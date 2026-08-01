@@ -28,7 +28,7 @@ export function BottomNav() {
             }
             aria-label="フィード"
           >
-            <Home className="w-6 h-6" aria-hidden="true" />
+            <Home className="w-7 h-7" aria-hidden="true" />
           </NavLink>
         </li>
 
@@ -44,8 +44,8 @@ export function BottomNav() {
             }
             aria-label="投稿"
           >
-            <span className="w-12 h-12 rounded-full bg-orange-500 shadow-md flex items-center justify-center ring-4 ring-white">
-              <Plus className="w-6 h-6 text-white" strokeWidth={2.5} aria-hidden="true" />
+            <span className="w-14 h-14 rounded-full bg-orange-500 shadow-md flex items-center justify-center ring-4 ring-white">
+              <Plus className="w-7 h-7 text-white" strokeWidth={2.5} aria-hidden="true" />
             </span>
           </NavLink>
         </li>
@@ -62,7 +62,7 @@ export function BottomNav() {
             }
             aria-label="マップ"
           >
-            <Map className="w-6 h-6" aria-hidden="true" />
+            <Map className="w-7 h-7" aria-hidden="true" />
           </NavLink>
         </li>
 

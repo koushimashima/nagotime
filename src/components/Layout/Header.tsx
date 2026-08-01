@@ -22,7 +22,7 @@ function AvatarBadge({ displayName }: { displayName: string }) {
     <img
       src={avatarUrl}
       alt={displayName}
-      className="w-8 h-8 rounded-full object-cover ring-2 ring-orange-300 bg-orange-50"
+      className="w-9 h-9 rounded-full object-cover ring-2 ring-orange-300 bg-orange-50"
     />
   )
 }
@@ -146,7 +146,7 @@ export function Header() {
           className="flex items-center shrink-0"
           aria-label="NagoTime ホーム"
         >
-          <span className="text-lg font-bold text-orange-500 tracking-tight">
+          <span className="text-xl font-bold text-orange-500 tracking-tight">
             NagoTime
           </span>
         </NavLink>
@@ -174,7 +174,7 @@ export function Header() {
               ].join(' ')
             }
           >
-            <Ticket className="w-6 h-6" aria-hidden="true" />
+            <Ticket className="w-7 h-7" aria-hidden="true" />
           </NavLink>
 
           {/* ユーザーボタン + アカウントパネル */}
@@ -189,7 +189,7 @@ export function Header() {
               {isAuthenticated && user ? (
                 <AvatarBadge displayName={user.displayName} />
               ) : (
-                <UserCircle className="w-6 h-6 text-gray-400" aria-hidden="true" />
+                <UserCircle className="w-7 h-7 text-gray-400" aria-hidden="true" />
               )}
             </button>
 
