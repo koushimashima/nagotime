@@ -302,7 +302,7 @@ NagoTime フロントエンドデモ版を、プロジェクトセットアッ�
     - _Requirements: 9.1〜9.5_
     - 推定時間: 2時間
 
-- [ ] 10. Wave 9: 統合テスト + ビルド確認
+- [x] 10. Wave 9: 統合テスト + ビルド確認
   - [x] 10.1 共通ユーティリティの単体テスト（example-based）
     - `src/utils/__tests__/validators.test.ts`: 境界値テスト（49/50/1000/1001文字など）
     - `src/utils/__tests__/timeUtils.test.ts`: 各時間帯の代表値テスト
@@ -312,7 +312,7 @@ NagoTime フロントエンドデモ版を、プロジェクトセットアッ�
     - _Requirements: 1.2, 1.3, 1.7, 4.3, 6.1_
     - 推定時間: 1.5時間
 
-  - [-] 10.2 コンポーネントの MSW インテグレーションテスト
+  - [x] 10.2 コンポーネントの MSW インテグレーションテスト
     - `src/features/feed/__tests__/FeedPage.test.tsx`: 口コミが表示される・フィルタが機能する
     - `src/features/review/__tests__/ReviewDetailPage.test.tsx`: いいねボタンの楽観的 UI + 409 復元
     - `src/features/submit/__tests__/SubmitPage.test.tsx`: バリデーションエラーのインライン表示
@@ -321,7 +321,7 @@ NagoTime フロントエンドデモ版を、プロジェクトセットアッ�
     - _Requirements: 3.1, 7.2, 7.3, 8.3〜8.5_
     - 推定時間: 2時間
 
-  - [ ] 10.3 ビルド確認とデモ動作検証
+  - [x] 10.3 ビルド確認とデモ動作検証
     - `vite build` を実行し、エラーなく `dist/` が生成されることを確認する
     - `vite preview` でビルド済みアプリを起動し、全画面の動作を手動確認する
     - MSW が本番ビルドでも正しく動作するか確認する（`import.meta.env.MODE === 'production'` で有効化）

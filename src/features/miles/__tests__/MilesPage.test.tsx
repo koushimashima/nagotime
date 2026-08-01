@@ -133,7 +133,7 @@ describe('MilesPage', () => {
     renderMilesPage()
 
     await waitFor(() => {
-      expect(screen.getByText('テストクーポン200マイル')).toBeInTheDocument()
+      expect(screen.getAllByText('テストクーポン200マイル').length).toBeGreaterThanOrEqual(1)
     })
 
     // 交換ボタンをクリック
@@ -146,7 +146,8 @@ describe('MilesPage', () => {
     await waitFor(() => {
       expect(screen.getByText('クーポン交換の確認')).toBeInTheDocument()
     })
-    expect(screen.getByText('テストクーポン200マイル')).toBeInTheDocument()
+    // coupon name appears in both coupon card and modal
+    expect(screen.getAllByText('テストクーポン200マイル').length).toBeGreaterThanOrEqual(2)
   })
 
   it('確認モーダルで「交換する」をクリックするとクーポンコードが表示される', async () => {
@@ -154,7 +155,7 @@ describe('MilesPage', () => {
     renderMilesPage()
 
     await waitFor(() => {
-      expect(screen.getByText('テストクーポン200マイル')).toBeInTheDocument()
+      expect(screen.getAllByText('テストクーポン200マイル').length).toBeGreaterThanOrEqual(1)
     })
 
     // 交換ボタンをクリック
@@ -185,7 +186,7 @@ describe('MilesPage', () => {
     renderMilesPage()
 
     await waitFor(() => {
-      expect(screen.getByText('テストクーポン200マイル')).toBeInTheDocument()
+      expect(screen.getAllByText('テストクーポン200マイル').length).toBeGreaterThanOrEqual(1)
     })
 
     // 交換前の残高（ローカルコンテキスト: 1000マイル）
@@ -212,24 +213,42 @@ describe('MilesPage', () => {
 
     // ローカル残高が 200 減算されて 800 になる
     // MileContext の deductMiles(200) が呼ばれているため
+    // balanceSection 内の残高が 800 に更新されることを確認
     await waitFor(() => {
-      expect(screen.getByText('800')).toBeInTheDocument()
+      // モーダルが閉じてメイン画面が再表示されるまで待つ
+      const refreshedSection = screen.queryByLabelText('マイル残高')
+      expect(refreshedSection).toBeInTheDocument()
+      expect(within(refreshedSection!).getByText('800')).toBeInTheDocument()
     })
   })
 
   it('マイル不足の場合は交換ボタンが無効化される', async () => {
     // マイル残高が 100 しかない場合（クーポンに必要な 200 に足りない）
+    // renderMilesPage より先に localStorage をセットし、直接 render する
+    localStorage.setItem('nagotime_auth_user', JSON.stringify(testUser))
     localStorage.setItem('nagotime_mile_balance', '100')
 
-    renderMilesPage()
+    render(
+      <MemoryRouter>
+        <AuthProvider>
+          <MileProvider>
+            <MilesPage />
+          </MileProvider>
+        </AuthProvider>
+      </MemoryRouter>,
+    )
 
     await waitFor(() => {
-      expect(screen.getByText('テストクーポン200マイル')).toBeInTheDocument()
+      expect(screen.getAllByText('テストクーポン200マイル').length).toBeGreaterThanOrEqual(1)
     })
 
     // 「あと〇マイル必要です」メッセージが表示される
     await waitFor(() => {
-      expect(screen.getByText('あと 100 マイル必要です')).toBeInTheDocument()
+      expect(
+        screen.getByText((_content, element) => {
+          return element?.tagName === 'P' && /あと.*100.*マイル必要/.test(element.textContent ?? '')
+        })
+      ).toBeInTheDocument()
     })
 
     // 交換ボタンが無効化されている

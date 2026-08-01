@@ -937,6 +937,35 @@
         "executionId": "362ccd33-36c7-46ba-a67b-848a9feffeb7",
         "chatSessionId": "sess_d595af98-2287-4eb6-9637-0fa7ac74c187",
         "timestamp": 1785586605426
+      },
+      {
+        "executionId": "b75089fc-d45b-4fa1-81a7-e0aa7d98c0d1",
+        "chatSessionId": "sess_3f93cd24-be60-4423-b51e-90b6ba3b1da2",
+        "timestamp": 1785593153494
+      },
+      {
+        "executionId": "b75089fc-d45b-4fa1-81a7-e0aa7d98c0d1",
+        "chatSessionId": "sess_3f93cd24-be60-4423-b51e-90b6ba3b1da2",
+        "timestamp": 1785593658880
+      }
+    ],
+    "10.3 ビルド確認とデモ動作検証": [
+      {
+        "executionId": "cf427657-268a-4398-b9f4-57f499b961a7",
+        "chatSessionId": "sess_40eff1f9-7c9e-4168-88dd-be3775ea597c",
+        "timestamp": 1785593888703
+      },
+      {
+        "executionId": "cf427657-268a-4398-b9f4-57f499b961a7",
+        "chatSessionId": "sess_40eff1f9-7c9e-4168-88dd-be3775ea597c",
+        "timestamp": 1785594050887
+      }
+    ],
+    "10. Wave 9: 統合テスト + ビルド確認": [
+      {
+        "executionId": "cf427657-268a-4398-b9f4-57f499b961a7",
+        "chatSessionId": "sess_40eff1f9-7c9e-4168-88dd-be3775ea597c",
+        "timestamp": 1785594051027
       }
     ]
   }

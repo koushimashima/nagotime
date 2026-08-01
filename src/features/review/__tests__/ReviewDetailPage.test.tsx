@@ -103,9 +103,9 @@ describe('ReviewDetailPage', () => {
     // ローディング表示
     expect(screen.getByText('読み込み中…')).toBeInTheDocument()
 
-    // 詳細が表示されるまで待機
+    // 詳細が表示されるまで待機（スポット名はヘッダーと本体に2か所あるので getAllByText）
     await waitFor(() => {
-      expect(screen.getByText('テストスポット栄')).toBeInTheDocument()
+      expect(screen.getAllByText('テストスポット栄').length).toBeGreaterThanOrEqual(1)
     }, WAIT_OPTIONS)
 
     expect(screen.getByText('田中 太郎')).toBeInTheDocument()
@@ -116,7 +116,7 @@ describe('ReviewDetailPage', () => {
     renderReviewDetailPage()
 
     await waitFor(() => {
-      expect(screen.getByText('テストスポット栄')).toBeInTheDocument()
+      expect(screen.getAllByText('テストスポット栄').length).toBeGreaterThanOrEqual(1)
     }, WAIT_OPTIONS)
 
     // いいね数が表示されている（42件）
@@ -128,7 +128,7 @@ describe('ReviewDetailPage', () => {
     renderReviewDetailPage()
 
     await waitFor(() => {
-      expect(screen.getByText('テストスポット栄')).toBeInTheDocument()
+      expect(screen.getAllByText('テストスポット栄').length).toBeGreaterThanOrEqual(1)
     }, WAIT_OPTIONS)
 
     // いいね前のカウント
@@ -164,7 +164,7 @@ describe('ReviewDetailPage', () => {
     renderReviewDetailPage()
 
     await waitFor(() => {
-      expect(screen.getByText('テストスポット栄')).toBeInTheDocument()
+      expect(screen.getAllByText('テストスポット栄').length).toBeGreaterThanOrEqual(1)
     }, WAIT_OPTIONS)
 
     // 初期カウントを確認
@@ -196,7 +196,7 @@ describe('ReviewDetailPage', () => {
     renderReviewDetailPage()
 
     await waitFor(() => {
-      expect(screen.getByText('テストスポット栄')).toBeInTheDocument()
+      expect(screen.getAllByText('テストスポット栄').length).toBeGreaterThanOrEqual(1)
     }, WAIT_OPTIONS)
 
     // 2枚の写真があるので「次の写真」ボタンが表示される
