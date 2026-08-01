@@ -1,4 +1,4 @@
-// src/contexts/MileContext.tsx
+﻿// src/contexts/MileContext.tsx
 // マイル残高・いいね状態管理コンテキスト（Requirements 7.2, 7.3, 8.3, 8.4, 8.5）
 
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
@@ -34,6 +34,13 @@ interface MileState {
    * @returns いいね追加した場合 true、重複の場合 false
    */
   toggleLike: (reviewId: string) => boolean
+  /**
+   * Overwrite-sync the mile balance with a value fetched from the server.
+   * Call this after a successful GET /api/miles to fix the initial-login
+   * discrepancy where localStorage returns 0.
+   * @param serverBalance The authoritative balance from the server
+   */
+  syncBalance: (serverBalance: number) => void
 }
 
 // ---- Context 生成 ----
@@ -137,12 +144,21 @@ export function MileProvider({ children }: MileProviderProps) {
     return true
   }
 
+  /**
+   * サーバー残高でローカル state と localStorage を上書きする。
+   * MilesPage で GET /api/miles 成功後に呼び出す。
+   */
+  function syncBalance(serverBalance: number): void {
+    setBalance(Math.max(0, serverBalance))
+  }
+
   const value: MileState = {
     balance,
     likedReviewIds,
     addMiles,
     deductMiles,
     toggleLike,
+    syncBalance,
   }
 
   return <MileContext.Provider value={value}>{children}</MileContext.Provider>

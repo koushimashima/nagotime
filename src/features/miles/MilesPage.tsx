@@ -1,4 +1,4 @@
-// src/features/miles/MilesPage.tsx
+﻿// src/features/miles/MilesPage.tsx
 // マイル・クーポン画面（Requirements 8.1〜8.8）
 
 import { useCallback, useEffect, useState } from 'react'
@@ -74,7 +74,7 @@ function formatDateTime(iso: string): string {
  */
 export function MilesPage() {
   const { user } = useAuth()
-  const { balance: localBalance, deductMiles } = useMile()
+  const { balance: localBalance, deductMiles, syncBalance } = useMile()
 
   // ---- API データ ----
   const [transactions, setTransactions] = useState<MileTransaction[]>([])
@@ -123,6 +123,8 @@ export function MilesPage() {
 
       const milesData = (await milesRes.json()) as MilesApiResponse
       setTransactions(milesData.transactions)
+      // Sync local MileContext with server balance (fixes initial-login balance = 0)
+      syncBalance(milesData.balance)
 
       if (couponsRes.ok) {
         const couponsData = (await couponsRes.json()) as { coupons: Coupon[] }
