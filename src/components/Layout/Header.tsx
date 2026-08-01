@@ -146,7 +146,7 @@ export function Header() {
           className="flex items-center shrink-0"
           aria-label="NagoTime ホーム"
         >
-          <span className="text-2xl font-bold text-white tracking-tight" style={{ fontFamily: "'Caveat', cursive" }}>
+          <span className="text-4xl font-bold text-white tracking-tight" style={{ fontFamily: "'Caveat', cursive" }}>
             NagoTime
           </span>
         </NavLink>
