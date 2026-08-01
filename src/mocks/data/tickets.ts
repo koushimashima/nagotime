@@ -17,7 +17,7 @@ export const mockTickets: Ticket[] = [
     redeemedCount: 58,
     status: 'ACTIVE',
     // みそかつ・とんかつ料理
-    thumbnailUrl: 'https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=400&h=300&fit=crop',
+    thumbnailUrl: 'https://picsum.photos/seed/ticket-001/400/300',
   },
   {
     ticketId: 'ticket-002',
@@ -31,7 +31,7 @@ export const mockTickets: Ticket[] = [
     redeemedCount: 34,
     status: 'ACTIVE',
     // ハンドドリップコーヒー
-    thumbnailUrl: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=300&fit=crop',
+    thumbnailUrl: 'https://picsum.photos/seed/ticket-002/400/300',
   },
   {
     ticketId: 'ticket-003',
@@ -45,7 +45,7 @@ export const mockTickets: Ticket[] = [
     redeemedCount: 122,
     status: 'ACTIVE',
     // 動物園・ゾウ
-    thumbnailUrl: 'https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=400&h=300&fit=crop',
+    thumbnailUrl: 'https://picsum.photos/seed/ticket-003/400/300',
   },
   {
     ticketId: 'ticket-006',
@@ -59,7 +59,7 @@ export const mockTickets: Ticket[] = [
     redeemedCount: 15,
     status: 'ACTIVE',
     // 映画館・シアター
-    thumbnailUrl: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=400&h=300&fit=crop',
+    thumbnailUrl: 'https://picsum.photos/seed/ticket-006/400/300',
   },
   {
     ticketId: 'ticket-007',
@@ -73,7 +73,7 @@ export const mockTickets: Ticket[] = [
     redeemedCount: 8,
     status: 'ACTIVE',
     // ボウリング
-    thumbnailUrl: 'https://images.unsplash.com/photo-1596301588034-4cb610424c81?w=400&h=300&fit=crop',
+    thumbnailUrl: 'https://picsum.photos/seed/ticket-007/400/300',
   },
 
   // ---- SOLD_OUT（売り切れ） ----
@@ -89,7 +89,7 @@ export const mockTickets: Ticket[] = [
     redeemedCount: 150,
     status: 'SOLD_OUT',
     // たこ焼き
-    thumbnailUrl: 'https://images.unsplash.com/photo-1585664811087-47f65abbad64?w=400&h=300&fit=crop',
+    thumbnailUrl: 'https://picsum.photos/seed/ticket-004/400/300',
   },
 
   // ---- EXPIRED（期限切れ） ----
@@ -105,6 +105,6 @@ export const mockTickets: Ticket[] = [
     redeemedCount: 217,
     status: 'EXPIRED',
     // 日本のお城・ミュージアムショップ
-    thumbnailUrl: 'https://images.unsplash.com/photo-1581090700227-1e37b190418e?w=400&h=300&fit=crop',
+    thumbnailUrl: 'https://picsum.photos/seed/ticket-005/400/300',
   },
 ]

@@ -219,29 +219,8 @@ export function ReviewDetailPage() {
   return (
     <div className="min-h-screen bg-gray-50 pb-20">
 
-      {/* ---- 戻るボタン（絶対配置でオーバーレイ） ---- */}
-      <div className="sticky top-0 z-20 bg-white border-b border-gray-200 px-4 py-3 flex items-center gap-3">
-        <button
-          type="button"
-          onClick={() => navigate(-1)}
-          aria-label="前のページに戻る"
-          className="p-1.5 rounded-full hover:bg-gray-100 transition-colors text-gray-600"
-        >
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            aria-hidden="true"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-        <h1 className="text-base font-semibold text-gray-900 truncate flex-1">{review.spotName}</h1>
-      </div>
-
-      {/* ---- 写真ギャラリー ---- */}
-      {photos.length > 0 && (
+      {/* ---- 写真ギャラリー（戻るボタンをオーバーレイ） ---- */}
+      {photos.length > 0 ? (
         <div
           className="relative w-full bg-black select-none"
           style={{ aspectRatio: '4 / 3' }}
@@ -255,6 +234,26 @@ export function ReviewDetailPage() {
             alt={`口コミ写真 ${photoIndex + 1} / ${photos.length}`}
             className="w-full h-full object-cover"
           />
+
+          {/* 戻るボタン（写真左上オーバーレイ） */}
+          <button
+            type="button"
+            onClick={() => navigate(-1)}
+            aria-label="前のページに戻る"
+            className="absolute top-3 left-3 z-10 w-9 h-9 flex items-center justify-center
+                       bg-black/50 hover:bg-black/70 text-white rounded-full
+                       transition-colors focus:outline-none focus:ring-2 focus:ring-white"
+          >
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
 
           {/* インデックス表示 */}
           {hasMultiplePhotos && (
@@ -309,6 +308,27 @@ export function ReviewDetailPage() {
               ))}
             </div>
           )}
+        </div>
+      ) : (
+        /* 写真なし時のシンプルなヘッダー（戻るボタンのみ） */
+        <div className="px-4 pt-4 pb-2">
+          <button
+            type="button"
+            onClick={() => navigate(-1)}
+            aria-label="前のページに戻る"
+            className="w-9 h-9 flex items-center justify-center bg-gray-100 hover:bg-gray-200
+                       text-gray-700 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400"
+          >
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
         </div>
       )}
 
@@ -381,6 +401,11 @@ export function ReviewDetailPage() {
           </span>
         </div>
 
+        {/* 本文テキスト */}
+        <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+          <p className="text-sm text-gray-800 leading-relaxed whitespace-pre-wrap">{review.text}</p>
+        </div>
+
         {/* 投稿者情報・投稿日時 */}
         <div className="flex items-center gap-3 py-3 border-t border-b border-gray-100">
           {/* アバター（アイコン） */}
@@ -398,11 +423,6 @@ export function ReviewDetailPage() {
               {formatDateJa(review.createdAt)}
             </time>
           </div>
-        </div>
-
-        {/* 本文テキスト */}
-        <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
-          <p className="text-sm text-gray-800 leading-relaxed whitespace-pre-wrap">{review.text}</p>
         </div>
 
       </div>

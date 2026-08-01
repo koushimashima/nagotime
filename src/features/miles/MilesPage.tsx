@@ -194,18 +194,20 @@ export function MilesPage() {
       {/* マイル残高カード */}
       <section aria-label="マイル残高">
         <div className="rounded-2xl bg-gradient-to-br from-orange-500 to-orange-400 text-white px-6 py-8 shadow-lg">
-          <p className="text-sm font-medium text-orange-100">あなたの残高</p>
-          <p className="mt-2 text-5xl font-bold tracking-tight">
+          <p className="text-sm font-medium text-orange-100 text-right">あなたの残高</p>
+          <p className="mt-2 text-5xl font-bold tracking-tight text-right">
             {displayBalance.toLocaleString()}
             <span className="ml-2 text-2xl font-normal text-orange-200">マイル</span>
           </p>
-          <button
-            type="button"
-            onClick={() => setHistoryOpen(v => !v)}
-            className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-orange-100 underline underline-offset-2 hover:text-white transition-colors"
-          >
-            {historyOpen ? '取引履歴を閉じる ▲' : '取引履歴 ▼'}
-          </button>
+          <div className="flex justify-end mt-4">
+            <button
+              type="button"
+              onClick={() => setHistoryOpen(v => !v)}
+              className="inline-flex items-center gap-1 text-xs font-medium text-orange-100 underline underline-offset-2 hover:text-white transition-colors"
+            >
+              {historyOpen ? '取引履歴を閉じる ▲' : '取引履歴 ▼'}
+            </button>
+          </div>
         </div>
 
         {historyOpen && (

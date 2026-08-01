@@ -6,7 +6,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { MapPin, AlertTriangle, LocateFixed } from 'lucide-react'
+import { AlertTriangle, LocateFixed } from 'lucide-react'
 import {
   MapContainer,
   TileLayer,
@@ -74,17 +74,17 @@ function LocateButton({
   locating: boolean
 }) {
   return (
-    <div className="absolute bottom-6 right-3 z-[1000]">
+    <div className="absolute bottom-20 right-4 z-[1000]">
       <button
         onClick={onLocate}
         disabled={locating}
         aria-label="現在地に移動"
-        className="bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-md border border-gray-200 hover:bg-gray-50 active:scale-95 transition-transform disabled:opacity-50"
+        className="bg-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg border border-gray-200 hover:bg-gray-50 active:scale-95 transition-transform disabled:opacity-50"
       >
         {locating ? (
           <LoadingSpinner size="sm" />
         ) : (
-          <LocateFixed className="w-5 h-5 text-blue-600" aria-hidden="true" />
+          <LocateFixed className="w-6 h-6 text-blue-600" aria-hidden="true" />
         )}
       </button>
     </div>
@@ -133,7 +133,6 @@ export function MapPage() {
   const [loading, setLoading] = useState(false)
   const [locating, setLocating] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [locationStatus, setLocationStatus] = useState<'pending' | 'granted' | 'denied'>('pending')
   // 「この範囲を検索」ボタン用：表示中心と検索済み座標が異なるか
   const [pendingSearch, setPendingSearch] = useState(false)
 
@@ -162,7 +161,6 @@ export function MapPage() {
   const locateUser = useCallback(
     (onSuccess?: () => void) => {
       if (!navigator.geolocation) {
-        setLocationStatus('denied')
         return
       }
       setLocating(true)
@@ -172,13 +170,11 @@ export function MapPage() {
           setUserCoord({ lat: latitude, lon: longitude })
           setMapCenter([latitude, longitude])
           setSearchCoord({ lat: latitude, lon: longitude })
-          setLocationStatus('granted')
           setLocating(false)
           onSuccess?.()
           fetchSpots(latitude, longitude)
         },
         () => {
-          setLocationStatus('denied')
           setLocating(false)
         },
         { timeout: 8000, maximumAge: 10000 },
@@ -190,7 +186,6 @@ export function MapPage() {
   // ---- 現在地取得（マウント時 1 回） ----
   useEffect(() => {
     if (!navigator.geolocation) {
-      setLocationStatus('denied')
       fetchSpots(
         (DEFAULT_CENTER as [number, number])[0],
         (DEFAULT_CENTER as [number, number])[1],
@@ -224,23 +219,6 @@ export function MapPage() {
 
   return (
     <div className="flex flex-col h-[calc(100vh-4rem)]">
-
-      {/* ---- ステータスバー ---- */}
-      <div className="bg-white border-b border-gray-200 px-4 py-2 flex items-center flex-shrink-0 z-10">
-        {locationStatus === 'denied' && (
-          <span className="flex items-center gap-1 text-xs text-gray-400">
-            <MapPin className="w-3.5 h-3.5" aria-hidden="true" />
-            栄（デフォルト）
-          </span>
-        )}
-        {locationStatus === 'granted' && (
-          <span className="flex items-center gap-1 text-xs text-green-600">
-            <MapPin className="w-3.5 h-3.5" aria-hidden="true" />
-            現在地
-          </span>
-        )}
-        {loading && <LoadingSpinner size="sm" className="ml-auto" />}
-      </div>
 
       {/* ---- エラーバナー ---- */}
       {error && (
@@ -278,6 +256,7 @@ export function MapPage() {
           center={DEFAULT_CENTER}
           zoom={DEFAULT_ZOOM}
           className="h-full w-full"
+          zoomControl={false}
           preferCanvas={false}
         >
           <TileLayer
