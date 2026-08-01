@@ -146,7 +146,7 @@ export function Header() {
           className="flex items-center shrink-0"
           aria-label="NagoTime ホーム"
         >
-          <span className="text-xl font-bold text-orange-500 tracking-tight">
+          <span className="text-2xl font-bold text-orange-500 tracking-tight">
             NagoTime
           </span>
         </NavLink>
