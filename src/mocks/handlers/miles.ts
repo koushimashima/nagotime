@@ -171,6 +171,7 @@ export const mileHandlers = [
       .filter((t) => t.status === 'ACTIVE' && new Date(t.expiresAt) >= now && t.redeemedCount < t.issueLimit)
       .slice()
       .sort(() => Math.random() - 0.5)
+    // NOTE: 表示順の優先付けはフロントエンド側（MilesPage）で行う
     return HttpResponse.json({ tickets: activeTickets, total: activeTickets.length })
   }),
 ]

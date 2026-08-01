@@ -84,7 +84,15 @@ export function MilesPage() {
 
       if (ticketsRes.ok) {
         const data = (await ticketsRes.json()) as { tickets: Ticket[] }
-        setTickets(data.tickets)
+        // マイルが足りているチケットを先頭に、同グループ内はランダム
+        const balance = milesData.balance
+        const sorted = [...data.tickets].sort((a, b) => {
+          const aAffordable = a.requiredMiles <= balance ? 0 : 1
+          const bAffordable = b.requiredMiles <= balance ? 0 : 1
+          if (aAffordable !== bAffordable) return aAffordable - bAffordable
+          return Math.random() - 0.5
+        })
+        setTickets(sorted)
       } else {
         setTickets([])
       }
@@ -194,7 +202,7 @@ export function MilesPage() {
       {/* マイル残高カード */}
       <section aria-label="マイル残高">
         <div className="rounded-2xl bg-gradient-to-br from-orange-500 to-orange-400 text-white px-6 py-8 shadow-lg">
-          <p className="text-sm font-medium text-orange-100 text-right">あなたの残高</p>
+          <p className="text-sm font-medium text-orange-100 text-left">あなたの残高</p>
           <p className="mt-2 text-5xl font-bold tracking-tight text-right">
             {displayBalance.toLocaleString()}
             <span className="ml-2 text-2xl font-normal text-orange-200">マイル</span>
@@ -264,7 +272,6 @@ export function MilesPage() {
                           {ticket.sponsorName}
                         </p>
                         <h3 className="text-sm font-semibold text-gray-900 mt-0.5 leading-snug">{ticket.name}</h3>
-                        <p className="text-xs text-gray-500 mt-1 line-clamp-2">{ticket.description}</p>
                         <div className="flex items-center gap-3 mt-2 flex-wrap">
                           <span className="inline-flex items-center text-xs font-semibold text-orange-600 bg-orange-50 rounded-full px-2.5 py-0.5">
                             {ticket.requiredMiles.toLocaleString()} マイル
@@ -317,7 +324,7 @@ export function MilesPage() {
 
           {/* シート本体 */}
           <div
-            className={`relative w-full max-w-lg bg-white rounded-t-2xl shadow-2xl flex flex-col max-h-[90dvh] transition-transform duration-300 ${isDetailOpen ? 'translate-y-0' : 'translate-y-full'}`}
+            className={`relative w-full max-w-lg bg-white rounded-t-2xl shadow-2xl flex flex-col max-h-[96dvh] transition-transform duration-300 ${isDetailOpen ? 'translate-y-0' : 'translate-y-full'}`}
           >
             {/* ドラッグハンドル */}
             <div className="flex justify-center pt-3 pb-1" aria-hidden="true">

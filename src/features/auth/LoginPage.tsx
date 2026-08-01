@@ -150,21 +150,10 @@ export function LoginPage() {
               <GraduationCap className="w-4 h-4" aria-hidden="true" />
               デモ用アカウント
             </p>
-            <div className="space-y-1.5">
-              <div>
-                <span className="font-medium">一般ユーザー</span>
-                <br />
-                <span className="font-mono">demo@example.com</span>
-                {' / '}
-                <span className="font-mono">password</span>
-              </div>
-              <div>
-                <span className="font-medium">管理者</span>
-                <br />
-                <span className="font-mono">admin@example.com</span>
-                {' / '}
-                <span className="font-mono">password</span>
-              </div>
+            <div>
+              <span className="font-mono">demo@example.com</span>
+              <br />
+              <span className="font-mono">password</span>
             </div>
           </div>
         </div>
