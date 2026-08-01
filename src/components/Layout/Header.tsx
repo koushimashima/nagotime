@@ -8,7 +8,7 @@
 
 import { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import { Ticket, UserCircle, LogOut, Mail, Coins, ShieldCheck } from 'lucide-react'
+import { Ticket, UserCircle, LogOut, Mail, Coins, ShieldCheck, Settings } from 'lucide-react'
 import { useAuth } from '../../contexts/AuthContext'
 import type { User } from '../../mocks/data/types'
 
@@ -33,9 +33,10 @@ interface AccountPanelProps {
   user: User
   onClose: () => void
   onLogout: () => void
+  onNavigate: (path: string) => void
 }
 
-function AccountPanel({ user, onClose, onLogout }: AccountPanelProps) {
+function AccountPanel({ user, onClose, onLogout, onNavigate }: AccountPanelProps) {
   const seed = encodeURIComponent(user.displayName)
   const avatarUrl = `https://api.dicebear.com/9.x/adventurer/svg?seed=${seed}&backgroundColor=ffedd5`
 
@@ -91,6 +92,18 @@ function AccountPanel({ user, onClose, onLogout }: AccountPanelProps) {
 
         {/* ログアウトボタン */}
         <div className="px-4 pb-4 pt-1">
+          {user.role === 'sponsor-admin' && (
+            <button
+              type="button"
+              onClick={() => onNavigate('/admin')}
+              className="w-full flex items-center justify-center gap-2 py-2.5 mb-2 rounded-xl
+                         text-sm font-medium text-purple-600 border border-purple-200
+                         hover:bg-purple-50 transition-colors"
+            >
+              <Settings className="w-4 h-4" aria-hidden="true" />
+              管理画面
+            </button>
+          )}
           <button
             type="button"
             onClick={onLogout}
@@ -134,6 +147,11 @@ export function Header() {
   function handleLogout() {
     setAccountOpen(false)
     logout()
+  }
+
+  function handleNavigate(path: string) {
+    setAccountOpen(false)
+    navigate(path)
   }
 
   return (
@@ -199,6 +217,7 @@ export function Header() {
                 user={user}
                 onClose={() => setAccountOpen(false)}
                 onLogout={handleLogout}
+                onNavigate={handleNavigate}
               />
             )}
           </div>

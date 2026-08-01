@@ -3,12 +3,12 @@ import { authHandlers } from './auth'
 import { reviewHandlers } from './reviews'
 import { spotHandlers } from './spots'
 import { mileHandlers } from './miles'
-import { couponHandlers } from './coupons'
+import { ticketHandlers } from './tickets'
 
 export const handlers: RequestHandler[] = [
   ...authHandlers,
   ...reviewHandlers,
   ...spotHandlers,
   ...mileHandlers,
-  ...couponHandlers,
+  ...ticketHandlers,
 ]

@@ -7,7 +7,7 @@ export const mockUsers: User[] = [
   {
     userId: 'user-001',
     email: 'demo@example.com',
-    displayName: '田中 太郎',
+    displayName: '名古 大夢',
     role: 'user',
     mileBalance: 1250,
   },

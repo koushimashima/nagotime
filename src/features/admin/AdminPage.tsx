@@ -6,7 +6,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useAuth } from '../../contexts/AuthContext'
 import { LoadingSpinner } from '../../components/LoadingSpinner'
-import type { Coupon, CouponStatus } from '../../mocks/data/types'
+import type { Ticket, TicketStatus } from '../../mocks/data/types'
 
 // ---- 型定義 ----
 
@@ -33,11 +33,11 @@ type FormValues = typeof INITIAL_FORM
 // ---- ステータスバッジ ----
 
 interface StatusBadgeProps {
-  status: CouponStatus
+  status: TicketStatus
 }
 
 function StatusBadge({ status }: StatusBadgeProps) {
-  const config: Record<CouponStatus, { label: string; className: string }> = {
+  const config: Record<TicketStatus, { label: string; className: string }> = {
     ACTIVE: {
       label: '有効',
       className: 'bg-emerald-100 text-emerald-700 border border-emerald-200',
@@ -95,7 +95,7 @@ export function AdminPage() {
   const [submitError, setSubmitError] = useState<string | null>(null)
 
   // ---- クーポン一覧状態 ----
-  const [coupons, setCoupons] = useState<Coupon[]>([])
+  const [coupons, setCoupons] = useState<Ticket[]>([])
   const [isLoadingList, setIsLoadingList] = useState(true)
   const [listError, setListError] = useState<string | null>(null)
 
@@ -108,7 +108,7 @@ export function AdminPage() {
     setListError(null)
 
     try {
-      const res = await fetch('/api/coupons', {
+      const res = await fetch('/api/tickets', {
         headers: {
           Authorization: `Bearer mock-jwt-token-${user.userId}-${Date.now()}`,
         },
@@ -116,11 +116,11 @@ export function AdminPage() {
 
       if (!res.ok) {
         const err = (await res.json()) as ApiErrorResponse
-        throw new Error(err.error?.message ?? 'クーポン一覧の取得に失敗しました')
+        throw new Error(err.error?.message ?? 'チケット一覧の取得に失敗しました')
       }
 
-      const data = (await res.json()) as { coupons: Coupon[]; total: number }
-      setCoupons(data.coupons)
+      const data = (await res.json()) as { tickets: Ticket[]; total: number }
+      setCoupons(data.tickets)
     } catch (err) {
       setListError(err instanceof Error ? err.message : 'データの取得に失敗しました')
     } finally {
@@ -192,7 +192,7 @@ export function AdminPage() {
     setIsSubmitting(true)
 
     try {
-      const res = await fetch('/api/coupons', {
+      const res = await fetch('/api/tickets', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -526,7 +526,7 @@ export function AdminPage() {
                 </thead>
                 <tbody className="divide-y divide-gray-100 bg-white">
                   {coupons.map((coupon) => (
-                    <tr key={coupon.couponId} className="hover:bg-gray-50 transition-colors">
+                    <tr key={coupon.ticketId} className="hover:bg-gray-50 transition-colors">
                       <td className="px-4 py-3">
                         <div className="min-w-0">
                           <p className="font-medium text-gray-900 truncate max-w-xs">
