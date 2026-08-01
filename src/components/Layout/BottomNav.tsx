@@ -1,22 +1,12 @@
 // src/components/Layout/BottomNav.tsx
 // モバイル向けボトムナビゲーション（大画面では非表示）
+//
+// レイアウト:
+//   [ Home ]  [ ＋（投稿） ]  [ Map ]
+//               ↑ 中央に突出した丸ボタン
 
 import { NavLink } from 'react-router-dom'
-import { Home, PenLine, Map, Ticket, type LucideIcon } from 'lucide-react'
-
-interface NavItem {
-  to: string
-  label: string
-  Icon: LucideIcon
-  end?: boolean
-}
-
-const NAV_ITEMS: NavItem[] = [
-  { to: '/',       label: 'フィード', Icon: Home,    end: true },
-  { to: '/submit', label: '投稿',     Icon: PenLine          },
-  { to: '/map',    label: 'マップ',   Icon: Map              },
-  { to: '/miles',  label: 'マイル',   Icon: Ticket           },
-]
+import { Home, Plus, Map } from 'lucide-react'
 
 export function BottomNav() {
   return (
@@ -24,27 +14,59 @@ export function BottomNav() {
       className="md:hidden fixed bottom-0 inset-x-0 bg-white border-t border-gray-200 z-50"
       aria-label="ボトムナビゲーション"
     >
-      <ul className="flex h-16">
-        {NAV_ITEMS.map(({ to, label, Icon, end }) => (
-          <li key={to} className="flex-1">
-            <NavLink
-              to={to}
-              end={end}
-              className={({ isActive }) =>
-                [
-                  'flex flex-col items-center justify-center h-full gap-0.5 text-xs font-medium transition-colors',
-                  isActive ? 'text-orange-500' : 'text-gray-500 hover:text-orange-500',
-                ].join(' ')
-              }
-              aria-label={label}
-            >
-              {/* アイコン */}
-              <Icon className="w-5 h-5" aria-hidden="true" />
-              {/* ラベル */}
-              <span>{label}</span>
-            </NavLink>
-          </li>
-        ))}
+      <ul className="flex h-16 items-end overflow-visible">
+
+        {/* ---- フィード ---- */}
+        <li className="flex-1">
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) =>
+              [
+                'flex items-center justify-center h-16 transition-colors',
+                isActive ? 'text-orange-500' : 'text-gray-400 hover:text-orange-500',
+              ].join(' ')
+            }
+            aria-label="フィード"
+          >
+            <Home className="w-6 h-6" aria-hidden="true" />
+          </NavLink>
+        </li>
+
+        {/* ---- 投稿（中央突出ボタン） ---- */}
+        <li className="flex-1 flex items-end justify-center pb-3">
+          <NavLink
+            to="/submit"
+            className={({ isActive }) =>
+              [
+                'flex items-center justify-center -translate-y-4 transition-transform',
+                isActive ? 'scale-95' : 'hover:scale-105',
+              ].join(' ')
+            }
+            aria-label="投稿"
+          >
+            <span className="w-14 h-14 rounded-full bg-orange-500 shadow-lg flex items-center justify-center ring-4 ring-white">
+              <Plus className="w-7 h-7 text-white" strokeWidth={2.5} aria-hidden="true" />
+            </span>
+          </NavLink>
+        </li>
+
+        {/* ---- マップ ---- */}
+        <li className="flex-1">
+          <NavLink
+            to="/map"
+            className={({ isActive }) =>
+              [
+                'flex items-center justify-center h-16 transition-colors',
+                isActive ? 'text-orange-500' : 'text-gray-400 hover:text-orange-500',
+              ].join(' ')
+            }
+            aria-label="マップ"
+          >
+            <Map className="w-6 h-6" aria-hidden="true" />
+          </NavLink>
+        </li>
+
       </ul>
     </nav>
   )

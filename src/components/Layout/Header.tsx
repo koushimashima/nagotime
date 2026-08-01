@@ -1,8 +1,11 @@
 // src/components/Layout/Header.tsx
-// デスクトップ向けヘッダー（アプリ名・ナビゲーション・認証ボタン）
+// デスクトップ向けヘッダー（アプリ名・ナビゲーション・アイコン群）
+//
+// 右端アイコン配置:
+//   [ マイル（Ticket） ]  [ ユーザー（UserCircle） ]
 
 import { NavLink, useNavigate } from 'react-router-dom'
-import { UtensilsCrossed } from 'lucide-react'
+import { Ticket, UserCircle } from 'lucide-react'
 import { useAuth } from '../../contexts/AuthContext'
 
 /**
@@ -20,7 +23,7 @@ export function Header() {
   const { isAuthenticated, logout } = useAuth()
   const navigate = useNavigate()
 
-  function handleAuthClick() {
+  function handleUserClick() {
     if (isAuthenticated) {
       logout()
     } else {
@@ -32,19 +35,18 @@ export function Header() {
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between gap-4">
 
-        {/* ロゴ */}
+        {/* ---- ロゴ ---- */}
         <NavLink
           to="/"
-          className="flex items-center gap-1.5 shrink-0"
+          className="flex items-center shrink-0"
           aria-label="NagoTime ホーム"
         >
-          <UtensilsCrossed className="w-5 h-5 text-orange-500" aria-hidden="true" />
           <span className="text-lg font-bold text-orange-500 tracking-tight">
             NagoTime
           </span>
         </NavLink>
 
-        {/* デスクトップナビゲーション（モバイルでは非表示） */}
+        {/* ---- デスクトップナビゲーション（モバイルでは非表示） ---- */}
         <nav className="hidden md:flex items-center gap-1" aria-label="メインナビゲーション">
           <NavLink to="/" end className={navLinkClass}>
             フィード
@@ -52,21 +54,46 @@ export function Header() {
           <NavLink to="/map" className={navLinkClass}>
             マップ
           </NavLink>
-          <NavLink to="/miles" className={navLinkClass}>
-            マイル
+          <NavLink to="/submit" className={navLinkClass}>
+            投稿
           </NavLink>
         </nav>
 
-        {/* 認証ボタン */}
-        <button
-          type="button"
-          onClick={handleAuthClick}
-          className="shrink-0 px-4 py-1.5 rounded-full text-sm font-medium border transition-colors
-                     border-orange-400 text-orange-500 hover:bg-orange-500 hover:text-white"
-        >
-          {isAuthenticated ? 'ログアウト' : 'ログイン'}
-        </button>
+        {/* ---- 右端アイコン群 ---- */}
+        <div className="flex items-center gap-1 shrink-0">
 
+          {/* マイルアイコン */}
+          <NavLink
+            to="/miles"
+            aria-label="マイル"
+            className={({ isActive }) =>
+              [
+                'p-2 rounded-full transition-colors',
+                isActive
+                  ? 'text-orange-500 bg-orange-50'
+                  : 'text-gray-500 hover:text-orange-500 hover:bg-orange-50',
+              ].join(' ')
+            }
+          >
+            <Ticket className="w-5 h-5" aria-hidden="true" />
+          </NavLink>
+
+          {/* ユーザーアイコン（ログイン/ログアウト） */}
+          <button
+            type="button"
+            onClick={handleUserClick}
+            aria-label={isAuthenticated ? 'ログアウト' : 'ログイン'}
+            className={[
+              'p-2 rounded-full transition-colors',
+              isAuthenticated
+                ? 'text-orange-500 hover:bg-orange-50'
+                : 'text-gray-500 hover:text-orange-500 hover:bg-orange-50',
+            ].join(' ')}
+          >
+            <UserCircle className="w-5 h-5" aria-hidden="true" />
+          </button>
+
+        </div>
       </div>
     </header>
   )
