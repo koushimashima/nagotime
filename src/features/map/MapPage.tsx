@@ -32,23 +32,31 @@ const FIXED_RADIUS = 2000
 
 function MapController({
   center,
+  flyToTrigger,
   onMapMoved,
 }: {
   center: LatLngExpression
+  flyToTrigger: number
   onMapMoved: (lat: number, lon: number) => void
 }) {
   const map = useMap()
-  const prevCenterRef = useRef<LatLngExpression | null>(null)
+  const prevCenterRef = useRef<[number, number] | null>(null)
+  const prevTriggerRef = useRef<number>(0)
 
   // プログラム的な中心移動
   useEffect(() => {
     const [lat, lon] = center as [number, number]
-    const prev = prevCenterRef.current as [number, number] | null
-    if (prev && prev[0] === lat && prev[1] === lon) return
+    const prev = prevCenterRef.current
+    const isForcedFly = flyToTrigger !== prevTriggerRef.current
 
-    map.setView(center, map.getZoom())
-    prevCenterRef.current = center
-  }, [center, map])
+    // 座標が同じかつ強制フライでなければスキップ
+    if (!isForcedFly && prev && prev[0] === lat && prev[1] === lon) return
+
+    map.flyTo(center, map.getZoom(), { duration: 0.8 })
+    // 値をコピーして保存（参照を共有しない）
+    prevCenterRef.current = [lat, lon]
+    prevTriggerRef.current = flyToTrigger
+  }, [center, flyToTrigger, map])
 
   // ユーザーがマップをドラッグ・ズームして移動したとき
   useEffect(() => {
@@ -74,7 +82,7 @@ function LocateButton({
   locating: boolean
 }) {
   return (
-    <div className="absolute bottom-20 right-4 z-[1000]">
+    <div className="absolute bottom-4 right-4 z-[1000]">
       <button
         onClick={onLocate}
         disabled={locating}
@@ -135,6 +143,8 @@ export function MapPage() {
   const [error, setError] = useState<string | null>(null)
   // 「この範囲を検索」ボタン用：表示中心と検索済み座標が異なるか
   const [pendingSearch, setPendingSearch] = useState(false)
+  // 現在地ボタン押下で強制 flyTo するためのカウンター
+  const [flyToTrigger, setFlyToTrigger] = useState(0)
 
   // ---- スポット取得 ----
   const fetchSpots = useCallback(async (lat: number, lon: number) => {
@@ -169,6 +179,7 @@ export function MapPage() {
           const { latitude, longitude } = position.coords
           setUserCoord({ lat: latitude, lon: longitude })
           setMapCenter([latitude, longitude])
+          setFlyToTrigger((n) => n + 1)
           setSearchCoord({ lat: latitude, lon: longitude })
           setLocating(false)
           onSuccess?.()
@@ -263,7 +274,7 @@ export function MapPage() {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           />
-          <MapController center={mapCenter} onMapMoved={handleMapMoved} />
+          <MapController center={mapCenter} flyToTrigger={flyToTrigger} onMapMoved={handleMapMoved} />
 
           {/* 現在地マーク（青い点 + 外縁リング） */}
           {userCoord && (

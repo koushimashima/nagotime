@@ -2,6 +2,7 @@
 // マイル・チケット画面（Requirements 8.1〜8.8）
 
 import { useCallback, useEffect, useState } from 'react'
+import QRCode from 'react-qr-code'
 import { useAuth } from '../../contexts/AuthContext'
 import { useMile } from '../../contexts/MileContext'
 import { LoadingSpinner } from '../../components/LoadingSpinner'
@@ -452,17 +453,23 @@ export function MilesPage() {
       </Modal>
 
       {/* チケットコード表示モーダル */}
-      <Modal isOpen={isCodeOpen} onClose={handleCodeClose} title="交換完了" cancelLabel="閉じる">
+      <Modal isOpen={isCodeOpen} onClose={handleCodeClose} title="交換完了">
         <div className="space-y-4">
           <p className="text-sm text-gray-700">チケットの交換が完了しました！以下のコードをご利用ください。</p>
           {redeemedTicketName && <p className="text-sm font-semibold text-gray-900">{redeemedTicketName}</p>}
-          <div className="rounded-xl bg-orange-50 border-2 border-orange-200 px-6 py-5 text-center">
-            <p className="text-xs text-orange-400 font-medium mb-2">チケットコード</p>
-            <p className="text-2xl font-bold font-mono tracking-widest text-orange-700 break-all" aria-label={`チケットコード: ${ticketCode ?? ''}`}>
-              {ticketCode}
-            </p>
+          <div className="rounded-xl bg-orange-50 border-2 border-orange-200 px-6 py-5 flex flex-col items-center gap-3">
+            <p className="text-xs text-orange-400 font-medium">QRコード</p>
+            {ticketCode && (
+              <div
+                className="bg-white p-3 rounded-lg shadow-sm"
+                aria-label={`チケットQRコード: ${ticketCode}`}
+              >
+                <QRCode value={ticketCode} size={160} />
+              </div>
+            )}
+            <p className="text-xs font-mono text-orange-700 break-all text-center">{ticketCode}</p>
           </div>
-          <p className="text-xs text-gray-400 text-center">このコードを店頭でご提示ください</p>
+          <p className="text-xs text-gray-400 text-center">このQRコードを店頭でご提示ください</p>
           <div className="rounded-lg bg-gray-50 border border-gray-200 px-4 py-3 text-center">
             <p className="text-xs text-gray-500">あなたの残高</p>
             <p className="text-xl font-bold text-orange-500 mt-0.5">
