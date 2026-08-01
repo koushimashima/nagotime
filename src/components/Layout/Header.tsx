@@ -84,7 +84,7 @@ function AccountPanel({ user, onClose, onLogout, onNavigate }: AccountPanelProps
             <span>
               マイル残高：
               <span className="font-semibold text-orange-500">
-                {user.mileBalance.toLocaleString()} mile
+                {user.mileBalance.toLocaleString()} マイル
               </span>
             </span>
           </li>

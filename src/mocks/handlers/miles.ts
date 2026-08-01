@@ -167,9 +167,10 @@ export const mileHandlers = [
   http.get('/api/tickets/active', async () => {
     await delay(200)
     const now = new Date()
-    const activeTickets = tickets.filter(
-      (t) => t.status === 'ACTIVE' && new Date(t.expiresAt) >= now && t.redeemedCount < t.issueLimit,
-    )
+    const activeTickets = tickets
+      .filter((t) => t.status === 'ACTIVE' && new Date(t.expiresAt) >= now && t.redeemedCount < t.issueLimit)
+      .slice()
+      .sort(() => Math.random() - 0.5)
     return HttpResponse.json({ tickets: activeTickets, total: activeTickets.length })
   }),
 ]

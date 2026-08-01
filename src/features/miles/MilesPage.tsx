@@ -6,7 +6,7 @@ import { useAuth } from '../../contexts/AuthContext'
 import { useMile } from '../../contexts/MileContext'
 import { LoadingSpinner } from '../../components/LoadingSpinner'
 import { Modal } from '../../components/Modal'
-import { MapPin, X, Ticket as TicketIcon, CalendarDays, Hash, ChevronRight } from 'lucide-react'
+import { MapPin, X, Ticket as TicketIcon, CalendarDays, ChevronRight } from 'lucide-react'
 import type { Ticket, MileTransaction, MileTransactionType } from '../../mocks/data/types'
 
 const TRANSACTION_TYPE_LABEL: Record<MileTransactionType, string> = {
@@ -194,7 +194,7 @@ export function MilesPage() {
       {/* マイル残高カード */}
       <section aria-label="マイル残高">
         <div className="rounded-2xl bg-gradient-to-br from-orange-500 to-orange-400 text-white px-6 py-8 shadow-lg">
-          <p className="text-sm font-medium text-orange-100">現在のマイル残高</p>
+          <p className="text-sm font-medium text-orange-100">あなたの残高</p>
           <p className="mt-2 text-5xl font-bold tracking-tight">
             {displayBalance.toLocaleString()}
             <span className="ml-2 text-2xl font-normal text-orange-200">マイル</span>
@@ -204,7 +204,7 @@ export function MilesPage() {
             onClick={() => setHistoryOpen(v => !v)}
             className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-orange-100 underline underline-offset-2 hover:text-white transition-colors"
           >
-            {historyOpen ? '取引履歴を閉じる ▲' : '取引履歴を見る ▼'}
+            {historyOpen ? '取引履歴を閉じる ▲' : '取引履歴 ▼'}
           </button>
         </div>
 
@@ -308,14 +308,14 @@ export function MilesPage() {
         >
           {/* オーバーレイ */}
           <div
-            className={`absolute inset-0 bg-black/40 transition-opacity duration-300 ${isDetailOpen ? 'opacity-100' : 'opacity-0'}`}
+            className={`fixed inset-0 bg-black/40 transition-opacity duration-300 ${isDetailOpen ? 'opacity-100' : 'opacity-0'}`}
             onClick={handleDetailClose}
             aria-hidden="true"
           />
 
           {/* シート本体 */}
           <div
-            className={`relative w-full max-w-lg bg-white rounded-t-2xl shadow-2xl overflow-y-auto max-h-[90dvh] transition-transform duration-300 ${isDetailOpen ? 'translate-y-0' : 'translate-y-full'}`}
+            className={`relative w-full max-w-lg bg-white rounded-t-2xl shadow-2xl flex flex-col max-h-[90dvh] transition-transform duration-300 ${isDetailOpen ? 'translate-y-0' : 'translate-y-full'}`}
           >
             {/* ドラッグハンドル */}
             <div className="flex justify-center pt-3 pb-1" aria-hidden="true">
@@ -345,7 +345,7 @@ export function MilesPage() {
             )}
 
             {/* 本文 */}
-            <div className="px-5 pt-4 pb-6 space-y-5">
+            <div className="px-5 pt-4 pb-2 space-y-5 overflow-y-auto flex-1">
               {/* スポンサー名 */}
               <p className="text-sm text-orange-500 font-medium flex items-center gap-1">
                 <MapPin className="w-4 h-4 shrink-0" aria-hidden="true" />
@@ -376,16 +376,7 @@ export function MilesPage() {
                   <span className="text-xs text-gray-500 w-24 shrink-0">有効期限</span>
                   <span className="text-sm text-gray-700">{formatDate(selectedTicket.expiresAt)}</span>
                 </div>
-                <div className="flex items-center gap-3 px-4 py-3">
-                  <Hash className="w-4 h-4 text-gray-400 shrink-0" aria-hidden="true" />
-                  <span className="text-xs text-gray-500 w-24 shrink-0">残り枚数</span>
-                  <span className="text-sm text-gray-700">
-                    {(selectedTicket.issueLimit - selectedTicket.redeemedCount).toLocaleString()} 枚
-                    <span className="text-xs text-gray-400 ml-1">
-                      （発行上限 {selectedTicket.issueLimit.toLocaleString()} 枚）
-                    </span>
-                  </span>
-                </div>
+
               </div>
 
               {/* マイル不足メッセージ */}
@@ -394,8 +385,10 @@ export function MilesPage() {
                   あと <span className="font-semibold">{(selectedTicket.requiredMiles - displayBalance).toLocaleString()} マイル</span> 貯めると交換できます
                 </div>
               )}
+            </div>
 
-              {/* 交換ボタン */}
+            {/* 交換ボタン（常に最下部に固定） */}
+            <div className="px-5 py-4 border-t border-gray-100 bg-white shrink-0">
               <button
                 type="button"
                 onClick={handleRedeemFromDetail}
@@ -461,7 +454,7 @@ export function MilesPage() {
           </div>
           <p className="text-xs text-gray-400 text-center">このコードを店頭でご提示ください</p>
           <div className="rounded-lg bg-gray-50 border border-gray-200 px-4 py-3 text-center">
-            <p className="text-xs text-gray-500">現在のマイル残高</p>
+            <p className="text-xs text-gray-500">あなたの残高</p>
             <p className="text-xl font-bold text-orange-500 mt-0.5">
               {displayBalance.toLocaleString()}<span className="text-sm font-normal text-gray-500 ml-1">マイル</span>
             </p>

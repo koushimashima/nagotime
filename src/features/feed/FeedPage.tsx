@@ -79,7 +79,7 @@ export function FeedPage() {
 
       {/* ---- ページヘッダー ---- */}
       <div className="bg-white border-b border-gray-200 px-4 pt-4 pb-3 sticky top-0 z-10">
-        <h1 className="text-lg font-bold text-gray-900 mb-3">口コミフィード</h1>
+        <h1 className="text-lg font-bold text-gray-900 mb-3">みんなのクチコミ</h1>
 
         {/* フィルタバー */}
         <div className="flex flex-wrap gap-2 items-center">

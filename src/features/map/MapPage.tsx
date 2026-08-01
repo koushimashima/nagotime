@@ -6,12 +6,13 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { MapPin, AlertTriangle } from 'lucide-react'
+import { MapPin, AlertTriangle, LocateFixed } from 'lucide-react'
 import {
   MapContainer,
   TileLayer,
   Marker,
   Popup,
+  CircleMarker,
   useMap,
 } from 'react-leaflet'
 import type { LatLngExpression } from 'leaflet'
@@ -29,10 +30,17 @@ const FIXED_RADIUS = 2000
 
 // ---- 内部コンポーネント ----
 
-function MapController({ center }: { center: LatLngExpression }) {
+function MapController({
+  center,
+  onMapMoved,
+}: {
+  center: LatLngExpression
+  onMapMoved: (lat: number, lon: number) => void
+}) {
   const map = useMap()
   const prevCenterRef = useRef<LatLngExpression | null>(null)
 
+  // プログラム的な中心移動
   useEffect(() => {
     const [lat, lon] = center as [number, number]
     const prev = prevCenterRef.current as [number, number] | null
@@ -42,7 +50,45 @@ function MapController({ center }: { center: LatLngExpression }) {
     prevCenterRef.current = center
   }, [center, map])
 
+  // ユーザーがマップをドラッグ・ズームして移動したとき
+  useEffect(() => {
+    const handleMoveEnd = () => {
+      const c = map.getCenter()
+      onMapMoved(c.lat, c.lng)
+    }
+    map.on('moveend', handleMoveEnd)
+    return () => {
+      map.off('moveend', handleMoveEnd)
+    }
+  }, [map, onMapMoved])
+
   return null
+}
+
+/** 現在地ボタン（地図内に重ねて表示） */
+function LocateButton({
+  onLocate,
+  locating,
+}: {
+  onLocate: () => void
+  locating: boolean
+}) {
+  return (
+    <div className="absolute bottom-6 right-3 z-[1000]">
+      <button
+        onClick={onLocate}
+        disabled={locating}
+        aria-label="現在地に移動"
+        className="bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-md border border-gray-200 hover:bg-gray-50 active:scale-95 transition-transform disabled:opacity-50"
+      >
+        {locating ? (
+          <LoadingSpinner size="sm" />
+        ) : (
+          <LocateFixed className="w-5 h-5 text-blue-600" aria-hidden="true" />
+        )}
+      </button>
+    </div>
+  )
 }
 
 function SpotPopup({ spot }: { spot: Spot }) {
@@ -76,19 +122,26 @@ function SpotPopup({ spot }: { spot: Spot }) {
 
 export function MapPage() {
   const [mapCenter, setMapCenter] = useState<LatLngExpression>(DEFAULT_CENTER)
+  // マップ中心座標（スポット検索に使う）
   const [searchCoord, setSearchCoord] = useState<{ lat: number; lon: number }>({
-    lat: 35.1815,
-    lon: 136.9066,
+    lat: (DEFAULT_CENTER as [number, number])[0],
+    lon: (DEFAULT_CENTER as [number, number])[1],
   })
+  // 現在地の実際の座標（取得できた場合のみ設定）
+  const [userCoord, setUserCoord] = useState<{ lat: number; lon: number } | null>(null)
   const [spots, setSpots] = useState<Spot[]>([])
   const [loading, setLoading] = useState(false)
+  const [locating, setLocating] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [locationStatus, setLocationStatus] = useState<'pending' | 'granted' | 'denied'>('pending')
+  // 「この範囲を検索」ボタン用：表示中心と検索済み座標が異なるか
+  const [pendingSearch, setPendingSearch] = useState(false)
 
   // ---- スポット取得 ----
   const fetchSpots = useCallback(async (lat: number, lon: number) => {
     setLoading(true)
     setError(null)
+    setPendingSearch(false)
     try {
       const res = await fetch(`/api/map/spots?lat=${lat}&lon=${lon}&radius=${FIXED_RADIUS}`)
       if (!res.ok) {
@@ -105,30 +158,69 @@ export function MapPage() {
     }
   }, [])
 
+  // ---- 現在地取得の共通処理 ----
+  const locateUser = useCallback(
+    (onSuccess?: () => void) => {
+      if (!navigator.geolocation) {
+        setLocationStatus('denied')
+        return
+      }
+      setLocating(true)
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords
+          setUserCoord({ lat: latitude, lon: longitude })
+          setMapCenter([latitude, longitude])
+          setSearchCoord({ lat: latitude, lon: longitude })
+          setLocationStatus('granted')
+          setLocating(false)
+          onSuccess?.()
+          fetchSpots(latitude, longitude)
+        },
+        () => {
+          setLocationStatus('denied')
+          setLocating(false)
+        },
+        { timeout: 8000, maximumAge: 10000 },
+      )
+    },
+    [fetchSpots],
+  )
+
   // ---- 現在地取得（マウント時 1 回） ----
   useEffect(() => {
     if (!navigator.geolocation) {
       setLocationStatus('denied')
-      fetchSpots(searchCoord.lat, searchCoord.lon)
+      fetchSpots(
+        (DEFAULT_CENTER as [number, number])[0],
+        (DEFAULT_CENTER as [number, number])[1],
+      )
       return
     }
-
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const { latitude, longitude } = position.coords
-        setMapCenter([latitude, longitude])
-        setSearchCoord({ lat: latitude, lon: longitude })
-        setLocationStatus('granted')
-        fetchSpots(latitude, longitude)
-      },
-      () => {
-        setLocationStatus('denied')
-        fetchSpots(searchCoord.lat, searchCoord.lon)
-      },
-      { timeout: 8000, maximumAge: 60000 },
-    )
+    locateUser(() => {
+      // 初回取得成功時の追加処理があれば記述
+    })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  // ---- マップ移動ハンドラー ----
+  const handleMapMoved = useCallback((lat: number, lon: number) => {
+    setSearchCoord((prev) => {
+      const moved = Math.abs(prev.lat - lat) > 0.0001 || Math.abs(prev.lon - lon) > 0.0001
+      if (moved) setPendingSearch(true)
+      return { lat, lon }
+    })
+  }, [])
+
+  // ---- 「この範囲を検索」ボタン ----
+  const handleSearchHere = useCallback(() => {
+    fetchSpots(searchCoord.lat, searchCoord.lon)
+  }, [fetchSpots, searchCoord])
+
+  // ---- 現在地ボタン ----
+  const handleLocateButton = useCallback(() => {
+    locateUser()
+  }, [locateUser])
 
   return (
     <div className="flex flex-col h-[calc(100vh-4rem)]">
@@ -162,7 +254,19 @@ export function MapPage() {
       )}
 
       {/* ---- 地図 ---- */}
-      <div className="flex-1">
+      <div className="flex-1 relative">
+        {/* この範囲を検索ボタン */}
+        {pendingSearch && !loading && (
+          <div className="absolute top-3 left-1/2 -translate-x-1/2 z-[1000]">
+            <button
+              onClick={handleSearchHere}
+              className="bg-white text-orange-600 border border-orange-400 text-sm font-medium px-4 py-1.5 rounded-full shadow-md hover:bg-orange-50 active:scale-95 transition-transform"
+            >
+              この範囲を検索
+            </button>
+          </div>
+        )}
+
         {loading && spots.length === 0 && (
           <div className="fixed inset-0 z-40 bg-white/70 flex flex-col items-center justify-center gap-3 pointer-events-none">
             <LoadingSpinner size="lg" />
@@ -180,7 +284,38 @@ export function MapPage() {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           />
-          <MapController center={mapCenter} />
+          <MapController center={mapCenter} onMapMoved={handleMapMoved} />
+
+          {/* 現在地マーク（青い点 + 外縁リング） */}
+          {userCoord && (
+            <>
+              {/* 精度リング */}
+              <CircleMarker
+                center={[userCoord.lat, userCoord.lon]}
+                radius={16}
+                pathOptions={{
+                  color: '#3b82f6',
+                  fillColor: '#3b82f6',
+                  fillOpacity: 0.12,
+                  weight: 1,
+                }}
+              />
+              {/* 現在地の点 */}
+              <CircleMarker
+                center={[userCoord.lat, userCoord.lon]}
+                radius={7}
+                pathOptions={{
+                  color: '#ffffff',
+                  fillColor: '#3b82f6',
+                  fillOpacity: 1,
+                  weight: 2.5,
+                }}
+              >
+                <Popup>現在地</Popup>
+              </CircleMarker>
+            </>
+          )}
+
           {spots.map((spot) => (
             <Marker
               key={spot.spotId}
@@ -192,6 +327,9 @@ export function MapPage() {
             </Marker>
           ))}
         </MapContainer>
+
+        {/* 現在地ボタン（地図右下） */}
+        <LocateButton onLocate={handleLocateButton} locating={locating} />
       </div>
 
       {/* ---- フッター情報 ---- */}
