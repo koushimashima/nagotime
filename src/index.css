@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*
+ * Leaflet の z-index をアプリの stacking context 内に閉じ込める。
+ * isolation: isolate でマップコンテナを独立した stacking context にする。
+ */
+.leaflet-container {
+  isolation: isolate;
+}

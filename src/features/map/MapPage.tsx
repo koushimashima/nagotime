@@ -222,10 +222,10 @@ export function MapPage() {
       )}
 
       {/* ---- 地図 ---- */}
-      <div className="flex-1 relative">
+      <div className="flex-1">
         {/* 地図上ローディングオーバーレイ（初回ロード中） */}
         {loading && spots.length === 0 && (
-          <div className="absolute inset-0 z-[1000] bg-white/70 flex flex-col items-center justify-center gap-3">
+          <div className="fixed inset-0 z-40 bg-white/70 flex flex-col items-center justify-center gap-3 pointer-events-none">
             <LoadingSpinner size="lg" />
             <p className="text-sm text-gray-500">スポットを読み込み中…</p>
           </div>
