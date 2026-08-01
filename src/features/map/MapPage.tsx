@@ -82,7 +82,7 @@ function LocateButton({
   locating: boolean
 }) {
   return (
-    <div className="absolute bottom-4 right-4 z-[1000]">
+    <div className="absolute bottom-20 right-4 z-[1000] md:bottom-4">
       <button
         onClick={onLocate}
         disabled={locating}
