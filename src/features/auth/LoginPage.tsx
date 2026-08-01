@@ -50,7 +50,7 @@ export function LoginPage() {
       <div className="w-full max-w-md">
         {/* ロゴ・タイトル */}
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-indigo-600">NagoTime</h1>
+          <h1 className="text-3xl font-bold text-orange-500" style={{ fontFamily: "'Caveat', cursive" }}>NagoTime</h1>
           <p className="mt-2 text-sm text-gray-500">
             学生の、学生による、学生と地域のためのローカルガイド
           </p>
@@ -85,7 +85,7 @@ export function LoginPage() {
                 onChange={(e) => setEmail(e.target.value)}
                 disabled={isLoading}
                 placeholder="demo@example.com"
-                className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed transition"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed transition"
               />
             </div>
 
@@ -103,7 +103,7 @@ export function LoginPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 disabled={isLoading}
                 placeholder="password"
-                className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed transition"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed transition"
               />
             </div>
 
@@ -111,7 +111,7 @@ export function LoginPage() {
             <button
               type="submit"
               disabled={isLoading || email.trim() === '' || password.trim() === ''}
-              className="w-full rounded-lg bg-indigo-600 px-4 py-3 text-sm font-semibold text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition"
+              className="w-full rounded-lg bg-orange-500 px-4 py-3 text-sm font-semibold text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition"
             >
               {isLoading ? (
                 <span className="flex items-center justify-center gap-2">
@@ -145,8 +145,8 @@ export function LoginPage() {
           </form>
 
           {/* デモ用認証情報ヒント */}
-          <div className="mt-8 rounded-lg bg-indigo-50 border border-indigo-100 px-4 py-4 text-xs text-gray-600">
-            <p className="flex items-center gap-1.5 font-semibold text-indigo-700 mb-2">
+          <div className="mt-8 rounded-lg bg-orange-50 border border-orange-100 px-4 py-4 text-xs text-gray-600">
+            <p className="flex items-center gap-1.5 font-semibold text-orange-600 mb-2">
               <GraduationCap className="w-4 h-4" aria-hidden="true" />
               デモ用アカウント
             </p>

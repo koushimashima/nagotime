@@ -112,8 +112,8 @@ function AccountPanel({ user, onClose, onLogout }: AccountPanelProps) {
 function navLinkClass({ isActive }: { isActive: boolean }): string {
   const base = 'px-3 py-1.5 rounded-md text-sm font-medium transition-colors'
   return isActive
-    ? `${base} bg-orange-100 text-orange-600`
-    : `${base} text-gray-600 hover:text-orange-600 hover:bg-orange-50`
+    ? `${base} bg-orange-600 text-white`
+    : `${base} text-orange-100 hover:text-white hover:bg-orange-600`
 }
 
 // ---- Header 本体 ----
@@ -137,7 +137,7 @@ export function Header() {
   }
 
   return (
-    <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <header className="bg-orange-500 sticky top-0 z-50">
       <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between gap-4">
 
         {/* ---- ロゴ ---- */}
@@ -146,7 +146,7 @@ export function Header() {
           className="flex items-center shrink-0"
           aria-label="NagoTime ホーム"
         >
-          <span className="text-2xl font-bold text-orange-500 tracking-tight">
+          <span className="text-2xl font-bold text-white tracking-tight" style={{ fontFamily: "'Caveat', cursive" }}>
             NagoTime
           </span>
         </NavLink>
@@ -169,8 +169,8 @@ export function Header() {
               [
                 'p-2 rounded-full transition-colors',
                 isActive
-                  ? 'text-orange-500 bg-orange-50'
-                  : 'text-gray-500 hover:text-orange-500 hover:bg-orange-50',
+                  ? 'text-white bg-orange-600'
+                  : 'text-orange-100 hover:text-white hover:bg-orange-600',
               ].join(' ')
             }
           >
@@ -184,12 +184,12 @@ export function Header() {
               onClick={handleUserClick}
               aria-label={isAuthenticated ? 'アカウント情報' : 'ログイン'}
               aria-expanded={accountOpen}
-              className="p-1.5 rounded-full transition-colors hover:bg-orange-50"
+              className="p-1.5 rounded-full transition-colors text-orange-100 hover:text-white hover:bg-orange-600"
             >
               {isAuthenticated && user ? (
                 <AvatarBadge displayName={user.displayName} />
               ) : (
-                <UserCircle className="w-7 h-7 text-gray-400" aria-hidden="true" />
+                <UserCircle className="w-7 h-7" aria-hidden="true" />
               )}
             </button>
 
