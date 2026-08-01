@@ -408,12 +408,12 @@ export function ReviewDetailPage() {
 
         {/* 投稿者情報・投稿日時 */}
         <div className="flex items-center gap-3 py-3 border-t border-b border-gray-100">
-          {/* アバター（アイコン） */}
-          <div className="w-9 h-9 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0">
-            <span className="text-orange-500 font-bold text-sm" aria-hidden="true">
-              {review.userName.charAt(0)}
-            </span>
-          </div>
+          {/* アバター（DiceBear adventurer イラスト） */}
+          <img
+            src={`https://api.dicebear.com/9.x/adventurer/svg?seed=${encodeURIComponent(review.userName)}&backgroundColor=ffedd5`}
+            alt={review.userName}
+            className="w-9 h-9 rounded-full object-cover bg-orange-50 flex-shrink-0"
+          />
           <div className="flex-1 min-w-0">
             <p className="text-sm font-medium text-gray-900 truncate">{review.userName}</p>
             <time
