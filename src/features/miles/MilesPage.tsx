@@ -324,7 +324,7 @@ export function MilesPage() {
 
           {/* シート本体 */}
           <div
-            className={`relative w-full max-w-lg bg-white rounded-t-2xl shadow-2xl flex flex-col max-h-[96dvh] transition-transform duration-300 ${isDetailOpen ? 'translate-y-0' : 'translate-y-full'}`}
+            className={`relative w-full max-w-lg bg-white rounded-t-2xl shadow-2xl flex flex-col max-h-[calc(100dvh-4rem)] md:max-h-[96dvh] transition-transform duration-300 ${isDetailOpen ? 'translate-y-0' : 'translate-y-full'}`}
           >
             {/* ドラッグハンドル */}
             <div className="flex justify-center pt-3 pb-1" aria-hidden="true">
@@ -397,7 +397,7 @@ export function MilesPage() {
             </div>
 
             {/* 交換ボタン（常に最下部に固定） */}
-            <div className="px-5 py-4 border-t border-gray-100 bg-white shrink-0">
+            <div className="px-5 pt-4 pb-4 md:pb-4 border-t border-gray-100 bg-white shrink-0" style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom))' }}>
               <button
                 type="button"
                 onClick={handleRedeemFromDetail}

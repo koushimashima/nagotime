@@ -37,21 +37,23 @@ export function ReviewCard({ review, onClick }: ReviewCardProps) {
         loading="lazy"
       />
 
+      {/* 写真下部グラデーション */}
+      <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
+
       {/* 右下：ハート＋いいね数 */}
       <div
-        className="absolute bottom-2 right-2 flex items-center gap-1
-                   bg-black/40 backdrop-blur-sm rounded-full px-2 py-1"
+        className="absolute bottom-2 right-2 flex items-center gap-1"
         aria-label={`いいね ${review.likeCount} 件`}
       >
         <svg
-          className="w-3.5 h-3.5 text-rose-400 shrink-0"
-          viewBox="0 0 20 20"
+          className="w-4 h-4 text-white shrink-0 drop-shadow"
+          viewBox="0 0 24 24"
           fill="currentColor"
           aria-hidden="true"
         >
-          <path d="M9.653 16.915l-.005-.003-.019-.01a20.759 20.759 0 0 1-1.162-.682 22.045 22.045 0 0 1-2.582-2.046C4.492 12.988 3 11.07 3 8.5a5.5 5.5 0 0 1 9.5-3.78 5.5 5.5 0 0 1 9.5 3.78c0 2.57-1.492 4.488-2.885 5.674a22.045 22.045 0 0 1-2.582 2.046 20.785 20.785 0 0 1-1.185.693l-.01.005-.002.001-.002.001a.75.75 0 0 1-.67.001l-.002-.001Z" />
+          <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
         </svg>
-        <span className="text-xs text-white font-medium leading-none">
+        <span className="text-xs text-white font-medium leading-none drop-shadow">
           {formatLikeCount(review.likeCount)}
         </span>
       </div>

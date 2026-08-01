@@ -225,7 +225,7 @@ export function FeedPage() {
 
         {/* 口コミグリッド */}
         {reviews.length > 0 && (
-          <div className="grid grid-cols-2 gap-3 sm:gap-4">
+          <div className="grid grid-cols-2 gap-1">
             {reviews.map(review => (
               <ReviewCard
                 key={review.reviewId}
