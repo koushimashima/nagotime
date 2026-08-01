@@ -21,7 +21,7 @@ export function ReviewCard({ review, onClick }: ReviewCardProps) {
 
   return (
     <article
-      className={`relative overflow-hidden rounded-2xl aspect-square bg-gray-100
+      className={`relative overflow-hidden aspect-square bg-gray-100
                   ${onClick ? 'cursor-pointer active:scale-95' : ''}`}
       onClick={onClick}
       role={onClick ? 'button' : undefined}

@@ -169,7 +169,7 @@ export function FeedPage() {
       </div>
 
       {/* ---- メインコンテンツ ---- */}
-      <main className="px-4 py-4 max-w-2xl mx-auto">
+      <main className="py-4 max-w-2xl mx-auto">
 
         {/* エラー表示 */}
         {error && (

@@ -313,9 +313,10 @@ export function MilesPage() {
           role="dialog"
           aria-modal="true"
           aria-label={`${selectedTicket.name}の詳細`}
-          className={`fixed inset-0 z-50 flex items-end justify-center transition-all duration-300 ${isDetailOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
+          className={`fixed inset-x-0 top-0 bottom-0 md:bottom-0 z-50 flex items-end justify-center transition-all duration-300 ${isDetailOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
+          style={{ bottom: 'var(--bottom-nav-height, 4rem)' }}
         >
-          {/* オーバーレイ */}
+          {/* オーバーレイ（画面全体を覆う） */}
           <div
             className={`fixed inset-0 bg-black/40 transition-opacity duration-300 ${isDetailOpen ? 'opacity-100' : 'opacity-0'}`}
             onClick={handleDetailClose}
@@ -324,7 +325,7 @@ export function MilesPage() {
 
           {/* シート本体 */}
           <div
-            className={`relative w-full max-w-lg bg-white rounded-t-2xl shadow-2xl flex flex-col max-h-[calc(100dvh-4rem)] md:max-h-[96dvh] transition-transform duration-300 ${isDetailOpen ? 'translate-y-0' : 'translate-y-full'}`}
+            className={`relative w-full max-w-lg bg-white rounded-t-2xl shadow-2xl flex flex-col max-h-full md:max-h-[96dvh] transition-transform duration-300 ${isDetailOpen ? 'translate-y-0' : 'translate-y-full'}`}
           >
             {/* ドラッグハンドル */}
             <div className="flex justify-center pt-3 pb-1" aria-hidden="true">
@@ -397,7 +398,7 @@ export function MilesPage() {
             </div>
 
             {/* 交換ボタン（常に最下部に固定） */}
-            <div className="px-5 pt-4 pb-4 md:pb-4 border-t border-gray-100 bg-white shrink-0" style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom))' }}>
+            <div className="px-5 py-4 border-t border-gray-100 bg-white shrink-0">
               <button
                 type="button"
                 onClick={handleRedeemFromDetail}
