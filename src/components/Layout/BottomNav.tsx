@@ -3,7 +3,6 @@
 //
 // レイアウト:
 //   [ Home ]  [ ＋（投稿） ]  [ Map ]
-//               ↑ 中央に突出した丸ボタン
 
 import { NavLink } from 'react-router-dom'
 import { Home, Plus, Map } from 'lucide-react'
@@ -14,7 +13,7 @@ export function BottomNav() {
       className="md:hidden fixed bottom-0 inset-x-0 bg-white border-t border-gray-200 z-50"
       aria-label="ボトムナビゲーション"
     >
-      <ul className="flex h-16 items-end overflow-visible">
+      <ul className="flex h-16 items-center">
 
         {/* ---- フィード ---- */}
         <li className="flex-1">
@@ -33,20 +32,20 @@ export function BottomNav() {
           </NavLink>
         </li>
 
-        {/* ---- 投稿（中央突出ボタン） ---- */}
-        <li className="flex-1 flex items-end justify-center pb-3">
+        {/* ---- 投稿（中央・丸ボタン） ---- */}
+        <li className="flex-1 flex items-center justify-center">
           <NavLink
             to="/submit"
             className={({ isActive }) =>
               [
-                'flex items-center justify-center -translate-y-4 transition-transform',
+                'flex items-center justify-center transition-transform',
                 isActive ? 'scale-95' : 'hover:scale-105',
               ].join(' ')
             }
             aria-label="投稿"
           >
-            <span className="w-14 h-14 rounded-full bg-orange-500 shadow-lg flex items-center justify-center ring-4 ring-white">
-              <Plus className="w-7 h-7 text-white" strokeWidth={2.5} aria-hidden="true" />
+            <span className="w-12 h-12 rounded-full bg-orange-500 shadow-md flex items-center justify-center ring-4 ring-white">
+              <Plus className="w-6 h-6 text-white" strokeWidth={2.5} aria-hidden="true" />
             </span>
           </NavLink>
         </li>
