@@ -7,6 +7,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { MapPin, AlertTriangle } from 'lucide-react'
 import {
   MapContainer,
   TileLayer,
@@ -193,13 +194,15 @@ export function MapPage() {
 
         {/* 位置情報ステータス */}
         {locationStatus === 'denied' && (
-          <span className="ml-auto text-xs text-gray-400 whitespace-nowrap">
-            📍 栄（デフォルト）
+          <span className="ml-auto flex items-center gap-1 text-xs text-gray-400 whitespace-nowrap">
+            <MapPin className="w-3.5 h-3.5" aria-hidden="true" />
+            栄（デフォルト）
           </span>
         )}
         {locationStatus === 'granted' && (
-          <span className="ml-auto text-xs text-green-600 whitespace-nowrap">
-            📍 現在地
+          <span className="ml-auto flex items-center gap-1 text-xs text-green-600 whitespace-nowrap">
+            <MapPin className="w-3.5 h-3.5" aria-hidden="true" />
+            現在地
           </span>
         )}
 
@@ -211,9 +214,10 @@ export function MapPage() {
       {error && (
         <div
           role="alert"
-          className="px-4 py-2 bg-red-50 border-b border-red-200 text-sm text-red-700 flex-shrink-0"
+          className="px-4 py-2 bg-red-50 border-b border-red-200 text-sm text-red-700 flex-shrink-0 flex items-center gap-1.5"
         >
-          ⚠️ {error}
+          <AlertTriangle className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+          {error}
         </div>
       )}
 

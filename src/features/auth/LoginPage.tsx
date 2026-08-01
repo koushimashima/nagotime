@@ -3,6 +3,7 @@
 
 import { type FormEvent, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { GraduationCap } from 'lucide-react'
 import { useAuth } from '../../contexts/AuthContext'
 
 /**
@@ -145,7 +146,10 @@ export function LoginPage() {
 
           {/* デモ用認証情報ヒント */}
           <div className="mt-8 rounded-lg bg-indigo-50 border border-indigo-100 px-4 py-4 text-xs text-gray-600">
-            <p className="font-semibold text-indigo-700 mb-2">🎓 デモ用アカウント</p>
+            <p className="flex items-center gap-1.5 font-semibold text-indigo-700 mb-2">
+              <GraduationCap className="w-4 h-4" aria-hidden="true" />
+              デモ用アカウント
+            </p>
             <div className="space-y-1.5">
               <div>
                 <span className="font-medium">一般ユーザー</span>

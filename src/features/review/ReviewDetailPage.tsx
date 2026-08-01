@@ -8,6 +8,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import { Search, AlertTriangle, MapPin, CalendarDays, Briefcase } from 'lucide-react'
 import { WeatherBadge } from '../../components/WeatherBadge'
 import { TimeBadge } from '../../components/TimeBadge'
 import { LoadingSpinner } from '../../components/LoadingSpinner'
@@ -173,7 +174,7 @@ export function ReviewDetailPage() {
   if (errorCode === 'NOT_FOUND') {
     return (
       <div className="flex flex-col items-center justify-center min-h-[50vh] gap-4 px-4">
-        <div className="text-5xl">🔍</div>
+        <Search className="w-14 h-14 text-gray-300" aria-hidden="true" />
         <h1 className="text-xl font-bold text-gray-700">口コミが見つかりませんでした</h1>
         <p className="text-sm text-gray-500 text-center">
           指定された口コミは存在しないか、非公開になっています。
@@ -194,7 +195,7 @@ export function ReviewDetailPage() {
   if (errorCode === 'ERROR' || !review) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[50vh] gap-4 px-4">
-        <div className="text-5xl">⚠️</div>
+        <AlertTriangle className="w-14 h-14 text-gray-300" aria-hidden="true" />
         <h1 className="text-xl font-bold text-gray-700">エラーが発生しました</h1>
         <p className="text-sm text-gray-500 text-center">
           口コミの読み込みに失敗しました。しばらく経ってからもう一度お試しください。
@@ -319,7 +320,10 @@ export function ReviewDetailPage() {
           <div className="flex-1 min-w-0">
             <h2 className="text-xl font-bold text-gray-900 leading-snug">{review.spotName}</h2>
             {review.area && (
-              <p className="text-sm text-gray-500 mt-0.5">📍 {review.area}</p>
+              <p className="flex items-center gap-1 text-sm text-gray-500 mt-0.5">
+                <MapPin className="w-3.5 h-3.5" aria-hidden="true" />
+                {review.area}
+              </p>
             )}
           </div>
 
@@ -369,7 +373,11 @@ export function ReviewDetailPage() {
                 : 'bg-green-100 text-green-700 border-green-200'
             }`}
           >
-            {review.dayType === 'HOLIDAY' ? '🎌 休日' : '💼 平日'}
+            {review.dayType === 'HOLIDAY'
+              ? <CalendarDays className="w-3 h-3" aria-hidden="true" />
+              : <Briefcase className="w-3 h-3" aria-hidden="true" />
+            }
+            {review.dayType === 'HOLIDAY' ? '休日' : '平日'}
           </span>
         </div>
 

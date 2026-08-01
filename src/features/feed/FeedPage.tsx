@@ -7,6 +7,7 @@
 
 import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Cloud, Sunrise, MapPin } from 'lucide-react'
 import { ReviewCard } from '../../components/ReviewCard'
 import { LoadingSpinner } from '../../components/LoadingSpinner'
 import { useReviewFeed, type ReviewFilters } from './useReviewFeed'
@@ -30,19 +31,19 @@ const AREA_OPTIONS = [
 
 /** 天気選択肢 */
 const WEATHER_OPTIONS: { value: Weather; label: string }[] = [
-  { value: 'SUNNY',  label: '☀️ 晴れ' },
-  { value: 'CLOUDY', label: '☁️ 曇り' },
-  { value: 'RAINY',  label: '🌧️ 雨' },
-  { value: 'SNOWY',  label: '❄️ 雪' },
-  { value: 'UNKNOWN',label: '❓ 不明' },
+  { value: 'SUNNY',   label: '晴れ' },
+  { value: 'CLOUDY',  label: '曇り' },
+  { value: 'RAINY',   label: '雨' },
+  { value: 'SNOWY',   label: '雪' },
+  { value: 'UNKNOWN', label: '不明' },
 ]
 
 /** 時間帯選択肢 */
 const TIMESLOT_OPTIONS: { value: TimeSlot; label: string }[] = [
-  { value: 'MORNING',   label: '🌅 朝（5〜9時）' },
-  { value: 'AFTERNOON', label: '🌞 昼（10〜16時）' },
-  { value: 'EVENING',   label: '🌆 夕（17〜20時）' },
-  { value: 'NIGHT',     label: '🌙 夜（21〜4時）' },
+  { value: 'MORNING',   label: '朝（5〜9時）' },
+  { value: 'AFTERNOON', label: '昼（10〜16時）' },
+  { value: 'EVENING',   label: '夕（17〜20時）' },
+  { value: 'NIGHT',     label: '夜（21〜4時）' },
 ]
 
 // ---- コンポーネント ----
@@ -85,6 +86,10 @@ export function FeedPage() {
 
           {/* エリア */}
           <div className="relative">
+            <div className="flex items-center gap-1.5 mb-1 text-xs text-gray-500 font-medium px-1">
+              <MapPin className="w-3.5 h-3.5" aria-hidden="true" />
+              エリア
+            </div>
             <select
               value={area}
               onChange={e => setArea(e.target.value)}
@@ -94,16 +99,20 @@ export function FeedPage() {
                          focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent
                          hover:border-gray-400 transition-colors cursor-pointer"
             >
-              <option value="">エリア: すべて</option>
+              <option value="">すべて</option>
               {AREA_OPTIONS.map(a => (
                 <option key={a} value={a}>{a}</option>
               ))}
             </select>
-            <span className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 text-xs">▾</span>
+            <span className="pointer-events-none absolute right-2 bottom-2 text-gray-400 text-xs">▾</span>
           </div>
 
           {/* 天気 */}
           <div className="relative">
+            <div className="flex items-center gap-1.5 mb-1 text-xs text-gray-500 font-medium px-1">
+              <Cloud className="w-3.5 h-3.5" aria-hidden="true" />
+              天気
+            </div>
             <select
               value={weather}
               onChange={e => setWeather(e.target.value)}
@@ -113,16 +122,20 @@ export function FeedPage() {
                          focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent
                          hover:border-gray-400 transition-colors cursor-pointer"
             >
-              <option value="">天気: すべて</option>
+              <option value="">すべて</option>
               {WEATHER_OPTIONS.map(w => (
                 <option key={w.value} value={w.value}>{w.label}</option>
               ))}
             </select>
-            <span className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 text-xs">▾</span>
+            <span className="pointer-events-none absolute right-2 bottom-2 text-gray-400 text-xs">▾</span>
           </div>
 
           {/* 時間帯 */}
           <div className="relative">
+            <div className="flex items-center gap-1.5 mb-1 text-xs text-gray-500 font-medium px-1">
+              <Sunrise className="w-3.5 h-3.5" aria-hidden="true" />
+              時間帯
+            </div>
             <select
               value={timeSlot}
               onChange={e => setTimeSlot(e.target.value)}
@@ -132,12 +145,12 @@ export function FeedPage() {
                          focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent
                          hover:border-gray-400 transition-colors cursor-pointer"
             >
-              <option value="">時間帯: すべて</option>
+              <option value="">すべて</option>
               {TIMESLOT_OPTIONS.map(t => (
                 <option key={t.value} value={t.value}>{t.label}</option>
               ))}
             </select>
-            <span className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 text-xs">▾</span>
+            <span className="pointer-events-none absolute right-2 bottom-2 text-gray-400 text-xs">▾</span>
           </div>
 
           {/* リセットボタン */}

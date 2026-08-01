@@ -2,19 +2,20 @@
 // モバイル向けボトムナビゲーション（大画面では非表示）
 
 import { NavLink } from 'react-router-dom'
+import { Home, PenLine, Map, Ticket, type LucideIcon } from 'lucide-react'
 
 interface NavItem {
   to: string
   label: string
-  icon: string
+  Icon: LucideIcon
   end?: boolean
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { to: '/', label: 'フィード', icon: '🏠', end: true },
-  { to: '/submit', label: '投稿', icon: '✏️' },
-  { to: '/map', label: 'マップ', icon: '🗺️' },
-  { to: '/miles', label: 'マイル', icon: '🎟️' },
+  { to: '/',       label: 'フィード', Icon: Home,    end: true },
+  { to: '/submit', label: '投稿',     Icon: PenLine          },
+  { to: '/map',    label: 'マップ',   Icon: Map              },
+  { to: '/miles',  label: 'マイル',   Icon: Ticket           },
 ]
 
 export function BottomNav() {
@@ -24,7 +25,7 @@ export function BottomNav() {
       aria-label="ボトムナビゲーション"
     >
       <ul className="flex h-16">
-        {NAV_ITEMS.map(({ to, label, icon, end }) => (
+        {NAV_ITEMS.map(({ to, label, Icon, end }) => (
           <li key={to} className="flex-1">
             <NavLink
               to={to}
@@ -38,9 +39,7 @@ export function BottomNav() {
               aria-label={label}
             >
               {/* アイコン */}
-              <span className="text-xl leading-none" aria-hidden="true">
-                {icon}
-              </span>
+              <Icon className="w-5 h-5" aria-hidden="true" />
               {/* ラベル */}
               <span>{label}</span>
             </NavLink>

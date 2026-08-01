@@ -2,6 +2,7 @@
 // デスクトップ向けヘッダー（アプリ名・ナビゲーション・認証ボタン）
 
 import { NavLink, useNavigate } from 'react-router-dom'
+import { UtensilsCrossed } from 'lucide-react'
 import { useAuth } from '../../contexts/AuthContext'
 
 /**
@@ -37,7 +38,7 @@ export function Header() {
           className="flex items-center gap-1.5 shrink-0"
           aria-label="NagoTime ホーム"
         >
-          <span className="text-xl" aria-hidden="true">🍜</span>
+          <UtensilsCrossed className="w-5 h-5 text-orange-500" aria-hidden="true" />
           <span className="text-lg font-bold text-orange-500 tracking-tight">
             NagoTime
           </span>
