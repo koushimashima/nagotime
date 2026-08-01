@@ -1,0 +1,2383 @@
+﻿
+[1m[7m[36m RUN [39m[27m[22m [36mv2.1.9 [39m[90mC:/Users/kouta/OneDrive - NITech/01_archive/2026/2026_07/AI contest/NagoTime[39m
+
+node : [90mstderr[2m | src/features/miles/__tests__/MilesPage.test.tsx[2m > [22m[2mMilesPage[2m > [22m[2m繝槭う繝ｫ谿矩ｫ倥→蜿門ｼ募ｱ･豁ｴ縺瑚｡ｨ遉ｺ縺輔ｌ繧・[22m[39m笞・・React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTran
+sition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+発生場所 行:1 文字:1
++ node ".\node_modules\vitest\vitest.mjs" run --reporter=verbose src/fe ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([90mstderr[2m...tarttransition.    :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+笞・・React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+
+ [32m笨・[39m src/features/miles/__tests__/MilesPage.test.tsx[2m > [22mMilesPage[2m > [22m繝槭う繝ｫ谿矩ｫ倥→蜿門ｼ募ｱ･豁ｴ縺瑚｡ｨ遉ｺ縺輔ｌ繧・ [32m笨・[39m src/features/miles/__tests__/MilesPage.test.tsx[2m > [22mMilesPage[2m > [22m繧ｯ繝ｼ繝昴Φ荳隕ｧ縺瑚｡ｨ遉ｺ縺輔ｌ繧・ [31mﾃ・[39m src/features/miles/__tests__/MilesPage.test.tsx[2m > [22mMilesPage[2m > [22m莠､謠帙・繧ｿ繝ｳ繧偵け繝ｪ繝・け縺吶ｋ縺ｨ遒ｺ隱阪Δ繝ｼ繝繝ｫ縺瑚｡ｨ遉ｺ縺輔ｌ繧・[31m   竊・Found multiple elements with the text: 繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<h3[31m
+  [33mclass[31m=[32m"text-sm font-semibold text-gray-900 mt-0.5 leading-snug"[31m
+[36m>[31m
+  [0m繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ[0m
+[36m</h3>[31m
+
+Ignored nodes: comments, script, style
+[36m<p[31m
+  [33mclass[31m=[32m"text-sm font-semibold text-gray-900"[31m
+[36m>[31m
+  [0m繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ[0m
+[36m</p>[31m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"max-w-2xl mx-auto px-4 py-6 pb-24 space-y-8"[31m
+    [36m>[31m
+      [36m<section[31m
+        [33maria-label[31m=[32m"繝槭う繝ｫ谿矩ｫ・[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-400 text-white px-6 py-8 shadow-lg"[31m
+        [36m>[31m
+          [36m<p[31m
+            [33mclass[31m=[32m"text-sm font-medium text-indigo-100"[31m
+          [36m>[31m
+            [0m迴ｾ蝨ｨ縺ｮ繝槭う繝ｫ谿矩ｫ・[0m
+          [36m</p>[31m
+          [36m<p[31m
+            [33mclass[31m=[32m"mt-2 text-5xl font-bold tracking-tight"[31m
+          [36m>[31m
+            [0m1,000[0m
+            [36m<span[31m
+              [33mclass[31m=[32m"ml-2 text-2xl font-normal text-indigo-200"[31m
+            [36m>[31m
+              [0m繝槭う繝ｫ[0m
+            [36m</span>[31m
+          [36m</p>[31m
+        [36m</div>[31m
+      [36m</section>[31m
+      [36m<section[31m
+        [33maria-label[31m=[32m"蜿門ｼ募ｱ･豁ｴ"[31m
+      [36m>[31m
+        [36m<h2[31m
+          [33mclass[31m=[32m"text-base font-semibold text-gray-800 mb-3"[31m
+        [36m>[31m
+          [0m蜿門ｼ募ｱ･豁ｴ・育峩霑・0莉ｶ・・[0m
+        [36m</h2>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"divide-y divide-gray-100 rounded-xl border border-gray-200 bg-white overflow-hidden shadow-sm"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"flex items-center justify-between px-4 py-3"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"min-w-0"[31m
+            [36m>[31m
+              [36m<p[31m
+                [33mclass[31m=[32m"text-sm font-medium text-gray-800 truncate"[31m
+              [36m>[31m
+                [0m蜿｣繧ｳ繝滓兜遞ｿ[0m
+              [36m</p>[31m
+              [36m<p[31m
+                [33mclass[31m=[32m"text-xs text-gray-400 mt-0.5"[31m
+              [36m>[31m
+                [0m2025/06/15 12:00[0m
+              [36m</p>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"ml-4 flex flex-col items-end shrink-0"[31m
+            [36m>[31m
+              [36m<span[31m
+                [33mclass[31m=[32m"text-sm font-semibold text-emerald-600"[31m
+              [36m>[31m
+                [0m+[0m
+                [0m10[0m
+                [0m 繝槭う繝ｫ[0m
+              [36m</span>[31m
+              [36m<span[31m
+                [33mclass[31m=[32m"text-xs text-gray-400 mt-0.5"[31m
+              [36m>[31m
+                [0m谿矩ｫ・[0m
+                [0m1,000[0m
+              [36m</span>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</section>[31m
+      [36m<section[31m
+        [33maria-label[31m=[32m"繧ｯ繝ｼ繝昴Φ荳隕ｧ"[31m
+      [36m>[31m
+        [36m<h2[31m
+          [33mclass[31m=[32m"text-base font-semibold text-gray-800 mb-3"[31m
+        [36m>[31m
+          [0m蛻ｩ逕ｨ蜿ｯ閭ｽ縺ｪ繧ｯ繝ｼ繝昴Φ[0m
+        [36m</h2>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"space-y-4"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"flex gap-4 p-4"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"flex-1 min-w-0"[31m
+              [36m>[31m
+                [36m<p[31m
+                  [33mclass[31m=[32m"text-xs text-indigo-600 font-medium"[31m
+                [36m>[31m
+                  [0m繝・せ繝井ｼ∵･ｭ[0m
+                [36m</p>[31m
+                [36m<h3[31m
+                  [33mclass[31m=[32m"text-sm font-semibold text-gray-900 mt-0.5 leading-snug"[31m
+                [36m>[31m
+                  [0m繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ[0m
+                [36m</h3>[31m
+                [36m<p[31m
+                  [33mclass[31m=[32m"text-xs text-gray-500 mt-1 line-clamp-2"[31m
+                [36m>[31m
+                  [0m繝・せ繝育畑繧ｯ繝ｼ繝昴Φ縺ｧ縺吶・00繝槭う繝ｫ縺ｧ莠､謠帙〒縺阪∪縺吶・[0m
+                [36m</p>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"flex items-center gap-3 mt-2 flex-wrap"[31m
+                [36m>[31m
+                  [36m<span[31m
+                    [33mclass[31m=[32m"inline-flex items-center text-xs font-semibold text-indigo-700 bg-indigo-50 rounded-full px-2.5 py-0.5"[31m
+                  [36m>[31m
+                    [0m200[0m
+                    [0m 繝槭う繝ｫ[0m
+                  [36m</span>[31m
+                  [36m<span[31m
+                    [33mclass[31m=[32m"text-xs text-gray-400"[31m
+                  [36m>[31m
+                    [0m譛滄剞: [0m
+                    [0m2099/12/31[0m
+                  [36m</span>[31m
+                  [36m<span[31m
+                    [33mclass[31m=[32m"text-xs text-gray-400"[31m
+                  [36m>[31m
+                    [0m谿九ｊ [0m
+                    [0m100[0m
+                    [0m 譫・[0m
+                  [36m</span>[31m
+                [36m</div>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"px-4 pb-4"[31m
+            [36m>[31m
+              [36m<button[31m
+                [33maria-label[31m=[32m"繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ繧剃ｺ､謠帙☆繧・[31m
+                [33mclass[31m=[32m"w-full py-2.5 rounded-lg text-sm font-semibold transition-colors
+                        bg-orange-500 text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-1"[31m
+                [33mtype[31m=[32m"button"[31m
+              [36m>[31m
+                [0m莠､謠帙☆繧・[0m
+              [36m</button>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</section>[31m
+      [36m<div[31m
+        [33maria-labelledby[31m=[32m"modal-title"[31m
+        [33maria-modal[31m=[32m"true"[31m
+        [33mclass[31m=[32m"fixed inset-0 z-50 flex items-center justify-center p-4"[31m
+        [33mrole[31m=[32m"dialog"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33maria-hidden[31m=[32m"true"[31m
+          [33mclass[31m=[32m"absolute inset-0 bg-black/50"[31m
+        [36m/>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"relative z-10 w-full max-w-md bg-white rounded-2xl shadow-xl"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"flex items-center justify-between px-6 pt-5 pb-4 border-b border-gray-100"[31m
+          [36m>[31m
+            [36m<h2[31m
+              [33mclass[31m=[32m"text-base font-semibold text-gray-900"[31m
+              [33mid[31m=[32m"modal-title"[31m
+            [36m>[31m
+              [0m繧ｯ繝ｼ繝昴Φ莠､謠帙・遒ｺ隱・[0m
+            [36m</h2>[31m
+            [36m<button[31m
+              [33maria-label[31m=[32m"髢峨§繧・[31m
+              [33mclass[31m=[32m"text-gray-400 hover:text-gray-600 transition-colors"[31m
+              [33mtype[31m=[32m"button"[31m
+            [36m>[31m
+              [36m<svg[31m
+                [33maria-hidden[31m=[32m"true"[31m
+                [33mclass[31m=[32m"w-5 h-5"[31m
+                [33mfill[31m=[32m"currentColor"[31m
+                [33mviewBox[31m=[32m"0 0 20 20"[31m
+              [36m>[31m
+                [36m<path[31m
+                  [33md[31m=[32m"M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"[31m
+                [36m/>[31m
+              [36m</svg>[31m
+            [36m</button>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"px-6 py-4 text-sm text-gray-700"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"space-y-3"[31m
+            [36m>[31m
+              [36m<p[31m
+                [33mclass[31m=[32m"text-sm text-gray-700"[31m
+              [36m>[31m
+                [0m莉･荳九・繧ｯ繝ｼ繝昴Φ縺ｨ莠､謠帙＠縺ｾ縺吶°・・[0m
+              [36m</p>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"rounded-lg bg-gray-50 border border-gray-200 px-4 py-3 space-y-1"[31m
+              [36m>[31m
+                [36m<p[31m
+                  [33mclass[31m=[32m"text-xs text-indigo-600 font-medium"[31m
+                [36m>[31m
+                  [0m繝・せ繝井ｼ∵･ｭ[0m
+                [36m</p>[31m
+                [36m<p[31m
+                  [33mclass[31m=[32m"text-sm font-semibold text-gray-900"[31m
+                [36m>[31m
+                  [0m繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ[0m
+                [36m</p>[31m
+                [36m<p[31m
+                  [33mclass[31m=[32m"text-sm text-gray-600"[31m
+                [36m>[31m
+                  [0m蠢・ｦ√・繧､繝ｫ:[0m
+                  [0m [0m
+                  [36m<span[31m
+                    [33mclass[31m=[32m"font-semibold text-indigo-700"[31m
+                  [36m>[31m
+                    [0m200[0m
+                    [0m 繝槭う繝ｫ[0m
+                  [36m</span>[31m
+                [36m</p>[31m
+                [36m<p[31m
+                  [33mclass[31m=[32m"text-xs text-gray-400"[31m
+                [36m>[31m
+                  [0m莠､謠帛ｾ後・谿矩ｫ・[0m
+                  [0m [0m
+                  [0m800[0m
+                  [0m 繝槭う繝ｫ[0m
+                [36m</p>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"flex items-center justify-end gap-3 px-6 pb-5 pt-2"[31m
+          [36m>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"px-4 py-2 rounded-lg text-sm font-medium text-gray-600 border border-gray-300
+                       hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"[31m
+              [33mtype[31m=[32m"button"[31m
+            [36m>[31m
+              [0m繧ｭ繝｣繝ｳ繧ｻ繝ｫ[0m
+            [36m</button>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium
+                         bg-orange-500 text-white hover:bg-orange-600 transition-colors
+                         disabled:opacity-50 disabled:cursor-not-allowed"[31m
+              [33mtype[31m=[32m"button"[31m
+            [36m>[31m
+              [0m莠､謠帙☆繧・[0m
+            [36m</button>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+ [32m笨・[39m src/features/miles/__tests__/MilesPage.test.tsx[2m > [22mMilesPage[2m > [22m遒ｺ隱阪Δ繝ｼ繝繝ｫ縺ｧ縲御ｺ､謠帙☆繧九阪ｒ繧ｯ繝ｪ繝・け縺吶ｋ縺ｨ繧ｯ繝ｼ繝昴Φ繧ｳ繝ｼ繝峨′陦ｨ遉ｺ縺輔ｌ繧・ [31mﾃ・[39m src/features/miles/__tests__/MilesPage.test.tsx[2m > [22mMilesPage[2m > [22m繧ｯ繝ｼ繝昴Φ莠､謠帛ｾ後↓繝ｭ繝ｼ繧ｫ繝ｫ縺ｮ繝槭う繝ｫ谿矩ｫ倥′貂帷ｮ励＆繧後ｋ[33m 1185[2mms[22m[39m
+[31m   竊・Found multiple elements with the text: 800
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<p[31m
+  [33mclass[31m=[32m"mt-2 text-5xl font-bold tracking-tight"[31m
+[36m>[31m
+  [0m800[0m
+  [36m<span[31m
+    [33mclass[31m=[32m"ml-2 text-2xl font-normal text-indigo-200"[31m
+  [36m>[31m
+    [0m繝槭う繝ｫ[0m
+  [36m</span>[31m
+[36m</p>[31m
+
+Ignored nodes: comments, script, style
+[36m<p[31m
+  [33mclass[31m=[32m"text-xl font-bold text-indigo-700 mt-0.5"[31m
+[36m>[31m
+  [0m800[0m
+  [36m<span[31m
+    [33mclass[31m=[32m"text-sm font-normal text-gray-500 ml-1"[31m
+  [36m>[31m
+    [0m繝槭う繝ｫ[0m
+  [36m</span>[31m
+[36m</p>[31m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"max-w-2xl mx-auto px-4 py-6 pb-24 space-y-8"[31m
+    [36m>[31m
+      [36m<section[31m
+        [33maria-label[31m=[32m"繝槭う繝ｫ谿矩ｫ・[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-400 text-white px-6 py-8 shadow-lg"[31m
+        [36m>[31m
+          [36m<p[31m
+            [33mclass[31m=[32m"text-sm font-medium text-indigo-100"[31m
+          [36m>[31m
+            [0m迴ｾ蝨ｨ縺ｮ繝槭う繝ｫ谿矩ｫ・[0m
+          [36m</p>[31m
+          [36m<p[31m
+            [33mclass[31m=[32m"mt-2 text-5xl font-bold tracking-tight"[31m
+          [36m>[31m
+            [0m800[0m
+            [36m<span[31m
+              [33mclass[31m=[32m"ml-2 text-2xl font-normal text-indigo-200"[31m
+            [36m>[31m
+              [0m繝槭う繝ｫ[0m
+            [36m</span>[31m
+          [36m</p>[31m
+        [36m</div>[31m
+      [36m</section>[31m
+      [36m<section[31m
+        [33maria-label[31m=[32m"蜿門ｼ募ｱ･豁ｴ"[31m
+      [36m>[31m
+        [36m<h2[31m
+          [33mclass[31m=[32m"text-base font-semibold text-gray-800 mb-3"[31m
+        [36m>[31m
+          [0m蜿門ｼ募ｱ･豁ｴ・育峩霑・0莉ｶ・・[0m
+        [36m</h2>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"divide-y divide-gray-100 rounded-xl border border-gray-200 bg-white overflow-hidden shadow-sm"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"flex items-center justify-between px-4 py-3"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"min-w-0"[31m
+            [36m>[31m
+              [36m<p[31m
+                [33mclass[31m=[32m"text-sm font-medium text-gray-800 truncate"[31m
+              [36m>[31m
+                [0m蜿｣繧ｳ繝滓兜遞ｿ[0m
+              [36m</p>[31m
+              [36m<p[31m
+                [33mclass[31m=[32m"text-xs text-gray-400 mt-0.5"[31m
+              [36m>[31m
+                [0m2025/06/15 12:00[0m
+              [36m</p>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"ml-4 flex flex-col items-end shrink-0"[31m
+            [36m>[31m
+              [36m<span[31m
+                [33mclass[31m=[32m"text-sm font-semibold text-emerald-600"[31m
+              [36m>[31m
+                [0m+[0m
+                [0m10[0m
+                [0m 繝槭う繝ｫ[0m
+              [36m</span>[31m
+              [36m<span[31m
+                [33mclass[31m=[32m"text-xs text-gray-400 mt-0.5"[31m
+              [36m>[31m
+                [0m谿矩ｫ・[0m
+                [0m1,000[0m
+              [36m</span>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</section>[31m
+      [36m<section[31m
+        [33maria-label[31m=[32m"繧ｯ繝ｼ繝昴Φ荳隕ｧ"[31m
+      [36m>[31m
+        [36m<h2[31m
+          [33mclass[31m=[32m"text-base font-semibold text-gray-800 mb-3"[31m
+        [36m>[31m
+          [0m蛻ｩ逕ｨ蜿ｯ閭ｽ縺ｪ繧ｯ繝ｼ繝昴Φ[0m
+        [36m</h2>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"space-y-4"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"flex gap-4 p-4"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"flex-1 min-w-0"[31m
+              [36m>[31m
+                [36m<p[31m
+                  [33mclass[31m=[32m"text-xs text-indigo-600 font-medium"[31m
+                [36m>[31m
+                  [0m繝・せ繝井ｼ∵･ｭ[0m
+                [36m</p>[31m
+                [36m<h3[31m
+                  [33mclass[31m=[32m"text-sm font-semibold text-gray-900 mt-0.5 leading-snug"[31m
+                [36m>[31m
+                  [0m繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ[0m
+                [36m</h3>[31m
+                [36m<p[31m
+                  [33mclass[31m=[32m"text-xs text-gray-500 mt-1 line-clamp-2"[31m
+                [36m>[31m
+                  [0m繝・せ繝育畑繧ｯ繝ｼ繝昴Φ縺ｧ縺吶・00繝槭う繝ｫ縺ｧ莠､謠帙〒縺阪∪縺吶・[0m
+                [36m</p>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"flex items-center gap-3 mt-2 flex-wrap"[31m
+                [36m>[31m
+                  [36m<span[31m
+                    [33mclass[31m=[32m"inline-flex items-center text-xs font-semibold text-indigo-700 bg-indigo-50 rounded-full px-2.5 py-0.5"[31m
+                  [36m>[31m
+                    [0m200[0m
+                    [0m 繝槭う繝ｫ[0m
+                  [36m</span>[31m
+                  [36m<span[31m
+                    [33mclass[31m=[32m"text-xs text-gray-400"[31m
+                  [36m>[31m
+                    [0m譛滄剞: [0m
+                    [0m2099/12/31[0m
+                  [36m</span>[31m
+                  [36m<span[31m
+                    [33mclass[31m=[32m"text-xs text-gray-400"[31m
+                  [36m>[31m
+                    [0m谿九ｊ [0m
+                    [0m100[0m
+                    [0m 譫・[0m
+                  [36m</span>[31m
+                [36m</div>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"px-4 pb-4"[31m
+            [36m>[31m
+              [36m<button[31m
+                [33maria-label[31m=[32m"繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ繧剃ｺ､謠帙☆繧・[31m
+                [33mclass[31m=[32m"w-full py-2.5 rounded-lg text-sm font-semibold transition-colors
+                        bg-orange-500 text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-1"[31m
+                [33mtype[31m=[32m"button"[31m
+              [36m>[31m
+                [0m莠､謠帙☆繧・[0m
+              [36m</button>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</section>[31m
+      [36m<div[31m
+        [33maria-labelledby[31m=[32m"modal-title"[31m
+        [33maria-modal[31m=[32m"true"[31m
+        [33mclass[31m=[32m"fixed inset-0 z-50 flex items-center justify-center p-4"[31m
+        [33mrole[31m=[32m"dialog"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33maria-hidden[31m=[32m"true"[31m
+          [33mclass[31m=[32m"absolute inset-0 bg-black/50"[31m
+        [36m/>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"relative z-10 w-full max-w-md bg-white rounded-2xl shadow-xl"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"flex items-center justify-between px-6 pt-5 pb-4 border-b border-gray-100"[31m
+          [36m>[31m
+            [36m<h2[31m
+              [33mclass[31m=[32m"text-base font-semibold text-gray-900"[31m
+              [33mid[31m=[32m"modal-title"[31m
+            [36m>[31m
+              [0m莠､謠帛ｮ御ｺ・[0m
+            [36m</h2>[31m
+            [36m<button[31m
+              [33maria-label[31m=[32m"髢峨§繧・[31m
+              [33mclass[31m=[32m"text-gray-400 hover:text-gray-600 transition-colors"[31m
+              [33mtype[31m=[32m"button"[31m
+            [36m>[31m
+              [36m<svg[31m
+                [33maria-hidden[31m=[32m"true"[31m
+                [33mclass[31m=[32m"w-5 h-5"[31m
+                [33mfill[31m=[32m"currentColor"[31m
+                [33mviewBox[31m=[32m"0 0 20 20"[31m
+              [36m>[31m
+                [36m<path[31m
+                  [33md[31m=[32m"M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"[31m
+                [36m/>[31m
+              [36m</svg>[31m
+            [36m</button>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"px-6 py-4 text-sm text-gray-700"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"space-y-4"[31m
+            [36m>[31m
+              [36m<p[31m
+                [33mclass[31m=[32m"text-sm text-gray-700"[31m
+              [36m>[31m
+                [0m繧ｯ繝ｼ繝昴Φ縺ｮ莠､謠帙′螳御ｺ・＠縺ｾ縺励◆・∽ｻ･荳九・繧ｳ繝ｼ繝峨ｒ縺泌茜逕ｨ縺上□縺輔＞縲・[0m
+              [36m</p>[31m
+              [36m<p[31m
+                [33mclass[31m=[32m"text-sm font-semibold text-gray-900"[31m
+              [36m>[31m
+                [0m繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ[0m
+              [36m</p>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"rounded-xl bg-indigo-50 border-2 border-indigo-200 px-6 py-5 text-center"[31m
+              [36m>[31m
+                [36m<p[31m
+                  [33mclass[31m=[32m"text-xs text-indigo-500 font-medium mb-2"[31m
+                [36m>[31m
+                  [0m繧ｯ繝ｼ繝昴Φ繧ｳ繝ｼ繝・[0m
+                [36m</p>[31m
+                [36m<p[31m
+                  [33maria-label[31m=[32m"繧ｯ繝ｼ繝昴Φ繧ｳ繝ｼ繝・ TESTCODE1234"[31m
+                  [33mclass[31m=[32m"text-2xl font-bold font-mono tracking-widest text-indigo-800 break-all"[31m
+                [36m>[31m
+                  [0mTESTCODE1234[0m
+                [36m</p>[31m
+              [36m</div>[31m
+              [36m<p[31m
+                [33mclass[31m=[32m"text-xs text-gray-400 text-center"[31m
+              [36m>[31m
+                [0m縺薙・繧ｳ繝ｼ繝峨ｒ蠎鈴ｭ縺ｧ縺疲署遉ｺ縺上□縺輔＞[0m
+              [36m</p>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"rounded-lg bg-gray-50 border border-gray-200 px-4 py-3 text-center"[31m
+              [36m>[31m
+                [36m<p[31m
+                  [33mclass[31m=[32m"text-xs text-gray-500"[31m
+                [36m>[31m
+                  [0m迴ｾ蝨ｨ縺ｮ繝槭う繝ｫ谿矩ｫ・[0m
+                [36m</p>[31m
+                [36m<p[31m
+                  [33mclass[31m=[32m"text-xl font-bold text-indigo-700 mt-0.5"[31m
+                [36m>[31m
+                  [0m800[0m
+                  [36m<span[31m
+                    [33mclass[31m=[32m"text-sm font-normal text-gray-500 ml-1"[31m
+                  [36m>[31m
+                    [0m繝槭う繝ｫ[0m
+                  [36m</span>[31m
+                [36m</p>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"flex items-center justify-end gap-3 px-6 pb-5 pt-2"[31m
+          [36m>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"px-4 py-2 rounded-lg text-sm font-medium text-gray-600 border border-gray-300
+                       hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"[31m
+              [33mtype[31m=[32m"button"[31m
+            [36m>[31m
+              [0m髢峨§繧・[0m
+            [36m</button>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m
+
+Ignored nodes: comments, script, style
+[36m<html>[31m
+  [36m<head />[31m
+  [36m<body>[31m
+    [36m<div>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"max-w-2xl mx-auto px-4 py-6 pb-24 space-y-8"[31m
+      [36m>[31m
+        [36m<section[31m
+          [33maria-label[31m=[32m"繝槭う繝ｫ谿矩ｫ・[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-400 text-white px-6 py-8 shadow-lg"[31m
+          [36m>[31m
+            [36m<p[31m
+              [33mclass[31m=[32m"text-sm font-medium text-indigo-100"[31m
+            [36m>[31m
+              [0m迴ｾ蝨ｨ縺ｮ繝槭う繝ｫ谿矩ｫ・[0m
+            [36m</p>[31m
+            [36m<p[31m
+              [33mclass[31m=[32m"mt-2 text-5xl font-bold tracking-tight"[31m
+            [36m>[31m
+              [0m800[0m
+              [36m<span[31m
+                [33mclass[31m=[32m"ml-2 text-2xl font-normal text-indigo-200"[31m
+              [36m>[31m
+                [0m繝槭う繝ｫ[0m
+              [36m</span>[31m
+            [36m</p>[31m
+          [36m</div>[31m
+        [36m</section>[31m
+        [36m<section[31m
+          [33maria-label[31m=[32m"蜿門ｼ募ｱ･豁ｴ"[31m
+        [36m>[31m
+          [36m<h2[31m
+            [33mclass[31m=[32m"text-base font-semibold text-gray-800 mb-3"[31m
+          [36m>[31m
+            [0m蜿門ｼ募ｱ･豁ｴ・育峩霑・0莉ｶ・・[0m
+          [36m</h2>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"divide-y divide-gray-100 rounded-xl border border-gray-200 bg-white overflow-hidden shadow-sm"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"flex items-center justify-between px-4 py-3"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"min-w-0"[31m
+              [36m>[31m
+                [36m<p[31m
+                  [33mclass[31m=[32m"text-sm font-medium text-gray-800 truncate"[31m
+                [36m>[31m
+                  [0m蜿｣繧ｳ繝滓兜遞ｿ[0m
+                [36m</p>[31m
+                [36m<p[31m
+                  [33mclass[31m=[32m"text-xs text-gray-400 mt-0.5"[31m
+                [36m>[31m
+                  [0m2025/06/15 12:00[0m
+                [36m</p>[31m
+              [36m</div>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"ml-4 flex flex-col items-end shrink-0"[31m
+              [36m>[31m
+                [36m<span[31m
+                  [33mclass[31m=[32m"text-sm font-semibold text-emerald-600"[31m
+                [36m>[31m
+                  [0m+[0m
+                  [0m10[0m
+                  [0m 繝槭う繝ｫ[0m
+                [36m</span>[31m
+                [36m<span[31m
+                  [33mclass[31m=[32m"text-xs text-gray-400 mt-0.5"[31m
+                [36m>[31m
+                  [0m谿矩ｫ・[0m
+                  [0m1,000[0m
+                [36m</span>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</section>[31m
+        [36m<section[31m
+          [33maria-label[31m=[32m"繧ｯ繝ｼ繝昴Φ荳隕ｧ"[31m
+        [36m>[31m
+          [36m<h2[31m
+            [33mclass[31m=[32m"text-base font-semibold text-gray-800 mb-3"[31m
+          [36m>[31m
+            [0m蛻ｩ逕ｨ蜿ｯ閭ｽ縺ｪ繧ｯ繝ｼ繝昴Φ[0m
+          [36m</h2>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"space-y-4"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"flex gap-4 p-4"[31m
+              [36m>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"flex-1 min-w-0"[31m
+                [36m>[31m
+                  [36m<p[31m
+                    [33mclass[31m=[32m"text-xs text-indigo-600 font-medium"[31m
+                  [36m>[31m
+                    [0m繝・せ繝井ｼ∵･ｭ[0m
+                  [36m</p>[31m
+                  [36m<h3[31m
+                    [33mclass[31m=[32m"text-sm font-semibold text-gray-900 mt-0.5 leading-snug"[31m
+                  [36m>[31m
+                    [0m繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ[0m
+                  [36m</h3>[31m
+                  [36m<p[31m
+                    [33mclass[31m=[32m"text-xs text-gray-500 mt-1 line-clamp-2"[31m
+                  [36m>[31m
+                    [0m繝・せ繝育畑繧ｯ繝ｼ繝昴Φ縺ｧ縺吶・00繝槭う繝ｫ縺ｧ莠､謠帙〒縺阪∪縺吶・[0m
+                  [36m</p>[31m
+                  [36m<div[31m
+                    [33mclass[31m=[32m"flex items-center gap-3 mt-2 flex-wrap"[31m
+                  [36m>[31m
+                    [36m<span[31m
+                      [33mclass[31m=[32m"inline-flex items-center text-xs font-semibold text-indigo-700 bg-indigo-50 rounded-full px-2.5 py-0.5"[31m
+                    [36m>[31m
+                      [0m200[0m
+                      [0m 繝槭う繝ｫ[0m
+                    [36m</span>[31m
+                    [36m<span[31m
+                      [33mclass[31m=[32m"text-xs text-gray-400"[31m
+                    [36m>[31m
+                      [0m譛滄剞: [0m
+                      [0m2099/12/31[0m
+                    [36m</span>[31m
+                    [36m<span[31m
+                      [33mclass[31m=[32m"text-xs text-gray-400"[31m
+                    [36m>[31m
+                      [0m谿九ｊ [0m
+                      [0m100[0m
+                      [0m 譫・[0m
+                    [36m</span>[31m
+                  [36m</div>[31m
+                [36m</div>[31m
+              [36m</div>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"px-4 pb-4"[31m
+              [36m>[31m
+                [36m<button[31m
+                  [33maria-label[31m=[32m"繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ繧剃ｺ､謠帙☆繧・[31m
+                  [33mclass[31m=[32m"w-full py-2.5 rounded-lg text-sm font-semibold transition-colors
+                        bg-orange-500 text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-1"[31m
+                  [33mtype[31m=[32m"button"[31m
+                [36m>[31m
+                  [0m莠､謠帙☆繧・[0m
+                [36m</button>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</section>[31m
+        [36m<div[31m
+          [33maria-labelledby[31m=[32m"modal-title"[31m
+          [33maria-modal[31m=[32m"true"[31m
+          [33mclass[31m=[32m"fixed inset-0 z-50 flex items-center justify-center p-4"[31m
+          [33mrole[31m=[32m"dialog"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33maria-hidden[31m=[32m"true"[31m
+            [33mclass[31m=[32m"absolute inset-0 bg-black/50"[31m
+          [36m/>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"relative z-10 w-full max-w-md bg-white rounded-2xl shadow-xl"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"flex items-center justify-between px-6 pt-5 pb-4 border-b border-gray-100"[31m
+            [36m>[31m
+              [36m<h2[31m
+                [33mclass[31m=[32m"text-base font-semibold text-gray-900"[31m
+                [33mid[31m=[32m"modal-title"[31m
+              [36m>[31m
+                [0m莠､謠帛ｮ御ｺ・[0m
+              [36m</h2>[31m
+              [36m<button[31m
+                [33maria-label[31m=[32m"髢峨§繧・[31m
+                [33mclass[31m=[32m"text-gray-400 hover:text-gray-600 transition-colors"[31m
+                [33mtype[31m=[32m"button"[31m
+              [36m>[31m
+                [36m<svg[31m
+                  [33maria-hidden[31m=[32m"true"[31m
+                  [33mclass[31m=[32m"w-5 h-5"[31m
+                  [33mfill[31m=[32m"currentColor"[31m
+                  [33mviewBox[31m=[32m"0 0 20 20"[31m
+                [36m>[31m
+                  [36m<path[31m
+                    [33md[31m=[32m"M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"[31m
+                  [36m/>[31m
+                [36m</svg>[31m
+              [36m</button>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"px-6 py-4 text-sm text-gray-700"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"space-y-4"[31m
+              [36m>[31m
+                [36m<p[31m
+                  [33mclass[31m=[32m"text-sm text-gray-700"[31m
+                [36m>[31m
+                  [0m繧ｯ繝ｼ繝昴Φ縺ｮ莠､謠帙′螳御ｺ・＠縺ｾ縺励◆・∽ｻ･荳九・繧ｳ繝ｼ繝峨ｒ縺泌茜逕ｨ縺上□縺輔＞縲・[0m
+                [36m</p>[31m
+                [36m<p[31m
+                  [33mclass[31m=[32m"text-sm font-semibold text-gray-900"[31m
+                [36m>[31m
+                  [0m繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ[0m
+                [36m</p>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"rounded-xl bg-indigo-50 border-2 border-indigo-200 px-6 py-5 text-center"[31m
+                [36m>[31m
+                  [36m<p[31m
+                    [33mclass[31m=[32m"text-xs text-indigo-500 font-medium mb-2"[31m
+                  [36m>[31m
+                    [0m繧ｯ繝ｼ繝昴Φ繧ｳ繝ｼ繝・[0m
+                  [36m</p>[31m
+                  [36m<p[31m
+                    [33maria-label[31m=[32m"繧ｯ繝ｼ繝昴Φ繧ｳ繝ｼ繝・ TESTCODE1234"[31m
+                    [33mclass[31m=[32m"text-2xl font-bold font-mono tracking-widest text-indigo-800 break-all"[31m
+                  [36m>[31m
+                    [0mTESTCODE1234[0m
+                  [36m</p>[31m
+                [36m</div>[31m
+                [36m<p[31m
+                  [33mclass[31m=[32m"text-xs text-gray-400 text-center"[31m
+                [36m>[31m
+                  [0m縺薙・繧ｳ繝ｼ繝峨ｒ蠎鈴ｭ縺ｧ縺疲署遉ｺ縺上□縺輔＞[0m
+                [36m</p>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"rounded-lg bg-gray-50 border border-gray-200 px-4 py-3 text-center"[31m
+                [36m>[31m
+                  [36m<p[31m
+                    [33mclass[31m=[32m"text-xs text-gray-500"[31m
+                  [36m>[31m
+                    [0m迴ｾ蝨ｨ縺ｮ繝槭う繝ｫ谿矩ｫ・[0m
+                  [36m</p>[31m
+                  [36m<p[31m
+                    [33mclass[31m=[32m"text-xl font-bold text-indigo-700 mt-0.5"[31m
+                  [36m>[31m
+                    [0m800[0m
+                    [36m<span[31m
+                      [33mclass[31m=[32m"text-sm font-normal text-gray-500 ml-1"[31m
+                    [36m>[31m
+                      [0m繝槭う繝ｫ[0m
+                    [36m</span>[31m
+                  [36m</p>[31m
+                [36m</div>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"flex items-center justify-end gap-3 px-6 pb-5 pt-2"[31m
+            [36m>[31m
+              [36m<button[31m
+                [33mclass[31m=[32m"px-4 py-2 rounded-lg text-sm font-medium text-gray-600 border border-gray-300
+                       hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"[31m
+                [33mtype[31m=[32m"button"[31m
+              [36m>[31m
+                [0m髢峨§繧・[0m
+              [36m</button>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</body>[31m
+[36m</html>[31m[39m
+ [31mﾃ・[39m src/features/miles/__tests__/MilesPage.test.tsx[2m > [22mMilesPage[2m > [22m繝槭う繝ｫ荳崎ｶｳ縺ｮ蝣ｴ蜷医・莠､謠帙・繧ｿ繝ｳ縺檎┌蜉ｹ蛹悶＆繧後ｋ[33m 1033[2mms[22m[39m
+[31m   竊・Unable to find an element with the text: 縺ゅ→ 100 繝槭う繝ｫ蠢・ｦ√〒縺・ This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"max-w-2xl mx-auto px-4 py-6 pb-24 space-y-8"[31m
+    [36m>[31m
+      [36m<section[31m
+        [33maria-label[31m=[32m"繝槭う繝ｫ谿矩ｫ・[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-400 text-white px-6 py-8 shadow-lg"[31m
+        [36m>[31m
+          [36m<p[31m
+            [33mclass[31m=[32m"text-sm font-medium text-indigo-100"[31m
+          [36m>[31m
+            [0m迴ｾ蝨ｨ縺ｮ繝槭う繝ｫ谿矩ｫ・[0m
+          [36m</p>[31m
+          [36m<p[31m
+            [33mclass[31m=[32m"mt-2 text-5xl font-bold tracking-tight"[31m
+          [36m>[31m
+            [0m1,000[0m
+            [36m<span[31m
+              [33mclass[31m=[32m"ml-2 text-2xl font-normal text-indigo-200"[31m
+            [36m>[31m
+              [0m繝槭う繝ｫ[0m
+            [36m</span>[31m
+          [36m</p>[31m
+        [36m</div>[31m
+      [36m</section>[31m
+      [36m<section[31m
+        [33maria-label[31m=[32m"蜿門ｼ募ｱ･豁ｴ"[31m
+      [36m>[31m
+        [36m<h2[31m
+          [33mclass[31m=[32m"text-base font-semibold text-gray-800 mb-3"[31m
+        [36m>[31m
+          [0m蜿門ｼ募ｱ･豁ｴ・育峩霑・0莉ｶ・・[0m
+        [36m</h2>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"divide-y divide-gray-100 rounded-xl border border-gray-200 bg-white overflow-hidden shadow-sm"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"flex items-center justify-between px-4 py-3"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"min-w-0"[31m
+            [36m>[31m
+              [36m<p[31m
+                [33mclass[31m=[32m"text-sm font-medium text-gray-800 truncate"[31m
+              [36m>[31m
+                [0m蜿｣繧ｳ繝滓兜遞ｿ[0m
+              [36m</p>[31m
+              [36m<p[31m
+                [33mclass[31m=[32m"text-xs text-gray-400 mt-0.5"[31m
+              [36m>[31m
+                [0m2025/06/15 12:00[0m
+              [36m</p>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"ml-4 flex flex-col items-end shrink-0"[31m
+            [36m>[31m
+              [36m<span[31m
+                [33mclass[31m=[32m"text-sm font-semibold text-emerald-600"[31m
+              [36m>[31m
+                [0m+[0m
+                [0m10[0m
+                [0m 繝槭う繝ｫ[0m
+              [36m</span>[31m
+              [36m<span[31m
+                [33mclass[31m=[32m"text-xs text-gray-400 mt-0.5"[31m
+              [36m>[31m
+                [0m谿矩ｫ・[0m
+                [0m1,000[0m
+              [36m</span>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</section>[31m
+      [36m<section[31m
+        [33maria-label[31m=[32m"繧ｯ繝ｼ繝昴Φ荳隕ｧ"[31m
+      [36m>[31m
+        [36m<h2[31m
+          [33mclass[31m=[32m"text-base font-semibold text-gray-800 mb-3"[31m
+        [36m>[31m
+          [0m蛻ｩ逕ｨ蜿ｯ閭ｽ縺ｪ繧ｯ繝ｼ繝昴Φ[0m
+        [36m</h2>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"space-y-4"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"flex gap-4 p-4"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"flex-1 min-w-0"[31m
+              [36m>[31m
+                [36m<p[31m
+                  [33mclass[31m=[32m"text-xs text-indigo-600 font-medium"[31m
+                [36m>[31m
+                  [0m繝・せ繝井ｼ∵･ｭ[0m
+                [36m</p>[31m
+                [36m<h3[31m
+                  [33mclass[31m=[32m"text-sm font-semibold text-gray-900 mt-0.5 leading-snug"[31m
+                [36m>[31m
+                  [0m繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ[0m
+                [36m</h3>[31m
+                [36m<p[31m
+                  [33mclass[31m=[32m"text-xs text-gray-500 mt-1 line-clamp-2"[31m
+                [36m>[31m
+                  [0m繝・せ繝育畑繧ｯ繝ｼ繝昴Φ縺ｧ縺吶・00繝槭う繝ｫ縺ｧ莠､謠帙〒縺阪∪縺吶・[0m
+                [36m</p>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"flex items-center gap-3 mt-2 flex-wrap"[31m
+                [36m>[31m
+                  [36m<span[31m
+                    [33mclass[31m=[32m"inline-flex items-center text-xs font-semibold text-indigo-700 bg-indigo-50 rounded-full px-2.5 py-0.5"[31m
+                  [36m>[31m
+                    [0m200[0m
+                    [0m 繝槭う繝ｫ[0m
+                  [36m</span>[31m
+                  [36m<span[31m
+                    [33mclass[31m=[32m"text-xs text-gray-400"[31m
+                  [36m>[31m
+                    [0m譛滄剞: [0m
+                    [0m2099/12/31[0m
+                  [36m</span>[31m
+                  [36m<span[31m
+                    [33mclass[31m=[32m"text-xs text-gray-400"[31m
+                  [36m>[31m
+                    [0m谿九ｊ [0m
+                    [0m100[0m
+                    [0m 譫・[0m
+                  [36m</span>[31m
+                [36m</div>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"px-4 pb-4"[31m
+            [36m>[31m
+              [36m<button[31m
+                [33maria-label[31m=[32m"繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ繧剃ｺ､謠帙☆繧・[31m
+                [33mclass[31m=[32m"w-full py-2.5 rounded-lg text-sm font-semibold transition-colors
+                        bg-orange-500 text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-1"[31m
+                [33mtype[31m=[32m"button"[31m
+              [36m>[31m
+                [0m莠､謠帙☆繧・[0m
+              [36m</button>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</section>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m
+
+Ignored nodes: comments, script, style
+[36m<html>[31m
+  [36m<head />[31m
+  [36m<body>[31m
+    [36m<div>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"max-w-2xl mx-auto px-4 py-6 pb-24 space-y-8"[31m
+      [36m>[31m
+        [36m<section[31m
+          [33maria-label[31m=[32m"繝槭う繝ｫ谿矩ｫ・[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-400 text-white px-6 py-8 shadow-lg"[31m
+          [36m>[31m
+            [36m<p[31m
+              [33mclass[31m=[32m"text-sm font-medium text-indigo-100"[31m
+            [36m>[31m
+              [0m迴ｾ蝨ｨ縺ｮ繝槭う繝ｫ谿矩ｫ・[0m
+            [36m</p>[31m
+            [36m<p[31m
+              [33mclass[31m=[32m"mt-2 text-5xl font-bold tracking-tight"[31m
+            [36m>[31m
+              [0m1,000[0m
+              [36m<span[31m
+                [33mclass[31m=[32m"ml-2 text-2xl font-normal text-indigo-200"[31m
+              [36m>[31m
+                [0m繝槭う繝ｫ[0m
+              [36m</span>[31m
+            [36m</p>[31m
+          [36m</div>[31m
+        [36m</section>[31m
+        [36m<section[31m
+          [33maria-label[31m=[32m"蜿門ｼ募ｱ･豁ｴ"[31m
+        [36m>[31m
+          [36m<h2[31m
+            [33mclass[31m=[32m"text-base font-semibold text-gray-800 mb-3"[31m
+          [36m>[31m
+            [0m蜿門ｼ募ｱ･豁ｴ・育峩霑・0莉ｶ・・[0m
+          [36m</h2>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"divide-y divide-gray-100 rounded-xl border border-gray-200 bg-white overflow-hidden shadow-sm"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"flex items-center justify-between px-4 py-3"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"min-w-0"[31m
+              [36m>[31m
+                [36m<p[31m
+                  [33mclass[31m=[32m"text-sm font-medium text-gray-800 truncate"[31m
+                [36m>[31m
+                  [0m蜿｣繧ｳ繝滓兜遞ｿ[0m
+                [36m</p>[31m
+                [36m<p[31m
+                  [33mclass[31m=[32m"text-xs text-gray-400 mt-0.5"[31m
+                [36m>[31m
+                  [0m2025/06/15 12:00[0m
+                [36m</p>[31m
+              [36m</div>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"ml-4 flex flex-col items-end shrink-0"[31m
+              [36m>[31m
+                [36m<span[31m
+                  [33mclass[31m=[32m"text-sm font-semibold text-emerald-600"[31m
+                [36m>[31m
+                  [0m+[0m
+                  [0m10[0m
+                  [0m 繝槭う繝ｫ[0m
+                [36m</span>[31m
+                [36m<span[31m
+                  [33mclass[31m=[32m"text-xs text-gray-400 mt-0.5"[31m
+                [36m>[31m
+                  [0m谿矩ｫ・[0m
+                  [0m1,000[0m
+                [36m</span>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</section>[31m
+        [36m<section[31m
+          [33maria-label[31m=[32m"繧ｯ繝ｼ繝昴Φ荳隕ｧ"[31m
+        [36m>[31m
+          [36m<h2[31m
+            [33mclass[31m=[32m"text-base font-semibold text-gray-800 mb-3"[31m
+          [36m>[31m
+            [0m蛻ｩ逕ｨ蜿ｯ閭ｽ縺ｪ繧ｯ繝ｼ繝昴Φ[0m
+          [36m</h2>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"space-y-4"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"flex gap-4 p-4"[31m
+              [36m>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"flex-1 min-w-0"[31m
+                [36m>[31m
+                  [36m<p[31m
+                    [33mclass[31m=[32m"text-xs text-indigo-600 font-medium"[31m
+                  [36m>[31m
+                    [0m繝・せ繝井ｼ∵･ｭ[0m
+                  [36m</p>[31m
+                  [36m<h3[31m
+                    [33mclass[31m=[32m"text-sm font-semibold text-gray-900 mt-0.5 leading-snug"[31m
+                  [36m>[31m
+                    [0m繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ[0m
+                  [36m</h3>[31m
+                  [36m<p[31m
+                    [33mclass[31m=[32m"text-xs text-gray-500 mt-1 line-clamp-2"[31m
+                  [36m>[31m
+                    [0m繝・せ繝育畑繧ｯ繝ｼ繝昴Φ縺ｧ縺吶・00繝槭う繝ｫ縺ｧ莠､謠帙〒縺阪∪縺吶・[0m
+                  [36m</p>[31m
+                  [36m<div[31m
+                    [33mclass[31m=[32m"flex items-center gap-3 mt-2 flex-wrap"[31m
+                  [36m>[31m
+                    [36m<span[31m
+                      [33mclass[31m=[32m"inline-flex items-center text-xs font-semibold text-indigo-700 bg-indigo-50 rounded-full px-2.5 py-0.5"[31m
+                    [36m>[31m
+                      [0m200[0m
+                      [0m 繝槭う繝ｫ[0m
+                    [36m</span>[31m
+                    [36m<span[31m
+                      [33mclass[31m=[32m"text-xs text-gray-400"[31m
+                    [36m>[31m
+                      [0m譛滄剞: [0m
+                      [0m2099/12/31[0m
+                    [36m</span>[31m
+                    [36m<span[31m
+                      [33mclass[31m=[32m"text-xs text-gray-400"[31m
+                    [36m>[31m
+                      [0m谿九ｊ [0m
+                      [0m100[0m
+                      [0m 譫・[0m
+                    [36m</span>[31m
+                  [36m</div>[31m
+                [36m</div>[31m
+              [36m</div>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"px-4 pb-4"[31m
+              [36m>[31m
+                [36m<button[31m
+                  [33maria-label[31m=[32m"繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ繧剃ｺ､謠帙☆繧・[31m
+                  [33mclass[31m=[32m"w-full py-2.5 rounded-lg text-sm font-semibold transition-colors
+                        bg-orange-500 text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-1"[31m
+                  [33mtype[31m=[32m"button"[31m
+                [36m>[31m
+                  [0m莠､謠帙☆繧・[0m
+                [36m</button>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</section>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</body>[31m
+[36m</html>[31m[39m
+ [32m笨・[39m src/features/miles/__tests__/MilesPage.test.tsx[2m > [22mMilesPage[2m > [22m莠､謠・API 縺悟､ｱ謨励＠縺溷ｴ蜷医・繧ｨ繝ｩ繝ｼ繝｡繝・そ繝ｼ繧ｸ縺瑚｡ｨ遉ｺ縺輔ｌ繧・
+[31m竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ[1m[7m Failed Tests 3 [27m[22m竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/features/miles/__tests__/MilesPage.test.tsx[2m > [22mMilesPage[2m > [22m莠､謠帙・繧ｿ繝ｳ繧偵け繝ｪ繝・け縺吶ｋ縺ｨ遒ｺ隱阪Δ繝ｼ繝繝ｫ縺瑚｡ｨ遉ｺ縺輔ｌ繧・[31m[1mTestingLibraryElementError[22m[39m: Found multiple elements with the text: 繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<h3[39m
+  [33mclass[39m=[32m"text-sm font-semibold text-gray-900 mt-0.5 leading-snug"[39m
+[36m>[39m
+  [0m繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ[0m
+[36m</h3>[39m
+
+Ignored nodes: comments, script, style
+[36m<p[39m
+  [33mclass[39m=[32m"text-sm font-semibold text-gray-900"[39m
+[36m>[39m
+  [0m繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ[0m
+[36m</p>[39m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"max-w-2xl mx-auto px-4 py-6 pb-24 space-y-8"[39m
+    [36m>[39m
+      [36m<section[39m
+        [33maria-label[39m=[32m"繝槭う繝ｫ谿矩ｫ・[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-400 text-white px-6 py-8 shadow-lg"[39m
+        [36m>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"text-sm font-medium text-indigo-100"[39m
+          [36m>[39m
+            [0m迴ｾ蝨ｨ縺ｮ繝槭う繝ｫ谿矩ｫ・[0m
+          [36m</p>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"mt-2 text-5xl font-bold tracking-tight"[39m
+          [36m>[39m
+            [0m1,000[0m
+            [36m<span[39m
+              [33mclass[39m=[32m"ml-2 text-2xl font-normal text-indigo-200"[39m
+            [36m>[39m
+              [0m繝槭う繝ｫ[0m
+            [36m</span>[39m
+          [36m</p>[39m
+        [36m</div>[39m
+      [36m</section>[39m
+      [36m<section[39m
+        [33maria-label[39m=[32m"蜿門ｼ募ｱ･豁ｴ"[39m
+      [36m>[39m
+        [36m<h2[39m
+          [33mclass[39m=[32m"text-base font-semibold text-gray-800 mb-3"[39m
+        [36m>[39m
+          [0m蜿門ｼ募ｱ･豁ｴ・育峩霑・0莉ｶ・・[0m
+        [36m</h2>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"divide-y divide-gray-100 rounded-xl border border-gray-200 bg-white overflow-hidden shadow-sm"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between px-4 py-3"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"min-w-0"[39m
+            [36m>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-sm font-medium text-gray-800 truncate"[39m
+              [36m>[39m
+                [0m蜿｣繧ｳ繝滓兜遞ｿ[0m
+              [36m</p>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-xs text-gray-400 mt-0.5"[39m
+              [36m>[39m
+                [0m2025/06/15 12:00[0m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"ml-4 flex flex-col items-end shrink-0"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"text-sm font-semibold text-emerald-600"[39m
+              [36m>[39m
+                [0m+[0m
+                [0m10[0m
+                [0m 繝槭う繝ｫ[0m
+              [36m</span>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"text-xs text-gray-400 mt-0.5"[39m
+              [36m>[39m
+                [0m谿矩ｫ・[0m
+                [0m1,000[0m
+              [36m</span>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</section>[39m
+      [36m<section[39m
+        [33maria-label[39m=[32m"繧ｯ繝ｼ繝昴Φ荳隕ｧ"[39m
+      [36m>[39m
+        [36m<h2[39m
+          [33mclass[39m=[32m"text-base font-semibold text-gray-800 mb-3"[39m
+        [36m>[39m
+          [0m蛻ｩ逕ｨ蜿ｯ閭ｽ縺ｪ繧ｯ繝ｼ繝昴Φ[0m
+        [36m</h2>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"space-y-4"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-4 p-4"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex-1 min-w-0"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-xs text-indigo-600 font-medium"[39m
+                [36m>[39m
+                  [0m繝・せ繝井ｼ∵･ｭ[0m
+                [36m</p>[39m
+                [36m<h3[39m
+                  [33mclass[39m=[32m"text-sm font-semibold text-gray-900 mt-0.5 leading-snug"[39m
+                [36m>[39m
+                  [0m繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ[0m
+                [36m</h3>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-xs text-gray-500 mt-1 line-clamp-2"[39m
+                [36m>[39m
+                  [0m繝・せ繝育畑繧ｯ繝ｼ繝昴Φ縺ｧ縺吶・00繝槭う繝ｫ縺ｧ莠､謠帙〒縺阪∪縺吶・[0m
+                [36m</p>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"flex items-center gap-3 mt-2 flex-wrap"[39m
+                [36m>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"inline-flex items-center text-xs font-semibold text-indigo-700 bg-indigo-50 rounded-full px-2.5 py-0.5"[39m
+                  [36m>[39m
+                    [0m200[0m
+                    [0m 繝槭う繝ｫ[0m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"text-xs text-gray-400"[39m
+                  [36m>[39m
+                    [0m譛滄剞: [0m
+                    [0m2099/12/31[0m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"text-xs text-gray-400"[39m
+                  [36m>[39m
+                    [0m谿九ｊ [0m
+                    [0m100[0m
+                    [0m 譫・[0m
+                  [36m</span>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"px-4 pb-4"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33maria-label[39m=[32m"繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ繧剃ｺ､謠帙☆繧・[39m
+                [33mclass[39m=[32m"w-full py-2.5 rounded-lg text-sm font-semibold transition-colors
+                        bg-orange-500 text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-1"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0m莠､謠帙☆繧・[0m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</section>[39m
+      [36m<div[39m
+        [33maria-labelledby[39m=[32m"modal-title"[39m
+        [33maria-modal[39m=[32m"true"[39m
+        [33mclass[39m=[32m"fixed inset-0 z-50 flex items-center justify-center p-4"[39m
+        [33mrole[39m=[32m"dialog"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"absolute inset-0 bg-black/50"[39m
+        [36m/>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"relative z-10 w-full max-w-md bg-white rounded-2xl shadow-xl"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between px-6 pt-5 pb-4 border-b border-gray-100"[39m
+          [36m>[39m
+            [36m<h2[39m
+              [33mclass[39m=[32m"text-base font-semibold text-gray-900"[39m
+              [33mid[39m=[32m"modal-title"[39m
+            [36m>[39m
+              [0m繧ｯ繝ｼ繝昴Φ莠､謠帙・遒ｺ隱・[0m
+            [36m</h2>[39m
+            [36m<button[39m
+              [33maria-label[39m=[32m"髢峨§繧・[39m
+              [33mclass[39m=[32m"text-gray-400 hover:text-gray-600 transition-colors"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"w-5 h-5"[39m
+                [33mfill[39m=[32m"currentColor"[39m
+                [33mviewBox[39m=[32m"0 0 20 20"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"px-6 py-4 text-sm text-gray-700"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"space-y-3"[39m
+            [36m>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-sm text-gray-700"[39m
+              [36m>[39m
+                [0m莉･荳九・繧ｯ繝ｼ繝昴Φ縺ｨ莠､謠帙＠縺ｾ縺吶°・・[0m
+              [36m</p>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"rounded-lg bg-gray-50 border border-gray-200 px-4 py-3 space-y-1"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-xs text-indigo-600 font-medium"[39m
+                [36m>[39m
+                  [0m繝・せ繝井ｼ∵･ｭ[0m
+                [36m</p>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-sm font-semibold text-gray-900"[39m
+                [36m>[39m
+                  [0m繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ[0m
+                [36m</p>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-sm text-gray-600"[39m
+                [36m>[39m
+                  [0m蠢・ｦ√・繧､繝ｫ:[0m
+                  [0m [0m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"font-semibold text-indigo-700"[39m
+                  [36m>[39m
+                    [0m200[0m
+                    [0m 繝槭う繝ｫ[0m
+                  [36m</span>[39m
+                [36m</p>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-xs text-gray-400"[39m
+                [36m>[39m
+                  [0m莠､謠帛ｾ後・谿矩ｫ・[0m
+                  [0m [0m
+                  [0m800[0m
+                  [0m 繝槭う繝ｫ[0m
+                [36m</p>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-end gap-3 px-6 pb-5 pt-2"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"px-4 py-2 rounded-lg text-sm font-medium text-gray-600 border border-gray-300
+                       hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0m繧ｭ繝｣繝ｳ繧ｻ繝ｫ[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium
+                         bg-orange-500 text-white hover:bg-orange-600 transition-colors
+                         disabled:opacity-50 disabled:cursor-not-allowed"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0m莠､謠帙☆繧・[0m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+[90m [2m笶ｯ[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m笶ｯ[22m getElementError node_modules/@testing-library/dom/dist/query-helpers.js:[2m20:35[22m[39m
+[90m [2m笶ｯ[22m getMultipleElementsFoundError node_modules/@testing-library/dom/dist/query-helpers.js:[2m23:10[22m[39m
+[90m [2m笶ｯ[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m55:13[22m[39m
+[90m [2m笶ｯ[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m笶ｯ[22m src/features/miles/__tests__/MilesPage.test.tsx:[2m149:19[22m[39m
+    [90m147| [39m      [34mexpect[39m(screen[33m.[39m[34mgetByText[39m([32m'繧ｯ繝ｼ繝昴Φ莠､謠帙・遒ｺ隱・[39m))[33m.[39m[34mtoBeInTheDocument[39m窶ｦ
+    [90m148| [39m    })
+    [90m149| [39m    [34mexpect[39m(screen[33m.[39m[34mgetByText[39m([32m'繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ'[39m))[33m.[39m[34mtoBeInTheDocum[39m窶ｦ
+    [90m   | [39m                  [31m^[39m
+    [90m150| [39m  })
+    [90m151| [39m
+
+[31m[2m竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ[1/3]竡ｯ[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/features/miles/__tests__/MilesPage.test.tsx[2m > [22mMilesPage[2m > [22m繧ｯ繝ｼ繝昴Φ莠､謠帛ｾ後↓繝ｭ繝ｼ繧ｫ繝ｫ縺ｮ繝槭う繝ｫ谿矩ｫ倥′貂帷ｮ励＆繧後ｋ
+[31m[1mTestingLibraryElementError[22m[39m: Found multiple elements with the text: 800
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<p[39m
+  [33mclass[39m=[32m"mt-2 text-5xl font-bold tracking-tight"[39m
+[36m>[39m
+  [0m800[0m
+  [36m<span[39m
+    [33mclass[39m=[32m"ml-2 text-2xl font-normal text-indigo-200"[39m
+  [36m>[39m
+    [0m繝槭う繝ｫ[0m
+  [36m</span>[39m
+[36m</p>[39m
+
+Ignored nodes: comments, script, style
+[36m<p[39m
+  [33mclass[39m=[32m"text-xl font-bold text-indigo-700 mt-0.5"[39m
+[36m>[39m
+  [0m800[0m
+  [36m<span[39m
+    [33mclass[39m=[32m"text-sm font-normal text-gray-500 ml-1"[39m
+  [36m>[39m
+    [0m繝槭う繝ｫ[0m
+  [36m</span>[39m
+[36m</p>[39m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"max-w-2xl mx-auto px-4 py-6 pb-24 space-y-8"[39m
+    [36m>[39m
+      [36m<section[39m
+        [33maria-label[39m=[32m"繝槭う繝ｫ谿矩ｫ・[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-400 text-white px-6 py-8 shadow-lg"[39m
+        [36m>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"text-sm font-medium text-indigo-100"[39m
+          [36m>[39m
+            [0m迴ｾ蝨ｨ縺ｮ繝槭う繝ｫ谿矩ｫ・[0m
+          [36m</p>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"mt-2 text-5xl font-bold tracking-tight"[39m
+          [36m>[39m
+            [0m800[0m
+            [36m<span[39m
+              [33mclass[39m=[32m"ml-2 text-2xl font-normal text-indigo-200"[39m
+            [36m>[39m
+              [0m繝槭う繝ｫ[0m
+            [36m</span>[39m
+          [36m</p>[39m
+        [36m</div>[39m
+      [36m</section>[39m
+      [36m<section[39m
+        [33maria-label[39m=[32m"蜿門ｼ募ｱ･豁ｴ"[39m
+      [36m>[39m
+        [36m<h2[39m
+          [33mclass[39m=[32m"text-base font-semibold text-gray-800 mb-3"[39m
+        [36m>[39m
+          [0m蜿門ｼ募ｱ･豁ｴ・育峩霑・0莉ｶ・・[0m
+        [36m</h2>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"divide-y divide-gray-100 rounded-xl border border-gray-200 bg-white overflow-hidden shadow-sm"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between px-4 py-3"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"min-w-0"[39m
+            [36m>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-sm font-medium text-gray-800 truncate"[39m
+              [36m>[39m
+                [0m蜿｣繧ｳ繝滓兜遞ｿ[0m
+              [36m</p>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-xs text-gray-400 mt-0.5"[39m
+              [36m>[39m
+                [0m2025/06/15 12:00[0m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"ml-4 flex flex-col items-end shrink-0"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"text-sm font-semibold text-emerald-600"[39m
+              [36m>[39m
+                [0m+[0m
+                [0m10[0m
+                [0m 繝槭う繝ｫ[0m
+              [36m</span>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"text-xs text-gray-400 mt-0.5"[39m
+              [36m>[39m
+                [0m谿矩ｫ・[0m
+                [0m1,000[0m
+              [36m</span>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</section>[39m
+      [36m<section[39m
+        [33maria-label[39m=[32m"繧ｯ繝ｼ繝昴Φ荳隕ｧ"[39m
+      [36m>[39m
+        [36m<h2[39m
+          [33mclass[39m=[32m"text-base font-semibold text-gray-800 mb-3"[39m
+        [36m>[39m
+          [0m蛻ｩ逕ｨ蜿ｯ閭ｽ縺ｪ繧ｯ繝ｼ繝昴Φ[0m
+        [36m</h2>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"space-y-4"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-4 p-4"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex-1 min-w-0"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-xs text-indigo-600 font-medium"[39m
+                [36m>[39m
+                  [0m繝・せ繝井ｼ∵･ｭ[0m
+                [36m</p>[39m
+                [36m<h3[39m
+                  [33mclass[39m=[32m"text-sm font-semibold text-gray-900 mt-0.5 leading-snug"[39m
+                [36m>[39m
+                  [0m繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ[0m
+                [36m</h3>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-xs text-gray-500 mt-1 line-clamp-2"[39m
+                [36m>[39m
+                  [0m繝・せ繝育畑繧ｯ繝ｼ繝昴Φ縺ｧ縺吶・00繝槭う繝ｫ縺ｧ莠､謠帙〒縺阪∪縺吶・[0m
+                [36m</p>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"flex items-center gap-3 mt-2 flex-wrap"[39m
+                [36m>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"inline-flex items-center text-xs font-semibold text-indigo-700 bg-indigo-50 rounded-full px-2.5 py-0.5"[39m
+                  [36m>[39m
+                    [0m200[0m
+                    [0m 繝槭う繝ｫ[0m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"text-xs text-gray-400"[39m
+                  [36m>[39m
+                    [0m譛滄剞: [0m
+                    [0m2099/12/31[0m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"text-xs text-gray-400"[39m
+                  [36m>[39m
+                    [0m谿九ｊ [0m
+                    [0m100[0m
+                    [0m 譫・[0m
+                  [36m</span>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"px-4 pb-4"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33maria-label[39m=[32m"繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ繧剃ｺ､謠帙☆繧・[39m
+                [33mclass[39m=[32m"w-full py-2.5 rounded-lg text-sm font-semibold transition-colors
+                        bg-orange-500 text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-1"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0m莠､謠帙☆繧・[0m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</section>[39m
+      [36m<div[39m
+        [33maria-labelledby[39m=[32m"modal-title"[39m
+        [33maria-modal[39m=[32m"true"[39m
+        [33mclass[39m=[32m"fixed inset-0 z-50 flex items-center justify-center p-4"[39m
+        [33mrole[39m=[32m"dialog"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"absolute inset-0 bg-black/50"[39m
+        [36m/>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"relative z-10 w-full max-w-md bg-white rounded-2xl shadow-xl"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between px-6 pt-5 pb-4 border-b border-gray-100"[39m
+          [36m>[39m
+            [36m<h2[39m
+              [33mclass[39m=[32m"text-base font-semibold text-gray-900"[39m
+              [33mid[39m=[32m"modal-title"[39m
+            [36m>[39m
+              [0m莠､謠帛ｮ御ｺ・[0m
+            [36m</h2>[39m
+            [36m<button[39m
+              [33maria-label[39m=[32m"髢峨§繧・[39m
+              [33mclass[39m=[32m"text-gray-400 hover:text-gray-600 transition-colors"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"w-5 h-5"[39m
+                [33mfill[39m=[32m"currentColor"[39m
+                [33mviewBox[39m=[32m"0 0 20 20"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"px-6 py-4 text-sm text-gray-700"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"space-y-4"[39m
+            [36m>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-sm text-gray-700"[39m
+              [36m>[39m
+                [0m繧ｯ繝ｼ繝昴Φ縺ｮ莠､謠帙′螳御ｺ・＠縺ｾ縺励◆・∽ｻ･荳九・繧ｳ繝ｼ繝峨ｒ縺泌茜逕ｨ縺上□縺輔＞縲・[0m
+              [36m</p>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-sm font-semibold text-gray-900"[39m
+              [36m>[39m
+                [0m繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ[0m
+              [36m</p>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"rounded-xl bg-indigo-50 border-2 border-indigo-200 px-6 py-5 text-center"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-xs text-indigo-500 font-medium mb-2"[39m
+                [36m>[39m
+                  [0m繧ｯ繝ｼ繝昴Φ繧ｳ繝ｼ繝・[0m
+                [36m</p>[39m
+                [36m<p[39m
+                  [33maria-label[39m=[32m"繧ｯ繝ｼ繝昴Φ繧ｳ繝ｼ繝・ TESTCODE1234"[39m
+                  [33mclass[39m=[32m"text-2xl font-bold font-mono tracking-widest text-indigo-800 break-all"[39m
+                [36m>[39m
+                  [0mTESTCODE1234[0m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-xs text-gray-400 text-center"[39m
+              [36m>[39m
+                [0m縺薙・繧ｳ繝ｼ繝峨ｒ蠎鈴ｭ縺ｧ縺疲署遉ｺ縺上□縺輔＞[0m
+              [36m</p>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"rounded-lg bg-gray-50 border border-gray-200 px-4 py-3 text-center"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-xs text-gray-500"[39m
+                [36m>[39m
+                  [0m迴ｾ蝨ｨ縺ｮ繝槭う繝ｫ谿矩ｫ・[0m
+                [36m</p>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-xl font-bold text-indigo-700 mt-0.5"[39m
+                [36m>[39m
+                  [0m800[0m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"text-sm font-normal text-gray-500 ml-1"[39m
+                  [36m>[39m
+                    [0m繝槭う繝ｫ[0m
+                  [36m</span>[39m
+                [36m</p>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-end gap-3 px-6 pb-5 pt-2"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"px-4 py-2 rounded-lg text-sm font-medium text-gray-600 border border-gray-300
+                       hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0m髢峨§繧・[0m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"max-w-2xl mx-auto px-4 py-6 pb-24 space-y-8"[39m
+      [36m>[39m
+        [36m<section[39m
+          [33maria-label[39m=[32m"繝槭う繝ｫ谿矩ｫ・[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-400 text-white px-6 py-8 shadow-lg"[39m
+          [36m>[39m
+            [36m<p[39m
+              [33mclass[39m=[32m"text-sm font-medium text-indigo-100"[39m
+            [36m>[39m
+              [0m迴ｾ蝨ｨ縺ｮ繝槭う繝ｫ谿矩ｫ・[0m
+            [36m</p>[39m
+            [36m<p[39m
+              [33mclass[39m=[32m"mt-2 text-5xl font-bold tracking-tight"[39m
+            [36m>[39m
+              [0m800[0m
+              [36m<span[39m
+                [33mclass[39m=[32m"ml-2 text-2xl font-normal text-indigo-200"[39m
+              [36m>[39m
+                [0m繝槭う繝ｫ[0m
+              [36m</span>[39m
+            [36m</p>[39m
+          [36m</div>[39m
+        [36m</section>[39m
+        [36m<section[39m
+          [33maria-label[39m=[32m"蜿門ｼ募ｱ･豁ｴ"[39m
+        [36m>[39m
+          [36m<h2[39m
+            [33mclass[39m=[32m"text-base font-semibold text-gray-800 mb-3"[39m
+          [36m>[39m
+            [0m蜿門ｼ募ｱ･豁ｴ・育峩霑・0莉ｶ・・[0m
+          [36m</h2>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"divide-y divide-gray-100 rounded-xl border border-gray-200 bg-white overflow-hidden shadow-sm"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center justify-between px-4 py-3"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"min-w-0"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-sm font-medium text-gray-800 truncate"[39m
+                [36m>[39m
+                  [0m蜿｣繧ｳ繝滓兜遞ｿ[0m
+                [36m</p>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-xs text-gray-400 mt-0.5"[39m
+                [36m>[39m
+                  [0m2025/06/15 12:00[0m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"ml-4 flex flex-col items-end shrink-0"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"text-sm font-semibold text-emerald-600"[39m
+                [36m>[39m
+                  [0m+[0m
+                  [0m10[0m
+                  [0m 繝槭う繝ｫ[0m
+                [36m</span>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"text-xs text-gray-400 mt-0.5"[39m
+                [36m>[39m
+                  [0m谿矩ｫ・[0m
+                  [0m1,000[0m
+                [36m</span>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</section>[39m
+        [36m<section[39m
+          [33maria-label[39m=[32m"繧ｯ繝ｼ繝昴Φ荳隕ｧ"[39m
+        [36m>[39m
+          [36m<h2[39m
+            [33mclass[39m=[32m"text-base font-semibold text-gray-800 mb-3"[39m
+          [36m>[39m
+            [0m蛻ｩ逕ｨ蜿ｯ閭ｽ縺ｪ繧ｯ繝ｼ繝昴Φ[0m
+          [36m</h2>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"space-y-4"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex gap-4 p-4"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"flex-1 min-w-0"[39m
+                [36m>[39m
+                  [36m<p[39m
+                    [33mclass[39m=[32m"text-xs text-indigo-600 font-medium"[39m
+                  [36m>[39m
+                    [0m繝・せ繝井ｼ∵･ｭ[0m
+                  [36m</p>[39m
+                  [36m<h3[39m
+                    [33mclass[39m=[32m"text-sm font-semibold text-gray-900 mt-0.5 leading-snug"[39m
+                  [36m>[39m
+                    [0m繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ[0m
+                  [36m</h3>[39m
+                  [36m<p[39m
+                    [33mclass[39m=[32m"text-xs text-gray-500 mt-1 line-clamp-2"[39m
+                  [36m>[39m
+                    [0m繝・せ繝育畑繧ｯ繝ｼ繝昴Φ縺ｧ縺吶・00繝槭う繝ｫ縺ｧ莠､謠帙〒縺阪∪縺吶・[0m
+                  [36m</p>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"flex items-center gap-3 mt-2 flex-wrap"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"inline-flex items-center text-xs font-semibold text-indigo-700 bg-indigo-50 rounded-full px-2.5 py-0.5"[39m
+                    [36m>[39m
+                      [0m200[0m
+                      [0m 繝槭う繝ｫ[0m
+                    [36m</span>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"text-xs text-gray-400"[39m
+                    [36m>[39m
+                      [0m譛滄剞: [0m
+                      [0m2099/12/31[0m
+                    [36m</span>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"text-xs text-gray-400"[39m
+                    [36m>[39m
+                      [0m谿九ｊ [0m
+                      [0m100[0m
+                      [0m 譫・[0m
+                    [36m</span>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"px-4 pb-4"[39m
+              [36m>[39m
+                [36m<button[39m
+                  [33maria-label[39m=[32m"繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ繧剃ｺ､謠帙☆繧・[39m
+                  [33mclass[39m=[32m"w-full py-2.5 rounded-lg text-sm font-semibold transition-colors
+                        bg-orange-500 text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-1"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0m莠､謠帙☆繧・[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</section>[39m
+        [36m<div[39m
+          [33maria-labelledby[39m=[32m"modal-title"[39m
+          [33maria-modal[39m=[32m"true"[39m
+          [33mclass[39m=[32m"fixed inset-0 z-50 flex items-center justify-center p-4"[39m
+          [33mrole[39m=[32m"dialog"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"absolute inset-0 bg-black/50"[39m
+          [36m/>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"relative z-10 w-full max-w-md bg-white rounded-2xl shadow-xl"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center justify-between px-6 pt-5 pb-4 border-b border-gray-100"[39m
+            [36m>[39m
+              [36m<h2[39m
+                [33mclass[39m=[32m"text-base font-semibold text-gray-900"[39m
+                [33mid[39m=[32m"modal-title"[39m
+              [36m>[39m
+                [0m莠､謠帛ｮ御ｺ・[0m
+              [36m</h2>[39m
+              [36m<button[39m
+                [33maria-label[39m=[32m"髢峨§繧・[39m
+                [33mclass[39m=[32m"text-gray-400 hover:text-gray-600 transition-colors"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"w-5 h-5"[39m
+                  [33mfill[39m=[32m"currentColor"[39m
+                  [33mviewBox[39m=[32m"0 0 20 20"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"px-6 py-4 text-sm text-gray-700"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"space-y-4"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-sm text-gray-700"[39m
+                [36m>[39m
+                  [0m繧ｯ繝ｼ繝昴Φ縺ｮ莠､謠帙′螳御ｺ・＠縺ｾ縺励◆・∽ｻ･荳九・繧ｳ繝ｼ繝峨ｒ縺泌茜逕ｨ縺上□縺輔＞縲・[0m
+                [36m</p>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-sm font-semibold text-gray-900"[39m
+                [36m>[39m
+                  [0m繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ[0m
+                [36m</p>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"rounded-xl bg-indigo-50 border-2 border-indigo-200 px-6 py-5 text-center"[39m
+                [36m>[39m
+                  [36m<p[39m
+                    [33mclass[39m=[32m"text-xs text-indigo-500 font-medium mb-2"[39m
+                  [36m>[39m
+                    [0m繧ｯ繝ｼ繝昴Φ繧ｳ繝ｼ繝・[0m
+                  [36m</p>[39m
+                  [36m<p[39m
+                    [33maria-label[39m=[32m"繧ｯ繝ｼ繝昴Φ繧ｳ繝ｼ繝・ TESTCODE1234"[39m
+                    [33mclass[39m=[32m"text-2xl font-bold font-mono tracking-widest text-indigo-800 break-all"[39m
+                  [36m>[39m
+                    [0mTESTCODE1234[0m
+                  [36m</p>[39m
+                [36m</div>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-xs text-gray-400 text-center"[39m
+                [36m>[39m
+                  [0m縺薙・繧ｳ繝ｼ繝峨ｒ蠎鈴ｭ縺ｧ縺疲署遉ｺ縺上□縺輔＞[0m
+                [36m</p>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"rounded-lg bg-gray-50 border border-gray-200 px-4 py-3 text-center"[39m
+                [36m>[39m
+                  [36m<p[39m
+                    [33mclass[39m=[32m"text-xs text-gray-500"[39m
+                  [36m>[39m
+                    [0m迴ｾ蝨ｨ縺ｮ繝槭う繝ｫ谿矩ｫ・[0m
+                  [36m</p>[39m
+                  [36m<p[39m
+                    [33mclass[39m=[32m"text-xl font-bold text-indigo-700 mt-0.5"[39m
+                  [36m>[39m
+                    [0m800[0m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"text-sm font-normal text-gray-500 ml-1"[39m
+                    [36m>[39m
+                      [0m繝槭う繝ｫ[0m
+                    [36m</span>[39m
+                  [36m</p>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center justify-end gap-3 px-6 pb-5 pt-2"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"px-4 py-2 rounded-lg text-sm font-medium text-gray-600 border border-gray-300
+                       hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0m髢峨§繧・[0m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+[90m [2m笶ｯ[22m Proxy.waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:[2m163:27[22m[39m
+[36m [2m笶ｯ[22m src/features/miles/__tests__/MilesPage.test.tsx:[2m215:11[22m[39m
+    [90m213| [39m    [90m// 繝ｭ繝ｼ繧ｫ繝ｫ谿矩ｫ倥′ 200 貂帷ｮ励＆繧後※ 800 縺ｫ縺ｪ繧・[39m
+    [90m214| [39m    [90m// MileContext 縺ｮ deductMiles(200) 縺悟他縺ｰ繧後※縺・ｋ縺溘ａ[39m
+    [90m215| [39m    [35mawait[39m [34mwaitFor[39m(() [33m=>[39m {
+    [90m   | [39m          [31m^[39m
+    [90m216| [39m      [34mexpect[39m(screen[33m.[39m[34mgetByText[39m([32m'800'[39m))[33m.[39m[34mtoBeInTheDocument[39m()
+    [90m217| [39m    })
+
+[31m[2m竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ[2/3]竡ｯ[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/features/miles/__tests__/MilesPage.test.tsx[2m > [22mMilesPage[2m > [22m繝槭う繝ｫ荳崎ｶｳ縺ｮ蝣ｴ蜷医・莠､謠帙・繧ｿ繝ｳ縺檎┌蜉ｹ蛹悶＆繧後ｋ
+[31m[1mTestingLibraryElementError[22m[39m: Unable to find an element with the text: 縺ゅ→ 100 繝槭う繝ｫ蠢・ｦ√〒縺・ This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"max-w-2xl mx-auto px-4 py-6 pb-24 space-y-8"[39m
+    [36m>[39m
+      [36m<section[39m
+        [33maria-label[39m=[32m"繝槭う繝ｫ谿矩ｫ・[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-400 text-white px-6 py-8 shadow-lg"[39m
+        [36m>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"text-sm font-medium text-indigo-100"[39m
+          [36m>[39m
+            [0m迴ｾ蝨ｨ縺ｮ繝槭う繝ｫ谿矩ｫ・[0m
+          [36m</p>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"mt-2 text-5xl font-bold tracking-tight"[39m
+          [36m>[39m
+            [0m1,000[0m
+            [36m<span[39m
+              [33mclass[39m=[32m"ml-2 text-2xl font-normal text-indigo-200"[39m
+            [36m>[39m
+              [0m繝槭う繝ｫ[0m
+            [36m</span>[39m
+          [36m</p>[39m
+        [36m</div>[39m
+      [36m</section>[39m
+      [36m<section[39m
+        [33maria-label[39m=[32m"蜿門ｼ募ｱ･豁ｴ"[39m
+      [36m>[39m
+        [36m<h2[39m
+          [33mclass[39m=[32m"text-base font-semibold text-gray-800 mb-3"[39m
+        [36m>[39m
+          [0m蜿門ｼ募ｱ･豁ｴ・育峩霑・0莉ｶ・・[0m
+        [36m</h2>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"divide-y divide-gray-100 rounded-xl border border-gray-200 bg-white overflow-hidden shadow-sm"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between px-4 py-3"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"min-w-0"[39m
+            [36m>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-sm font-medium text-gray-800 truncate"[39m
+              [36m>[39m
+                [0m蜿｣繧ｳ繝滓兜遞ｿ[0m
+              [36m</p>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-xs text-gray-400 mt-0.5"[39m
+              [36m>[39m
+                [0m2025/06/15 12:00[0m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"ml-4 flex flex-col items-end shrink-0"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"text-sm font-semibold text-emerald-600"[39m
+              [36m>[39m
+                [0m+[0m
+                [0m10[0m
+                [0m 繝槭う繝ｫ[0m
+              [36m</span>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"text-xs text-gray-400 mt-0.5"[39m
+              [36m>[39m
+                [0m谿矩ｫ・[0m
+                [0m1,000[0m
+              [36m</span>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</section>[39m
+      [36m<section[39m
+        [33maria-label[39m=[32m"繧ｯ繝ｼ繝昴Φ荳隕ｧ"[39m
+      [36m>[39m
+        [36m<h2[39m
+          [33mclass[39m=[32m"text-base font-semibold text-gray-800 mb-3"[39m
+        [36m>[39m
+          [0m蛻ｩ逕ｨ蜿ｯ閭ｽ縺ｪ繧ｯ繝ｼ繝昴Φ[0m
+        [36m</h2>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"space-y-4"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-4 p-4"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex-1 min-w-0"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-xs text-indigo-600 font-medium"[39m
+                [36m>[39m
+                  [0m繝・せ繝井ｼ∵･ｭ[0m
+                [36m</p>[39m
+                [36m<h3[39m
+                  [33mclass[39m=[32m"text-sm font-semibold text-gray-900 mt-0.5 leading-snug"[39m
+                [36m>[39m
+                  [0m繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ[0m
+                [36m</h3>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-xs text-gray-500 mt-1 line-clamp-2"[39m
+                [36m>[39m
+                  [0m繝・せ繝育畑繧ｯ繝ｼ繝昴Φ縺ｧ縺吶・00繝槭う繝ｫ縺ｧ莠､謠帙〒縺阪∪縺吶・[0m
+                [36m</p>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"flex items-center gap-3 mt-2 flex-wrap"[39m
+                [36m>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"inline-flex items-center text-xs font-semibold text-indigo-700 bg-indigo-50 rounded-full px-2.5 py-0.5"[39m
+                  [36m>[39m
+                    [0m200[0m
+                    [0m 繝槭う繝ｫ[0m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"text-xs text-gray-400"[39m
+                  [36m>[39m
+                    [0m譛滄剞: [0m
+                    [0m2099/12/31[0m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"text-xs text-gray-400"[39m
+                  [36m>[39m
+                    [0m谿九ｊ [0m
+                    [0m100[0m
+                    [0m 譫・[0m
+                  [36m</span>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"px-4 pb-4"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33maria-label[39m=[32m"繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ繧剃ｺ､謠帙☆繧・[39m
+                [33mclass[39m=[32m"w-full py-2.5 rounded-lg text-sm font-semibold transition-colors
+                        bg-orange-500 text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-1"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0m莠､謠帙☆繧・[0m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</section>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"max-w-2xl mx-auto px-4 py-6 pb-24 space-y-8"[39m
+      [36m>[39m
+        [36m<section[39m
+          [33maria-label[39m=[32m"繝槭う繝ｫ谿矩ｫ・[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-400 text-white px-6 py-8 shadow-lg"[39m
+          [36m>[39m
+            [36m<p[39m
+              [33mclass[39m=[32m"text-sm font-medium text-indigo-100"[39m
+            [36m>[39m
+              [0m迴ｾ蝨ｨ縺ｮ繝槭う繝ｫ谿矩ｫ・[0m
+            [36m</p>[39m
+            [36m<p[39m
+              [33mclass[39m=[32m"mt-2 text-5xl font-bold tracking-tight"[39m
+            [36m>[39m
+              [0m1,000[0m
+              [36m<span[39m
+                [33mclass[39m=[32m"ml-2 text-2xl font-normal text-indigo-200"[39m
+              [36m>[39m
+                [0m繝槭う繝ｫ[0m
+              [36m</span>[39m
+            [36m</p>[39m
+          [36m</div>[39m
+        [36m</section>[39m
+        [36m<section[39m
+          [33maria-label[39m=[32m"蜿門ｼ募ｱ･豁ｴ"[39m
+        [36m>[39m
+          [36m<h2[39m
+            [33mclass[39m=[32m"text-base font-semibold text-gray-800 mb-3"[39m
+          [36m>[39m
+            [0m蜿門ｼ募ｱ･豁ｴ・育峩霑・0莉ｶ・・[0m
+          [36m</h2>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"divide-y divide-gray-100 rounded-xl border border-gray-200 bg-white overflow-hidden shadow-sm"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center justify-between px-4 py-3"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"min-w-0"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-sm font-medium text-gray-800 truncate"[39m
+                [36m>[39m
+                  [0m蜿｣繧ｳ繝滓兜遞ｿ[0m
+                [36m</p>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-xs text-gray-400 mt-0.5"[39m
+                [36m>[39m
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m3 failed[39m[22m[2m | [22m[1m[32m4 passed[39m[22m[90m (7)[39m
+[2m   Start at [22m 21:37:52
+[2m   Duration [22m 5.73s[2m (transform 128ms, setup 222ms, collect 700ms, tests 2.73s, environment 1.06s, prepare 143ms)[22m
+
+                  [0m2025/06/15 12:00[0m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"ml-4 flex flex-col items-end shrink-0"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"text-sm font-semibold text-emerald-600"[39m
+                [36m>[39m
+                  [0m+[0m
+                  [0m10[0m
+                  [0m 繝槭う繝ｫ[0m
+                [36m</span>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"text-xs text-gray-400 mt-0.5"[39m
+                [36m>[39m
+                  [0m谿矩ｫ・[0m
+                  [0m1,000[0m
+                [36m</span>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</section>[39m
+        [36m<section[39m
+          [33maria-label[39m=[32m"繧ｯ繝ｼ繝昴Φ荳隕ｧ"[39m
+        [36m>[39m
+          [36m<h2[39m
+            [33mclass[39m=[32m"text-base font-semibold text-gray-800 mb-3"[39m
+          [36m>[39m
+            [0m蛻ｩ逕ｨ蜿ｯ閭ｽ縺ｪ繧ｯ繝ｼ繝昴Φ[0m
+          [36m</h2>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"space-y-4"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex gap-4 p-4"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"flex-1 min-w-0"[39m
+                [36m>[39m
+                  [36m<p[39m
+                    [33mclass[39m=[32m"text-xs text-indigo-600 font-medium"[39m
+                  [36m>[39m
+                    [0m繝・せ繝井ｼ∵･ｭ[0m
+                  [36m</p>[39m
+                  [36m<h3[39m
+                    [33mclass[39m=[32m"text-sm font-semibold text-gray-900 mt-0.5 leading-snug"[39m
+                  [36m>[39m
+                    [0m繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ[0m
+                  [36m</h3>[39m
+                  [36m<p[39m
+                    [33mclass[39m=[32m"text-xs text-gray-500 mt-1 line-clamp-2"[39m
+                  [36m>[39m
+                    [0m繝・せ繝育畑繧ｯ繝ｼ繝昴Φ縺ｧ縺吶・00繝槭う繝ｫ縺ｧ莠､謠帙〒縺阪∪縺吶・[0m
+                  [36m</p>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"flex items-center gap-3 mt-2 flex-wrap"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"inline-flex items-center text-xs font-semibold text-indigo-700 bg-indigo-50 rounded-full px-2.5 py-0.5"[39m
+                    [36m>[39m
+                      [0m200[0m
+                      [0m 繝槭う繝ｫ[0m
+                    [36m</span>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"text-xs text-gray-400"[39m
+                    [36m>[39m
+                      [0m譛滄剞: [0m
+                      [0m2099/12/31[0m
+                    [36m</span>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"text-xs text-gray-400"[39m
+                    [36m>[39m
+                      [0m谿九ｊ [0m
+                      [0m100[0m
+                      [0m 譫・[0m
+                    [36m</span>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"px-4 pb-4"[39m
+              [36m>[39m
+                [36m<button[39m
+                  [33maria-label[39m=[32m"繝・せ繝医け繝ｼ繝昴Φ200繝槭う繝ｫ繧剃ｺ､謠帙☆繧・[39m
+                  [33mclass[39m=[32m"w-full py-2.5 rounded-lg text-sm font-semibold transition-colors
+                        bg-orange-500 text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-1"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0m莠､謠帙☆繧・[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</section>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+[90m [2m笶ｯ[22m Proxy.waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:[2m163:27[22m[39m
+[36m [2m笶ｯ[22m src/features/miles/__tests__/MilesPage.test.tsx:[2m231:11[22m[39m
+    [90m229| [39m
+    [90m230| [39m    [90m// 縲後≠縺ｨ縲・・繧､繝ｫ蠢・ｦ√〒縺吶阪Γ繝・そ繝ｼ繧ｸ縺瑚｡ｨ遉ｺ縺輔ｌ繧・[39m
+    [90m231| [39m    [35mawait[39m [34mwaitFor[39m(() [33m=>[39m {
+    [90m   | [39m          [31m^[39m
+    [90m232| [39m      [34mexpect[39m(screen[33m.[39m[34mgetByText[39m([32m'縺ゅ→ 100 繝槭う繝ｫ蠢・ｦ√〒縺・[39m))[33m.[39m[34mtoBeInTheDoc[39m窶ｦ
+    [90m233| [39m    })
+
+[31m[2m竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ[3/3]竡ｯ[22m[39m
+
+

@@ -1,0 +1,943 @@
+{
+  "pbtResults": {
+    "5.1 バリデーション関数の PBT（`src/utils/__tests__/validators.pbt.test.ts`）": {
+      "status": "passed",
+      "lastRunTimestamp": 1785435993224
+    },
+    "5.2 時間帯・平日判定の PBT（`src/utils/__tests__/timeUtils.pbt.test.ts`）": {
+      "status": "passed",
+      "lastRunTimestamp": 1785514831687
+    },
+    "5.3 フィード取得・フィルタリングの PBT（`src/utils/__tests__/feedUtils.pbt.test.ts`）": {
+      "status": "passed",
+      "lastRunTimestamp": 1785456110418
+    },
+    "5.4 レコメンド・Haversine の PBT（`src/utils/__tests__/scoring.pbt.test.ts`）": {
+      "status": "passed",
+      "lastRunTimestamp": 1785471058971
+    },
+    "5.5 マイル・クーポン・いいねの PBT（`src/utils/__tests__/mileUtils.pbt.test.ts`）": {
+      "status": "passed",
+      "lastRunTimestamp": 1785514691793
+    }
+  },
+  "executionHistory": {
+    "1.1 DynamoDB テーブル群の作成（IaC / AWS CDK または CloudFormation テンプレート）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392706197
+      },
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392726529
+      },
+      {
+        "executionId": "ed171a42-4ccf-4583-b1f8-daf65446735c",
+        "chatSessionId": "sess_1560dbc1-a5d8-4cee-a464-1617bdbd17aa",
+        "timestamp": 1785401929186
+      }
+    ],
+    "1.2 S3 バケット 2 本の作成と設定": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392706631
+      },
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392727627
+      },
+      {
+        "executionId": "ed171a42-4ccf-4583-b1f8-daf65446735c",
+        "chatSessionId": "sess_1560dbc1-a5d8-4cee-a464-1617bdbd17aa",
+        "timestamp": 1785402410192
+      }
+    ],
+    "1.3 Amazon Cognito の設定": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392706774
+      },
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392728542
+      },
+      {
+        "executionId": "ed171a42-4ccf-4583-b1f8-daf65446735c",
+        "chatSessionId": "sess_1560dbc1-a5d8-4cee-a464-1617bdbd17aa",
+        "timestamp": 1785402414567
+      }
+    ],
+    "1.4 API Gateway REST API の設定": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392706889
+      },
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392729659
+      },
+      {
+        "executionId": "ed171a42-4ccf-4583-b1f8-daf65446735c",
+        "chatSessionId": "sess_1560dbc1-a5d8-4cee-a464-1617bdbd17aa",
+        "timestamp": 1785402418300
+      }
+    ],
+    "1.5 AWS Budgets コスト監視設定": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392706991
+      },
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392730844
+      },
+      {
+        "executionId": "ed171a42-4ccf-4583-b1f8-daf65446735c",
+        "chatSessionId": "sess_1560dbc1-a5d8-4cee-a464-1617bdbd17aa",
+        "timestamp": 1785402422164
+      }
+    ],
+    "2.1 バリデーション関数の実装（`src/common/validators.py`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392707087
+      },
+      {
+        "executionId": "770331bd-3623-4973-bb1e-dd92e8543fc5",
+        "chatSessionId": "sess_6dbd23ec-0ec7-4ee3-a3f7-410158d0d62a",
+        "timestamp": 1785393057535
+      }
+    ],
+    "2.5 時間帯・平日判定関数の実装（`src/common/time_utils.py`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392707177
+      },
+      {
+        "executionId": "770331bd-3623-4973-bb1e-dd92e8543fc5",
+        "chatSessionId": "sess_6dbd23ec-0ec7-4ee3-a3f7-410158d0d62a",
+        "timestamp": 1785393058549
+      }
+    ],
+    "2.8 スコアリング計算関数の実装（`src/common/scoring.py`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392707321
+      },
+      {
+        "executionId": "770331bd-3623-4973-bb1e-dd92e8543fc5",
+        "chatSessionId": "sess_6dbd23ec-0ec7-4ee3-a3f7-410158d0d62a",
+        "timestamp": 1785393059621
+      }
+    ],
+    "2.10 フィード取得・フィルタリング関数の実装（`src/common/feed_utils.py`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392707409
+      },
+      {
+        "executionId": "770331bd-3623-4973-bb1e-dd92e8543fc5",
+        "chatSessionId": "sess_6dbd23ec-0ec7-4ee3-a3f7-410158d0d62a",
+        "timestamp": 1785393061010
+      }
+    ],
+    "2.14 広告差し込み関数の実装（`src/common/ad_utils.py`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392707583
+      },
+      {
+        "executionId": "770331bd-3623-4973-bb1e-dd92e8543fc5",
+        "chatSessionId": "sess_6dbd23ec-0ec7-4ee3-a3f7-410158d0d62a",
+        "timestamp": 1785393062177
+      }
+    ],
+    "2.16 クーポンコード生成関数の実装（`src/common/coupon_utils.py`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392707720
+      },
+      {
+        "executionId": "c49e51e6-1040-4fef-8971-04eca306e7f2",
+        "chatSessionId": "sess_14a11698-f350-4d33-8602-74c0ac997060",
+        "timestamp": 1785395185592
+      }
+    ],
+    "2.18 Haversine 距離計算関数の実装（`src/common/geo_utils.py`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392707827
+      },
+      {
+        "executionId": "c49e51e6-1040-4fef-8971-04eca306e7f2",
+        "chatSessionId": "sess_14a11698-f350-4d33-8602-74c0ac997060",
+        "timestamp": 1785395186387
+      }
+    ],
+    "2.19 フェーズ2 チェックポイント": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392707977
+      }
+    ],
+    "3.1 review-submission ビジネスロジックの実装（`src/review_submission/logic.py`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392708090
+      }
+    ],
+    "3.2 review-submission ハンドラー関数の実装（`src/review_submission/handler.py`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392708267
+      }
+    ],
+    "4.1 image-analyzer ビジネスロジックの実装（`src/image_analyzer/logic.py`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392708394
+      }
+    ],
+    "4.2 image-analyzer ハンドラー関数の実装（`src/image_analyzer/handler.py`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392708508
+      }
+    ],
+    "5.1 review-feed ハンドラー関数の実装（`src/review_feed/handler.py`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392708619
+      }
+    ],
+    "6.1 map-service ハンドラー関数の実装（`src/map_service/handler.py`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392708727
+      }
+    ],
+    "7.1 mile-service ビジネスロジックの実装（`src/mile_service/logic.py`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392708836
+      }
+    ],
+    "7.3 mile-service ハンドラー関数の実装（`src/mile_service/handler.py`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392708922
+      }
+    ],
+    "8.1 ad-service ハンドラー関数の実装（`src/ad_service/handler.py`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392709015
+      }
+    ],
+    "9. フェーズ3 チェックポイント": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392709096
+      }
+    ],
+    "10.1 プロジェクト初期設定とルーティング（`frontend/`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392709203
+      }
+    ],
+    "10.2 Cognito 認証フローの実装（`frontend/src/features/auth/`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392709360
+      }
+    ],
+    "10.3 口コミ一覧画面の実装（`frontend/src/features/feed/`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392709453
+      }
+    ],
+    "10.4 コンテキストレコメンド画面の実装（`frontend/src/features/recommend/`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392709531
+      }
+    ],
+    "10.5 口コミ詳細画面の実装（`frontend/src/features/review/`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392709652
+      }
+    ],
+    "10.6 口コミ投稿画面の実装（`frontend/src/features/submit/`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392709760
+      }
+    ],
+    "10.7 マップ画面の実装（`frontend/src/features/map/`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392709880
+      }
+    ],
+    "10.8 マイル・クーポン画面の実装（`frontend/src/features/miles/`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392710014
+      }
+    ],
+    "10.9 協賛企業管理画面の実装（`frontend/src/features/admin/`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392710126
+      }
+    ],
+    "11.1 Cognito 認証フロー統合テストの実装（`tests/e2e/test_auth_flow.py`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392710242
+      }
+    ],
+    "11.2 口コミ投稿 → 画像解析 → フィード公開フローの統合テスト（`tests/e2e/test_review_flow.py`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392710398
+      }
+    ],
+    "11.3 マイル付与 → クーポン交換フローの統合テスト（`tests/e2e/test_mile_flow.py`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392710474
+      }
+    ],
+    "12.1 フロントエンドビルドとデプロイ設定（`frontend/amplify.yml`）": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392710560
+      }
+    ],
+    "12.2 バックエンド Lambda デプロイ最終確認": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392710664
+      }
+    ],
+    "13. 最終チェックポイント": [
+      {
+        "executionId": "076042c6-b369-4ee7-b3cc-6a7db7afa4f3",
+        "chatSessionId": "sess_bb7f7d64-dc37-416e-8a0e-b15d48bace1f",
+        "timestamp": 1785392710774
+      }
+    ],
+    "1. フェーズ1: インフラストラクチャ準備": [
+      {
+        "executionId": "ed171a42-4ccf-4583-b1f8-daf65446735c",
+        "chatSessionId": "sess_1560dbc1-a5d8-4cee-a464-1617bdbd17aa",
+        "timestamp": 1785402422305
+      }
+    ],
+    "1. Wave 0: プロジェクトセットアップ": [
+      {
+        "executionId": "a9c6a89e-b70c-4e1e-9b68-34174e3cd531",
+        "chatSessionId": "sess_f7d4b79d-c7a1-48c4-99a5-da2fd42d3e00",
+        "timestamp": 1785403178387
+      },
+      {
+        "executionId": "aaecccfd-f555-4eb1-a3f1-7acfe7f9ea8a",
+        "chatSessionId": "sess_95d87fc9-fa41-4f73-b8e3-faa500a85dfc",
+        "timestamp": 1785426466543
+      }
+    ],
+    "1.1 Vite + React + TypeScript プロジェクト初期化": [
+      {
+        "executionId": "8dc13aef-7e3a-444a-8d4d-a926ad4ac4c2",
+        "chatSessionId": "sess_2f0a5467-569b-4d74-89bc-91949588e8eb",
+        "timestamp": 1785403964037
+      },
+      {
+        "executionId": "8dc13aef-7e3a-444a-8d4d-a926ad4ac4c2",
+        "chatSessionId": "sess_2f0a5467-569b-4d74-89bc-91949588e8eb",
+        "timestamp": 1785404203990
+      }
+    ],
+    "1.2 Tailwind CSS のセットアップ": [
+      {
+        "executionId": "0b7d477e-9440-4dba-9994-4402ce022443",
+        "chatSessionId": "sess_a97febc4-4818-437d-bf77-0d0ddb3b4969",
+        "timestamp": 1785404235499
+      },
+      {
+        "executionId": "17a66393-fc4e-4ad7-baff-3c5e59f2bfc3",
+        "chatSessionId": "sess_fe9d4053-cb54-4baa-9b7c-d43fc7b8f93d",
+        "timestamp": 1785423768273
+      },
+      {
+        "executionId": "17a66393-fc4e-4ad7-baff-3c5e59f2bfc3",
+        "chatSessionId": "sess_fe9d4053-cb54-4baa-9b7c-d43fc7b8f93d",
+        "timestamp": 1785423886848
+      }
+    ],
+    "1.3 react-router-dom v6 のセットアップ": [
+      {
+        "executionId": "9fd25d5c-7a3a-4b8e-af33-c89656455cd1",
+        "chatSessionId": "sess_6bcb7528-6606-4dca-8ab3-9e5ad8070228",
+        "timestamp": 1785423902099
+      },
+      {
+        "executionId": "9fd25d5c-7a3a-4b8e-af33-c89656455cd1",
+        "chatSessionId": "sess_6bcb7528-6606-4dca-8ab3-9e5ad8070228",
+        "timestamp": 1785425877690
+      }
+    ],
+    "1.4 MSW v2 のセットアップ": [
+      {
+        "executionId": "89eace53-aba8-4aa3-a13f-46ba1f897db5",
+        "chatSessionId": "sess_41e4fed7-6141-41d5-9831-2700bc76cd6f",
+        "timestamp": 1785425894381
+      },
+      {
+        "executionId": "89eace53-aba8-4aa3-a13f-46ba1f897db5",
+        "chatSessionId": "sess_41e4fed7-6141-41d5-9831-2700bc76cd6f",
+        "timestamp": 1785426021657
+      }
+    ],
+    "1.5 react-leaflet のセットアップ": [
+      {
+        "executionId": "c564df9e-c3f5-44a3-9f27-645f5a50e9b5",
+        "chatSessionId": "sess_e3ba4998-c1ba-4efa-9c62-2bab6bb5f46b",
+        "timestamp": 1785426056806
+      },
+      {
+        "executionId": "c564df9e-c3f5-44a3-9f27-645f5a50e9b5",
+        "chatSessionId": "sess_e3ba4998-c1ba-4efa-9c62-2bab6bb5f46b",
+        "timestamp": 1785426196015
+      }
+    ],
+    "1.6 Vitest + Testing Library のセットアップ": [
+      {
+        "executionId": "aaecccfd-f555-4eb1-a3f1-7acfe7f9ea8a",
+        "chatSessionId": "sess_95d87fc9-fa41-4f73-b8e3-faa500a85dfc",
+        "timestamp": 1785426219721
+      },
+      {
+        "executionId": "aaecccfd-f555-4eb1-a3f1-7acfe7f9ea8a",
+        "chatSessionId": "sess_95d87fc9-fa41-4f73-b8e3-faa500a85dfc",
+        "timestamp": 1785426466439
+      }
+    ],
+    "2.1 TypeScript 型定義の作成（`src/mocks/data/types.ts`）": [
+      {
+        "executionId": "28198e06-381a-446f-8ebf-768062d66ccc",
+        "chatSessionId": "sess_1fc3b0e7-39a0-40b4-ae20-b70769acaa59",
+        "timestamp": 1785426500429
+      },
+      {
+        "executionId": "28198e06-381a-446f-8ebf-768062d66ccc",
+        "chatSessionId": "sess_1fc3b0e7-39a0-40b4-ae20-b70769acaa59",
+        "timestamp": 1785426638100
+      }
+    ],
+    "2.2 口コミサンプルデータの作成（`src/mocks/data/reviews.ts`）": [
+      {
+        "executionId": "feba8747-23e2-4e4a-8e1b-0fa6db668c05",
+        "chatSessionId": "sess_e9fbecf8-138b-456b-af0a-c979c559c387",
+        "timestamp": 1785426687158
+      },
+      {
+        "executionId": "bf7427d9-6780-41df-8366-e16ce091ede2",
+        "chatSessionId": "sess_e9fbecf8-138b-456b-af0a-c979c559c387",
+        "timestamp": 1785427286980
+      }
+    ],
+    "2.3 スポットサンプルデータの作成（`src/mocks/data/spots.ts`）": [
+      {
+        "executionId": "a54cad72-db00-4fc9-b1ef-cd172a8acd24",
+        "chatSessionId": "sess_cfa0bc4d-4698-476a-ba22-afac5587405f",
+        "timestamp": 1785427381538
+      },
+      {
+        "executionId": "a54cad72-db00-4fc9-b1ef-cd172a8acd24",
+        "chatSessionId": "sess_cfa0bc4d-4698-476a-ba22-afac5587405f",
+        "timestamp": 1785427458391
+      }
+    ],
+    "2.4 ユーザー・クーポン・取引履歴サンプルデータの作成": [
+      {
+        "executionId": "4da4d76c-cd45-44d8-b8ec-7bb3a8b8d306",
+        "chatSessionId": "sess_aa4235c1-f900-4190-9c11-3b2dac40ffcd",
+        "timestamp": 1785427532782
+      },
+      {
+        "executionId": "4da4d76c-cd45-44d8-b8ec-7bb3a8b8d306",
+        "chatSessionId": "sess_aa4235c1-f900-4190-9c11-3b2dac40ffcd",
+        "timestamp": 1785427855802
+      }
+    ],
+    "2. Wave 1: モックデータ定義": [
+      {
+        "executionId": "4da4d76c-cd45-44d8-b8ec-7bb3a8b8d306",
+        "chatSessionId": "sess_aa4235c1-f900-4190-9c11-3b2dac40ffcd",
+        "timestamp": 1785427855958
+      }
+    ],
+    "3.1 認証ハンドラーの実装（`src/mocks/handlers/auth.ts`）": [
+      {
+        "executionId": "9ebaaa2a-85b8-40b6-81d9-97e1de70e0a5",
+        "chatSessionId": "sess_398f68c0-4bea-4390-8465-0ec95ddfba1d",
+        "timestamp": 1785427894353
+      },
+      {
+        "executionId": "9ebaaa2a-85b8-40b6-81d9-97e1de70e0a5",
+        "chatSessionId": "sess_398f68c0-4bea-4390-8465-0ec95ddfba1d",
+        "timestamp": 1785428021978
+      }
+    ],
+    "3.2 口コミ系ハンドラーの実装（`src/mocks/handlers/reviews.ts`）": [
+      {
+        "executionId": "e07a324d-f85e-4242-9f17-517e482fe1f6",
+        "chatSessionId": "sess_ad31dd8b-d9e3-4556-b1c3-d3d58039f188",
+        "timestamp": 1785428038135
+      },
+      {
+        "executionId": "e07a324d-f85e-4242-9f17-517e482fe1f6",
+        "chatSessionId": "sess_ad31dd8b-d9e3-4556-b1c3-d3d58039f188",
+        "timestamp": 1785428687625
+      }
+    ],
+    "3.3 スポット・マイル・クーポンハンドラーの実装": [
+      {
+        "executionId": "2208c875-e81d-4a42-a37d-fedfabd94fb0",
+        "chatSessionId": "sess_5735fbf7-9fb6-44c8-b4dc-3eb8ecbd3eb5",
+        "timestamp": 1785430909174
+      },
+      {
+        "executionId": "2208c875-e81d-4a42-a37d-fedfabd94fb0",
+        "chatSessionId": "sess_5735fbf7-9fb6-44c8-b4dc-3eb8ecbd3eb5",
+        "timestamp": 1785431165534
+      }
+    ],
+    "3.4 MSW ハンドラーのエントリポイント統合（`src/mocks/handlers/index.ts`）": [
+      {
+        "executionId": "005cd2c5-298f-40ac-a265-bb7fe87f9e76",
+        "chatSessionId": "sess_9f1d6c45-5fe4-4ca7-96d0-988107cc05a6",
+        "timestamp": 1785431186489
+      },
+      {
+        "executionId": "005cd2c5-298f-40ac-a265-bb7fe87f9e76",
+        "chatSessionId": "sess_9f1d6c45-5fe4-4ca7-96d0-988107cc05a6",
+        "timestamp": 1785431271640
+      }
+    ],
+    "3. Wave 2: MSW ハンドラー実装": [
+      {
+        "executionId": "005cd2c5-298f-40ac-a265-bb7fe87f9e76",
+        "chatSessionId": "sess_9f1d6c45-5fe4-4ca7-96d0-988107cc05a6",
+        "timestamp": 1785431271817
+      }
+    ],
+    "4.1 バリデーション関数の実装（`src/utils/validators.ts`）": [
+      {
+        "executionId": "cb6b681f-4987-4acf-840b-8efe78c97a78",
+        "chatSessionId": "sess_e02fb494-0dc5-49b3-908e-d5f1ecd0a7ef",
+        "timestamp": 1785431338851
+      },
+      {
+        "executionId": "49c4f40f-ae41-4394-8d38-063b1d1dd5c5",
+        "chatSessionId": "sess_94133bb2-9d20-49c8-9048-a210b9a2771b",
+        "timestamp": 1785433149553
+      },
+      {
+        "executionId": "49c4f40f-ae41-4394-8d38-063b1d1dd5c5",
+        "chatSessionId": "sess_94133bb2-9d20-49c8-9048-a210b9a2771b",
+        "timestamp": 1785433273288
+      }
+    ],
+    "4.2 時間帯・平日判定関数の実装（`src/utils/timeUtils.ts`）": [
+      {
+        "executionId": "cb6b681f-4987-4acf-840b-8efe78c97a78",
+        "chatSessionId": "sess_e02fb494-0dc5-49b3-908e-d5f1ecd0a7ef",
+        "timestamp": 1785431343335
+      },
+      {
+        "executionId": "37f5219a-1df0-42d0-9bc5-fbababd2444c",
+        "chatSessionId": "sess_01806e72-45a8-4000-8176-c9e1165fb8aa",
+        "timestamp": 1785432479750
+      },
+      {
+        "executionId": "37f5219a-1df0-42d0-9bc5-fbababd2444c",
+        "chatSessionId": "sess_01806e72-45a8-4000-8176-c9e1165fb8aa",
+        "timestamp": 1785432554189
+      }
+    ],
+    "4.3 スコアリング計算関数の実装（`src/utils/scoring.ts`）": [
+      {
+        "executionId": "cb6b681f-4987-4acf-840b-8efe78c97a78",
+        "chatSessionId": "sess_e02fb494-0dc5-49b3-908e-d5f1ecd0a7ef",
+        "timestamp": 1785431344502
+      },
+      {
+        "executionId": "9888af26-a314-416a-9a0d-ab8b5b7c2517",
+        "chatSessionId": "sess_94133bb2-9d20-49c8-9048-a210b9a2771b",
+        "timestamp": 1785432969635
+      },
+      {
+        "executionId": "9888af26-a314-416a-9a0d-ab8b5b7c2517",
+        "chatSessionId": "sess_94133bb2-9d20-49c8-9048-a210b9a2771b",
+        "timestamp": 1785433092903
+      }
+    ],
+    "4.4 フィード取得・フィルタリング関数の実装（`src/utils/feedUtils.ts`）": [
+      {
+        "executionId": "cb6b681f-4987-4acf-840b-8efe78c97a78",
+        "chatSessionId": "sess_e02fb494-0dc5-49b3-908e-d5f1ecd0a7ef",
+        "timestamp": 1785431345848
+      },
+      {
+        "executionId": "cb6b681f-4987-4acf-840b-8efe78c97a78",
+        "chatSessionId": "sess_e02fb494-0dc5-49b3-908e-d5f1ecd0a7ef",
+        "timestamp": 1785431456325
+      }
+    ],
+    "4.5 Haversine 距離計算・スポット検索関数の実装（`src/utils/geoUtils.ts`）": [
+      {
+        "executionId": "cb6b681f-4987-4acf-840b-8efe78c97a78",
+        "chatSessionId": "sess_e02fb494-0dc5-49b3-908e-d5f1ecd0a7ef",
+        "timestamp": 1785431347366
+      },
+      {
+        "executionId": "cb6b681f-4987-4acf-840b-8efe78c97a78",
+        "chatSessionId": "sess_e02fb494-0dc5-49b3-908e-d5f1ecd0a7ef",
+        "timestamp": 1785431457692
+      }
+    ],
+    "4.6 マイル・クーポン関連の純粋関数の実装（`src/utils/mileUtils.ts`）": [
+      {
+        "executionId": "cb6b681f-4987-4acf-840b-8efe78c97a78",
+        "chatSessionId": "sess_e02fb494-0dc5-49b3-908e-d5f1ecd0a7ef",
+        "timestamp": 1785431348658
+      },
+      {
+        "executionId": "7ac57c2e-a930-4976-8f01-fb67022049fe",
+        "chatSessionId": "sess_93e6077e-c783-423a-8697-e5891f96cdf7",
+        "timestamp": 1785433293174
+      },
+      {
+        "executionId": "422043ce-ff44-4024-a6c5-61e0d3434786",
+        "chatSessionId": "sess_efc26187-f6d6-4e7f-855e-ee67f617ffc9",
+        "timestamp": 1785435776859
+      },
+      {
+        "executionId": "422043ce-ff44-4024-a6c5-61e0d3434786",
+        "chatSessionId": "sess_efc26187-f6d6-4e7f-855e-ee67f617ffc9",
+        "timestamp": 1785435859288
+      }
+    ],
+    "4. Wave 3: 共通ユーティリティ（純粋関数）": [
+      {
+        "executionId": "422043ce-ff44-4024-a6c5-61e0d3434786",
+        "chatSessionId": "sess_efc26187-f6d6-4e7f-855e-ee67f617ffc9",
+        "timestamp": 1785435859391
+      }
+    ],
+    "5.1 バリデーション関数の PBT（`src/utils/__tests__/validators.pbt.test.ts`）": [
+      {
+        "executionId": "543c4c9c-4545-4791-8a1e-f3a986f63a4c",
+        "chatSessionId": "sess_547ed029-bb62-49a1-b73f-16049649641e",
+        "timestamp": 1785435874678
+      },
+      {
+        "executionId": "543c4c9c-4545-4791-8a1e-f3a986f63a4c",
+        "chatSessionId": "sess_547ed029-bb62-49a1-b73f-16049649641e",
+        "timestamp": 1785436007472
+      }
+    ],
+    "5.2 時間帯・平日判定の PBT（`src/utils/__tests__/timeUtils.pbt.test.ts`）": [
+      {
+        "executionId": "56d1ecba-84ec-4d12-8035-40eb06cf43f8",
+        "chatSessionId": "sess_e733f2f4-e9cc-4e48-829c-c1651588e7d1",
+        "timestamp": 1785436020855
+      },
+      {
+        "executionId": "65a8cc0b-0e02-4e9a-951d-9c20816b6eb1",
+        "chatSessionId": "sess_6c7ae0b4-2c6b-403d-97f1-8a77e57a1a00",
+        "timestamp": 1785514733748
+      },
+      {
+        "executionId": "65a8cc0b-0e02-4e9a-951d-9c20816b6eb1",
+        "chatSessionId": "sess_6c7ae0b4-2c6b-403d-97f1-8a77e57a1a00",
+        "timestamp": 1785514845561
+      }
+    ],
+    "5.3 フィード取得・フィルタリングの PBT（`src/utils/__tests__/feedUtils.pbt.test.ts`）": [
+      {
+        "executionId": "fc011d46-add8-4e6e-ad84-ef95ddf85fe6",
+        "chatSessionId": "sess_02612725-cd45-4df8-ae72-027bc8160132",
+        "timestamp": 1785454858504
+      },
+      {
+        "executionId": "fc011d46-add8-4e6e-ad84-ef95ddf85fe6",
+        "chatSessionId": "sess_02612725-cd45-4df8-ae72-027bc8160132",
+        "timestamp": 1785456127585
+      }
+    ],
+    "5.4 レコメンド・Haversine の PBT（`src/utils/__tests__/scoring.pbt.test.ts`）": [
+      {
+        "executionId": "6a92aefc-0581-4684-a52f-fb7be19af5eb",
+        "chatSessionId": "sess_1fe50dc9-fd97-4299-af05-b23ace0a96a1",
+        "timestamp": 1785470800221
+      },
+      {
+        "executionId": "6a92aefc-0581-4684-a52f-fb7be19af5eb",
+        "chatSessionId": "sess_1fe50dc9-fd97-4299-af05-b23ace0a96a1",
+        "timestamp": 1785471085156
+      }
+    ],
+    "5.5 マイル・クーポン・いいねの PBT（`src/utils/__tests__/mileUtils.pbt.test.ts`）": [
+      {
+        "executionId": "5725d3a2-f432-4000-855f-98f339d7680a",
+        "chatSessionId": "sess_d97bdb44-cc9e-44c0-b623-89a3773f67bf",
+        "timestamp": 1785514487951
+      },
+      {
+        "executionId": "5725d3a2-f432-4000-855f-98f339d7680a",
+        "chatSessionId": "sess_d97bdb44-cc9e-44c0-b623-89a3773f67bf",
+        "timestamp": 1785514715647
+      }
+    ],
+    "5. Wave 4: PBT 実装（fast-check）": [
+      {
+        "executionId": "65a8cc0b-0e02-4e9a-951d-9c20816b6eb1",
+        "chatSessionId": "sess_6c7ae0b4-2c6b-403d-97f1-8a77e57a1a00",
+        "timestamp": 1785514845654
+      }
+    ],
+    "6.1 AuthContext の実装（`src/contexts/AuthContext.tsx`）": [
+      {
+        "executionId": "66878b1c-37c6-4a86-bf45-939194ce2903",
+        "chatSessionId": "sess_671a0eb4-ac8a-42c3-8494-8959e70d22c6",
+        "timestamp": 1785514861135
+      },
+      {
+        "executionId": "66878b1c-37c6-4a86-bf45-939194ce2903",
+        "chatSessionId": "sess_671a0eb4-ac8a-42c3-8494-8959e70d22c6",
+        "timestamp": 1785515011863
+      }
+    ],
+    "6.2 MileContext の実装（`src/contexts/MileContext.tsx`）": [
+      {
+        "executionId": "29898688-9c6f-4766-a914-bd504af80434",
+        "chatSessionId": "sess_57bb9064-36f9-48ad-90d3-741035a45c0c",
+        "timestamp": 1785515033614
+      },
+      {
+        "executionId": "29898688-9c6f-4766-a914-bd504af80434",
+        "chatSessionId": "sess_57bb9064-36f9-48ad-90d3-741035a45c0c",
+        "timestamp": 1785515163364
+      }
+    ],
+    "6.3 Layout コンポーネントの実装（`src/components/Layout/`）": [
+      {
+        "executionId": "c0ebd86d-c2e3-4d88-93bc-af605ea25f8e",
+        "chatSessionId": "sess_7de92718-1e10-4c14-ae8d-c0058674d162",
+        "timestamp": 1785515180149
+      },
+      {
+        "executionId": "c0ebd86d-c2e3-4d88-93bc-af605ea25f8e",
+        "chatSessionId": "sess_7de92718-1e10-4c14-ae8d-c0058674d162",
+        "timestamp": 1785515369204
+      }
+    ],
+    "6.4 共通コンポーネントの実装（`src/components/`）": [
+      {
+        "executionId": "4c52efbd-4b80-47b2-ba01-75c10d5afafd",
+        "chatSessionId": "sess_019571e8-8ed1-4557-a08c-6edb7f478c9e",
+        "timestamp": 1785574443756
+      },
+      {
+        "executionId": "4c52efbd-4b80-47b2-ba01-75c10d5afafd",
+        "chatSessionId": "sess_019571e8-8ed1-4557-a08c-6edb7f478c9e",
+        "timestamp": 1785574929384
+      }
+    ],
+    "6. Wave 5: 認証コンテキスト + レイアウト + 共通コンポーネント": [
+      {
+        "executionId": "4c52efbd-4b80-47b2-ba01-75c10d5afafd",
+        "chatSessionId": "sess_019571e8-8ed1-4557-a08c-6edb7f478c9e",
+        "timestamp": 1785574929506
+      }
+    ],
+    "7.1 ログイン画面の実装（`src/features/auth/LoginPage.tsx`）": [
+      {
+        "executionId": "1a2495c9-0b09-4160-b78e-1f1316a5ad84",
+        "chatSessionId": "sess_da914745-a386-4fb4-9e2f-c5c0609f6d4c",
+        "timestamp": 1785574974718
+      },
+      {
+        "executionId": "1a2495c9-0b09-4160-b78e-1f1316a5ad84",
+        "chatSessionId": "sess_da914745-a386-4fb4-9e2f-c5c0609f6d4c",
+        "timestamp": 1785575079377
+      }
+    ],
+    "7.2 口コミフィード画面の実装（`src/features/feed/FeedPage.tsx`）": [
+      {
+        "executionId": "e05f4cb4-1adc-407c-91c7-0fe7aa666e96",
+        "chatSessionId": "sess_50980ce2-5b8d-4556-9bd7-e3958ed70e16",
+        "timestamp": 1785575113414
+      },
+      {
+        "executionId": "e05f4cb4-1adc-407c-91c7-0fe7aa666e96",
+        "chatSessionId": "sess_50980ce2-5b8d-4556-9bd7-e3958ed70e16",
+        "timestamp": 1785575340401
+      }
+    ],
+    "7.3 口コミ詳細画面の実装（`src/features/review/ReviewDetailPage.tsx`）": [
+      {
+        "executionId": "ad73bdf0-4fcc-417a-81b2-cdd094ed78d6",
+        "chatSessionId": "sess_e7f4bfca-9b76-4790-bdb0-c17534170d3a",
+        "timestamp": 1785580667103
+      },
+      {
+        "executionId": "ad73bdf0-4fcc-417a-81b2-cdd094ed78d6",
+        "chatSessionId": "sess_e7f4bfca-9b76-4790-bdb0-c17534170d3a",
+        "timestamp": 1785580872467
+      }
+    ],
+    "7. Wave 6: 口コミフィード画面 + 詳細画面": [
+      {
+        "executionId": "ad73bdf0-4fcc-417a-81b2-cdd094ed78d6",
+        "chatSessionId": "sess_e7f4bfca-9b76-4790-bdb0-c17534170d3a",
+        "timestamp": 1785580872589
+      }
+    ],
+    "8.1 口コミ投稿画面の実装（`src/features/submit/SubmitPage.tsx`）": [
+      {
+        "executionId": "f2dd8cb4-6f13-4fcf-8679-1a3714b5d957",
+        "chatSessionId": "sess_351ffaec-e125-491f-875f-ec2675a307f4",
+        "timestamp": 1785580978925
+      },
+      {
+        "executionId": "f2dd8cb4-6f13-4fcf-8679-1a3714b5d957",
+        "chatSessionId": "sess_351ffaec-e125-491f-875f-ec2675a307f4",
+        "timestamp": 1785581227179
+      }
+    ],
+    "8.2 マップ画面の実装（`src/features/map/MapPage.tsx`）": [
+      {
+        "executionId": "7e98020f-452b-491c-8b3c-288f6a811591",
+        "chatSessionId": "sess_12d8340f-4558-4c11-88d9-3db2a728e3fa",
+        "timestamp": 1785581244322
+      },
+      {
+        "executionId": "7a656097-08c7-4180-9b78-0bbf57f6d0c2",
+        "chatSessionId": "sess_a7aa3dff-9f59-4566-b27d-c0ddf1f0e79b",
+        "timestamp": 1785581732574
+      },
+      {
+        "executionId": "e82e5e2f-0bd1-427e-bc38-f7b759511c9b",
+        "chatSessionId": "sess_af72abfa-6679-4442-ac32-7454a96f8409",
+        "timestamp": 1785583608093
+      }
+    ],
+    "8. Wave 7: 口コミ投稿画面 + マップ画面": [
+      {
+        "executionId": "e82e5e2f-0bd1-427e-bc38-f7b759511c9b",
+        "chatSessionId": "sess_af72abfa-6679-4442-ac32-7454a96f8409",
+        "timestamp": 1785583608261
+      }
+    ],
+    "9.1 マイル・クーポン画面の実装（`src/features/miles/MilesPage.tsx`）": [
+      {
+        "executionId": "428dcc1d-55e5-4f32-ae12-97755f41a814",
+        "chatSessionId": "sess_3a99153a-1efa-466c-b9ba-7881ab81b5c1",
+        "timestamp": 1785583622326
+      },
+      {
+        "executionId": "428dcc1d-55e5-4f32-ae12-97755f41a814",
+        "chatSessionId": "sess_3a99153a-1efa-466c-b9ba-7881ab81b5c1",
+        "timestamp": 1785584512915
+      }
+    ],
+    "9.2 管理画面の実装（`src/features/admin/AdminPage.tsx`）": [
+      {
+        "executionId": "fab96d33-d073-44a3-8ddf-b571965c63ea",
+        "chatSessionId": "sess_130744d5-4d3a-424c-8d44-d4715e71427d",
+        "timestamp": 1785584561104
+      },
+      {
+        "executionId": "fab96d33-d073-44a3-8ddf-b571965c63ea",
+        "chatSessionId": "sess_130744d5-4d3a-424c-8d44-d4715e71427d",
+        "timestamp": 1785585783578
+      }
+    ],
+    "9. Wave 8: マイル・クーポン画面 + 管理画面": [
+      {
+        "executionId": "fab96d33-d073-44a3-8ddf-b571965c63ea",
+        "chatSessionId": "sess_130744d5-4d3a-424c-8d44-d4715e71427d",
+        "timestamp": 1785585783696
+      }
+    ],
+    "10.1 共通ユーティリティの単体テスト（example-based）": [
+      {
+        "executionId": "581940fd-743a-40aa-8321-30d5727816e8",
+        "chatSessionId": "sess_efacea8b-1387-497b-aad7-4188721fcb2f",
+        "timestamp": 1785585801544
+      },
+      {
+        "executionId": "ff97bbdf-b863-4d1e-aa85-11e74a67a8c4",
+        "chatSessionId": "sess_46b8264e-06e5-4e61-88f8-6b9dac1cff1d",
+        "timestamp": 1785586333128
+      }
+    ],
+    "10.2 コンポーネントの MSW インテグレーションテスト": [
+      {
+        "executionId": "362ccd33-36c7-46ba-a67b-848a9feffeb7",
+        "chatSessionId": "sess_d595af98-2287-4eb6-9637-0fa7ac74c187",
+        "timestamp": 1785586605426
+      }
+    ]
+  }
+}
