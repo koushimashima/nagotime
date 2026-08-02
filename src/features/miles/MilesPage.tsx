@@ -212,28 +212,28 @@ export function MilesPage() {
             >
               {historyOpen ? '取引履歴を閉じる ▲' : '取引履歴 ▼'}
             </button>
-            {historyOpen && (
-              <div className="mt-3 w-full">
-                <div className="border-t border-orange-400/30 pt-3">
-                  <h3 className="text-xs font-semibold text-orange-100 mb-2">取引履歴</h3>
-                  <div className="space-y-2 max-h-40 overflow-y-auto pr-2">
-                    {transactions.length > 0 ? (
-                      transactions.slice(0, 5).map((t) => (
-                        <div key={t.transactionId} className="flex justify-between items-center text-xs">
-                          <span className="text-orange-100 truncate">{TRANSACTION_TYPE_LABEL[t.type] || t.type}</span>
-                          <span className="text-orange-100 font-medium">
-                            {t.amount > 0 ? '+' : ''}{t.amount.toLocaleString()} マイル
-                          </span>
-                        </div>
-                      ))
-                    ) : (
-                      <p className="text-xs text-orange-200">取引履歴がありません</p>
-                    )}
-                  </div>
+          </div>
+          {historyOpen && (
+            <div className="mt-3 w-full">
+              <div className="border-t border-orange-400/30 pt-3">
+                <h3 className="text-xs font-semibold text-orange-100 mb-2">取引履歴</h3>
+                <div className="space-y-2 max-h-40 overflow-y-auto pr-2">
+                  {transactions.length > 0 ? (
+                    transactions.slice(0, 5).map((t) => (
+                      <div key={t.transactionId} className="flex justify-between items-center text-xs">
+                        <span className="text-orange-100 truncate">{TRANSACTION_TYPE_LABEL[t.type] || t.type}</span>
+                        <span className="text-orange-100 font-medium">
+                          {t.amount > 0 ? '+' : ''}{t.amount.toLocaleString()} マイル
+                        </span>
+                      </div>
+                    ))
+                  ) : (
+                    <p className="text-xs text-orange-200">取引履歴がありません</p>
+                  )}
                 </div>
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
 
 
