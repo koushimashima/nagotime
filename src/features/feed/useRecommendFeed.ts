@@ -2,6 +2,7 @@
 // レコメンドフィード取得カスタムフック（Requirements 2.2, 6.1, 6.2）
 //
 // - GET /api/reviews/recommend にコンテキストパラメータを渡してスコア降順の口コミを取得する
+// - weather / timeSlot が null の場合はそのパラメータを省略して全件取得する
 // - params の変化を JSON.stringify のキーで検知し、変化のたびに再フェッチする
 // - ページネーションなし（最大 20 件はAPIが保証）
 
@@ -14,8 +15,8 @@ import type { Review, Weather, TimeSlot } from '../../mocks/data/types'
 export interface RecommendFeedParams {
   lat: number
   lon: number
-  weather: Weather
-  timeSlot: TimeSlot
+  weather: Weather | null  // null = フィルタ無効（パラメータ省略）
+  timeSlot: TimeSlot | null // null = フィルタ無効（パラメータ省略）
 }
 
 /** レコメンドフィードの状態 */
@@ -41,6 +42,7 @@ interface RecommendApiResponse {
  *
  * `/api/reviews/recommend` に lat/lon/weather/timeSlot を渡し、
  * スコア降順の口コミリスト（最大20件）を返す。
+ * weather / timeSlot が null の場合はそのパラメータをクエリから省略する。
  *
  * @param params フェッチパラメータ。値が変わるたびに再フェッチする。
  */
@@ -59,8 +61,14 @@ export function useRecommendFeed(params: RecommendFeedParams): RecommendFeedStat
       setLoading(true)
       setError(null)
       try {
-        const url = `/api/reviews/recommend?lat=${lat}&lon=${lon}&weather=${weather}&timeSlot=${timeSlot}`
-        const res = await fetch(url)
+        // null のパラメータは省略してクエリ文字列を組み立てる
+        const query = new URLSearchParams()
+        query.set('lat', String(lat))
+        query.set('lon', String(lon))
+        if (weather !== null)   query.set('weather', weather)
+        if (timeSlot !== null)  query.set('timeSlot', timeSlot)
+
+        const res = await fetch(`/api/reviews/recommend?${query.toString()}`)
 
         if (!res.ok) {
           const body = await res.json().catch(() => ({}))

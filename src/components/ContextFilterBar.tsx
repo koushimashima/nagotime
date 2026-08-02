@@ -3,6 +3,7 @@
 // Requirements: 2.1, 2.2, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 7.1, 7.2, 7.3, 8.1, 8.4
 
 import { useState } from 'react'
+import { Filter, RotateCcw } from 'lucide-react'
 import { useRecommendContext } from '../contexts/RecommendContext'
 import { LoadingSpinner } from './LoadingSpinner'
 import type { TimeSlot, DayType, Weather } from '../mocks/data/types'
@@ -29,20 +30,17 @@ const DAY_TYPE_LABEL: Record<DayType, string> = {
 const TIME_SLOT_ORDER: TimeSlot[] = ['MORNING', 'AFTERNOON', 'EVENING', 'NIGHT']
 const DAY_TYPE_ORDER: DayType[]   = ['WEEKDAY', 'HOLIDAY']
 
-// ---- 天気メタデータ ----
+// ---- 天気メタデータ（絵文字なし） ----
 
 const WEATHER_LABEL: Record<Weather, string> = {
   SUNNY: '晴れ', CLOUDY: '曇り', RAINY: '雨', SNOWY: '雪', UNKNOWN: '不明',
-}
-const WEATHER_ICON: Record<Weather, string> = {
-  SUNNY: '☀️', CLOUDY: '☁️', RAINY: '🌧', SNOWY: '❄️', UNKNOWN: '？',
 }
 const WEATHER_ORDER: Weather[] = ['SUNNY', 'CLOUDY', 'RAINY', 'SNOWY']
 
 // ---- コンポーネント ----
 
 /**
- * 時間帯・曜日種別フィルタチップ UI。
+ * 時間帯・曜日種別・天気フィルタチップ UI。
  * props は持たず、useRecommendContext() からすべてのデータを取得する。
  *
  * Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 7.1, 7.2, 7.3, 8.1, 8.4
@@ -56,7 +54,9 @@ export function ContextFilterBar() {
     setFilterDayType,
     setFilterWeather,
     resetFilters,
+    clearFilters,
     isFilterModified,
+    isAnyFilterActive,
     locating,
     locationError,
   } = useRecommendContext()
@@ -90,7 +90,18 @@ export function ContextFilterBar() {
     'relative inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium cursor-pointer select-none border transition-colors'
   const chipNormal    = 'bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200'
   const chipModified  = 'bg-orange-500 text-white border-orange-500 hover:bg-orange-600'
-  const chipClassName = `${chipBase} ${isFilterModified ? chipModified : chipNormal}`
+  const chipInactive  = 'bg-gray-100 text-gray-400 border-gray-200 hover:bg-gray-200 opacity-60'
+
+  // フィルタが完全解除（null）かどうかでチップスタイルを決定
+  const timeSlotChipClass = `${chipBase} ${
+    filterTimeSlot === null ? chipInactive : (isFilterModified ? chipModified : chipNormal)
+  }`
+  const dayTypeChipClass = `${chipBase} ${
+    filterDayType === null ? chipInactive : (isFilterModified ? chipModified : chipNormal)
+  }`
+  const weatherChipClass = `${chipBase} ${
+    filterWeather === null ? chipInactive : (isFilterModified ? chipModified : chipNormal)
+  }`
 
   // ---- ドロップダウン共通スタイル ----
   const dropdownBase =
@@ -130,35 +141,54 @@ export function ContextFilterBar() {
     setOpenDropdown(null)
   }
 
-  // ---- アリアラベル ----
-  const timeSlotMeta = TIME_SLOT_META[filterTimeSlot]
-  const timeSlotAriaLabel = `時間帯フィルタ: ${timeSlotMeta.label} (${timeSlotMeta.range})`
-  const dayTypeAriaLabel  = `曜日フィルタ: ${DAY_TYPE_LABEL[filterDayType]}`
+  function handleClearAll() {
+    clearFilters()
+    setOpenDropdown(null)
+  }
+
+  // ---- 表示ラベル（null のときはプレースホルダー） ----
+  const timeSlotMeta = filterTimeSlot ? TIME_SLOT_META[filterTimeSlot] : null
+  const timeSlotAriaLabel = timeSlotMeta
+    ? `時間帯フィルタ: ${timeSlotMeta.label} (${timeSlotMeta.range})`
+    : '時間帯フィルタ: すべて'
+  const dayTypeAriaLabel = filterDayType
+    ? `曜日フィルタ: ${DAY_TYPE_LABEL[filterDayType]}`
+    : '曜日フィルタ: すべて'
 
   return (
     <div
       className="flex items-center gap-2 px-4 py-2 flex-wrap"
-      // クリック伝播でドロップダウンを閉じる（チップ外クリック時）
       onClick={(e) => {
-        // チップ自体のクリックは各ハンドラで管理するため、バブル時のみ閉じる
         const target = e.target as HTMLElement
         if (!target.closest('[data-chip]')) {
           setOpenDropdown(null)
         }
       }}
     >
+      {/* ろうとアイコン */}
+      <Filter
+        className="w-4 h-4 text-gray-400 flex-shrink-0"
+        aria-hidden="true"
+      />
+
       {/* 時間帯チップ */}
       <div className="relative" data-chip>
         <button
           type="button"
-          className={chipClassName}
+          className={timeSlotChipClass}
           aria-label={timeSlotAriaLabel}
           aria-haspopup="listbox"
           aria-expanded={openDropdown === 'timeSlot'}
           onClick={handleTimeSlotChipClick}
         >
-          {timeSlotMeta.label}
-          <span className="text-xs opacity-75">({timeSlotMeta.range})</span>
+          {timeSlotMeta ? (
+            <>
+              {timeSlotMeta.label}
+              <span className="text-xs opacity-75">({timeSlotMeta.range})</span>
+            </>
+          ) : (
+            <span className="text-xs">時間帯</span>
+          )}
           <span className="ml-1 text-xs opacity-60" aria-hidden="true">▾</span>
         </button>
 
@@ -195,13 +225,17 @@ export function ContextFilterBar() {
       <div className="relative" data-chip>
         <button
           type="button"
-          className={chipClassName}
+          className={dayTypeChipClass}
           aria-label={dayTypeAriaLabel}
           aria-haspopup="listbox"
           aria-expanded={openDropdown === 'dayType'}
           onClick={handleDayTypeChipClick}
         >
-          {DAY_TYPE_LABEL[filterDayType]}
+          {filterDayType ? (
+            DAY_TYPE_LABEL[filterDayType]
+          ) : (
+            <span className="text-xs">曜日</span>
+          )}
           <span className="ml-1 text-xs opacity-60" aria-hidden="true">▾</span>
         </button>
 
@@ -232,17 +266,21 @@ export function ContextFilterBar() {
         )}
       </div>
 
-      {/* 天気チップ */}
+      {/* 天気チップ（絵文字なし） */}
       <div className="relative" data-chip>
         <button
           type="button"
-          className={chipClassName}
-          aria-label={`天気フィルタ: ${WEATHER_LABEL[filterWeather]}`}
+          className={weatherChipClass}
+          aria-label={`天気フィルタ: ${filterWeather ? WEATHER_LABEL[filterWeather] : 'すべて'}`}
           aria-haspopup="listbox"
           aria-expanded={openDropdown === 'weather'}
           onClick={handleWeatherChipClick}
         >
-          {WEATHER_ICON[filterWeather]}{WEATHER_LABEL[filterWeather]}
+          {filterWeather ? (
+            WEATHER_LABEL[filterWeather]
+          ) : (
+            <span className="text-xs">天気</span>
+          )}
           <span className="ml-1 text-xs opacity-60" aria-hidden="true">▾</span>
         </button>
 
@@ -265,7 +303,7 @@ export function ContextFilterBar() {
                   }`}
                   onClick={() => handleSelectWeather(w)}
                 >
-                  {WEATHER_ICON[w]} {WEATHER_LABEL[w]}
+                  {WEATHER_LABEL[w]}
                 </li>
               )
             })}
@@ -283,8 +321,22 @@ export function ContextFilterBar() {
                      hover:bg-orange-50 transition-colors cursor-pointer"
           onClick={handleReset}
         >
-          <span aria-hidden="true">✕</span>
+          <RotateCcw className="w-3.5 h-3.5" aria-hidden="true" />
           リセット
+        </button>
+      )}
+
+      {/* 全フィルター解除ボタン（いずれかのフィルタが有効な時のみ表示） */}
+      {isAnyFilterActive && (
+        <button
+          type="button"
+          aria-label="すべてのフィルターを解除して全口コミを表示"
+          className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium
+                     bg-gray-100 text-gray-500 border border-gray-300
+                     hover:bg-gray-200 transition-colors cursor-pointer"
+          onClick={handleClearAll}
+        >
+          すべて表示
         </button>
       )}
     </div>

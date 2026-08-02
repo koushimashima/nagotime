@@ -17,6 +17,7 @@ import {
 } from 'react-leaflet'
 import type { LatLngExpression } from 'leaflet'
 import { LoadingSpinner } from '../../components/LoadingSpinner'
+import { ContextFilterBar } from '../../components/ContextFilterBar'
 import { useRecommendContext } from '../../contexts/RecommendContext'
 import { PhotoPin } from './PhotoPin'
 
@@ -130,6 +131,11 @@ export function MapPage() {
 
   return (
     <div className="flex flex-col h-[calc(100vh-4rem)]">
+
+      {/* ---- コンテキストフィルタバー ---- */}
+      <div className="bg-white border-b border-gray-200 flex-shrink-0">
+        <ContextFilterBar />
+      </div>
 
       {/* ---- 地図 ---- */}
       <div className="flex-1 relative">

@@ -30,14 +30,16 @@ interface RecommendState {
   dayType: DayType // 現在曜日から自動計算
 
   // フィルタ状態（ユーザーが変更可能）
-  filterTimeSlot: TimeSlot
-  filterDayType: DayType
-  filterWeather: Weather
+  filterTimeSlot: TimeSlot | null // null = フィルタ無効（すべて表示）
+  filterDayType: DayType | null   // null = フィルタ無効（すべて表示）
+  filterWeather: Weather | null   // null = フィルタ無効（すべて表示）
   setFilterTimeSlot: (ts: TimeSlot) => void
   setFilterDayType: (dt: DayType) => void
   setFilterWeather: (w: Weather) => void
   resetFilters: () => void
+  clearFilters: () => void // フィルタを完全解除（すべての口コミを表示）
   isFilterModified: boolean // フィルタがデフォルト（Context値）から変更されているか
+  isAnyFilterActive: boolean // いずれかのフィルタが有効な状態か
 
   // フィード・マップ間の共有口コミリスト
   sharedReviews: Review[]
@@ -83,10 +85,10 @@ export function RecommendProvider({ children }: RecommendProviderProps) {
   const timeSlot: TimeSlot = initialTimeSlot
   const dayType: DayType = initialDayType
 
-  // フィルタ状態（初期値は timeSlot / dayType / weather と同じ）
-  const [filterTimeSlot, setFilterTimeSlot] = useState<TimeSlot>(initialTimeSlot)
-  const [filterDayType, setFilterDayType] = useState<DayType>(initialDayType)
-  const [filterWeather, setFilterWeather] = useState<Weather>(weather)
+  // フィルタ状態（初期値は timeSlot / dayType / weather と同じ。null = フィルタ無効）
+  const [filterTimeSlot, setFilterTimeSlot] = useState<TimeSlot | null>(initialTimeSlot)
+  const [filterDayType, setFilterDayType] = useState<DayType | null>(initialDayType)
+  const [filterWeather, setFilterWeather] = useState<Weather | null>(weather)
 
   // 共有口コミリスト（FeedPage → MapPage へ共有）
   const [sharedReviews, setSharedReviews] = useState<Review[]>([])
@@ -162,6 +164,15 @@ export function RecommendProvider({ children }: RecommendProviderProps) {
     setFilterWeather(weather)
   }
 
+  /**
+   * フィルタを完全解除する（すべての口コミを表示）
+   */
+  function clearFilters(): void {
+    setFilterTimeSlot(null)
+    setFilterDayType(null)
+    setFilterWeather(null)
+  }
+
   // ---- isFilterModified（useMemo で算出） ----
 
   const isFilterModified = useMemo(
@@ -170,6 +181,12 @@ export function RecommendProvider({ children }: RecommendProviderProps) {
       filterDayType !== dayType ||
       filterWeather !== weather,
     [filterTimeSlot, filterDayType, filterWeather, timeSlot, dayType, weather],
+  )
+
+  // いずれかのフィルタが有効（非 null）かどうか
+  const isAnyFilterActive = useMemo(
+    () => filterTimeSlot !== null || filterDayType !== null || filterWeather !== null,
+    [filterTimeSlot, filterDayType, filterWeather],
   )
 
   // ---- Context 値の組み立て ----
@@ -186,7 +203,9 @@ export function RecommendProvider({ children }: RecommendProviderProps) {
     setFilterDayType,
     setFilterWeather,
     resetFilters,
+    clearFilters,
     isFilterModified,
+    isAnyFilterActive,
     sharedReviews,
     setSharedReviews,
     locating,
