@@ -178,7 +178,11 @@ export function ContextFilterBar() {
         }`}
         onClick={isAnyFilterActive ? handleClearAll : undefined}
       >
-        <Filter className="w-4 h-4" aria-hidden="true" />
+        <Filter
+          className="w-4 h-4"
+          aria-hidden="true"
+          {...(isAnyFilterActive ? { fill: 'currentColor' } : {})}
+        />
       </button>
 
       {/* 時間帯チップ */}

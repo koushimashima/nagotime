@@ -8,7 +8,7 @@
 
 import { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import { Ticket, UserCircle, LogOut, Mail, Coins, ShieldCheck, Settings, BadgeCheck } from 'lucide-react'
+import { Ticket, UserCircle, LogOut, Mail, Coins, ShieldCheck, Settings, BadgeCheck, MessageSquare } from 'lucide-react'
 import { useAuth } from '../../contexts/AuthContext'
 import type { User } from '../../mocks/data/types'
 
@@ -57,11 +57,21 @@ function AccountPanel({ user, onClose, onLogout, onNavigate }: AccountPanelProps
       >
         {/* アバター + 名前 */}
         <div className="flex flex-col items-center gap-3 px-6 py-6 bg-orange-50">
-          <img
-            src={avatarUrl}
-            alt={user.displayName}
-            className="w-16 h-16 rounded-full object-cover ring-4 ring-white shadow-md bg-orange-100"
-          />
+          <div className="relative inline-block">
+            <img
+              src={avatarUrl}
+              alt={user.displayName}
+              className="w-16 h-16 rounded-full object-cover ring-4 ring-white shadow-md bg-orange-100"
+            />
+            {/* 学生認証バッジ（右下） */}
+            <span
+              className="absolute bottom-0 right-0 flex items-center justify-center w-5 h-5 rounded-full bg-white shadow"
+              title="学生認証済み"
+              aria-label="学生認証済み"
+            >
+              <BadgeCheck className="w-4 h-4 text-green-500" aria-hidden="true" />
+            </span>
+          </div>
           <div className="text-center">
             <p className="text-base font-bold text-gray-900">{user.displayName}</p>
             {user.role === 'sponsor-admin' && (
@@ -78,10 +88,6 @@ function AccountPanel({ user, onClose, onLogout, onNavigate }: AccountPanelProps
           <li className="flex items-center gap-3 py-3 text-sm text-gray-700">
             <Mail className="w-4 h-4 text-gray-400 shrink-0" aria-hidden="true" />
             <span className="truncate">{user.email}</span>
-            <span className="inline-flex items-center gap-1 shrink-0 text-xs font-medium text-green-700 bg-green-100 px-2 py-0.5 rounded-full">
-              <BadgeCheck className="w-3 h-3" aria-hidden="true" />
-              学生認証
-            </span>
           </li>
           <li className="flex items-center gap-3 py-3 text-sm text-gray-700">
             <Coins className="w-4 h-4 text-orange-400 shrink-0" aria-hidden="true" />
@@ -94,8 +100,19 @@ function AccountPanel({ user, onClose, onLogout, onNavigate }: AccountPanelProps
           </li>
         </ul>
 
-        {/* ログアウトボタン */}
+        {/* フィードバック・ログアウトボタン */}
         <div className="px-4 pb-4 pt-1">
+          <a
+            href="https://forms.gle/iRgnT9q3EhVXmBKM7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full flex items-center justify-center gap-2 py-2.5 mb-2 rounded-xl
+                       text-sm font-medium text-orange-500 border border-orange-200
+                       hover:bg-orange-50 transition-colors"
+          >
+            <MessageSquare className="w-4 h-4" aria-hidden="true" />
+            フィードバック
+          </a>
           {user.role === 'sponsor-admin' && (
             <button
               type="button"

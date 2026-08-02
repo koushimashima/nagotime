@@ -3,7 +3,7 @@
 // ロゴタップ時に表示される。認証不要。
 
 import { useNavigate } from 'react-router-dom'
-import { ArrowLeft, MapPin, Star, Ticket, Users, Compass } from 'lucide-react'
+import { ArrowLeft, MapPin, Star, Ticket, Users, Compass, MessageSquare } from 'lucide-react'
 
 // ---- サービス機能カード ----
 
@@ -47,6 +47,19 @@ export function AboutPage() {
             <ArrowLeft className="w-5 h-5" aria-hidden="true" />
           </button>
           <span className="text-lg font-semibold text-white">NagoTimeについて</span>
+          <div className="ml-auto">
+            <a
+              href="https://forms.gle/iRgnT9q3EhVXmBKM7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl
+                         text-sm font-medium text-orange-500 bg-white
+                         hover:bg-orange-50 transition-colors"
+            >
+              <MessageSquare className="w-4 h-4" aria-hidden="true" />
+              フィードバック
+            </a>
+          </div>
         </div>
       </div>
 
