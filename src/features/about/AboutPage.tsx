@@ -138,7 +138,7 @@ export function AboutPage() {
 
         {/* ---- フッター ---- */}
         <footer className="text-center text-xs text-gray-400 pb-4">
-          © 2026 NagoTime — All rights reserved. /n
+          © 2026 NagoTime — All rights reserved.<br />
           Created by Koushi HIGASHIURA & Kiro
         </footer>
 
