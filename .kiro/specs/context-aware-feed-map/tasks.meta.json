@@ -1,0 +1,255 @@
+{
+  "pbtResults": {
+    "1.2 `src/utils/contextCalc.test.ts` を新規作成し、Property 1・2 のプロパティテストを実装する": {
+      "status": "passed",
+      "lastRunTimestamp": 1785687844957
+    },
+    "2.2 `src/contexts/RecommendContext.test.tsx` を新規作成し、Property 3・4 のプロパティテストとユニットテストを実装する": {
+      "status": "passed",
+      "lastRunTimestamp": 1785689226478
+    },
+    "3.2 `src/features/feed/useRecommendFeed.test.ts` を新規作成し、Property 5 のプロパティテストを実装する": {
+      "status": "passed",
+      "lastRunTimestamp": 1785689622229
+    },
+    "4.2 `src/components/ContextFilterBar.test.tsx` を新規作成し、Property 8 のプロパティテストとユニットテストを実装する": {
+      "status": "passed",
+      "lastRunTimestamp": 1785690015084
+    },
+    "5.2 `src/features/map/PhotoPin.test.tsx` を新規作成し、Property 6・7・9 のプロパティテストを実装する": {
+      "status": "passed",
+      "lastRunTimestamp": 1785690933007
+    }
+  },
+  "executionHistory": {
+    "1.1 `src/utils/contextCalc.ts` を新規作成し、`calcTimeSlot` と `calcDayType` 純粋関数を実装する": [
+      {
+        "executionId": "d051ada2-f50a-4273-a824-8c6471cf5d42",
+        "chatSessionId": "sess_e1b1efd9-e4f9-4501-8350-57451a17186a",
+        "timestamp": 1785687614457
+      },
+      {
+        "executionId": "d051ada2-f50a-4273-a824-8c6471cf5d42",
+        "chatSessionId": "sess_e1b1efd9-e4f9-4501-8350-57451a17186a",
+        "timestamp": 1785687775054
+      }
+    ],
+    "1. contextCalc ユーティリティの実装": [
+      {
+        "executionId": "d051ada2-f50a-4273-a824-8c6471cf5d42",
+        "chatSessionId": "sess_e1b1efd9-e4f9-4501-8350-57451a17186a",
+        "timestamp": 1785687775136
+      }
+    ],
+    "1.2 `src/utils/contextCalc.test.ts` を新規作成し、Property 1・2 のプロパティテストを実装する": [
+      {
+        "executionId": "224d4f5f-9f4d-4718-b321-f6348880f03e",
+        "chatSessionId": "sess_354b06f5-17aa-46a6-81d3-dac3dd10ee54",
+        "timestamp": 1785687786438
+      },
+      {
+        "executionId": "224d4f5f-9f4d-4718-b321-f6348880f03e",
+        "chatSessionId": "sess_354b06f5-17aa-46a6-81d3-dac3dd10ee54",
+        "timestamp": 1785687858253
+      }
+    ],
+    "2.1 `src/contexts/RecommendContext.tsx` を新規作成し、`RecommendProvider` と `useRecommendContext` フックを実装する": [
+      {
+        "executionId": "c3f3592b-1062-463f-b2f6-25cbe26cb982",
+        "chatSessionId": "sess_6f7e3b42-ebaa-4121-9089-6095be24ee87",
+        "timestamp": 1785688244775
+      },
+      {
+        "executionId": "c3f3592b-1062-463f-b2f6-25cbe26cb982",
+        "chatSessionId": "sess_6f7e3b42-ebaa-4121-9089-6095be24ee87",
+        "timestamp": 1785688617670
+      }
+    ],
+    "2. RecommendContext の実装": [
+      {
+        "executionId": "c3f3592b-1062-463f-b2f6-25cbe26cb982",
+        "chatSessionId": "sess_6f7e3b42-ebaa-4121-9089-6095be24ee87",
+        "timestamp": 1785688617788
+      }
+    ],
+    "2.2 `src/contexts/RecommendContext.test.tsx` を新規作成し、Property 3・4 のプロパティテストとユニットテストを実装する": [
+      {
+        "executionId": "78498e07-decf-41ef-a648-4c25a8b70574",
+        "chatSessionId": "sess_00b21011-5cdc-40f1-b2ce-d6a4dafef43f",
+        "timestamp": 1785688877958
+      },
+      {
+        "executionId": "78498e07-decf-41ef-a648-4c25a8b70574",
+        "chatSessionId": "sess_00b21011-5cdc-40f1-b2ce-d6a4dafef43f",
+        "timestamp": 1785689260116
+      }
+    ],
+    "3.1 `src/features/feed/useRecommendFeed.ts` を新規作成し、`/api/reviews/recommend` を呼び出すカスタムフックを実装する": [
+      {
+        "executionId": "21731007-2326-44d9-86c9-68675daf19c5",
+        "chatSessionId": "sess_a01b5467-6218-4fb4-b2e9-2206dd4da197",
+        "timestamp": 1785689358535
+      },
+      {
+        "executionId": "21731007-2326-44d9-86c9-68675daf19c5",
+        "chatSessionId": "sess_a01b5467-6218-4fb4-b2e9-2206dd4da197",
+        "timestamp": 1785689453676
+      }
+    ],
+    "3. useRecommendFeed フックの実装": [
+      {
+        "executionId": "21731007-2326-44d9-86c9-68675daf19c5",
+        "chatSessionId": "sess_a01b5467-6218-4fb4-b2e9-2206dd4da197",
+        "timestamp": 1785689453841
+      }
+    ],
+    "3.2 `src/features/feed/useRecommendFeed.test.ts` を新規作成し、Property 5 のプロパティテストを実装する": [
+      {
+        "executionId": "bb2f6788-aca6-47e3-a98e-76602cb89c02",
+        "chatSessionId": "sess_99d197a0-1a85-46e5-a082-2410059fa9b1",
+        "timestamp": 1785689499795
+      },
+      {
+        "executionId": "bb2f6788-aca6-47e3-a98e-76602cb89c02",
+        "chatSessionId": "sess_99d197a0-1a85-46e5-a082-2410059fa9b1",
+        "timestamp": 1785689638251
+      }
+    ],
+    "4.1 `src/components/ContextFilterBar.tsx` を新規作成し、時間帯・曜日種別フィルタチップ UI を実装する": [
+      {
+        "executionId": "ad04d7e1-b9f3-4a3d-ae82-66decd631cab",
+        "chatSessionId": "sess_fe23825f-2f74-4fdf-8c88-3dd22d593c92",
+        "timestamp": 1785689700128
+      },
+      {
+        "executionId": "ad04d7e1-b9f3-4a3d-ae82-66decd631cab",
+        "chatSessionId": "sess_fe23825f-2f74-4fdf-8c88-3dd22d593c92",
+        "timestamp": 1785689846382
+      }
+    ],
+    "4. ContextFilterBar コンポーネントの実装": [
+      {
+        "executionId": "ad04d7e1-b9f3-4a3d-ae82-66decd631cab",
+        "chatSessionId": "sess_fe23825f-2f74-4fdf-8c88-3dd22d593c92",
+        "timestamp": 1785689846878
+      }
+    ],
+    "4.2 `src/components/ContextFilterBar.test.tsx` を新規作成し、Property 8 のプロパティテストとユニットテストを実装する": [
+      {
+        "executionId": "54173087-83e9-4dfd-846b-6521f58911ed",
+        "chatSessionId": "sess_6705c004-b0bf-4107-a3a4-1883846d19de",
+        "timestamp": 1785689887266
+      },
+      {
+        "executionId": "54173087-83e9-4dfd-846b-6521f58911ed",
+        "chatSessionId": "sess_6705c004-b0bf-4107-a3a4-1883846d19de",
+        "timestamp": 1785690033588
+      }
+    ],
+    "5.1 `src/features/map/PhotoPin.tsx` を新規作成し、DivIcon と `renderToStaticMarkup` を使った写真ピンを実装する": [
+      {
+        "executionId": "f0fdbdf0-9d15-409f-8d21-59074929382c",
+        "chatSessionId": "sess_c479174a-ba1b-4232-adbe-0fc9f9d7c75e",
+        "timestamp": 1785690055953
+      },
+      {
+        "executionId": "f0fdbdf0-9d15-409f-8d21-59074929382c",
+        "chatSessionId": "sess_c479174a-ba1b-4232-adbe-0fc9f9d7c75e",
+        "timestamp": 1785690333924
+      }
+    ],
+    "5. PhotoPin コンポーネントの実装": [
+      {
+        "executionId": "f0fdbdf0-9d15-409f-8d21-59074929382c",
+        "chatSessionId": "sess_c479174a-ba1b-4232-adbe-0fc9f9d7c75e",
+        "timestamp": 1785690334327
+      }
+    ],
+    "5.2 `src/features/map/PhotoPin.test.tsx` を新規作成し、Property 6・7・9 のプロパティテストを実装する": [
+      {
+        "executionId": "01067974-2f07-4a86-aa4e-26a3cf21d468",
+        "chatSessionId": "sess_811eb7fe-852c-4de7-aaf1-6f47383e8a43",
+        "timestamp": 1785690559572
+      },
+      {
+        "executionId": "01067974-2f07-4a86-aa4e-26a3cf21d468",
+        "chatSessionId": "sess_811eb7fe-852c-4de7-aaf1-6f47383e8a43",
+        "timestamp": 1785690954324
+      }
+    ],
+    "6. チェックポイント — コアモジュールのテスト確認": [
+      {
+        "executionId": "a93a178e-4819-4067-87e8-e130d705976e",
+        "chatSessionId": "sess_1c38ee97-c22d-4d6b-ba08-7897cf4ae095",
+        "timestamp": 1785691030306
+      },
+      {
+        "executionId": "a93a178e-4819-4067-87e8-e130d705976e",
+        "chatSessionId": "sess_1c38ee97-c22d-4d6b-ba08-7897cf4ae095",
+        "timestamp": 1785691183085
+      }
+    ],
+    "7. App.tsx への RecommendProvider 追加": [
+      {
+        "executionId": "9bbffea5-5166-4062-82ee-de29894ea2e3",
+        "chatSessionId": "sess_09fd9a07-6b05-4d44-b791-60965aad3524",
+        "timestamp": 1785691309445
+      },
+      {
+        "executionId": "9bbffea5-5166-4062-82ee-de29894ea2e3",
+        "chatSessionId": "sess_09fd9a07-6b05-4d44-b791-60965aad3524",
+        "timestamp": 1785691367109
+      }
+    ],
+    "8.1 `src/features/feed/FeedPage.tsx` を修正し、`useRecommendFeed` と `ContextFilterBar` に切り替える": [
+      {
+        "executionId": "0dc22585-4eed-4e24-b1e7-7e4e347d9eb5",
+        "chatSessionId": "sess_29640dce-355e-4b02-b1ee-b2df7fda6303",
+        "timestamp": 1785691380131
+      },
+      {
+        "executionId": "0dc22585-4eed-4e24-b1e7-7e4e347d9eb5",
+        "chatSessionId": "sess_29640dce-355e-4b02-b1ee-b2df7fda6303",
+        "timestamp": 1785691683705
+      }
+    ],
+    "8. FeedPage の切り替え": [
+      {
+        "executionId": "0dc22585-4eed-4e24-b1e7-7e4e347d9eb5",
+        "chatSessionId": "sess_29640dce-355e-4b02-b1ee-b2df7fda6303",
+        "timestamp": 1785691683794
+      }
+    ],
+    "9.1 `src/features/map/MapPage.tsx` を修正し、`PhotoPin` による口コミピン表示に切り替える": [
+      {
+        "executionId": "344e3e24-c66f-452d-a748-c939c9359961",
+        "chatSessionId": "sess_44b6abbe-0f90-4575-9e93-1661b03ce551",
+        "timestamp": 1785691752026
+      },
+      {
+        "executionId": "344e3e24-c66f-452d-a748-c939c9359961",
+        "chatSessionId": "sess_44b6abbe-0f90-4575-9e93-1661b03ce551",
+        "timestamp": 1785691875382
+      }
+    ],
+    "9. MapPage の切り替え": [
+      {
+        "executionId": "344e3e24-c66f-452d-a748-c939c9359961",
+        "chatSessionId": "sess_44b6abbe-0f90-4575-9e93-1661b03ce551",
+        "timestamp": 1785691875488
+      }
+    ],
+    "10. 最終チェックポイント — 全テスト確認": [
+      {
+        "executionId": "f7f9a288-32ad-40e6-9aea-cd4dcbc97e2a",
+        "chatSessionId": "sess_de8e6652-8cab-4e14-ac3e-fc1a9083723a",
+        "timestamp": 1785692359966
+      },
+      {
+        "executionId": "f7f9a288-32ad-40e6-9aea-cd4dcbc97e2a",
+        "chatSessionId": "sess_de8e6652-8cab-4e14-ac3e-fc1a9083723a",
+        "timestamp": 1785692463421
+      }
+    ]
+  }
+}

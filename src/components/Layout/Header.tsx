@@ -8,7 +8,7 @@
 
 import { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import { Ticket, UserCircle, LogOut, Mail, Coins, ShieldCheck, Settings } from 'lucide-react'
+import { Ticket, UserCircle, LogOut, Mail, Coins, ShieldCheck, Settings, BadgeCheck } from 'lucide-react'
 import { useAuth } from '../../contexts/AuthContext'
 import type { User } from '../../mocks/data/types'
 
@@ -78,6 +78,10 @@ function AccountPanel({ user, onClose, onLogout, onNavigate }: AccountPanelProps
           <li className="flex items-center gap-3 py-3 text-sm text-gray-700">
             <Mail className="w-4 h-4 text-gray-400 shrink-0" aria-hidden="true" />
             <span className="truncate">{user.email}</span>
+            <span className="inline-flex items-center gap-1 shrink-0 text-xs font-medium text-green-700 bg-green-100 px-2 py-0.5 rounded-full">
+              <BadgeCheck className="w-3 h-3" aria-hidden="true" />
+              学生認証
+            </span>
           </li>
           <li className="flex items-center gap-3 py-3 text-sm text-gray-700">
             <Coins className="w-4 h-4 text-orange-400 shrink-0" aria-hidden="true" />
@@ -160,9 +164,9 @@ export function Header() {
 
         {/* ---- ロゴ ---- */}
         <NavLink
-          to="/"
+          to="/about"
           className="flex items-center shrink-0"
-          aria-label="NagoTime ホーム"
+          aria-label="NagoTime について"
         >
           <span className="text-4xl font-bold text-white tracking-tight" style={{ fontFamily: "'Caveat', cursive" }}>
             NagoTime

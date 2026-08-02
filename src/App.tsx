@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { AuthProvider } from './contexts/AuthContext'
 import { MileProvider } from './contexts/MileContext'
+import { RecommendProvider } from './contexts/RecommendContext'
 import { Layout } from './components/Layout/Layout'
 import { ProtectedRoute } from './components/ProtectedRoute'
 import { AdminRoute } from './components/AdminRoute'
@@ -15,6 +16,7 @@ const SubmitPage = lazy(() => import('./features/submit/SubmitPage').then(m => (
 const MapPage = lazy(() => import('./features/map/MapPage').then(m => ({ default: m.MapPage })))
 const MilesPage = lazy(() => import('./features/miles/MilesPage').then(m => ({ default: m.MilesPage })))
 const AdminPage = lazy(() => import('./features/admin/AdminPage').then(m => ({ default: m.AdminPage })))
+const AboutPage = lazy(() => import('./features/about/AboutPage').then(m => ({ default: m.AboutPage })))
 
 /** ルート切り替え中に表示するフォールバック */
 function PageLoader() {
@@ -34,6 +36,7 @@ function AppRoutes() {
     <Suspense fallback={<PageLoader />}>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route element={<Layout />}>
           <Route path="/" element={<FeedPage />} />
           <Route path="/reviews/:id" element={<ReviewDetailPage />} />
@@ -74,7 +77,9 @@ export default function App() {
       {/* AuthProvider は BrowserRouter の内側に置くことで useNavigate が使用可能 */}
       <AuthProvider>
         <MileProvider>
-          <AppRoutes />
+          <RecommendProvider>
+            <AppRoutes />
+          </RecommendProvider>
         </MileProvider>
       </AuthProvider>
     </BrowserRouter>

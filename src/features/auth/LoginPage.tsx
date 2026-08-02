@@ -50,7 +50,14 @@ export function LoginPage() {
       <div className="w-full max-w-md">
         {/* ロゴ・タイトル */}
         <div className="text-center mb-8">
-          <h1 className="text-5xl font-bold text-orange-500" style={{ fontFamily: "'Caveat', cursive" }}>NagoTime</h1>
+          <button
+            type="button"
+            onClick={() => navigate('/about')}
+            className="inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 rounded-lg"
+            aria-label="NagoTime について"
+          >
+            <h1 className="text-5xl font-bold text-orange-500" style={{ fontFamily: "'Caveat', cursive" }}>NagoTime</h1>
+          </button>
           <p className="mt-2 text-sm text-gray-500">
             学生の、学生による、学生と地域のためのローカルガイド
           </p>

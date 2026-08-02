@@ -216,13 +216,16 @@ export function MilesPage() {
           {historyOpen && (
             <div className="mt-3 w-full">
               <div className="border-t border-orange-400/30 pt-3">
-                <h3 className="text-xs font-semibold text-orange-100 mb-2">取引履歴</h3>
-                <div className="space-y-2 max-h-40 overflow-y-auto pr-2">
+                <p className="text-xs text-orange-200 mb-2">直近の10件を表示しています</p>
+                <div className="space-y-2 max-h-52 overflow-y-auto pr-1">
                   {transactions.length > 0 ? (
-                    transactions.slice(0, 5).map((t) => (
-                      <div key={t.transactionId} className="flex justify-between items-center text-xs">
-                        <span className="text-orange-100 truncate">{TRANSACTION_TYPE_LABEL[t.type] || t.type}</span>
-                        <span className="text-orange-100 font-medium">
+                    transactions.slice(0, 10).map((t) => (
+                      <div key={t.transactionId} className="flex justify-between items-start text-xs gap-2">
+                        <div className="flex flex-col min-w-0">
+                          <span className="text-orange-100 truncate">{TRANSACTION_TYPE_LABEL[t.type] || t.type}</span>
+                          <span className="text-orange-300 text-[10px]">{formatDateTime(t.createdAt)}</span>
+                        </div>
+                        <span className="text-orange-100 font-medium shrink-0">
                           {t.amount > 0 ? '+' : ''}{t.amount.toLocaleString()} マイル
                         </span>
                       </div>

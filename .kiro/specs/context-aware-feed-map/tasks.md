@@ -11,22 +11,22 @@ MapPage.tsx を差し替える。各ステップで単体テスト・PBT を追�
 
 ## タスク
 
-- [ ] 1. contextCalc ユーティリティの実装
-  - [ ] 1.1 `src/utils/contextCalc.ts` を新規作成し、`calcTimeSlot` と `calcDayType` 純粋関数を実装する
+- [x] 1. contextCalc ユーティリティの実装
+  - [x] 1.1 `src/utils/contextCalc.ts` を新規作成し、`calcTimeSlot` と `calcDayType` 純粋関数を実装する
     - `calcTimeSlot(hour: number): TimeSlot` — 0〜23 の整数を受け取り、要件 1.4 の境界値に従いタイムスロットを返す
     - `calcDayType(day: number): DayType` — 0〜6 の整数を受け取り、要件 1.5 の規則で曜日種別を返す
     - `TimeSlot`・`DayType` は `../../mocks/data/types` からインポートすること
     - _Requirements: 1.4, 1.5_
 
-  - [ ]* 1.2 `src/utils/contextCalc.test.ts` を新規作成し、Property 1・2 のプロパティテストを実装する
+  - [x] 1.2 `src/utils/contextCalc.test.ts` を新規作成し、Property 1・2 のプロパティテストを実装する
     - **Property 1: 時間帯変換の網羅性** — `fc.integer({ min: 0, max: 23 })` で hour を生成し、全時刻で正しい TimeSlot を返すことを検証する
     - **Validates: Requirements 1.4**
     - **Property 2: 曜日種別変換の網羅性** — `fc.integer({ min: 0, max: 6 })` で day を生成し、0・6 が HOLIDAY、1〜5 が WEEKDAY になることを検証する
     - **Validates: Requirements 1.5**
     - テストタグ: `// Feature: context-aware-feed-map, Property 1: 時間帯変換の網羅性`、`// Feature: context-aware-feed-map, Property 2: 曜日種別変換の網羅性`
 
-- [ ] 2. RecommendContext の実装
-  - [ ] 2.1 `src/contexts/RecommendContext.tsx` を新規作成し、`RecommendProvider` と `useRecommendContext` フックを実装する
+- [x] 2. RecommendContext の実装
+  - [x] 2.1 `src/contexts/RecommendContext.tsx` を新規作成し、`RecommendProvider` と `useRecommendContext` フックを実装する
     - `createContext<RecommendState | null>(null)` で初期化し、`useRecommendContext()` は Provider 外使用時にエラーをスローする
     - `Geolocation.getCurrentPosition()` を呼び出し、成功時は取得座標を、失敗・拒否時はデフォルト座標（35.1815, 136.9066）を `coord` に設定する（タイムアウト 8000ms）
     - 失敗・拒否時は `locationError` に `'現在地を取得できませんでした'` をセットし、`setTimeout` で 3 秒後に `null` にリセットする
@@ -38,7 +38,7 @@ MapPage.tsx を差し替える。各ステップで単体テスト・PBT を追�
     - `locating: boolean` で Geolocation 取得中フラグを管理する
     - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 3.5, 7.1, 7.2, 7.3_
 
-  - [ ]* 2.2 `src/contexts/RecommendContext.test.tsx` を新規作成し、Property 3・4 のプロパティテストとユニットテストを実装する
+  - [x] 2.2 `src/contexts/RecommendContext.test.tsx` を新規作成し、Property 3・4 のプロパティテストとユニットテストを実装する
     - **Property 3: 位置取得失敗時のデフォルトフォールバック** — 任意の Geolocation エラーコード（0〜3）でモックを失敗させ、`coord` がデフォルト座標（35.1815, 136.9066）になることを検証する
     - **Validates: Requirements 1.3**
     - **Property 4: フィルタリセットの冪等性** — `fc.constantFrom('MORNING', 'AFTERNOON', 'EVENING', 'NIGHT')` と `fc.constantFrom('WEEKDAY', 'HOLIDAY')` で任意の変更値を生成し、変更→リセット後に `filterTimeSlot === timeSlot`、`filterDayType === dayType`、`isFilterModified === false` になることを検証する
@@ -46,8 +46,8 @@ MapPage.tsx を差し替える。各ステップで単体テスト・PBT を追�
     - ユニットテスト: 初期 `weather` が `'SUNNY'`、ロード完了後に `locating` が `false` になること
     - テストタグ: `// Feature: context-aware-feed-map, Property 3: 位置取得失敗時のデフォルトフォールバック`、`// Feature: context-aware-feed-map, Property 4: フィルタリセットの冪等性`
 
-- [ ] 3. useRecommendFeed フックの実装
-  - [ ] 3.1 `src/features/feed/useRecommendFeed.ts` を新規作成し、`/api/reviews/recommend` を呼び出すカスタムフックを実装する
+- [x] 3. useRecommendFeed フックの実装
+  - [x] 3.1 `src/features/feed/useRecommendFeed.ts` を新規作成し、`/api/reviews/recommend` を呼び出すカスタムフックを実装する
     - インターフェース: `useRecommendFeed(params: RecommendFeedParams): RecommendFeedState`
     - `params` の変化を `JSON.stringify(params)` のキーで検知し、変化のたびに再フェッチする（`useEffect` の依存配列に `paramsKey` を使う）
     - クエリ文字列: `/api/reviews/recommend?lat=${lat}&lon=${lon}&weather=${weather}&timeSlot=${timeSlot}`
@@ -55,13 +55,13 @@ MapPage.tsx を差し替える。各ステップで単体テスト・PBT を追�
     - エラー時は `error` state にメッセージをセットする
     - _Requirements: 2.2, 6.1, 6.2_
 
-  - [ ]* 3.2 `src/features/feed/useRecommendFeed.test.ts` を新規作成し、Property 5 のプロパティテストを実装する
+  - [x] 3.2 `src/features/feed/useRecommendFeed.test.ts` を新規作成し、Property 5 のプロパティテストを実装する
     - **Property 5: レコメンドAPIクエリパラメータの正確な伝達** — `fc.record({ lat: fc.float({min:-90,max:90}), lon: fc.float({min:-180,max:180}), weather: fc.constantFrom('SUNNY'), timeSlot: fc.constantFrom('MORNING','AFTERNOON','EVENING','NIGHT') })` で生成した params をフックに渡し、MSW でキャプチャした URL が全パラメータを正確に含むことを検証する
     - **Validates: Requirements 2.2, 6.1**
     - テストタグ: `// Feature: context-aware-feed-map, Property 5: レコメンドAPIクエリパラメータの正確な伝達`
 
-- [ ] 4. ContextFilterBar コンポーネントの実装
-  - [ ] 4.1 `src/components/ContextFilterBar.tsx` を新規作成し、時間帯・曜日種別フィルタチップ UI を実装する
+- [x] 4. ContextFilterBar コンポーネントの実装
+  - [x] 4.1 `src/components/ContextFilterBar.tsx` を新規作成し、時間帯・曜日種別フィルタチップ UI を実装する
     - `useRecommendContext()` から全データを取得し、props は持たない
     - `locating` が `true` のとき: `LoadingSpinner` を表示する
     - `locationError` があるとき: エラー文字列を表示する（3 秒後は Context 側で自動 null クリア済み）
@@ -73,14 +73,14 @@ MapPage.tsx を差し替える。各ステップで単体テスト・PBT を追�
     - チップタップ時にドロップダウンで選択肢を表示する（時間帯: 4 種類、曜日種別: 2 種類）
     - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 7.1, 7.2, 7.3, 8.1, 8.4_
 
-  - [ ]* 4.2 `src/components/ContextFilterBar.test.tsx` を新規作成し、Property 8 のプロパティテストとユニットテストを実装する
+  - [x] 4.2 `src/components/ContextFilterBar.test.tsx` を新規作成し、Property 8 のプロパティテストとユニットテストを実装する
     - **Property 8: aria-labelの動的生成** — `fc.constantFrom('MORNING', 'AFTERNOON', 'EVENING', 'NIGHT')` で TimeSlot を生成し、時間帯チップの `aria-label` に正しい日本語ラベルと時間帯区間文字列が含まれることを検証する
     - **Validates: Requirements 8.1**
     - ユニットテスト: `locating=true` のときスピナーが表示されること、`locationError` があるときエラーメッセージが表示されること（fake timers で 3 秒後に消えることを確認）、`isFilterModified=true` のときリセットボタンが表示されること、時間帯チップタップでドロップダウンが表示されること
     - テストタグ: `// Feature: context-aware-feed-map, Property 8: aria-labelの動的生成`
 
-- [ ] 5. PhotoPin コンポーネントの実装
-  - [ ] 5.1 `src/features/map/PhotoPin.tsx` を新規作成し、DivIcon と `renderToStaticMarkup` を使った写真ピンを実装する
+- [x] 5. PhotoPin コンポーネントの実装
+  - [x] 5.1 `src/features/map/PhotoPin.tsx` を新規作成し、DivIcon と `renderToStaticMarkup` を使った写真ピンを実装する
     - `renderToStaticMarkup(<PhotoChipHtml review={review} />)` で HTML 文字列を生成し、`L.divIcon({ html, className: '', iconSize: [40, 40], iconAnchor: [20, 20] })` に渡す
     - `photoUrls[0]` が存在する場合: `<img src={photoUrls[0]} alt="{spotName} の口コミ写真" className="w-10 h-10 rounded-full object-cover border-2 border-white shadow-md" />` を表示する
     - `photoUrls` が空の場合: `<div className="w-10 h-10 rounded-full bg-orange-500 border-2 border-white shadow-md" />` を表示する
@@ -89,7 +89,7 @@ MapPage.tsx を差し替える。各ステップで単体テスト・PBT を追�
     - ポップアップに `role="dialog"` を設定し、`useEffect` でフォーカス移動を実装する
     - _Requirements: 5.1, 5.2, 5.3, 5.5, 5.6, 5.7, 8.2, 8.3_
 
-  - [ ]* 5.2 `src/features/map/PhotoPin.test.tsx` を新規作成し、Property 6・7・9 のプロパティテストを実装する
+  - [x] 5.2 `src/features/map/PhotoPin.test.tsx` を新規作成し、Property 6・7・9 のプロパティテストを実装する
     - **Property 6: 写真ピンのphotoUrls[0]使用とフォールバック** — `fc.record({ ...reviewArb, photoUrls: fc.oneof(fc.array(fc.webUrl(), {minLength:1}), fc.constant([])) })` で口コミを生成し、非空なら `img[src]=photoUrls[0]`、空なら `.bg-orange-500` 要素がレンダリングされることを検証する
     - **Validates: Requirements 5.1, 5.7**
     - **Property 7: ポップアップのコンテンツ完整性** — `fc.record({ spotName: fc.string({minLength:1}), text: fc.string(), likeCount: fc.nat(), reviewId: fc.uuid(), ...他フィールド })` で口コミを生成し、ポップアップ内に `spotName` 全文・`text` 先頭 60 文字・`likeCount`・`/reviews/{reviewId}` リンクが含まれることを検証する
@@ -98,18 +98,18 @@ MapPage.tsx を差し替える。各ステップで単体テスト・PBT を追�
     - **Validates: Requirements 4.3**
     - テストタグ: `// Feature: context-aware-feed-map, Property 6: 写真ピンのphotoUrls[0]使用とフォールバック`、`// Feature: context-aware-feed-map, Property 7: ポップアップのコンテンツ完整性`、`// Feature: context-aware-feed-map, Property 9: 共有口コミリストのマップピン反映`
 
-- [ ] 6. チェックポイント — コアモジュールのテスト確認
+- [x] 6. チェックポイント — コアモジュールのテスト確認
   - すべてのテストが通ることを確認する。問題があればユーザーに確認する。
 
-- [ ] 7. App.tsx への RecommendProvider 追加
-  - [ ] 7.1 `src/App.tsx` を修正し、`MileProvider` の内側に `RecommendProvider` をラップする
+- [x] 7. App.tsx への RecommendProvider 追加
+  - [x] 7.1 `src/App.tsx` を修正し、`MileProvider` の内側に `RecommendProvider` をラップする
     - `import { RecommendProvider } from './contexts/RecommendContext'` を追加する
     - 変更前: `<MileProvider><AppRoutes /></MileProvider>`
     - 変更後: `<MileProvider><RecommendProvider><AppRoutes /></RecommendProvider></MileProvider>`
     - _Requirements: 1.7, 4.1_
 
-- [ ] 8. FeedPage の切り替え
-  - [ ] 8.1 `src/features/feed/FeedPage.tsx` を修正し、`useRecommendFeed` と `ContextFilterBar` に切り替える
+- [x] 8. FeedPage の切り替え
+  - [x] 8.1 `src/features/feed/FeedPage.tsx` を修正し、`useRecommendFeed` と `ContextFilterBar` に切り替える
     - `useReviewFeed` の代わりに `useRecommendFeed` を使用する
     - 手動フィルタ state（`area`・`weather`・`timeSlot` の `useState`）を削除し、`useRecommendContext()` からフィルタ状態を取得する
     - ヘッダー内の既存フィルタバーを `<ContextFilterBar />` に置き換える
@@ -117,8 +117,8 @@ MapPage.tsx を差し替える。各ステップで単体テスト・PBT を追�
     - エラー時は `role="alert"` バナーとして表示する（既存パターンを維持）
     - _Requirements: 2.1, 2.2, 2.3, 2.4, 4.2, 6.3_
 
-- [ ] 9. MapPage の切り替え
-  - [ ] 9.1 `src/features/map/MapPage.tsx` を修正し、`PhotoPin` による口コミピン表示に切り替える
+- [x] 9. MapPage の切り替え
+  - [x] 9.1 `src/features/map/MapPage.tsx` を修正し、`PhotoPin` による口コミピン表示に切り替える
     - `useRecommendContext()` から `sharedReviews` を取得する
     - `fetchSpots`・`spots` の state と fetch ロジックを削除する（スポット表示から口コミピン表示へ完全移行）
     - `sharedReviews.map(r => <PhotoPin key={r.reviewId} review={r} />)` でピンを表示する
@@ -126,7 +126,7 @@ MapPage.tsx を差し替える。各ステップで単体テスト・PBT を追�
     - フッターカウントを口コミ件数に更新する（例: `${sharedReviews.length} 件の口コミを表示中`）
     - _Requirements: 4.3, 4.4, 5.1〜5.7_
 
-- [ ] 10. 最終チェックポイント — 全テスト確認
+- [x] 10. 最終チェックポイント — 全テスト確認
   - すべてのテストが通ること（`npx vitest --run`）を確認する。問題があればユーザーに確認する。
 
 ---
