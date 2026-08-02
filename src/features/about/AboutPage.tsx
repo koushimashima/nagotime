@@ -73,7 +73,7 @@ export function AboutPage() {
           </h2>
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-orange-100 space-y-4 text-sm text-gray-600 leading-relaxed">
             <p>
-              名古屋工業大学の学生が、名古屋（ナゴ）での「ちょうどいい時間（タイム）」を
+              学生たちが、名古屋（Nago）での「ちょうどいい時間（Time）」を
               シェアし合うローカルクチコミアプリです。
             </p>
             <p>
@@ -82,7 +82,7 @@ export function AboutPage() {
             </p>
             <p>
               口コミを投稿するたびに<span className="font-semibold text-orange-500">マイル</span>が貯まり、
-              地域の協賛店舗で使えるクーポンと交換できるエコシステムで、
+              地域施設や協賛店舗で使えるチケットと交換できるエコシステムで、
               学生・店舗・地域がともに盛り上がる仕組みを目指しています。
             </p>
           </div>
@@ -101,11 +101,6 @@ export function AboutPage() {
               description="現在地・天気・時間帯を自動取得し、今この瞬間に合ったスポットのクチコミをフィードに表示します。"
             />
             <FeatureCard
-              icon={<Search className="w-5 h-5" />}
-              title="スポット検索＆絞り込み"
-              description="時間帯（朝・昼・夕・夜）や天気でフィルタリングし、目的にぴったりのスポットを素早く見つけられます。"
-            />
-            <FeatureCard
               icon={<MapPin className="w-5 h-5" />}
               title="マップビュー"
               description="フィードに表示中のスポットを地図上で確認。位置感覚をつかみながらお出かけ先を選べます。"
@@ -113,24 +108,25 @@ export function AboutPage() {
             <FeatureCard
               icon={<Star className="w-5 h-5" />}
               title="クチコミ投稿"
-              description="写真・テキスト・評価でスポットへの感想を投稿。学生のリアルな声を地域全体で共有します。"
+              description="写真・テキスト・ハッシュタグでスポットへの感想を投稿。学生のリアルな声を地域全体で共有します。"
             />
             <FeatureCard
               icon={<Ticket className="w-5 h-5" />}
               title="マイル＆クーポン"
-              description="クチコミを投稿するとマイルが貯まります。貯めたマイルは協賛店舗のクーポンに交換できます。"
+              description="クチコミを投稿するとマイルが貯まります。貯めたマイルは地域の商業・文化施設のチケットに交換できます。"
             />
             <FeatureCard
               icon={<Users className="w-5 h-5" />}
               title="学生コミュニティ"
-              description="名古屋工業大学の学生が中心となって情報を発信・共有。リアルで信頼度の高いローカル情報が集まります。"
+              description="学生が中心となって情報を発信・共有。リアルで信頼度の高いローカル情報が集まります。"
             />
           </div>
         </section>
 
         {/* ---- フッター ---- */}
         <footer className="text-center text-xs text-gray-400 pb-4">
-          © 2026 NagoTime — 名古屋工業大学 学生プロジェクト
+          © 2026 NagoTime — All rights reserved.
+          Created by Koushi HIGASHIURA & Kiro
         </footer>
 
       </div>

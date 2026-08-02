@@ -1,11 +1,11 @@
 // src/components/ContextFilterBar.tsx
-// コンテキストフィルタバー — 時間帯・曜日種別フィルタチップ UI
-// Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 7.1, 7.2, 7.3, 8.1, 8.4
+// コンテキストフィルタバー — 時間帯・曜日種別・天気フィルタチップ UI
+// Requirements: 2.1, 2.2, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 7.1, 7.2, 7.3, 8.1, 8.4
 
 import { useState } from 'react'
 import { useRecommendContext } from '../contexts/RecommendContext'
 import { LoadingSpinner } from './LoadingSpinner'
-import type { TimeSlot, DayType } from '../mocks/data/types'
+import type { TimeSlot, DayType, Weather } from '../mocks/data/types'
 
 // ---- ラベル・区間マッピング ----
 
@@ -29,6 +29,16 @@ const DAY_TYPE_LABEL: Record<DayType, string> = {
 const TIME_SLOT_ORDER: TimeSlot[] = ['MORNING', 'AFTERNOON', 'EVENING', 'NIGHT']
 const DAY_TYPE_ORDER: DayType[]   = ['WEEKDAY', 'HOLIDAY']
 
+// ---- 天気メタデータ ----
+
+const WEATHER_LABEL: Record<Weather, string> = {
+  SUNNY: '晴れ', CLOUDY: '曇り', RAINY: '雨', SNOWY: '雪', UNKNOWN: '不明',
+}
+const WEATHER_ICON: Record<Weather, string> = {
+  SUNNY: '☀️', CLOUDY: '☁️', RAINY: '🌧', SNOWY: '❄️', UNKNOWN: '？',
+}
+const WEATHER_ORDER: Weather[] = ['SUNNY', 'CLOUDY', 'RAINY', 'SNOWY']
+
 // ---- コンポーネント ----
 
 /**
@@ -41,8 +51,10 @@ export function ContextFilterBar() {
   const {
     filterTimeSlot,
     filterDayType,
+    filterWeather,
     setFilterTimeSlot,
     setFilterDayType,
+    setFilterWeather,
     resetFilters,
     isFilterModified,
     locating,
@@ -50,7 +62,7 @@ export function ContextFilterBar() {
   } = useRecommendContext()
 
   // ドロップダウン開閉状態
-  const [openDropdown, setOpenDropdown] = useState<'timeSlot' | 'dayType' | null>(null)
+  const [openDropdown, setOpenDropdown] = useState<'timeSlot' | 'dayType' | 'weather' | null>(null)
 
   // ---- ローディング表示 ----
   if (locating) {
@@ -101,6 +113,15 @@ export function ContextFilterBar() {
 
   function handleSelectDayType(dt: DayType) {
     setFilterDayType(dt)
+    setOpenDropdown(null)
+  }
+
+  function handleWeatherChipClick() {
+    setOpenDropdown(prev => (prev === 'weather' ? null : 'weather'))
+  }
+
+  function handleSelectWeather(w: Weather) {
+    setFilterWeather(w)
     setOpenDropdown(null)
   }
 
@@ -204,6 +225,47 @@ export function ContextFilterBar() {
                   onClick={() => handleSelectDayType(dt)}
                 >
                   {DAY_TYPE_LABEL[dt]}
+                </li>
+              )
+            })}
+          </ul>
+        )}
+      </div>
+
+      {/* 天気チップ */}
+      <div className="relative" data-chip>
+        <button
+          type="button"
+          className={chipClassName}
+          aria-label={`天気フィルタ: ${WEATHER_LABEL[filterWeather]}`}
+          aria-haspopup="listbox"
+          aria-expanded={openDropdown === 'weather'}
+          onClick={handleWeatherChipClick}
+        >
+          {WEATHER_ICON[filterWeather]}{WEATHER_LABEL[filterWeather]}
+          <span className="ml-1 text-xs opacity-60" aria-hidden="true">▾</span>
+        </button>
+
+        {/* 天気ドロップダウン */}
+        {openDropdown === 'weather' && (
+          <ul
+            role="listbox"
+            aria-label="天気を選択"
+            className={dropdownBase}
+          >
+            {WEATHER_ORDER.map((w) => {
+              const isSelected = w === filterWeather
+              return (
+                <li
+                  key={w}
+                  role="option"
+                  aria-selected={isSelected}
+                  className={`px-4 py-2 text-sm cursor-pointer hover:bg-orange-50 transition-colors ${
+                    isSelected ? 'bg-orange-100 text-orange-700 font-medium' : 'text-gray-700'
+                  }`}
+                  onClick={() => handleSelectWeather(w)}
+                >
+                  {WEATHER_ICON[w]} {WEATHER_LABEL[w]}
                 </li>
               )
             })}

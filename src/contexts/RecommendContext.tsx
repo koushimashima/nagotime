@@ -32,8 +32,10 @@ interface RecommendState {
   // フィルタ状態（ユーザーが変更可能）
   filterTimeSlot: TimeSlot
   filterDayType: DayType
+  filterWeather: Weather
   setFilterTimeSlot: (ts: TimeSlot) => void
   setFilterDayType: (dt: DayType) => void
+  setFilterWeather: (w: Weather) => void
   resetFilters: () => void
   isFilterModified: boolean // フィルタがデフォルト（Context値）から変更されているか
 
@@ -81,9 +83,10 @@ export function RecommendProvider({ children }: RecommendProviderProps) {
   const timeSlot: TimeSlot = initialTimeSlot
   const dayType: DayType = initialDayType
 
-  // フィルタ状態（初期値は timeSlot / dayType と同じ）
+  // フィルタ状態（初期値は timeSlot / dayType / weather と同じ）
   const [filterTimeSlot, setFilterTimeSlot] = useState<TimeSlot>(initialTimeSlot)
   const [filterDayType, setFilterDayType] = useState<DayType>(initialDayType)
+  const [filterWeather, setFilterWeather] = useState<Weather>(weather)
 
   // 共有口コミリスト（FeedPage → MapPage へ共有）
   const [sharedReviews, setSharedReviews] = useState<Review[]>([])
@@ -156,13 +159,17 @@ export function RecommendProvider({ children }: RecommendProviderProps) {
   function resetFilters(): void {
     setFilterTimeSlot(timeSlot)
     setFilterDayType(dayType)
+    setFilterWeather(weather)
   }
 
   // ---- isFilterModified（useMemo で算出） ----
 
   const isFilterModified = useMemo(
-    () => filterTimeSlot !== timeSlot || filterDayType !== dayType,
-    [filterTimeSlot, filterDayType, timeSlot, dayType],
+    () =>
+      filterTimeSlot !== timeSlot ||
+      filterDayType !== dayType ||
+      filterWeather !== weather,
+    [filterTimeSlot, filterDayType, filterWeather, timeSlot, dayType, weather],
   )
 
   // ---- Context 値の組み立て ----
@@ -174,8 +181,10 @@ export function RecommendProvider({ children }: RecommendProviderProps) {
     dayType,
     filterTimeSlot,
     filterDayType,
+    filterWeather,
     setFilterTimeSlot,
     setFilterDayType,
+    setFilterWeather,
     resetFilters,
     isFilterModified,
     sharedReviews,

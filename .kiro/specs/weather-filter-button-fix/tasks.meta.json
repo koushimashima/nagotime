@@ -1,0 +1,126 @@
+{
+  "pbtResults": {
+    "1. バグ条件の探索的テストを書く": {
+      "status": "passed",
+      "failingExample": "テストケース1: expected null not to be null — weatherButton === null（ContextFilterBar に天気フィルタボタンが DOM に存在しない）\nテストケース2: expected undefined not to be undefined — filterWeather === undefined（RecommendContext から filterWeather が取得できない）\nテストケース3: expected undefined not to be undefined — filterWeather === undefined（RecommendState インターフェースに filterWeather が定義されていない）\nテストケース4: expected undefined to be defined — setFilterWeather === undefined（setFilterWeather が RecommendContext に存在しない）",
+      "lastRunTimestamp": 1785695613843
+    },
+    "2. 保護（Preservation）プロパティテストを書く（修正前に実施）": {
+      "status": "passed",
+      "lastRunTimestamp": 1785696387025
+    },
+    "3.4 バグ条件探索的テストが PASS することを確認する": {
+      "status": "passed",
+      "lastRunTimestamp": 1785697195030
+    },
+    "3.5 保護プロパティテストが引き続き PASS することを確認する": {
+      "status": "passed",
+      "lastRunTimestamp": 1785697357893
+    }
+  },
+  "executionHistory": {
+    "1. バグ条件の探索的テストを書く": [
+      {
+        "executionId": "69e62fda-bf85-4007-bae8-829d6d0d79b5",
+        "chatSessionId": "sess_d3dfd1a5-2a6d-45fe-abad-17a0d9eb97d0",
+        "timestamp": 1785695465983
+      },
+      {
+        "executionId": "69e62fda-bf85-4007-bae8-829d6d0d79b5",
+        "chatSessionId": "sess_d3dfd1a5-2a6d-45fe-abad-17a0d9eb97d0",
+        "timestamp": 1785695631630
+      }
+    ],
+    "2. 保護（Preservation）プロパティテストを書く（修正前に実施）": [
+      {
+        "executionId": "c7accdfb-f8fe-4965-9889-5c50158afb58",
+        "chatSessionId": "sess_5c3505f7-6f3d-4b87-83f4-c215857c26ac",
+        "timestamp": 1785695647316
+      },
+      {
+        "executionId": "344eca67-bb80-4731-9231-97af2dd35949",
+        "chatSessionId": "sess_5c3505f7-6f3d-4b87-83f4-c215857c26ac",
+        "timestamp": 1785696403250
+      }
+    ],
+    "3.1 `RecommendContext.tsx` に `filterWeather` state を追加する": [
+      {
+        "executionId": "f4c1ca85-f7a0-41fb-97bf-8724e0160789",
+        "chatSessionId": "sess_c64e8e54-6a0f-4b3e-bc7e-80337b93cd73",
+        "timestamp": 1785696416883
+      },
+      {
+        "executionId": "f4c1ca85-f7a0-41fb-97bf-8724e0160789",
+        "chatSessionId": "sess_c64e8e54-6a0f-4b3e-bc7e-80337b93cd73",
+        "timestamp": 1785696654987
+      }
+    ],
+    "3.2 `ContextFilterBar.tsx` に天気チップ UI を追加する": [
+      {
+        "executionId": "ba126076-e724-4dab-ad7c-bfbf2e39139b",
+        "chatSessionId": "sess_d80556f0-bcb4-46de-84df-d2d52c99c078",
+        "timestamp": 1785696669923
+      },
+      {
+        "executionId": "ba126076-e724-4dab-ad7c-bfbf2e39139b",
+        "chatSessionId": "sess_d80556f0-bcb4-46de-84df-d2d52c99c078",
+        "timestamp": 1785696885145
+      }
+    ],
+    "3.3 `FeedPage.tsx` の `weather` パラメータを `filterWeather` に変更する": [
+      {
+        "executionId": "072a51c1-fc3b-439a-aadd-ee6da7baafe9",
+        "chatSessionId": "sess_7259502c-fb74-4bcd-8e1b-f6df55e65eea",
+        "timestamp": 1785696940820
+      },
+      {
+        "executionId": "072a51c1-fc3b-439a-aadd-ee6da7baafe9",
+        "chatSessionId": "sess_7259502c-fb74-4bcd-8e1b-f6df55e65eea",
+        "timestamp": 1785697103627
+      }
+    ],
+    "3.4 バグ条件探索的テストが PASS することを確認する": [
+      {
+        "executionId": "68f8763b-8363-4c37-8df1-056ac00ab732",
+        "chatSessionId": "sess_8fa00e4a-4603-4190-a9c6-716fede9c1d3",
+        "timestamp": 1785697147189
+      },
+      {
+        "executionId": "68f8763b-8363-4c37-8df1-056ac00ab732",
+        "chatSessionId": "sess_8fa00e4a-4603-4190-a9c6-716fede9c1d3",
+        "timestamp": 1785697205190
+      }
+    ],
+    "3.5 保護プロパティテストが引き続き PASS することを確認する": [
+      {
+        "executionId": "c114e2c0-8987-4241-b80d-630d8669513d",
+        "chatSessionId": "sess_e3e0e426-13aa-4c7a-ab92-6820da017c50",
+        "timestamp": 1785697285396
+      },
+      {
+        "executionId": "c114e2c0-8987-4241-b80d-630d8669513d",
+        "chatSessionId": "sess_e3e0e426-13aa-4c7a-ab92-6820da017c50",
+        "timestamp": 1785697371449
+      }
+    ],
+    "3. 天気フィルターチップ未実装バグの修正": [
+      {
+        "executionId": "c114e2c0-8987-4241-b80d-630d8669513d",
+        "chatSessionId": "sess_e3e0e426-13aa-4c7a-ab92-6820da017c50",
+        "timestamp": 1785697371513
+      }
+    ],
+    "4. チェックポイント — 全テスト PASS の確認": [
+      {
+        "executionId": "954c7d63-ebe8-4d1d-8a1c-ba4570871546",
+        "chatSessionId": "sess_482824f3-5f48-43b2-9c34-0b415de9e818",
+        "timestamp": 1785697396513
+      },
+      {
+        "executionId": "954c7d63-ebe8-4d1d-8a1c-ba4570871546",
+        "chatSessionId": "sess_482824f3-5f48-43b2-9c34-0b415de9e818",
+        "timestamp": 1785697540123
+      }
+    ]
+  }
+}

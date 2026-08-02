@@ -22,7 +22,7 @@ export function FeedPage() {
   // コンテキストからフィルタ状態と共有口コミセッターを取得
   const {
     coord,
-    weather,
+    filterWeather,
     filterTimeSlot,
     setSharedReviews,
   } = useRecommendContext()
@@ -31,7 +31,7 @@ export function FeedPage() {
   const { reviews, loading, error } = useRecommendFeed({
     lat: coord.lat,
     lon: coord.lon,
-    weather,
+    weather: filterWeather,
     timeSlot: filterTimeSlot,
   })
 
