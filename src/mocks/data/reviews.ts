@@ -24,7 +24,7 @@ export const mockReviews: Review[] = [
     viewCount: 310,
     createdAt: '2025-06-15T12:30:00+09:00',
     likedUserIds: ['user-002', 'user-003'],
-    hashtags: ['#ランチ', '#コスパ良し', '#一人'],
+    hashtags: ['#みんなと楽しみたい','#ランチ', '#コスパ良し', '#一人'],
   },
   {
     reviewId: 'rev-002',
@@ -47,7 +47,7 @@ export const mockReviews: Review[] = [
     viewCount: 520,
     createdAt: '2025-06-10T08:15:00+09:00',
     likedUserIds: ['user-001', 'user-004', 'user-005'],
-    hashtags: ['#モーニング', '#カフェ活', '#コスパ良し'],
+    hashtags: ['#モーニング', '#カフェ活', '#コスパ良し', '#朝カフェ', '#おしゃれ'],
   },
   {
     reviewId: 'rev-003',
@@ -701,7 +701,7 @@ export const mockReviews: Review[] = [
     viewCount: 670,
     createdAt: '2026-07-09T13:30:00+09:00',
     likedUserIds: ['user-001', 'user-003', 'user-006'],
-    hashtags: ['#ランチ', '#カフェ活', '#テラス席', '#インスタ映え'],
+    hashtags: ['#ランチ', '#カフェ活', '#テラス席', '#インスタ映え', '#トナリノ好き', '#名城公園ランチ', '#公園ビュー'],
   },
   {
     reviewId: 'rev-030',
@@ -724,7 +724,7 @@ export const mockReviews: Review[] = [
     viewCount: 210,
     createdAt: '2026-07-03T12:45:00+09:00',
     likedUserIds: ['user-010'],
-    hashtags: ['#穴場', '#一人', '#勉強スポット'],
+    hashtags: ['#穴場', '#一人', '#勉強スポット', '#雨の日こそ名城公園', '#静かな公園好き'],
   },
   {
     reviewId: 'rev-031',
@@ -748,7 +748,7 @@ export const mockReviews: Review[] = [
     viewCount: 330,
     createdAt: '2026-06-25T13:00:00+09:00',
     likedUserIds: ['user-002', 'user-008'],
-    hashtags: ['#ゼミ後', '#一人', '#穴場'],
+    hashtags: ['#ゼミ後', '#一人', '#穴場', '#名城公園ランナー', '#外堀さんぽ'],
   },
   {
     reviewId: 'rev-032',
@@ -773,7 +773,7 @@ export const mockReviews: Review[] = [
     viewCount: 780,
     createdAt: '2026-06-18T12:30:00+09:00',
     likedUserIds: ['user-003', 'user-004', 'user-007'],
-    hashtags: ['#インスタ映え', '#デート', '#テラス席'],
+    hashtags: ['#インスタ映え', '#デート', '#テラス席', '#バラ園', '#金シャチビュー', '#平日昼の名城公園最高'],
   },
   {
     reviewId: 'rev-033',
@@ -797,7 +797,7 @@ export const mockReviews: Review[] = [
     viewCount: 510,
     createdAt: '2026-01-22T13:00:00+09:00',
     likedUserIds: ['user-005', 'user-009'],
-    hashtags: ['#ランチ', '#勉強スポット', '#Wi-Fi完備', '#コスパ良し'],
+    hashtags: ['#ランチ', '#勉強スポット', '#Wi-Fi完備', '#コスパ良し', '#レンガ造りカフェ', '#雪の日の喫茶店', '#名城公園近く'],
   },
   {
     reviewId: 'rev-034',
@@ -820,7 +820,7 @@ export const mockReviews: Review[] = [
     viewCount: 270,
     createdAt: '2026-05-13T14:00:00+09:00',
     likedUserIds: ['user-002'],
-    hashtags: ['#一人', '#穴場', '#予約不要'],
+    hashtags: ['#一人', '#穴場', '#予約不要', '#名城公園サイクリング', '#レンタサイクル'],
   },
   {
     reviewId: 'rev-035',
@@ -844,7 +844,7 @@ export const mockReviews: Review[] = [
     viewCount: 490,
     createdAt: '2026-04-23T12:15:00+09:00',
     likedUserIds: ['user-001', 'user-006'],
-    hashtags: ['#テイクアウト', '#コスパ良し', '#予約不要'],
+    hashtags: ['#テイクアウト', '#コスパ良し', '#予約不要', '#みたらし団子', '#城北茶屋', '#公園の売店'],
   },
   {
     reviewId: 'rev-036',
@@ -868,7 +868,7 @@ export const mockReviews: Review[] = [
     viewCount: 600,
     createdAt: '2026-03-11T12:30:00+09:00',
     likedUserIds: ['user-003', 'user-007'],
-    hashtags: ['#ランチ', '#一人', '#コスパ良し', '#予約不要'],
+    hashtags: ['#ランチ', '#一人', '#コスパ良し', '#予約不要', '#味噌ラーメン', '#名古屋めし', '#城下町グルメ', '#雨の日ランチ'],
   },
   {
     reviewId: 'rev-037',
@@ -893,7 +893,7 @@ export const mockReviews: Review[] = [
     viewCount: 360,
     createdAt: '2026-02-04T12:00:00+09:00',
     likedUserIds: ['user-004'],
-    hashtags: ['#穴場', '#インスタ映え', '#一人'],
+    hashtags: ['#穴場', '#インスタ映え', '#一人', '#石垣が好き', '#城東門エリア', '#お濠に鷺'],
   },
 
   // ---- 名城公園半径3km圏内・実在スポット ----
@@ -921,7 +921,7 @@ export const mockReviews: Review[] = [
     viewCount: 1050,
     createdAt: '2026-06-10T13:30:00+09:00',
     likedUserIds: ['user-001', 'user-005', 'user-008'],
-    hashtags: ['#インスタ映え', '#大人数', '#予約不要'],
+    hashtags: ['#インスタ映え', '#大人数', '#予約不要', '#隈研吾建築', '#IGアリーナ', '#名城公園の新顔', '#木のルーバー', '#名古屋新ランドマーク'],
   },
   {
     reviewId: 'rev-039',
@@ -945,7 +945,7 @@ export const mockReviews: Review[] = [
     viewCount: 1480,
     createdAt: '2026-05-21T12:00:00+09:00',
     likedUserIds: ['user-002', 'user-004', 'user-007', 'user-010'],
-    hashtags: ['#インスタ映え', '#大人数', '#サークル'],
+    hashtags: ['#インスタ映え', '#大人数', '#サークル', '#赤レンガ好き', '#トヨタ産業技術記念館', '#織機が動く', '#雨の日も楽しい'],
   },
   {
     reviewId: 'rev-040',
@@ -970,7 +970,7 @@ export const mockReviews: Review[] = [
     viewCount: 830,
     createdAt: '2026-04-15T13:00:00+09:00',
     likedUserIds: ['user-001', 'user-006', 'user-009'],
-    hashtags: ['#穴場', '#デート', '#インスタ映え'],
+    hashtags: ['#穴場', '#デート', '#インスタ映え', '#源氏物語絵巻', '#徳川美術館', '#刀剣好き', '#尾張徳川家'],
   },
   {
     reviewId: 'rev-041',
@@ -994,7 +994,7 @@ export const mockReviews: Review[] = [
     viewCount: 580,
     createdAt: '2026-03-18T14:00:00+09:00',
     likedUserIds: ['user-003', 'user-005'],
-    hashtags: ['#ゼミ後', '#デート', '#穴場', '#インスタ映え'],
+    hashtags: ['#ゼミ後', '#デート', '#穴場', '#インスタ映え', '#池泉回遊式庭園', '#雨の日の徳川園', '#大名気分'],
   },
   {
     reviewId: 'rev-042',
@@ -1018,7 +1018,7 @@ export const mockReviews: Review[] = [
     viewCount: 660,
     createdAt: '2026-05-07T13:30:00+09:00',
     likedUserIds: ['user-002', 'user-004'],
-    hashtags: ['#インスタ映え', '#穴場', '#一人'],
+    hashtags: ['#インスタ映え', '#穴場', '#一人', '#白壁洋館', '#明治大正建築', '#城下町さんぽ', '#名古屋の隠れた名所'],
   },
   {
     reviewId: 'rev-043',
@@ -1043,7 +1043,7 @@ export const mockReviews: Review[] = [
     viewCount: 1720,
     createdAt: '2026-04-22T12:30:00+09:00',
     likedUserIds: ['user-001', 'user-003', 'user-006', 'user-008'],
-    hashtags: ['#インスタ映え', '#大人数', '#就活'],
+    hashtags: ['#インスタ映え', '#大人数', '#就活', '#本丸御殿', '#金碧障壁画', '#名古屋城内部', '#歴史建築好き', '#曇り日が狙い目', '#復元建築'],
   },
   {
     reviewId: 'rev-044',
@@ -1066,7 +1066,7 @@ export const mockReviews: Review[] = [
     viewCount: 390,
     createdAt: '2026-01-17T13:00:00+09:00',
     likedUserIds: ['user-007'],
-    hashtags: ['#食べ歩き', '#穴場', '#テイクアウト'],
+    hashtags: ['#食べ歩き', '#穴場', '#テイクアウト', '#筒井町商店街', '#下町グルメ', '#コロッケ食べ歩き', '#雪の日の城下町', '#昭和の商店街'],
   },
   {
     reviewId: 'rev-045',
@@ -1090,7 +1090,7 @@ export const mockReviews: Review[] = [
     viewCount: 310,
     createdAt: '2026-06-03T12:45:00+09:00',
     likedUserIds: ['user-010'],
-    hashtags: ['#モーニング', '#穴場', '#コスパ良し'],
+    hashtags: ['#モーニング', '#穴場', '#コスパ良し', '#浅間町喫茶', '#名古屋下町', '#地元民の日常'],
   },
   {
     reviewId: 'rev-046',
@@ -1114,7 +1114,7 @@ export const mockReviews: Review[] = [
     viewCount: 510,
     createdAt: '2026-05-14T12:30:00+09:00',
     likedUserIds: ['user-003', 'user-005'],
-    hashtags: ['#ランチ', '#カフェ活', '#インスタ映え'],
+    hashtags: ['#ランチ', '#カフェ活', '#インスタ映え', '#赤レンガカフェ', '#Cafe1894', '#博物館飯', '#トヨタ記念館'],
   },
   {
     reviewId: 'rev-047',
