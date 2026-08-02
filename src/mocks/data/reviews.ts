@@ -24,6 +24,7 @@ export const mockReviews: Review[] = [
     viewCount: 310,
     createdAt: '2025-06-15T12:30:00+09:00',
     likedUserIds: ['user-002', 'user-003'],
+    hashtags: ['#ランチ', '#コスパ良し', '#一人'],
   },
   {
     reviewId: 'rev-002',
@@ -46,6 +47,7 @@ export const mockReviews: Review[] = [
     viewCount: 520,
     createdAt: '2025-06-10T08:15:00+09:00',
     likedUserIds: ['user-001', 'user-004', 'user-005'],
+    hashtags: ['#モーニング', '#カフェ活', '#コスパ良し'],
   },
   {
     reviewId: 'rev-003',
@@ -70,6 +72,7 @@ export const mockReviews: Review[] = [
     viewCount: 890,
     createdAt: '2025-06-05T14:00:00+09:00',
     likedUserIds: ['user-001', 'user-002', 'user-004'],
+    hashtags: ['#食べ歩き', '#大人数', '#インスタ映え', '#穴場'],
   },
   {
     reviewId: 'rev-004',
@@ -93,6 +96,7 @@ export const mockReviews: Review[] = [
     viewCount: 445,
     createdAt: '2025-05-28T21:30:00+09:00',
     likedUserIds: ['user-003'],
+    hashtags: ['#飲み会', '#深夜営業', '#コスパ良し', '#大人数'],
   },
   {
     reviewId: 'rev-005',
@@ -118,6 +122,7 @@ export const mockReviews: Review[] = [
     viewCount: 1240,
     createdAt: '2025-05-20T10:00:00+09:00',
     likedUserIds: ['user-001', 'user-002', 'user-003', 'user-004'],
+    hashtags: ['#スイーツ', '#カフェ活', '#デート', '#インスタ映え'],
   },
   {
     reviewId: 'rev-006',
@@ -140,6 +145,7 @@ export const mockReviews: Review[] = [
     viewCount: 2100,
     createdAt: '2025-05-15T13:00:00+09:00',
     likedUserIds: ['user-001', 'user-002', 'user-005'],
+    hashtags: ['#ランチ', '#インスタ映え', '#予約不要'],
   },
   {
     reviewId: 'rev-007',
@@ -163,6 +169,7 @@ export const mockReviews: Review[] = [
     viewCount: 1050,
     createdAt: '2025-05-10T15:30:00+09:00',
     likedUserIds: ['user-002', 'user-003', 'user-006'],
+    hashtags: ['#穴場', '#テラス席', '#大人数'],
   },
   {
     reviewId: 'rev-008',
@@ -187,6 +194,7 @@ export const mockReviews: Review[] = [
     viewCount: 678,
     createdAt: '2025-05-05T22:00:00+09:00',
     likedUserIds: ['user-002', 'user-004'],
+    hashtags: ['#深夜営業', '#一人', '#バイト帰り'],
   },
   {
     reviewId: 'rev-009',
@@ -209,6 +217,7 @@ export const mockReviews: Review[] = [
     viewCount: 388,
     createdAt: '2025-04-28T14:45:00+09:00',
     likedUserIds: ['user-005'],
+    hashtags: ['#穴場', '#カフェ活', '#一人'],
   },
   {
     reviewId: 'rev-010',
@@ -232,6 +241,7 @@ export const mockReviews: Review[] = [
     viewCount: 312,
     createdAt: '2025-04-20T18:00:00+09:00',
     likedUserIds: ['user-001', 'user-007'],
+    hashtags: ['#サークル', '#大人数', '#予約不要'],
   },
   {
     reviewId: 'rev-011',
@@ -255,6 +265,7 @@ export const mockReviews: Review[] = [
     viewCount: 540,
     createdAt: '2025-04-15T17:30:00+09:00',
     likedUserIds: ['user-002', 'user-003', 'user-008'],
+    hashtags: ['#バイト帰り', '#ゼミ後', '#就活'],
   },
   {
     reviewId: 'rev-012',
@@ -281,6 +292,7 @@ export const mockReviews: Review[] = [
     viewCount: 3200,
     createdAt: '2025-04-08T10:30:00+09:00',
     likedUserIds: ['user-001', 'user-004', 'user-005', 'user-006'],
+    hashtags: ['#インスタ映え', '#大人数', '#予約不要'],
   },
   {
     reviewId: 'rev-013',
@@ -304,6 +316,7 @@ export const mockReviews: Review[] = [
     viewCount: 780,
     createdAt: '2025-03-30T09:00:00+09:00',
     likedUserIds: ['user-002', 'user-007'],
+    hashtags: ['#穴場', '#一人', '#カフェ活'],
   },
   {
     reviewId: 'rev-014',
@@ -326,6 +339,7 @@ export const mockReviews: Review[] = [
     viewCount: 620,
     createdAt: '2025-03-22T20:00:00+09:00',
     likedUserIds: ['user-001', 'user-003', 'user-009'],
+    hashtags: ['#飲み会', '#サークル', '#大人数', '#深夜営業'],
   },
   {
     reviewId: 'rev-015',
@@ -349,6 +363,7 @@ export const mockReviews: Review[] = [
     viewCount: 455,
     createdAt: '2025-03-15T13:30:00+09:00',
     likedUserIds: ['user-005', 'user-008'],
+    hashtags: ['#穴場', '#一人'],
   },
   {
     reviewId: 'rev-016',
@@ -373,6 +388,7 @@ export const mockReviews: Review[] = [
     viewCount: 290,
     createdAt: '2025-03-05T14:00:00+09:00',
     likedUserIds: ['user-002'],
+    hashtags: ['#大人数', '#テラス席'],
   },
   {
     reviewId: 'rev-017',
@@ -395,6 +411,7 @@ export const mockReviews: Review[] = [
     viewCount: 218,
     createdAt: '2025-02-25T10:30:00+09:00',
     likedUserIds: ['user-003', 'user-010'],
+    hashtags: ['#勉強スポット', '#一人', '#穴場'],
   },
   {
     reviewId: 'rev-018',
@@ -419,6 +436,7 @@ export const mockReviews: Review[] = [
     viewCount: 1100,
     createdAt: '2025-02-14T19:00:00+09:00',
     likedUserIds: ['user-001', 'user-006', 'user-009'],
+    hashtags: ['#夜景', '#デート', '#インスタ映え', '#ディナー'],
   },
   {
     reviewId: 'rev-019',
@@ -442,6 +460,7 @@ export const mockReviews: Review[] = [
     viewCount: 2050,
     createdAt: '2025-02-08T09:30:00+09:00',
     likedUserIds: ['user-002', 'user-003', 'user-007', 'user-010'],
+    hashtags: ['#大人数', '#テラス席', '#インスタ映え'],
   },
   {
     reviewId: 'rev-020',
@@ -464,6 +483,7 @@ export const mockReviews: Review[] = [
     viewCount: 820,
     createdAt: '2025-01-28T12:30:00+09:00',
     likedUserIds: ['user-004', 'user-005'],
+    hashtags: ['#ランチ', '#コスパ良し', '#予約不要'],
   },
   {
     reviewId: 'rev-021',
@@ -487,6 +507,7 @@ export const mockReviews: Review[] = [
     viewCount: 670,
     createdAt: '2025-01-20T17:00:00+09:00',
     likedUserIds: ['user-001', 'user-008'],
+    hashtags: ['#大人数', '#就活', '#ゼミ後'],
   },
   {
     reviewId: 'rev-022',
@@ -511,6 +532,7 @@ export const mockReviews: Review[] = [
     viewCount: 1580,
     createdAt: '2025-01-12T14:00:00+09:00',
     likedUserIds: ['user-003', 'user-006', 'user-010'],
+    hashtags: ['#テラス席', '#カフェ活', '#インスタ映え', '#デート'],
   },
   {
     reviewId: 'rev-023',
@@ -533,6 +555,7 @@ export const mockReviews: Review[] = [
     viewCount: 502,
     createdAt: '2025-01-05T08:30:00+09:00',
     likedUserIds: ['user-002', 'user-007', 'user-009'],
+    hashtags: ['#モーニング', '#カフェ活', '#勉強スポット', '#Wi-Fi完備'],
   },
   {
     reviewId: 'rev-024',
@@ -556,6 +579,7 @@ export const mockReviews: Review[] = [
     viewCount: 355,
     createdAt: '2024-12-28T15:00:00+09:00',
     likedUserIds: ['user-004', 'user-005'],
+    hashtags: ['#穴場', '#大人数'],
   },
   {
     reviewId: 'rev-025',
@@ -579,6 +603,7 @@ export const mockReviews: Review[] = [
     viewCount: 398,
     createdAt: '2024-12-20T19:30:00+09:00',
     likedUserIds: ['user-001', 'user-003'],
+    hashtags: ['#ディナー', '#飲み会', '#禁煙'],
   },
   {
     reviewId: 'rev-026',
