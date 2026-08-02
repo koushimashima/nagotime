@@ -3,7 +3,7 @@
 // ロゴタップ時に表示される。認証不要。
 
 import { useNavigate } from 'react-router-dom'
-import { ArrowLeft, MapPin, Star, Ticket, Users, Search, Compass } from 'lucide-react'
+import { ArrowLeft, MapPin, Star, Ticket, Users, Compass } from 'lucide-react'
 
 // ---- サービス機能カード ----
 
