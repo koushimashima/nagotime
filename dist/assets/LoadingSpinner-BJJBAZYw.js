@@ -1,0 +1,1 @@
+import{j as s}from"./index-CZZS8gm1.js";const o={sm:"h-4 w-4 border-2",md:"h-8 w-8 border-2",lg:"h-12 w-12 border-4"};function t({size:r="md",className:e=""}){const n=o[r];return s.jsx("span",{role:"status","aria-label":"読み込み中",className:`inline-block animate-spin rounded-full border-orange-400 border-t-transparent ${n} ${e}`})}export{t as L};
