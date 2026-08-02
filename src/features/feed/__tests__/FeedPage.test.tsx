@@ -92,13 +92,13 @@ describe('FeedPage', () => {
     // 初回ローディング中
     expect(screen.getByText('口コミを読み込み中…')).toBeInTheDocument()
 
-    // 口コミが表示されるまで待機
+    // 口コミが表示されるまで待機（aria-label で確認）
     await waitFor(() => {
-      expect(screen.getByText('テストスポット rev-sakae-1')).toBeInTheDocument()
+      expect(screen.getByRole('button', { name: /テストスポット rev-sakae-1/ })).toBeInTheDocument()
     })
 
-    expect(screen.getByText('テストスポット rev-nagoya-1')).toBeInTheDocument()
-    expect(screen.getByText('テストスポット rev-osu-1')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /テストスポット rev-nagoya-1/ })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /テストスポット rev-osu-1/ })).toBeInTheDocument()
   })
 
   it('エリアフィルタを選択すると該当する口コミだけが表示される', async () => {
@@ -107,7 +107,7 @@ describe('FeedPage', () => {
 
     // 口コミ一覧が表示されるまで待機
     await waitFor(() => {
-      expect(screen.getByText('テストスポット rev-sakae-1')).toBeInTheDocument()
+      expect(screen.getByRole('button', { name: /テストスポット rev-sakae-1/ })).toBeInTheDocument()
     })
 
     // エリアフィルタで「栄」を選択
@@ -116,10 +116,10 @@ describe('FeedPage', () => {
 
     // 栄のみが表示される
     await waitFor(() => {
-      expect(screen.getByText('テストスポット rev-sakae-1')).toBeInTheDocument()
+      expect(screen.getByRole('button', { name: /テストスポット rev-sakae-1/ })).toBeInTheDocument()
     })
-    expect(screen.queryByText('テストスポット rev-nagoya-1')).not.toBeInTheDocument()
-    expect(screen.queryByText('テストスポット rev-osu-1')).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /テストスポット rev-nagoya-1/ })).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /テストスポット rev-osu-1/ })).not.toBeInTheDocument()
   })
 
   it('天気フィルタを選択すると該当する口コミだけが表示される', async () => {
@@ -128,7 +128,7 @@ describe('FeedPage', () => {
 
     // 口コミ一覧が表示されるまで待機
     await waitFor(() => {
-      expect(screen.getByText('テストスポット rev-sakae-1')).toBeInTheDocument()
+      expect(screen.getByRole('button', { name: /テストスポット rev-sakae-1/ })).toBeInTheDocument()
     })
 
     // 天気フィルタで「CLOUDY」を選択
@@ -137,9 +137,9 @@ describe('FeedPage', () => {
 
     // CLOUDY のみが表示される
     await waitFor(() => {
-      expect(screen.getByText('テストスポット rev-nagoya-1')).toBeInTheDocument()
+      expect(screen.getByRole('button', { name: /テストスポット rev-nagoya-1/ })).toBeInTheDocument()
     })
-    expect(screen.queryByText('テストスポット rev-sakae-1')).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /テストスポット rev-sakae-1/ })).not.toBeInTheDocument()
   })
 
   it('フィルタ結果が0件の場合「口コミが見つかりませんでした」が表示される', async () => {
@@ -147,7 +147,7 @@ describe('FeedPage', () => {
     renderFeedPage()
 
     await waitFor(() => {
-      expect(screen.getByText('テストスポット rev-sakae-1')).toBeInTheDocument()
+      expect(screen.getByRole('button', { name: /テストスポット rev-sakae-1/ })).toBeInTheDocument()
     })
 
     // 存在しないエリアでフィルタ（サーバーが空配列を返すよう上書き）
@@ -170,7 +170,7 @@ describe('FeedPage', () => {
     renderFeedPage()
 
     await waitFor(() => {
-      expect(screen.getByText('テストスポット rev-sakae-1')).toBeInTheDocument()
+      expect(screen.getByRole('button', { name: /テストスポット rev-sakae-1/ })).toBeInTheDocument()
     })
 
     // エリアフィルタで「栄」を選択
@@ -187,9 +187,9 @@ describe('FeedPage', () => {
 
     // 全口コミが再表示される
     await waitFor(() => {
-      expect(screen.getByText('テストスポット rev-sakae-1')).toBeInTheDocument()
+      expect(screen.getByRole('button', { name: /テストスポット rev-sakae-1/ })).toBeInTheDocument()
     })
-    expect(screen.getByText('テストスポット rev-nagoya-1')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /テストスポット rev-nagoya-1/ })).toBeInTheDocument()
   })
 
   it('APIエラーの場合にエラーメッセージが表示される', async () => {

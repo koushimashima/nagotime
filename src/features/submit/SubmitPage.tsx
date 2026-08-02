@@ -8,7 +8,7 @@
 // - バリデーションエラーをフィールド下にインライン表示
 // - POST /api/reviews → 成功時 addMiles(10) → navigate('/')
 
-import { useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
 import { useMile } from '../../contexts/MileContext'
@@ -22,6 +22,9 @@ import {
 } from '../../utils/errorMessages'
 import { getTimeSlot, getDayType } from '../../utils/timeUtils'
 import { LoadingSpinner } from '../../components/LoadingSpinner'
+import { ALL_PRESET_HASHTAGS } from '../../constants/hashtags'
+import { HashtagSelector } from './HashtagSelector'
+import type { Review } from '../../mocks/data/types'
 
 // ---- 型定義 ----
 
@@ -51,6 +54,22 @@ export function SubmitPage() {
   const [submitting, setSubmitting] = useState(false)
   const [geoLoading, setGeoLoading] = useState(false)
   const [isDragging, setIsDragging] = useState(false)
+  const [hashtags, setHashtags] = useState<string[]>([])
+
+  // ---- 全レビュー取得（customHashtagPool 導出用） ----
+  const [allReviews, setAllReviews] = useState<Review[]>([])
+  useEffect(() => {
+    fetch('/api/reviews?limit=200')
+      .then((res) => res.ok ? res.json() : { reviews: [] })
+      .then((data) => { setAllReviews(data.reviews ?? []) })
+      .catch(() => { /* サジェストなしで継続 */ })
+  }, [])
+
+  const customHashtagPool = useMemo(() => {
+    const all = allReviews.flatMap((r) => r.hashtags ?? [])
+    const unique = Array.from(new Set(all))
+    return unique.filter((tag) => !ALL_PRESET_HASHTAGS.includes(tag))
+  }, [allReviews])
 
   // ファイル入力の ref（非表示 input をラベルからトリガー）
   const fileInputRef = useRef<HTMLInputElement>(null)
@@ -193,6 +212,7 @@ export function SubmitPage() {
       weather: 'UNKNOWN',
       timeSlot,
       dayType,
+      hashtags,
     }
 
     try {
@@ -509,6 +529,15 @@ export function SubmitPage() {
               {errors.photos}
             </p>
           )}
+        </div>
+
+        {/* ---- ハッシュタグ ---- */}
+        <div className="bg-white rounded-xl p-4 border border-gray-200">
+          <HashtagSelector
+            value={hashtags}
+            onHashtagsChange={setHashtags}
+            customHashtagPool={customHashtagPool}
+          />
         </div>
 
         {/* ---- 送信エラー ---- */}

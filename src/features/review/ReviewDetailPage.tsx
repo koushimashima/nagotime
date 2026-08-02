@@ -406,6 +406,21 @@ export function ReviewDetailPage() {
           <p className="text-sm text-gray-800 leading-relaxed whitespace-pre-wrap">{review.text}</p>
         </div>
 
+        {/* ハッシュタグチップ（review.hashtags が空の場合は非表示） */}
+        {(review.hashtags ?? []).length > 0 && (
+          <div className="flex flex-wrap gap-2 px-1">
+            {(review.hashtags ?? []).slice(0, 10).map((tag) => (
+              <span
+                key={tag}
+                className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium
+                           bg-orange-100 text-orange-700 border border-orange-200"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+
         {/* 投稿者情報・投稿日時 */}
         <div className="flex items-center gap-3 py-3 border-t border-b border-gray-100">
           {/* アバター（DiceBear adventurer イラスト） */}

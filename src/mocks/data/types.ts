@@ -30,6 +30,7 @@ export interface Review {
   viewCount: number
   createdAt: string
   likedUserIds: string[]
+  hashtags?: string[]
 }
 
 export interface Spot {

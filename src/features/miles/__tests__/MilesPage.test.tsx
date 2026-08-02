@@ -80,9 +80,12 @@ afterEach(() => localStorage.clear())
 
 describe('MilesPage', () => {
   it('マイル残高と取引履歴が表示される', async () => {
+    const user = userEvent.setup()
     renderMilesPage()
     await waitFor(() => expect(screen.getByText('1,000')).toBeInTheDocument())
-    expect(screen.getByText('口コミ投稿')).toBeInTheDocument()
+    // 取引履歴は「取引履歴 ▼」ボタンで開く
+    await user.click(screen.getByRole('button', { name: /取引履歴/ }))
+    await waitFor(() => expect(screen.getByText('口コミ投稿')).toBeInTheDocument())
   })
 
   it('チケット一覧が表示される', async () => {
@@ -113,6 +116,18 @@ describe('MilesPage', () => {
   })
 
   it('チケット交換後にローカルのマイル残高が減算される', async () => {
+    // 交換後の再fetchでは800を返すようにサーバーを更新
+    let milesCallCount = 0
+    server.use(
+      http.get('/api/miles', ({ request }) => {
+        if (!request.headers.get('Authorization')) {
+          return HttpResponse.json({ error: { code: 'UNAUTHORIZED', message: '認証が必要です' } }, { status: 401 })
+        }
+        milesCallCount++
+        const balance = milesCallCount > 1 ? 800 : 1000
+        return HttpResponse.json({ balance, transactions: [testTransaction] })
+      }),
+    )
     const user = userEvent.setup()
     renderMilesPage()
     await waitFor(() => expect(screen.getAllByText('テストチケット200マイル').length).toBeGreaterThanOrEqual(1))
@@ -129,6 +144,15 @@ describe('MilesPage', () => {
   })
 
   it('マイル不足の場合は交換ボタンが無効化される', async () => {
+    // APIが100マイルを返すようにオーバーライド
+    server.use(
+      http.get('/api/miles', ({ request }) => {
+        if (!request.headers.get('Authorization')) {
+          return HttpResponse.json({ error: { code: 'UNAUTHORIZED', message: '認証が必要です' } }, { status: 401 })
+        }
+        return HttpResponse.json({ balance: 100, transactions: [testTransaction] })
+      }),
+    )
     localStorage.setItem('nagotime_auth_user', JSON.stringify(testUser))
     localStorage.setItem('nagotime_mile_balance', '100')
     render(
@@ -137,7 +161,7 @@ describe('MilesPage', () => {
     await waitFor(() => expect(screen.getAllByText('テストチケット200マイル').length).toBeGreaterThanOrEqual(1))
     await waitFor(() =>
       expect(
-        screen.getByText((_c, el) => el?.tagName === 'P' && /あと.*100.*マイル必要/.test(el.textContent ?? ''))
+        screen.getByText((_, el) => el?.tagName === 'P' && /あと.*100.*マイル必要/.test(el.textContent ?? ''))
       ).toBeInTheDocument()
     )
     expect(screen.getByRole('button', { name: 'テストチケット200マイル（マイル不足のため交換不可）' })).toBeDisabled()

@@ -92,6 +92,15 @@ function calcTotalScore(
   return weatherScore * 0.3 + timeScore * 0.25 + distanceScore * 0.3 + likeScore * 0.15
 }
 
+/**
+ * レビューオブジェクトを正規化する。
+ * `hashtags` フィールドが未定義の場合は `[]` にデフォルトする（Requirements 8.3）。
+ */
+const normalize = (r: Review): Review => ({
+  ...r,
+  hashtags: r.hashtags ?? [],
+})
+
 /** 401 レスポンスを生成する */
 function unauthorizedResponse() {
   return HttpResponse.json(
@@ -179,7 +188,7 @@ export const reviewHandlers = [
     const nextCursor = startIndex + limit < total ? page[page.length - 1]?.reviewId ?? null : null
 
     return HttpResponse.json({
-      reviews: page,
+      reviews: page.map(normalize),
       nextCursor,
       total,
     })
@@ -242,7 +251,7 @@ export const reviewHandlers = [
 
     scored.sort((a, b) => b.score - a.score)
 
-    const resultReviews = scored.slice(0, 20).map((s) => s.review)
+    const resultReviews = scored.slice(0, 20).map((s) => normalize(s.review))
 
     return HttpResponse.json({ reviews: resultReviews })
   }),
@@ -273,7 +282,7 @@ export const reviewHandlers = [
     // viewCount をインクリメント（Requirements 5.4, 5.5）
     reviews[reviewIndex] = { ...review, viewCount: review.viewCount + 1 }
 
-    return HttpResponse.json(reviews[reviewIndex])
+    return HttpResponse.json(normalize(reviews[reviewIndex]))
   }),
 
   /**
@@ -344,6 +353,27 @@ export const reviewHandlers = [
       validationErrors.push('lon')
     }
 
+    // hashtags バリデーション（Requirements 7.1〜7.5）
+    const hashtags = body.hashtags ?? []
+    if (Array.isArray(hashtags)) {
+      // 上限チェック（Requirements 7.1）
+      if (hashtags.length > 10) {
+        validationErrors.push('hashtags')
+      }
+      // 各ハッシュタグの形式チェック（Requirements 7.2, 7.3）
+      const hasInvalid = hashtags.some(
+        (tag: unknown) =>
+          typeof tag !== 'string' ||
+          tag.length > 31 ||
+          /\s/.test(tag)
+      )
+      if (hasInvalid) validationErrors.push('hashtags')
+      // 重複チェック（Requirements 7.4）
+      if (new Set(hashtags).size !== hashtags.length) {
+        validationErrors.push('hashtags')
+      }
+    }
+
     if (validationErrors.length > 0) {
       // バリデーションエラーの具体的なメッセージを組み立てる
       let message = '入力内容にエラーがあります'
@@ -391,6 +421,7 @@ export const reviewHandlers = [
       viewCount: 0,
       createdAt: now.toISOString(),
       likedUserIds: [],
+      hashtags: Array.isArray(hashtags) ? hashtags as string[] : [],
     }
 
     // メモリ上の配列の先頭に追加（以降の GET に反映される）

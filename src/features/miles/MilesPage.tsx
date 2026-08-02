@@ -311,9 +311,9 @@ export function MilesPage() {
       {/* チケット詳細モーダル */}
       {selectedTicket && (
         <div
-          role="dialog"
-          aria-modal="true"
-          aria-label={`${selectedTicket.name}の詳細`}
+          role={isDetailOpen ? 'dialog' : undefined}
+          aria-modal={isDetailOpen ? 'true' : undefined}
+          aria-label={isDetailOpen ? `${selectedTicket.name}の詳細` : undefined}
           className={`fixed inset-x-0 top-0 bottom-0 md:bottom-0 z-50 flex items-end justify-center transition-all duration-300 ${isDetailOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
           style={{ bottom: 'var(--bottom-nav-height, 4rem)' }}
         >

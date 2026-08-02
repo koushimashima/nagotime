@@ -1,0 +1,434 @@
+{
+  "pbtResults": {
+    "1.4 `validateHashtag` のプロパティベーステスト（Property 1）を `src/features/submit/hashtagValidator.pbt.test.ts` に実装する": {
+      "status": "passed",
+      "lastRunTimestamp": 1785632662254
+    },
+    "2.3 MSW ハンドラーの重複ハッシュタグ拒否プロパティテスト（Property 2）を `src/mocks/handlers/reviews.pbt.test.ts` に実装する": {
+      "status": "passed",
+      "lastRunTimestamp": 1785633305077
+    },
+    "2.4 MSW ハンドラーのハッシュタグ上限超過拒否プロパティテスト（Property 3）を実装する": {
+      "status": "passed",
+      "lastRunTimestamp": 1785633461890
+    },
+    "2.5 GET レスポンスの `hashtags` 自動補完プロパティテスト（Property 4）を実装する": {
+      "status": "passed",
+      "lastRunTimestamp": 1785633693643
+    },
+    "4.4 プリセットチップの選択・解除ラウンドトリップのプロパティテスト（Property 5）を `src/features/submit/HashtagSelector.pbt.test.tsx` に実装する": {
+      "status": "passed",
+      "lastRunTimestamp": 1785635272170
+    },
+    "4.5 カスタム入力の `#` 正規化プロパティテスト（Property 6）を実装する": {
+      "status": "passed",
+      "lastRunTimestamp": 1785678269953
+    },
+    "4.6 カスタム入力後のフィールドクリアプロパティテスト（Property 7）を実装する": {
+      "status": "passed",
+      "lastRunTimestamp": 1785678380852
+    },
+    "5.2 フォーム送信時のハッシュタグ反映プロパティテスト（Property 8）を `src/features/submit/HashtagSelector.pbt.test.tsx` に追加する": {
+      "status": "passed",
+      "lastRunTimestamp": 1785679091404
+    },
+    "7.2 ReviewDetailPage のチップ表示プロパティテスト（Property 9）を `src/features/review/ReviewDetailPage.pbt.test.tsx` に実装する": {
+      "status": "passed",
+      "lastRunTimestamp": 1785679665985
+    },
+    "8.2 ReviewCard の縦3件制限と余剰表示プロパティテスト（Property 10）を `src/components/ReviewCard/ReviewCard.pbt.test.tsx` に実装する": {
+      "status": "passed",
+      "lastRunTimestamp": 1785680117906
+    },
+    "10.3 サジェストのフィルタリングプロパティテスト（Property 11）を `src/features/submit/HashtagSelector.pbt.test.tsx` に追加する": {
+      "status": "passed",
+      "lastRunTimestamp": 1785680785586
+    },
+    "10.4 サジェスト候補上限プロパティテスト（Property 12）を実装する": {
+      "status": "passed",
+      "lastRunTimestamp": 1785680922623
+    }
+  },
+  "executionHistory": {
+    "1.1 `src/mocks/data/types.ts` の `Review` インターフェースに `hashtags?: string[]` を追加する": [
+      {
+        "executionId": "6fc31626-7348-4f34-8bdf-ccadb6ef7e9c",
+        "chatSessionId": "sess_70d7e7e5-4870-4869-b5a6-c346a0553b51",
+        "timestamp": 1785631797987
+      },
+      {
+        "executionId": "6fc31626-7348-4f34-8bdf-ccadb6ef7e9c",
+        "chatSessionId": "sess_70d7e7e5-4870-4869-b5a6-c346a0553b51",
+        "timestamp": 1785631850378
+      }
+    ],
+    "1.2 `src/constants/hashtags.ts` を新規作成し、`PRESET_CATEGORIES` と `ALL_PRESET_HASHTAGS` を定義する": [
+      {
+        "executionId": "51a22326-013c-4d29-bc63-9a98909bb77d",
+        "chatSessionId": "sess_519d1be2-bdb9-4bd3-9818-fae1f4697530",
+        "timestamp": 1785631863256
+      },
+      {
+        "executionId": "51a22326-013c-4d29-bc63-9a98909bb77d",
+        "chatSessionId": "sess_519d1be2-bdb9-4bd3-9818-fae1f4697530",
+        "timestamp": 1785631918159
+      }
+    ],
+    "1.3 `src/features/submit/hashtagValidator.ts` を新規作成し、再利用可能な純粋関数 `validateHashtag(tag: string)` を実装する": [
+      {
+        "executionId": "d906fb4d-b2a4-4783-9474-502b3fc554e9",
+        "chatSessionId": "sess_54eb89db-1e9b-4ec1-a9e5-61c19200e954",
+        "timestamp": 1785632479693
+      },
+      {
+        "executionId": "d906fb4d-b2a4-4783-9474-502b3fc554e9",
+        "chatSessionId": "sess_54eb89db-1e9b-4ec1-a9e5-61c19200e954",
+        "timestamp": 1785632529771
+      }
+    ],
+    "1. データモデルとバリデーション基盤の整備": [
+      {
+        "executionId": "d906fb4d-b2a4-4783-9474-502b3fc554e9",
+        "chatSessionId": "sess_54eb89db-1e9b-4ec1-a9e5-61c19200e954",
+        "timestamp": 1785632529881
+      }
+    ],
+    "1.4 `validateHashtag` のプロパティベーステスト（Property 1）を `src/features/submit/hashtagValidator.pbt.test.ts` に実装する": [
+      {
+        "executionId": "bf52bda1-0c2b-4913-a5e9-cd907280b271",
+        "chatSessionId": "sess_f7e34a94-d269-47a6-8ed9-aed516d4b431",
+        "timestamp": 1785632556603
+      },
+      {
+        "executionId": "bf52bda1-0c2b-4913-a5e9-cd907280b271",
+        "chatSessionId": "sess_f7e34a94-d269-47a6-8ed9-aed516d4b431",
+        "timestamp": 1785632679025
+      }
+    ],
+    "2.1 `src/mocks/handlers/reviews.ts` の `POST /api/reviews` ハンドラーに `hashtags` バリデーションを追加する": [
+      {
+        "executionId": "a0b3dced-e88e-4698-aed3-f9b841690939",
+        "chatSessionId": "sess_5cdbfe07-4711-4e5e-9a14-88339373c694",
+        "timestamp": 1785632752651
+      },
+      {
+        "executionId": "a0b3dced-e88e-4698-aed3-f9b841690939",
+        "chatSessionId": "sess_5cdbfe07-4711-4e5e-9a14-88339373c694",
+        "timestamp": 1785633001874
+      }
+    ],
+    "2.2 `GET /api/reviews` と `GET /api/reviews/:id` ハンドラーに `normalize` 関数を追加し、`hashtags` が未定義のレビューに `[]` を補完する": [
+      {
+        "executionId": "c98b04d6-30d9-4cbf-a1fe-444ed8fadee8",
+        "chatSessionId": "sess_7913ac6f-22f2-4aa0-b22a-f2523242717f",
+        "timestamp": 1785633017461
+      },
+      {
+        "executionId": "c98b04d6-30d9-4cbf-a1fe-444ed8fadee8",
+        "chatSessionId": "sess_7913ac6f-22f2-4aa0-b22a-f2523242717f",
+        "timestamp": 1785633109825
+      }
+    ],
+    "2. MSW ハンドラーの拡張（API レイヤー）": [
+      {
+        "executionId": "c98b04d6-30d9-4cbf-a1fe-444ed8fadee8",
+        "chatSessionId": "sess_7913ac6f-22f2-4aa0-b22a-f2523242717f",
+        "timestamp": 1785633109945
+      }
+    ],
+    "2.3 MSW ハンドラーの重複ハッシュタグ拒否プロパティテスト（Property 2）を `src/mocks/handlers/reviews.pbt.test.ts` に実装する": [
+      {
+        "executionId": "3c7d545b-2c6b-45ca-8e75-17020a94b3cd",
+        "chatSessionId": "sess_668b9b61-6c11-4d68-8d0f-e29c1033bc44",
+        "timestamp": 1785633131949
+      },
+      {
+        "executionId": "3c7d545b-2c6b-45ca-8e75-17020a94b3cd",
+        "chatSessionId": "sess_668b9b61-6c11-4d68-8d0f-e29c1033bc44",
+        "timestamp": 1785633321026
+      }
+    ],
+    "2.4 MSW ハンドラーのハッシュタグ上限超過拒否プロパティテスト（Property 3）を実装する": [
+      {
+        "executionId": "c4ec5453-e705-49eb-a822-b361f8d47a8c",
+        "chatSessionId": "sess_3625e2d1-63ec-4165-b576-807b2e43e806",
+        "timestamp": 1785633340196
+      },
+      {
+        "executionId": "c4ec5453-e705-49eb-a822-b361f8d47a8c",
+        "chatSessionId": "sess_3625e2d1-63ec-4165-b576-807b2e43e806",
+        "timestamp": 1785633476223
+      }
+    ],
+    "2.5 GET レスポンスの `hashtags` 自動補完プロパティテスト（Property 4）を実装する": [
+      {
+        "executionId": "26a79f1e-e34a-464e-97a5-e898df08e666",
+        "chatSessionId": "sess_25723422-df6e-4a53-b39f-8c9f49b5815e",
+        "timestamp": 1785633486177
+      },
+      {
+        "executionId": "26a79f1e-e34a-464e-97a5-e898df08e666",
+        "chatSessionId": "sess_25723422-df6e-4a53-b39f-8c9f49b5815e",
+        "timestamp": 1785633710529
+      }
+    ],
+    "3. チェックポイント — API レイヤーの確認": [
+      {
+        "executionId": "eeaacdcc-792e-40e9-bdff-4f4a2f1ad226",
+        "chatSessionId": "sess_3003b832-57a7-4294-a4a8-67100dd2e69f",
+        "timestamp": 1785633740454
+      },
+      {
+        "executionId": "eeaacdcc-792e-40e9-bdff-4f4a2f1ad226",
+        "chatSessionId": "sess_3003b832-57a7-4294-a4a8-67100dd2e69f",
+        "timestamp": 1785633852071
+      }
+    ],
+    "4.1 `src/features/submit/HashtagSelector.tsx` を新規作成し、Props インターフェース・内部状態・カテゴリ別プリセットチップ表示を実装する": [
+      {
+        "executionId": "dd098934-cf0a-4664-b352-597a5cc43b12",
+        "chatSessionId": "sess_d368d916-31ff-4e99-b17b-347ee4547568",
+        "timestamp": 1785633880981
+      },
+      {
+        "executionId": "dd098934-cf0a-4664-b352-597a5cc43b12",
+        "chatSessionId": "sess_d368d916-31ff-4e99-b17b-347ee4547568",
+        "timestamp": 1785634196067
+      }
+    ],
+    "4.2 プリセットチップのタップ選択・解除ロジックを実装する": [
+      {
+        "executionId": "e3a506dd-c9e8-44d9-8d40-90f641ce114f",
+        "chatSessionId": "sess_dc7e25dd-af5d-4a8b-a6ff-ab802493d70e",
+        "timestamp": 1785634211965
+      },
+      {
+        "executionId": "e3a506dd-c9e8-44d9-8d40-90f641ce114f",
+        "chatSessionId": "sess_dc7e25dd-af5d-4a8b-a6ff-ab802493d70e",
+        "timestamp": 1785634340897
+      }
+    ],
+    "4.3 カスタムハッシュタグ入力フィールドと追加ボタンを実装する": [
+      {
+        "executionId": "db5e4ea1-ba54-4e7d-8e30-7114e720b374",
+        "chatSessionId": "sess_112fe705-f688-41d4-893e-38698d9c5cbf",
+        "timestamp": 1785634393570
+      }
+    ],
+    "4.4 プリセットチップの選択・解除ラウンドトリップのプロパティテスト（Property 5）を `src/features/submit/HashtagSelector.pbt.test.tsx` に実装する": [
+      {
+        "executionId": "119ec9c2-7b06-4a33-9f69-98205ff42edd",
+        "chatSessionId": "sess_b93d8db5-ba6b-45af-94ce-96c17bd4384f",
+        "timestamp": 1785635139876
+      },
+      {
+        "executionId": "119ec9c2-7b06-4a33-9f69-98205ff42edd",
+        "chatSessionId": "sess_b93d8db5-ba6b-45af-94ce-96c17bd4384f",
+        "timestamp": 1785635288472
+      }
+    ],
+    "4.5 カスタム入力の `#` 正規化プロパティテスト（Property 6）を実装する": [
+      {
+        "executionId": "949b8a6a-4917-43e5-a0cb-8668925ad3b5",
+        "chatSessionId": "sess_fab20f78-8415-453c-9e2b-83a01561a36b",
+        "timestamp": 1785678067503
+      },
+      {
+        "executionId": "949b8a6a-4917-43e5-a0cb-8668925ad3b5",
+        "chatSessionId": "sess_fab20f78-8415-453c-9e2b-83a01561a36b",
+        "timestamp": 1785678285000
+      }
+    ],
+    "4. `HashtagSelector` コンポーネントの実装": [
+      {
+        "executionId": "949b8a6a-4917-43e5-a0cb-8668925ad3b5",
+        "chatSessionId": "sess_fab20f78-8415-453c-9e2b-83a01561a36b",
+        "timestamp": 1785678285151
+      }
+    ],
+    "4.6 カスタム入力後のフィールドクリアプロパティテスト（Property 7）を実装する": [
+      {
+        "executionId": "3d62cd25-8ece-4e79-8f1c-57123159d0e5",
+        "chatSessionId": "sess_ecfc4f33-0be6-40fc-949c-b011b735bb15",
+        "timestamp": 1785678301547
+      },
+      {
+        "executionId": "3d62cd25-8ece-4e79-8f1c-57123159d0e5",
+        "chatSessionId": "sess_ecfc4f33-0be6-40fc-949c-b011b735bb15",
+        "timestamp": 1785678393272
+      }
+    ],
+    "5.1 `src/features/submit/SubmitPage.tsx` に `hashtags: string[]` フォーム状態を追加し、`HashtagSelector` を写真アップロードブロックの直後に配置する": [
+      {
+        "executionId": "020cd988-b34f-4ed6-a673-d4b2b22433b4",
+        "chatSessionId": "sess_3a6808fb-de1d-4561-9ad8-d0ded52d82c7",
+        "timestamp": 1785678424700
+      },
+      {
+        "executionId": "020cd988-b34f-4ed6-a673-d4b2b22433b4",
+        "chatSessionId": "sess_3a6808fb-de1d-4561-9ad8-d0ded52d82c7",
+        "timestamp": 1785678802157
+      }
+    ],
+    "5. `SubmitPage` へのハッシュタグ統合": [
+      {
+        "executionId": "020cd988-b34f-4ed6-a673-d4b2b22433b4",
+        "chatSessionId": "sess_3a6808fb-de1d-4561-9ad8-d0ded52d82c7",
+        "timestamp": 1785678802278
+      }
+    ],
+    "5.2 フォーム送信時のハッシュタグ反映プロパティテスト（Property 8）を `src/features/submit/HashtagSelector.pbt.test.tsx` に追加する": [
+      {
+        "executionId": "41c76a22-0461-4399-a9bb-2af083e46568",
+        "chatSessionId": "sess_4f767dc5-cf11-43c4-93b6-5364d038123c",
+        "timestamp": 1785678815106
+      },
+      {
+        "executionId": "41c76a22-0461-4399-a9bb-2af083e46568",
+        "chatSessionId": "sess_4f767dc5-cf11-43c4-93b6-5364d038123c",
+        "timestamp": 1785679108262
+      }
+    ],
+    "6. チェックポイント — HashtagSelector と SubmitPage の確認": [
+      {
+        "executionId": "3b6cc9aa-bfe1-4e7c-ae46-e861d0add6ed",
+        "chatSessionId": "sess_df4c2f92-b019-42ea-9991-fb42e0631b6d",
+        "timestamp": 1785679142792
+      },
+      {
+        "executionId": "3b6cc9aa-bfe1-4e7c-ae46-e861d0add6ed",
+        "chatSessionId": "sess_df4c2f92-b019-42ea-9991-fb42e0631b6d",
+        "timestamp": 1785679274438
+      }
+    ],
+    "7.1 `src/features/review/ReviewDetailPage.tsx` の本文テキストブロック直後にハッシュタグチップセクションを追加する": [
+      {
+        "executionId": "1c455f7a-91ff-4acd-bb33-72142829d564",
+        "chatSessionId": "sess_956fb85d-eab4-442f-a7f0-4770de021cda",
+        "timestamp": 1785679289291
+      },
+      {
+        "executionId": "1c455f7a-91ff-4acd-bb33-72142829d564",
+        "chatSessionId": "sess_956fb85d-eab4-442f-a7f0-4770de021cda",
+        "timestamp": 1785679493139
+      }
+    ],
+    "7. `ReviewDetailPage` へのハッシュタグ表示統合": [
+      {
+        "executionId": "1c455f7a-91ff-4acd-bb33-72142829d564",
+        "chatSessionId": "sess_956fb85d-eab4-442f-a7f0-4770de021cda",
+        "timestamp": 1785679493287
+      }
+    ],
+    "7.2 ReviewDetailPage のチップ表示プロパティテスト（Property 9）を `src/features/review/ReviewDetailPage.pbt.test.tsx` に実装する": [
+      {
+        "executionId": "1aae1a94-c9af-4ecc-a6b4-c30c20d648d1",
+        "chatSessionId": "sess_d7656138-e4ec-4dcb-aa7a-b486285808db",
+        "timestamp": 1785679509218
+      },
+      {
+        "executionId": "1aae1a94-c9af-4ecc-a6b4-c30c20d648d1",
+        "chatSessionId": "sess_d7656138-e4ec-4dcb-aa7a-b486285808db",
+        "timestamp": 1785679681136
+      }
+    ],
+    "8.1 `src/components/ReviewCard/ReviewCard.tsx` の写真左上オーバーレイに縦3件 + `+N` インジケーターのハッシュタグ表示を追加する": [
+      {
+        "executionId": "7c7e9fa3-d3a6-45d2-8cdc-0f6f7d787e97",
+        "chatSessionId": "sess_afa95136-6c1d-431f-bfe2-8eef096c8d06",
+        "timestamp": 1785679700356
+      },
+      {
+        "executionId": "7c7e9fa3-d3a6-45d2-8cdc-0f6f7d787e97",
+        "chatSessionId": "sess_afa95136-6c1d-431f-bfe2-8eef096c8d06",
+        "timestamp": 1785679838269
+      }
+    ],
+    "8. `ReviewCard` へのハッシュタグ表示統合": [
+      {
+        "executionId": "7c7e9fa3-d3a6-45d2-8cdc-0f6f7d787e97",
+        "chatSessionId": "sess_afa95136-6c1d-431f-bfe2-8eef096c8d06",
+        "timestamp": 1785679838367
+      }
+    ],
+    "8.2 ReviewCard の縦3件制限と余剰表示プロパティテスト（Property 10）を `src/components/ReviewCard/ReviewCard.pbt.test.tsx` に実装する": [
+      {
+        "executionId": "3b5a3815-10a8-4c59-b4a0-66789ed242e4",
+        "chatSessionId": "sess_f1936950-adff-4e3f-b845-e902b01e4551",
+        "timestamp": 1785679868155
+      },
+      {
+        "executionId": "3b5a3815-10a8-4c59-b4a0-66789ed242e4",
+        "chatSessionId": "sess_f1936950-adff-4e3f-b845-e902b01e4551",
+        "timestamp": 1785680142726
+      }
+    ],
+    "10.1 `HashtagSelector` に `suggestions` / `showSuggestions` 内部状態を追加し、`customInput` 変化時のフィルタリングロジック（`useEffect`）を実装する": [
+      {
+        "executionId": "ec009771-2a16-4795-ba7a-e5d4c77b54c5",
+        "chatSessionId": "sess_6ad6578e-c24a-4a45-917c-8065270d7c26",
+        "timestamp": 1785680187175
+      },
+      {
+        "executionId": "ec009771-2a16-4795-ba7a-e5d4c77b54c5",
+        "chatSessionId": "sess_6ad6578e-c24a-4a45-917c-8065270d7c26",
+        "timestamp": 1785680435176
+      }
+    ],
+    "10.2 ドロップダウン UI を実装する（`role=\"listbox\"` / `role=\"option\"`）": [
+      {
+        "executionId": "e9a627b5-6682-4333-b337-f318902bff9c",
+        "chatSessionId": "sess_a43c4292-46d5-413b-90f2-4b4f624af8ac",
+        "timestamp": 1785680471319
+      },
+      {
+        "executionId": "e9a627b5-6682-4333-b337-f318902bff9c",
+        "chatSessionId": "sess_a43c4292-46d5-413b-90f2-4b4f624af8ac",
+        "timestamp": 1785680627917
+      }
+    ],
+    "10. カスタムハッシュタグのサジェスト機能実装": [
+      {
+        "executionId": "e9a627b5-6682-4333-b337-f318902bff9c",
+        "chatSessionId": "sess_a43c4292-46d5-413b-90f2-4b4f624af8ac",
+        "timestamp": 1785680628120
+      }
+    ],
+    "10.3 サジェストのフィルタリングプロパティテスト（Property 11）を `src/features/submit/HashtagSelector.pbt.test.tsx` に追加する": [
+      {
+        "executionId": "ff976b13-cef5-4ada-beac-090761eaa90a",
+        "chatSessionId": "sess_5f65ace3-557a-4c06-8459-574d84329b01",
+        "timestamp": 1785680641994
+      },
+      {
+        "executionId": "ff976b13-cef5-4ada-beac-090761eaa90a",
+        "chatSessionId": "sess_5f65ace3-557a-4c06-8459-574d84329b01",
+        "timestamp": 1785680802946
+      }
+    ],
+    "10.4 サジェスト候補上限プロパティテスト（Property 12）を実装する": [
+      {
+        "executionId": "f8304867-c2c1-42fc-b47c-620ab1f64f84",
+        "chatSessionId": "sess_6ae90993-ec50-4195-b2a2-8915434ddf91",
+        "timestamp": 1785680815786
+      },
+      {
+        "executionId": "f8304867-c2c1-42fc-b47c-620ab1f64f84",
+        "chatSessionId": "sess_6ae90993-ec50-4195-b2a2-8915434ddf91",
+        "timestamp": 1785680940850
+      }
+    ],
+    "9. 最終チェックポイント — 全テストパス確認": [
+      {
+        "executionId": "59faeff6-2d98-4e8f-b9df-84a392528c5c",
+        "chatSessionId": "sess_4feb8e2c-12f9-4648-a22e-3228ad315917",
+        "timestamp": 1785680955126
+      },
+      {
+        "executionId": "77afd5d0-3dfb-435e-ad52-3026fea4242e",
+        "chatSessionId": "sess_4feb8e2c-12f9-4648-a22e-3228ad315917",
+        "timestamp": 1785682344422
+      }
+    ]
+  }
+}

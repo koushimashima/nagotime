@@ -40,6 +40,28 @@ export function ReviewCard({ review, onClick }: ReviewCardProps) {
       {/* 写真下部グラデーション */}
       <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
 
+      {/* ハッシュタグ（写真左上・縦3件・白字・背景なし） */}
+      {(review.hashtags ?? []).length > 0 && (
+        <div
+          className="absolute top-2 left-2 flex flex-col gap-0.5 pointer-events-none"
+          aria-label={`ハッシュタグ: ${(review.hashtags ?? []).join(', ')}`}
+        >
+          {(review.hashtags ?? []).slice(0, 3).map((tag) => (
+            <span
+              key={tag}
+              className="max-w-[60%] truncate text-[10px] font-medium text-white [filter:drop-shadow(0_1px_2px_rgba(0,0,0,0.35))] leading-none"
+            >
+              {tag}
+            </span>
+          ))}
+          {(review.hashtags ?? []).length > 3 && (
+            <span className="text-[10px] font-medium text-white [filter:drop-shadow(0_1px_2px_rgba(0,0,0,0.35))] leading-none">
+              +{(review.hashtags ?? []).length - 3}
+            </span>
+          )}
+        </div>
+      )}
+
       {/* 右下：ハート＋いいね数 */}
       <div
         className="absolute bottom-2 right-2 flex items-center gap-1"
