@@ -165,11 +165,21 @@ export function ContextFilterBar() {
         }
       }}
     >
-      {/* ろうとアイコン */}
-      <Filter
-        className="w-4 h-4 text-gray-400 flex-shrink-0"
-        aria-hidden="true"
-      />
+      {/* ろうとアイコン — 絞り込み中はオレンジ（クリックで全解除）、全表示中はグレー */}
+      <button
+        type="button"
+        aria-label={isAnyFilterActive ? 'フィルターを解除してすべての口コミを表示' : 'フィルターなし（すべて表示中）'}
+        aria-pressed={isAnyFilterActive}
+        disabled={!isAnyFilterActive}
+        className={`flex-shrink-0 rounded-full p-1 transition-colors ${
+          isAnyFilterActive
+            ? 'text-orange-500 hover:bg-orange-50 cursor-pointer'
+            : 'text-gray-300 cursor-default'
+        }`}
+        onClick={isAnyFilterActive ? handleClearAll : undefined}
+      >
+        <Filter className="w-4 h-4" aria-hidden="true" />
+      </button>
 
       {/* 時間帯チップ */}
       <div className="relative" data-chip>
@@ -311,32 +321,16 @@ export function ContextFilterBar() {
         )}
       </div>
 
-      {/* リセットボタン（フィルタ変更時のみ表示） */}
+      {/* リセットボタン（フィルタ変更時のみ表示）— アイコンのみ */}
       {isFilterModified && (
         <button
           type="button"
           aria-label="フィルタをリセット"
-          className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium
-                     bg-white text-orange-500 border border-orange-400
+          className="flex-shrink-0 rounded-full p-1 text-orange-500
                      hover:bg-orange-50 transition-colors cursor-pointer"
           onClick={handleReset}
         >
           <RotateCcw className="w-3.5 h-3.5" aria-hidden="true" />
-          リセット
-        </button>
-      )}
-
-      {/* 全フィルター解除ボタン（いずれかのフィルタが有効な時のみ表示） */}
-      {isAnyFilterActive && (
-        <button
-          type="button"
-          aria-label="すべてのフィルターを解除して全口コミを表示"
-          className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium
-                     bg-gray-100 text-gray-500 border border-gray-300
-                     hover:bg-gray-200 transition-colors cursor-pointer"
-          onClick={handleClearAll}
-        >
-          すべて表示
         </button>
       )}
     </div>
