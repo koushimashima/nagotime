@@ -32,10 +32,6 @@ interface ApiErrorResponse {
   error: { code: string; message: string; shortfall?: number }
 }
 
-function formatDate(iso: string): string {
-  return new Date(iso).toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' })
-}
-
 function formatDateTime(iso: string): string {
   return new Date(iso).toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' })
 }
@@ -277,7 +273,7 @@ export function MilesPage() {
                           <span className="inline-flex items-center text-xs font-semibold text-orange-600 bg-orange-50 rounded-full px-2.5 py-0.5">
                             {ticket.requiredMiles.toLocaleString()} マイル
                           </span>
-                          <span className="text-xs text-gray-400">期限: {formatDate(ticket.expiresAt)}</span>
+                          <span className="text-xs text-gray-400">期限: {formatDateTime(ticket.expiresAt)}</span>
                         </div>
                         {!canRedeem && (
                           <p className="mt-2 text-xs text-amber-600 font-medium">あと {shortfall.toLocaleString()} マイル必要です</p>
@@ -385,7 +381,7 @@ export function MilesPage() {
                 <div className="flex items-center gap-3 px-4 py-3">
                   <CalendarDays className="w-4 h-4 text-gray-400 shrink-0" aria-hidden="true" />
                   <span className="text-xs text-gray-500 w-24 shrink-0">有効期限</span>
-                  <span className="text-sm text-gray-700">{formatDate(selectedTicket.expiresAt)}</span>
+                  <span className="text-sm text-gray-700">{formatDateTime(selectedTicket.expiresAt)}</span>
                 </div>
 
               </div>
