@@ -17,7 +17,7 @@ export const mockTickets: Ticket[] = [
     redeemedCount: 58,
     status: 'ACTIVE',
     // みそかつ・とんかつ料理
-    thumbnailUrl: 'https://picsum.photos/seed/ticket-001/400/300',
+    thumbnailUrl: 'https://loremflickr.com/400/300/tonkatsu,miso,pork?lock=201',
   },
   {
     ticketId: 'ticket-002',
@@ -31,7 +31,7 @@ export const mockTickets: Ticket[] = [
     redeemedCount: 34,
     status: 'ACTIVE',
     // ハンドドリップコーヒー
-    thumbnailUrl: 'https://picsum.photos/seed/ticket-002/400/300',
+    thumbnailUrl: 'https://loremflickr.com/400/300/coffee,handdrip,cafe?lock=202',
   },
   {
     ticketId: 'ticket-003',
@@ -45,7 +45,7 @@ export const mockTickets: Ticket[] = [
     redeemedCount: 122,
     status: 'ACTIVE',
     // 動物園・ゾウ
-    thumbnailUrl: 'https://picsum.photos/seed/ticket-003/400/300',
+    thumbnailUrl: 'https://loremflickr.com/400/300/zoo,animal,nature?lock=203',
   },
   {
     ticketId: 'ticket-006',
@@ -59,7 +59,7 @@ export const mockTickets: Ticket[] = [
     redeemedCount: 15,
     status: 'ACTIVE',
     // 映画館・シアター
-    thumbnailUrl: 'https://picsum.photos/seed/ticket-006/400/300',
+    thumbnailUrl: 'https://loremflickr.com/400/300/cinema,movie,theater?lock=206',
   },
   {
     ticketId: 'ticket-007',
@@ -73,7 +73,7 @@ export const mockTickets: Ticket[] = [
     redeemedCount: 8,
     status: 'ACTIVE',
     // ボウリング
-    thumbnailUrl: 'https://picsum.photos/seed/ticket-007/400/300',
+    thumbnailUrl: 'https://loremflickr.com/400/300/bowling,sport,leisure?lock=207',
   },
 
   // ---- SOLD_OUT（売り切れ） ----
@@ -89,7 +89,7 @@ export const mockTickets: Ticket[] = [
     redeemedCount: 150,
     status: 'SOLD_OUT',
     // たこ焼き
-    thumbnailUrl: 'https://picsum.photos/seed/ticket-004/400/300',
+    thumbnailUrl: 'https://loremflickr.com/400/300/takoyaki,food,streetfood?lock=204',
   },
 
   // ---- EXPIRED（期限切れ） ----
@@ -105,6 +105,6 @@ export const mockTickets: Ticket[] = [
     redeemedCount: 217,
     status: 'EXPIRED',
     // 日本のお城・ミュージアムショップ
-    thumbnailUrl: 'https://picsum.photos/seed/ticket-005/400/300',
+    thumbnailUrl: 'https://loremflickr.com/400/300/castle,museum,shop?lock=205',
   },
 ]

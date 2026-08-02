@@ -13,7 +13,7 @@ export const mockSpots: Spot[] = [
     category: '観光',
     area: '栄',
     reviewCount: 42,
-    thumbnailUrl: 'https://picsum.photos/seed/spot-001/400/300',
+    thumbnailUrl: 'https://loremflickr.com/400/300/oasis,park,nagoya?lock=301',
   },
   {
     spotId: 'spot-002',
@@ -23,7 +23,7 @@ export const mockSpots: Spot[] = [
     category: '公園',
     area: '栄',
     reviewCount: 28,
-    thumbnailUrl: 'https://picsum.photos/seed/spot-002/400/300',
+    thumbnailUrl: 'https://loremflickr.com/400/300/park,green,japan?lock=302',
   },
 
   // ---- 名古屋駅エリア ----
@@ -35,7 +35,7 @@ export const mockSpots: Spot[] = [
     category: 'ショッピング',
     area: '名古屋駅',
     reviewCount: 35,
-    thumbnailUrl: 'https://picsum.photos/seed/spot-003/400/300',
+    thumbnailUrl: 'https://loremflickr.com/400/300/shopping,mall,building?lock=303',
   },
   {
     spotId: 'spot-004',
@@ -45,7 +45,7 @@ export const mockSpots: Spot[] = [
     category: 'ショッピング',
     area: '名古屋駅',
     reviewCount: 31,
-    thumbnailUrl: 'https://picsum.photos/seed/spot-004/400/300',
+    thumbnailUrl: 'https://loremflickr.com/400/300/skyscraper,office,japan?lock=304',
   },
 
   // ---- 大須エリア ----
@@ -57,7 +57,7 @@ export const mockSpots: Spot[] = [
     category: '観光',
     area: '大須',
     reviewCount: 47,
-    thumbnailUrl: 'https://picsum.photos/seed/spot-005/400/300',
+    thumbnailUrl: 'https://loremflickr.com/400/300/shrine,temple,japan?lock=305',
   },
   {
     spotId: 'spot-006',
@@ -67,7 +67,7 @@ export const mockSpots: Spot[] = [
     category: 'ショッピング',
     area: '大須',
     reviewCount: 39,
-    thumbnailUrl: 'https://picsum.photos/seed/spot-006/400/300',
+    thumbnailUrl: 'https://loremflickr.com/400/300/shopping,street,market?lock=306',
   },
 
   // ---- 今池エリア ----
@@ -79,7 +79,7 @@ export const mockSpots: Spot[] = [
     category: 'グルメ',
     area: '今池',
     reviewCount: 22,
-    thumbnailUrl: 'https://picsum.photos/seed/spot-007/400/300',
+    thumbnailUrl: 'https://loremflickr.com/400/300/restaurant,food,japan?lock=307',
   },
 
   // ---- 覚王山エリア ----
@@ -91,7 +91,7 @@ export const mockSpots: Spot[] = [
     category: '観光',
     area: '覚王山',
     reviewCount: 18,
-    thumbnailUrl: 'https://picsum.photos/seed/spot-008/400/300',
+    thumbnailUrl: 'https://loremflickr.com/400/300/buddhist,temple,pagoda?lock=308',
   },
   {
     spotId: 'spot-009',
@@ -101,7 +101,7 @@ export const mockSpots: Spot[] = [
     category: 'カフェ',
     area: '覚王山',
     reviewCount: 14,
-    thumbnailUrl: 'https://picsum.photos/seed/spot-009/400/300',
+    thumbnailUrl: 'https://loremflickr.com/400/300/cafe,antique,japan?lock=309',
   },
 
   // ---- 名古屋城エリア ----
@@ -113,7 +113,7 @@ export const mockSpots: Spot[] = [
     category: '観光',
     area: '名古屋城',
     reviewCount: 50,
-    thumbnailUrl: 'https://picsum.photos/seed/spot-010/400/300',
+    thumbnailUrl: 'https://loremflickr.com/400/300/castle,japan,nagoya?lock=310',
   },
 
   // ---- 熱田エリア ----
@@ -125,7 +125,7 @@ export const mockSpots: Spot[] = [
     category: '観光',
     area: '熱田',
     reviewCount: 45,
-    thumbnailUrl: 'https://picsum.photos/seed/spot-011/400/300',
+    thumbnailUrl: 'https://loremflickr.com/400/300/shrine,shinto,japan?lock=311',
   },
 
   // ---- 鶴舞エリア ----
@@ -137,7 +137,7 @@ export const mockSpots: Spot[] = [
     category: '公園',
     area: '千種',
     reviewCount: 20,
-    thumbnailUrl: 'https://picsum.photos/seed/spot-012/400/300',
+    thumbnailUrl: 'https://loremflickr.com/400/300/park,cherry,blossom?lock=312',
   },
 
   // ---- 矢場町エリア ----
@@ -149,7 +149,7 @@ export const mockSpots: Spot[] = [
     category: 'ショッピング',
     area: '栄',
     reviewCount: 33,
-    thumbnailUrl: 'https://picsum.photos/seed/spot-013/400/300',
+    thumbnailUrl: 'https://loremflickr.com/400/300/department,store,japan?lock=313',
   },
 
   // ---- 金山エリア ----
@@ -161,7 +161,7 @@ export const mockSpots: Spot[] = [
     category: 'エンタメ',
     area: '金山',
     reviewCount: 16,
-    thumbnailUrl: 'https://picsum.photos/seed/spot-014/400/300',
+    thumbnailUrl: 'https://loremflickr.com/400/300/museum,art,building?lock=314',
   },
 
   // ---- 東山エリア ----
@@ -173,7 +173,7 @@ export const mockSpots: Spot[] = [
     category: '観光',
     area: '東山',
     reviewCount: 48,
-    thumbnailUrl: 'https://picsum.photos/seed/spot-015/400/300',
+    thumbnailUrl: 'https://loremflickr.com/400/300/zoo,elephant,animal?lock=315',
   },
 
   // ---- 名駅周辺・その他 ----
@@ -185,7 +185,7 @@ export const mockSpots: Spot[] = [
     category: 'カフェ',
     area: '名古屋駅',
     reviewCount: 12,
-    thumbnailUrl: 'https://picsum.photos/seed/spot-016/400/300',
+    thumbnailUrl: 'https://loremflickr.com/400/300/coffee,cafe,terrace?lock=316',
   },
   {
     spotId: 'spot-017',
@@ -195,6 +195,6 @@ export const mockSpots: Spot[] = [
     category: 'グルメ',
     area: '名古屋城',
     reviewCount: 9,
-    thumbnailUrl: 'https://picsum.photos/seed/spot-017/400/300',
+    thumbnailUrl: 'https://loremflickr.com/400/300/food,japan,street?lock=317',
   },
 ]
