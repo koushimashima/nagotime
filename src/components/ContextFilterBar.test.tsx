@@ -1,8 +1,8 @@
 // src/components/ContextFilterBar.test.tsx
 // Feature: context-aware-feed-map, Property 8: aria-labelの動的生成
 
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import { render, screen, fireEvent, act } from '@testing-library/react'
+import { describe, it, expect, vi, afterEach } from 'vitest'
+import { render, screen, fireEvent } from '@testing-library/react'
 import * as fc from 'fast-check'
 import { ContextFilterBar } from './ContextFilterBar'
 import type { TimeSlot, DayType } from '../mocks/data/types'
