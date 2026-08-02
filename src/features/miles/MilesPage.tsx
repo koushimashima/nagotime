@@ -215,7 +215,8 @@ export function MilesPage() {
               className="inline-flex items-center gap-1 text-xs font-medium text-orange-100 underline underline-offset-2 hover:text-white transition-colors"
             >
               {historyOpen ? '取引履歴を閉じる ▲' : '取引履歴 ▼'}
-            </button>{historyOpen && (
+            </button>
+            {historyOpen && (
               <div className="mt-3 w-full">
                 <div className="border-t border-orange-400/30 pt-3">
                   <h3 className="text-xs font-semibold text-orange-100 mb-2">取引履歴</h3>
