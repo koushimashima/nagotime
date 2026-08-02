@@ -215,32 +215,31 @@ export function MilesPage() {
               className="inline-flex items-center gap-1 text-xs font-medium text-orange-100 underline underline-offset-2 hover:text-white transition-colors"
             >
               {historyOpen ? '取引履歴を閉じる ▲' : '取引履歴 ▼'}
-            </button>
+            </button>{historyOpen && (
+              <div className="mt-3 w-full">
+                <div className="border-t border-orange-400/30 pt-3">
+                  <h3 className="text-xs font-semibold text-orange-100 mb-2">取引履歴</h3>
+                  <div className="space-y-2 max-h-40 overflow-y-auto pr-2">
+                    {transactions.length > 0 ? (
+                      transactions.slice(0, 5).map((t) => (
+                        <div key={t.transactionId} className="flex justify-between items-center text-xs">
+                          <span className="text-orange-100 truncate">{TRANSACTION_TYPE_LABEL[t.type] || t.type}</span>
+                          <span className="text-orange-100 font-medium">
+                            {t.amount > 0 ? '+' : ''}{t.amount.toLocaleString()} マイル
+                          </span>
+                        </div>
+                      ))
+                    ) : (
+                      <p className="text-xs text-orange-200">取引履歴がありません</p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
-        {historyOpen && (
-          <div className="mt-3 divide-y divide-gray-100 rounded-xl border border-gray-200 bg-white overflow-hidden shadow-sm">
-            {transactions.length === 0 ? (
-              <p className="text-sm text-gray-400 py-4 text-center">取引履歴がありません</p>
-            ) : (
-              transactions.map((tx) => (
-                <div key={tx.transactionId} className="flex items-center justify-between px-4 py-3">
-                  <div className="min-w-0">
-                    <p className="text-sm font-medium text-gray-800 truncate">{TRANSACTION_TYPE_LABEL[tx.type]}</p>
-                    <p className="text-xs text-gray-400 mt-0.5">{formatDateTime(tx.createdAt)}</p>
-                  </div>
-                  <div className="ml-4 flex flex-col items-end shrink-0">
-                    <span className={`text-sm font-semibold ${tx.amount >= 0 ? 'text-emerald-600' : 'text-red-500'}`}>
-                      {tx.amount >= 0 ? '+' : ''}{tx.amount.toLocaleString()} マイル
-                    </span>
-                    <span className="text-xs text-gray-400 mt-0.5">残高 {tx.balanceAfter.toLocaleString()}</span>
-                  </div>
-                </div>
-              ))
-            )}
-          </div>
-        )}
+
       </section>
 
       {/* チケット一覧 */}
@@ -468,7 +467,7 @@ export function MilesPage() {
             )}
             <p className="text-xs font-mono text-orange-700 break-all text-center">{ticketCode}</p>
           </div>
-          <p className="text-xs text-gray-400 text-center">このQRコードを店頭でご提示ください</p>
+          <p className="text-xs text-gray-400 text-center">このQRコードを店頭でご提示ください。これはデモ版です。実際にはご利用いただけません。</p>
         </div>
       </Modal>
 
