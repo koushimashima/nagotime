@@ -4142,7 +4142,7 @@ export const mockReviews: Review[] = [
     spotId: 'spot-agu-001',
     spotName: '愛知学院大学 名城キャンパス 食堂',
     area: '名城',
-    lat: 35.1922,
+    lat: 35.1902,
     lon: 136.9031,
     text: 'キャンパス内の食堂は一般の人も利用できてコスパ抜群です。お昼休みは学生でかなり混雑しますが、時間をずらせば快適に過ごせます。晴れた日の窓際の席が明るくてお気に入りです。',
     photoUrls: [
@@ -4165,7 +4165,7 @@ export const mockReviews: Review[] = [
     spotId: 'spot-agu-002',
     spotName: '愛知学院大学 名城キャンパス 図書館',
     area: '名城',
-    lat: 35.1925,
+    lat: 35.1915,
     lon: 136.9028,
     text: '静かでとても集中できる環境です。平日の午後は空きコマの学生が勉強や読書をしていて、落ち着いた雰囲気が漂っています。課題を終わらせるのに最適な場所です。',
     photoUrls: [
@@ -4188,9 +4188,9 @@ export const mockReviews: Review[] = [
     spotId: 'spot-agu-003',
     spotName: '名城キャンパス周辺 カフェ',
     area: '名城',
-    lat: 35.1918,
-    lon: 136.9035,
-    text: '大学のすぐそばにあるおしゃれなカフェ。ランチタイムは学生や周辺のオフィスワーカーで賑わっています。コーヒーが美味しくて、午後の授業前のリフレッシュにぴったりです。',
+    lat: 35.1889,
+    lon: 136.9015,
+    text: '大学の少し離れた場所にあるおしゃれなカフェ。ランチタイムは学生や周辺のオフィスワーカーで賑わっています。コーヒーが美味しくて、午後の授業前のリフレッシュにぴったりです。',
     photoUrls: [
       'https://loremflickr.com/400/300/sunny,cafe/all?lock=302'
     ],
@@ -4209,10 +4209,10 @@ export const mockReviews: Review[] = [
     userId: 'user-014',
     userName: '木村 彩音',
     spotId: 'spot-agu-004',
-    spotName: '名城キャンパス前 バス停',
+    spotName: '名城キャンパス周辺 バス停',
     area: '名城',
-    lat: 35.1920,
-    lon: 136.9025,
+    lat: 35.1921,
+    lon: 136.9045,
     text: '曇りの日のバス待ち。授業終わりの時間帯はバス停に長い列ができます。本数はそれなりにあるので、少し待てば乗れるのが助かります。',
     photoUrls: [
       'https://loremflickr.com/400/300/cloudy,busstop/all?lock=303'
@@ -4234,9 +4234,9 @@ export const mockReviews: Review[] = [
     spotId: 'spot-agu-005',
     spotName: '大学周辺のコンビニ',
     area: '名城',
-    lat: 35.1915,
-    lon: 136.9040,
-    text: '雨の日の朝、1限の前にコンビニで朝ごはんを調達。傘をさした学生が続々と吸い込まれていきます。品揃えが良くていつも助かっています。',
+    lat: 35.1875,
+    lon: 136.9002,
+    text: '雨の日の朝、1限の前にキャンパスから少し歩いたコンビニで朝ごはんを調達。傘をさした学生が続々と吸い込まれていきます。品揃えが良くていつも助かっています。',
     photoUrls: [
       'https://loremflickr.com/400/300/rainy,store/all?lock=304'
     ],
@@ -4257,8 +4257,8 @@ export const mockReviews: Review[] = [
     spotId: 'spot-agu-006',
     spotName: '大学周辺 ランニングコース',
     area: '名城',
-    lat: 35.1928,
-    lon: 136.9020,
+    lat: 35.1930,
+    lon: 136.8995,
     text: '夕暮れ時にキャンパス周辺から名城公園に向けてランニング。平日の夕方は涼しくて走りやすく、仕事終わりの運動に最適です。',
     photoUrls: [
       'https://loremflickr.com/400/300/warm,street/all?lock=305'
@@ -4280,9 +4280,9 @@ export const mockReviews: Review[] = [
     spotId: 'spot-agu-007',
     spotName: '名城キャンパス 広場',
     area: '名城',
-    lat: 35.1921,
-    lon: 136.9032,
-    text: '晴れた日の昼休み、広場のベンチで友達とランチ。日差しが暖かくて最高に気持ちいいです。キャンパス内は緑が多くて癒やされます。',
+    lat: 35.1898,
+    lon: 136.9050,
+    text: '晴れた日の昼休み、少し離れた広場のベンチで友達とランチ。日差しが暖かくて最高に気持ちいいです。キャンパス周辺は緑が多くて癒やされます。',
     photoUrls: [
       'https://loremflickr.com/400/300/bright,plaza/all?lock=306'
     ],
@@ -4303,8 +4303,8 @@ export const mockReviews: Review[] = [
     spotId: 'spot-agu-008',
     spotName: '休日キャンパス周辺',
     area: '名城',
-    lat: 35.1919,
-    lon: 136.9030,
+    lat: 35.1911,
+    lon: 136.9012,
     text: '休日のキャンパス周辺は平日とは打って変わって静かです。曇り空でしたが、散歩するにはちょうどいい気温でした。人も少なくて穴場です。',
     photoUrls: [
       'https://loremflickr.com/400/300/cloudy,campus/all?lock=307'
@@ -4326,8 +4326,8 @@ export const mockReviews: Review[] = [
     spotId: 'spot-agu-009',
     spotName: '大学近くのパン屋',
     area: '名城',
-    lat: 35.1915,
-    lon: 136.9045,
+    lat: 35.1882,
+    lon: 136.9039,
     text: '平日の朝、大学に行く前に立ち寄るパン屋さん。焼きたてのクロワッサンの香りがたまりません。朝早くから開いているので助かります。',
     photoUrls: [
       'https://loremflickr.com/400/300/sunny,bakery/all?lock=308'
@@ -4349,8 +4349,8 @@ export const mockReviews: Review[] = [
     spotId: 'spot-agu-010',
     spotName: '大学裏の定食屋',
     area: '名城',
-    lat: 35.1925,
-    lon: 136.9040,
+    lat: 35.1945,
+    lon: 136.9021,
     text: '雨の日の昼下がり、学生御用達の定食屋でガッツリと唐揚げ定食を。ボリューム満点で午後からの講義も乗り切れそうです。',
     photoUrls: [
       'https://loremflickr.com/400/300/rainy,restaurant/all?lock=309'
@@ -4372,9 +4372,9 @@ export const mockReviews: Review[] = [
     spotId: 'spot-agu-011',
     spotName: '大学周辺 夜の道',
     area: '名城',
-    lat: 35.1920,
-    lon: 136.9038,
-    text: 'サークル終わりにキャンパス周辺を歩いて帰宅。夜風が涼しくて、街灯に照らされた道が綺麗でした。静かで安全なエリアです。',
+    lat: 35.1907,
+    lon: 136.8988,
+    text: 'サークル終わりにキャンパスから少し離れた道を歩いて帰宅。夜風が涼しくて、街灯に照らされた道が綺麗でした。静かで安全なエリアです。',
     photoUrls: [
       'https://loremflickr.com/400/300/dark,walkway/all?lock=310'
     ],
@@ -4393,11 +4393,11 @@ export const mockReviews: Review[] = [
     userId: 'user-007',
     userName: '加藤 誠',
     spotId: 'spot-agu-012',
-    spotName: '雪の日のキャンパス',
+    spotName: '雪の日のキャンパス周辺',
     area: '名城',
-    lat: 35.1922,
-    lon: 136.9030,
-    text: '珍しく雪が積もった平日のキャンパス。校舎が真っ白になっていて、いつもとは違う幻想的な雰囲気でした。足元は滑りやすいので注意です。',
+    lat: 35.1933,
+    lon: 136.9061,
+    text: '珍しく雪が積もった平日のキャンパス周辺。校舎や木々が真っ白になっていて、いつもとは違う幻想的な雰囲気でした。足元は滑りやすいので注意です。',
     photoUrls: [
       'https://loremflickr.com/400/300/snowy,building/all?lock=311'
     ],
@@ -4418,8 +4418,8 @@ export const mockReviews: Review[] = [
     spotId: 'spot-agu-013',
     spotName: '大学近くの小公園',
     area: '名城',
-    lat: 35.1910,
-    lon: 136.9025,
+    lat: 35.1879,
+    lon: 136.9011,
     text: '休日の昼間、キャンパス近くの公園でまったり。近所の子供たちが遊んでいてのどかな雰囲気です。天気が良くてピクニック日和でした。',
     photoUrls: [
       'https://loremflickr.com/400/300/sunny,park/all?lock=312'
@@ -4441,9 +4441,9 @@ export const mockReviews: Review[] = [
     spotId: 'spot-agu-014',
     spotName: '授業終わりのカフェ',
     area: '名城',
-    lat: 35.1918,
-    lon: 136.9035,
-    text: '夕方の曇り空の中、授業終わりに友達とカフェでコーヒータイム。1日の疲れが癒やされます。店内は程よく混んでいました。',
+    lat: 35.1926,
+    lon: 136.8999,
+    text: '夕方の曇り空の中、授業終わりに少し歩いたところにあるカフェでコーヒータイム。1日の疲れが癒やされます。店内は程よく混んでいました。',
     photoUrls: [
       'https://loremflickr.com/400/300/cloudy,coffee/all?lock=313'
     ],
@@ -4462,10 +4462,10 @@ export const mockReviews: Review[] = [
     userId: 'user-010',
     userName: '中村 さゆり',
     spotId: 'spot-agu-015',
-    spotName: 'キャンパス内の芝生',
+    spotName: 'キャンパス周辺の芝生',
     area: '名城',
-    lat: 35.1923,
-    lon: 136.9033,
+    lat: 35.1895,
+    lon: 136.9044,
     text: '晴れた平日の昼下がり、芝生に座ってサンドイッチを食べました。日差しがぽかぽかしていて、そのまま昼寝してしまいそうです。',
     photoUrls: [
       'https://loremflickr.com/400/300/sunny,lawn/all?lock=314'
@@ -4487,8 +4487,8 @@ export const mockReviews: Review[] = [
     spotId: 'spot-agu-016',
     spotName: '大学周辺の居酒屋',
     area: '名城',
-    lat: 35.1912,
-    lon: 136.9042,
+    lat: 35.1918,
+    lon: 136.9007,
     text: '雨の日の夜、休日前夜ということでサークルの先輩たちと飲み会。アットホームな雰囲気のお店で、お酒もご飯も進みました。',
     photoUrls: [
       'https://loremflickr.com/400/300/dark,pub/all?lock=315'
@@ -4508,11 +4508,11 @@ export const mockReviews: Review[] = [
     userId: 'user-012',
     userName: '山口 結衣',
     spotId: 'spot-agu-017',
-    spotName: 'キャンパス前の並木道',
+    spotName: 'キャンパス周辺の並木道',
     area: '名城',
-    lat: 35.1920,
-    lon: 136.9028,
-    text: '平日の朝、通学路の木漏れ日がとても綺麗で思わず写真を撮りました。天気も良くて、今日も1日頑張ろうという気持ちになります。',
+    lat: 35.1885,
+    lon: 136.9026,
+    text: '平日の朝、少し離れた通学路の木漏れ日がとても綺麗で思わず写真を撮りました。天気も良くて、今日も1日頑張ろうという気持ちになります。',
     photoUrls: [
       'https://loremflickr.com/400/300/sunny,trees/all?lock=316'
     ],
@@ -4527,7 +4527,7 @@ export const mockReviews: Review[] = [
     hashtags: ['#通学路', '#木漏れ日', '#朝の風景']
   },
 
-  // ---- 名古屋市北区役所周辺 ----
+  // ---- 名古屋市北区役所周辺 (広く分散) ----
   {
     reviewId: 'rev-203',
     userId: 'user-013',
@@ -4535,8 +4535,8 @@ export const mockReviews: Review[] = [
     spotId: 'spot-kitaku-001',
     spotName: '名古屋市北区役所 窓口',
     area: '清水',
-    lat: 35.1915,
-    lon: 136.9060,
+    lat: 35.1941,
+    lon: 136.9140,
     text: '平日の昼間に手続きで訪問。晴れていて役所内も明るい雰囲気でした。窓口の対応が丁寧で、待ち時間もそれほど長くありませんでした。',
     photoUrls: [
       'https://loremflickr.com/400/300/bright,office/all?lock=317'
@@ -4558,8 +4558,8 @@ export const mockReviews: Review[] = [
     spotId: 'spot-kitaku-002',
     spotName: '北区役所 地下食堂',
     area: '清水',
-    lat: 35.1915,
-    lon: 136.9060,
+    lat: 35.1955,
+    lon: 136.9135,
     text: '区役所に用事があったついでに地下の食堂でランチ。ワンコインで食べられる定食がおいしくて、お財布に優しいです。平日昼間は職員の方で賑わっています。',
     photoUrls: [
       'https://loremflickr.com/400/300/bright,canteen/all?lock=318'
@@ -4579,11 +4579,11 @@ export const mockReviews: Review[] = [
     userId: 'user-015',
     userName: '林 健太郎',
     spotId: 'spot-kitaku-003',
-    spotName: '北区役所前の交差点',
+    spotName: '北区役所周辺の交差点',
     area: '清水',
-    lat: 35.1912,
-    lon: 136.9062,
-    text: '平日の午後、曇り空の中を移動中。この交差点は交通量が多いですが、歩道が広くて歩きやすいです。近くに名城公園も見えます。',
+    lat: 35.1928,
+    lon: 136.9152,
+    text: '平日の午後、曇り空の中を少し離れた場所から移動中。この交差点は交通量が多いですが、歩道が広くて歩きやすいです。',
     photoUrls: [
       'https://loremflickr.com/400/300/cloudy,crossroad/all?lock=319'
     ],
@@ -4602,11 +4602,11 @@ export const mockReviews: Review[] = [
     userId: 'user-001',
     userName: '田中 太郎',
     spotId: 'spot-kitaku-004',
-    spotName: '区役所近くの喫茶店',
+    spotName: '区役所から少し離れた喫茶店',
     area: '清水',
-    lat: 35.1918,
-    lon: 136.9055,
-    text: '雨の日の朝、手続きの前に昔ながらの喫茶店でモーニング。コーヒーとトーストでほっと一息つけました。地元の人に愛されているお店です。',
+    lat: 35.1961,
+    lon: 136.9128,
+    text: '雨の日の朝、手続きの前に少し歩いて昔ながらの喫茶店でモーニング。コーヒーとトーストでほっと一息つけました。地元の人に愛されているお店です。',
     photoUrls: [
       'https://loremflickr.com/400/300/rainy,coffee/all?lock=320'
     ],
@@ -4625,11 +4625,11 @@ export const mockReviews: Review[] = [
     userId: 'user-002',
     userName: '鈴木 花子',
     spotId: 'spot-kitaku-005',
-    spotName: '北区役所横の広場',
+    spotName: '北区役所周辺の広場',
     area: '清水',
-    lat: 35.1916,
-    lon: 136.9063,
-    text: '晴れた平日の昼下がり、区役所横のスペースで休憩。よく整備されていてベンチもあり、ちょっとした息抜きにぴったりの場所です。',
+    lat: 35.1935,
+    lon: 136.9161,
+    text: '晴れた平日の昼下がり、区役所から少し歩いた広場で休憩。よく整備されていてベンチもあり、ちょっとした息抜きにぴったりの場所です。',
     photoUrls: [
       'https://loremflickr.com/400/300/sunny,plaza/all?lock=321'
     ],
@@ -4650,8 +4650,8 @@ export const mockReviews: Review[] = [
     spotId: 'spot-kitaku-006',
     spotName: '北区役所 休日窓口',
     area: '清水',
-    lat: 35.1915,
-    lon: 136.9060,
+    lat: 35.1948,
+    lon: 136.9115,
     text: '休日に一部の窓口が開いていたので利用しました。平日より人が少なく、スムーズに書類を受け取れました。晴れていて外出ついでにちょうどよかったです。',
     photoUrls: [
       'https://loremflickr.com/400/300/sunny,desk/all?lock=322'
@@ -4673,9 +4673,9 @@ export const mockReviews: Review[] = [
     spotId: 'spot-kitaku-007',
     spotName: '北区役所周辺の帰り道',
     area: '清水',
-    lat: 35.1910,
-    lon: 136.9058,
-    text: '平日の夕方、曇り空の中を歩いて帰宅。この辺りは街灯も多く、夕方でも安心して歩けます。車の通りは少し多めです。',
+    lat: 35.1970,
+    lon: 136.9150,
+    text: '平日の夕方、曇り空の中を少し歩いて帰宅。この辺りは街灯も多く、夕方でも安心して歩けます。車の通りは少し多めです。',
     photoUrls: [
       'https://loremflickr.com/400/300/cloudy,street/all?lock=323'
     ],
@@ -4694,10 +4694,10 @@ export const mockReviews: Review[] = [
     userId: 'user-005',
     userName: '渡辺 健一',
     spotId: 'spot-kitaku-008',
-    spotName: '北区役所前の花壇',
+    spotName: '北区役所周辺の花壇',
     area: '清水',
-    lat: 35.1914,
-    lon: 136.9061,
+    lat: 35.1921,
+    lon: 136.9139,
     text: '平日の朝、綺麗に手入れされた花壇の前を通りました。色鮮やかな花が咲いていて、晴れた朝の清々しい気分をさらに上げてくれます。',
     photoUrls: [
       'https://loremflickr.com/400/300/sunny,flower/all?lock=324'
@@ -4719,9 +4719,9 @@ export const mockReviews: Review[] = [
     spotId: 'spot-kitaku-009',
     spotName: '北区役所近くの郵便局',
     area: '清水',
-    lat: 35.1917,
-    lon: 136.9050,
-    text: '雨の平日の午後、区役所での手続きの後に近くの郵便局へ。このエリアは必要な施設が集まっていて、雨の日でも移動が少なく済むのが良いところです。',
+    lat: 35.1952,
+    lon: 136.9175,
+    text: '雨の平日の午後、区役所での手続きの後に少し離れた郵便局へ。このエリアは必要な施設が集まっていて、雨の日でも移動が少なく済むのが良いところです。',
     photoUrls: [
       'https://loremflickr.com/400/300/rainy,postoffice/all?lock=325'
     ],
@@ -4743,8 +4743,8 @@ export const mockReviews: Review[] = [
     spotName: '夜の区役所周辺',
     area: '清水',
     lat: 35.1915,
-    lon: 136.9060,
-    text: '平日の夜に区役所の前を通りました。昼間の喧騒が嘘のように静まり返っていて、ライトアップされた建物の輪郭が綺麗でした。',
+    lon: 136.9121,
+    text: '平日の夜に区役所周辺の道を通りました。昼間の喧騒が嘘のように静まり返っていて、ライトアップされた建物の輪郭が綺麗でした。',
     photoUrls: [
       'https://loremflickr.com/400/300/dark,building/all?lock=326'
     ],
@@ -4763,11 +4763,11 @@ export const mockReviews: Review[] = [
     userId: 'user-008',
     userName: '松本 陽子',
     spotId: 'spot-kitaku-011',
-    spotName: '雪の日の北区役所',
+    spotName: '雪の日の北区役所周辺',
     area: '清水',
-    lat: 35.1915,
-    lon: 136.9060,
-    text: '朝から雪が降る平日、どうしても外せない用事があり区役所へ。職員の方々が雪かきをしてくれていて、安全に入館できました。感謝です。',
+    lat: 35.1965,
+    lon: 136.9166,
+    text: '朝から雪が降る平日、どうしても外せない用事があり区役所周辺へ。道中滑りやすかったですが、職員の方々が雪かきをしてくれていて助かりました。',
     photoUrls: [
       'https://loremflickr.com/400/300/snowy,office/all?lock=327'
     ],
@@ -4786,11 +4786,11 @@ export const mockReviews: Review[] = [
     userId: 'user-009',
     userName: '佐々木 拓海',
     spotId: 'spot-kitaku-012',
-    spotName: '役所近くの中華料理屋',
+    spotName: '役所周辺の中華料理屋',
     area: '清水',
-    lat: 35.1912,
-    lon: 136.9052,
-    text: '晴れた平日の昼間、役所のすぐ近くにある町中華でランチ。チャーハンと餃子のセットがボリューム満点で大満足です。',
+    lat: 35.1938,
+    lon: 136.9109,
+    text: '晴れた平日の昼間、役所から少し歩いたところにある町中華でランチ。チャーハンと餃子のセットがボリューム満点で大満足です。',
     photoUrls: [
       'https://loremflickr.com/400/300/sunny,restaurant/all?lock=328'
     ],
@@ -4809,11 +4809,11 @@ export const mockReviews: Review[] = [
     userId: 'user-010',
     userName: '中村 さゆり',
     spotId: 'spot-kitaku-013',
-    spotName: '北区役所前の道',
+    spotName: '北区役所周辺の道',
     area: '清水',
-    lat: 35.1916,
-    lon: 136.9062,
-    text: '休日の午後、曇り空のなかお散歩。平日は車や人で混み合うこの道も、休日は驚くほど静かです。のんびり歩くのにぴったり。',
+    lat: 35.1981,
+    lon: 136.9145,
+    text: '休日の午後、曇り空のなか少し離れた道をお散歩。平日は車や人で混み合うこの道も、休日は驚くほど静かです。のんびり歩くのにぴったり。',
     photoUrls: [
       'https://loremflickr.com/400/300/cloudy,road/all?lock=329'
     ],
@@ -4832,11 +4832,11 @@ export const mockReviews: Review[] = [
     userId: 'user-011',
     userName: '清水 翔太',
     spotId: 'spot-kitaku-014',
-    spotName: '夕暮れの区役所',
+    spotName: '夕暮れの区役所周辺',
     area: '清水',
-    lat: 35.1915,
-    lon: 136.9060,
-    text: '平日の夕方、手続きを終えて外に出ると綺麗な夕焼けが広がっていました。晴れた日の夕方は空が広く見えて気持ちが良いです。',
+    lat: 35.1925,
+    lon: 136.9181,
+    text: '平日の夕方、手続きを終えて少し歩くと綺麗な夕焼けが広がっていました。晴れた日の夕方は空が広く見えて気持ちが良いです。',
     photoUrls: [
       'https://loremflickr.com/400/300/warm,evening/all?lock=330'
     ],
@@ -4855,11 +4855,11 @@ export const mockReviews: Review[] = [
     userId: 'user-012',
     userName: '山口 結衣',
     spotId: 'spot-kitaku-015',
-    spotName: '役所近くのコンビニ',
+    spotName: '役所周辺のコンビニ',
     area: '清水',
-    lat: 35.1919,
-    lon: 136.9058,
-    text: '雨が降ってきたので、平日の昼間に役所近くのコンビニへ雨宿りがてら立ち寄りました。イートインスペースがあって助かりました。',
+    lat: 35.1944,
+    lon: 136.9125,
+    text: '雨が降ってきたので、平日の昼間に役所から少し離れたコンビニへ雨宿りがてら立ち寄りました。イートインスペースがあって助かりました。',
     photoUrls: [
       'https://loremflickr.com/400/300/rainy,store/all?lock=331'
     ],
@@ -4878,11 +4878,11 @@ export const mockReviews: Review[] = [
     userId: 'user-013',
     userName: '橋本 涼',
     spotId: 'spot-kitaku-016',
-    spotName: '役所前のベンチ',
+    spotName: '役所周辺のベンチ',
     area: '清水',
-    lat: 35.1916,
-    lon: 136.9061,
-    text: '晴れた平日の昼下がり、お弁当を買って役所前のベンチでランチ。風が心地よくてリフレッシュできました。たまには外で食べるのも良いですね。',
+    lat: 35.1975,
+    lon: 136.9158,
+    text: '晴れた平日の昼下がり、お弁当を買って役所周辺のベンチでランチ。風が心地よくてリフレッシュできました。たまには外で食べるのも良いですね。',
     photoUrls: [
       'https://loremflickr.com/400/300/sunny,bench/all?lock=332'
     ],
@@ -4901,11 +4901,11 @@ export const mockReviews: Review[] = [
     userId: 'user-014',
     userName: '木村 彩音',
     spotId: 'spot-kitaku-017',
-    spotName: '休日の区役所前',
+    spotName: '休日の区役所周辺',
     area: '清水',
-    lat: 35.1915,
-    lon: 136.9060,
-    text: '休日の朝にランニングで通過。平日は人でごった返している正面玄関前も、休日の朝は貸し切り状態で清々しいです。',
+    lat: 35.1911,
+    lon: 136.9169,
+    text: '休日の朝にランニングで通過。平日は人でごった返している周辺の道も、休日の朝は貸し切り状態で清々しいです。',
     photoUrls: [
       'https://loremflickr.com/400/300/sunny,building/all?lock=333'
     ],
@@ -4920,7 +4920,7 @@ export const mockReviews: Review[] = [
     hashtags: ['#朝ラン', '#休日の朝', '#静寂']
   },
 
-  // ---- 清水駅周辺 ----
+  // ---- 清水駅周辺 (広く分散) ----
   {
     reviewId: 'rev-220',
     userId: 'user-015',
@@ -4928,8 +4928,8 @@ export const mockReviews: Review[] = [
     spotId: 'spot-shimizu-001',
     spotName: '名鉄 清水駅 ホーム',
     area: '清水',
-    lat: 35.1890,
-    lon: 136.9110,
+    lat: 35.1891,
+    lon: 136.9111,
     text: '平日の昼間、栄方面へ向かうために利用。晴れていてホームからの見晴らしが良いです。のんびりとしたローカル感があって好きな駅です。',
     photoUrls: [
       'https://loremflickr.com/400/300/sunny,platform/all?lock=334'
@@ -4949,11 +4949,11 @@ export const mockReviews: Review[] = [
     userId: 'user-001',
     userName: '田中 太郎',
     spotId: 'spot-shimizu-002',
-    spotName: '清水駅前のカフェ',
+    spotName: '清水駅周辺のカフェ',
     area: '清水',
-    lat: 35.1892,
-    lon: 136.9112,
-    text: '駅を出てすぐのところにあるお洒落なカフェ。平日の午後に立ち寄りましたが、窓からの日差しが明るくてコーヒーも美味しく、居心地抜群です。',
+    lat: 35.1875,
+    lon: 136.9125,
+    text: '駅から少し歩いたところにあるお洒落なカフェ。平日の午後に立ち寄りましたが、窓からの日差しが明るくてコーヒーも美味しく、居心地抜群です。',
     photoUrls: [
       'https://loremflickr.com/400/300/sunny,cafe/all?lock=335'
     ],
@@ -4974,9 +4974,9 @@ export const mockReviews: Review[] = [
     spotId: 'spot-shimizu-003',
     spotName: '清水駅 高架下の商店街',
     area: '清水',
-    lat: 35.1895,
-    lon: 136.9115,
-    text: '曇りの平日の昼間、高架下をぶらぶら散策。新しくオープンしたお店と昔からあるお店が入り混じっていて、歩いているだけで楽しいエリアです。',
+    lat: 35.1905,
+    lon: 136.9098,
+    text: '曇りの平日の昼間、高架下周辺をぶらぶら散策。新しくオープンしたお店と昔からあるお店が入り混じっていて、歩いているだけで楽しいエリアです。',
     photoUrls: [
       'https://loremflickr.com/400/300/cloudy,street/all?lock=336'
     ],
@@ -4995,11 +4995,11 @@ export const mockReviews: Review[] = [
     userId: 'user-003',
     userName: '伊藤 次郎',
     spotId: 'spot-shimizu-004',
-    spotName: '駅前のスーパー',
+    spotName: '駅周辺のスーパー',
     area: '清水',
-    lat: 35.1888,
-    lon: 136.9108,
-    text: '仕事帰り、雨が降る中で駅前のスーパーへ。駅チカなので濡れずに買い物ができて非常に便利です。夕方はお惣菜が安くなっていてお得でした。',
+    lat: 35.1868,
+    lon: 136.9105,
+    text: '仕事帰り、雨が降る中で駅から少し離れたスーパーへ。夕方はお惣菜が安くなっていてお得でした。',
     photoUrls: [
       'https://loremflickr.com/400/300/rainy,supermarket/all?lock=337'
     ],
@@ -5018,11 +5018,11 @@ export const mockReviews: Review[] = [
     userId: 'user-004',
     userName: '山田 美咲',
     spotId: 'spot-shimizu-005',
-    spotName: '清水駅前のパン屋',
+    spotName: '清水駅周辺のパン屋',
     area: '清水',
-    lat: 35.1893,
-    lon: 136.9109,
-    text: '快晴の平日の朝、出勤前に立ち寄ってパンを購入。朝早くから開いていて、種類も豊富なので選ぶのが楽しいです。メロンパンが絶品です。',
+    lat: 35.1899,
+    lon: 136.9132,
+    text: '快晴の平日の朝、出勤前に少し歩いてパン屋に立ち寄り。朝早くから開いていて、種類も豊富なので選ぶのが楽しいです。メロンパンが絶品です。',
     photoUrls: [
       'https://loremflickr.com/400/300/sunny,bakery/all?lock=338'
     ],
@@ -5041,11 +5041,11 @@ export const mockReviews: Review[] = [
     userId: 'user-005',
     userName: '渡辺 健一',
     spotId: 'spot-shimizu-006',
-    spotName: '駅前の公園',
+    spotName: '駅周辺の公園',
     area: '清水',
-    lat: 35.1885,
-    lon: 136.9120,
-    text: '休日の午後、晴れてポカポカ陽気だったので駅前の公園で子供と遊びました。遊具が充実していて、家族連れでとても賑わっていました。',
+    lat: 35.1882,
+    lon: 136.9085,
+    text: '休日の午後、晴れてポカポカ陽気だったので駅から少し歩いた公園で子供と遊びました。遊具が充実していて、家族連れでとても賑わっていました。',
     photoUrls: [
       'https://loremflickr.com/400/300/sunny,park/all?lock=339'
     ],
@@ -5064,11 +5064,11 @@ export const mockReviews: Review[] = [
     userId: 'user-006',
     userName: '小林 えり',
     spotId: 'spot-shimizu-007',
-    spotName: '清水駅の踏切',
+    spotName: '清水駅周辺の踏切',
     area: '清水',
-    lat: 35.1890,
-    lon: 136.9115,
-    text: '平日の午後、曇り空の下で踏切待ち。赤い電車が通り過ぎるのを見るのが密かな楽しみです。この辺りはどこか懐かしい風景が広がっています。',
+    lat: 35.1912,
+    lon: 136.9119,
+    text: '平日の午後、曇り空の下で駅から少し離れた場所で踏切待ち。赤い電車が通り過ぎるのを見るのが密かな楽しみです。この辺りはどこか懐かしい風景が広がっています。',
     photoUrls: [
       'https://loremflickr.com/400/300/cloudy,railway/all?lock=340'
     ],
@@ -5087,10 +5087,10 @@ export const mockReviews: Review[] = [
     userId: 'user-007',
     userName: '加藤 誠',
     spotId: 'spot-shimizu-008',
-    spotName: '駅前の焼き鳥屋',
+    spotName: '駅周辺の焼き鳥屋',
     area: '清水',
-    lat: 35.1891,
-    lon: 136.9111,
+    lat: 35.1855,
+    lon: 136.9128,
     text: '平日の夜、仕事帰りにふらっと一人で立ち寄りました。外から良い匂いがして素通りできません。ビールと焼き鳥の組み合わせが最高の一日の締めくくりです。',
     photoUrls: [
       'https://loremflickr.com/400/300/dark,pub/all?lock=341'
@@ -5110,11 +5110,11 @@ export const mockReviews: Review[] = [
     userId: 'user-008',
     userName: '松本 陽子',
     spotId: 'spot-shimizu-009',
-    spotName: '雨の清水駅前',
+    spotName: '雨の清水駅周辺',
     area: '清水',
-    lat: 35.1890,
-    lon: 136.9110,
-    text: '平日の朝、本降りの雨の中を通勤。駅までの少しの道のりでも濡れてしまいますが、駅に着けば屋根があるのでほっとします。',
+    lat: 35.1901,
+    lon: 136.9079,
+    text: '平日の朝、本降りの雨の中を通勤。駅までの少し歩く道のりで濡れてしまいますが、駅に着けば屋根があるのでほっとします。',
     photoUrls: [
       'https://loremflickr.com/400/300/rainy,walkway/all?lock=342'
     ],
@@ -5133,10 +5133,10 @@ export const mockReviews: Review[] = [
     userId: 'user-009',
     userName: '佐々木 拓海',
     spotId: 'spot-shimizu-010',
-    spotName: '駅前の定食屋',
+    spotName: '駅周辺の定食屋',
     area: '清水',
-    lat: 35.1894,
-    lon: 136.9108,
+    lat: 35.1871,
+    lon: 136.9141,
     text: '平日の昼間、晴れた日のランチで利用しました。地元のお客さんで賑わっていて、アジフライ定食がサクサクでとても美味しかったです。',
     photoUrls: [
       'https://loremflickr.com/400/300/sunny,meal/all?lock=343'
@@ -5156,11 +5156,11 @@ export const mockReviews: Review[] = [
     userId: 'user-010',
     userName: '中村 さゆり',
     spotId: 'spot-shimizu-011',
-    spotName: '休日の清水駅前',
+    spotName: '休日の清水駅周辺',
     area: '清水',
-    lat: 35.1890,
-    lon: 136.9110,
-    text: 'よく晴れた休日の午後。平日ほどの慌ただしさはなく、ゆったりとした時間が流れています。栄に出るにもアクセスが良くて便利です。',
+    lat: 35.1895,
+    lon: 136.9092,
+    text: 'よく晴れた休日の午後。駅から少し歩くと平日ほどの慌ただしさはなく、ゆったりとした時間が流れています。栄に出るにもアクセスが良くて便利です。',
     photoUrls: [
       'https://loremflickr.com/400/300/sunny,plaza/all?lock=344'
     ],
@@ -5179,11 +5179,11 @@ export const mockReviews: Review[] = [
     userId: 'user-011',
     userName: '清水 翔太',
     spotId: 'spot-shimizu-012',
-    spotName: '高架下の居酒屋',
+    spotName: '高架下の居酒屋周辺',
     area: '清水',
-    lat: 35.1896,
-    lon: 136.9113,
-    text: '平日の夜、曇り空でしたが気にせず同僚と飲み会。高架下ならではのディープな雰囲気が最高です。安くて美味しい料理がたくさんあります。',
+    lat: 35.1861,
+    lon: 136.9115,
+    text: '平日の夜、曇り空でしたが気にせず同僚と飲み会。駅から少し離れた高架下ならではのディープな雰囲気が最高です。安くて美味しい料理がたくさんあります。',
     photoUrls: [
       'https://loremflickr.com/400/300/dark,bar/all?lock=345'
     ],
@@ -5202,10 +5202,10 @@ export const mockReviews: Review[] = [
     userId: 'user-012',
     userName: '山口 結衣',
     spotId: 'spot-shimizu-013',
-    spotName: '駅近くの古本屋',
+    spotName: '駅周辺の古本屋',
     area: '清水',
-    lat: 35.1887,
-    lon: 136.9115,
+    lat: 35.1908,
+    lon: 136.9148,
     text: '平日の午後、晴れて気持ちの良い日にふらっと立ち寄りました。昔からある小さな古本屋さんで、掘り出し物を探すのが楽しいです。',
     photoUrls: [
       'https://loremflickr.com/400/300/sunny,books/all?lock=346'
@@ -5225,11 +5225,11 @@ export const mockReviews: Review[] = [
     userId: 'user-013',
     userName: '橋本 涼',
     spotId: 'spot-shimizu-014',
-    spotName: '夕方の改札',
+    spotName: '夕方の改札周辺',
     area: '清水',
-    lat: 35.1890,
-    lon: 136.9110,
-    text: '平日の夕方、西日が差し込む改札口。学校帰りの学生や仕事帰りの人で少しずつ活気が出てくるこの時間帯の雰囲気が好きです。',
+    lat: 35.1888,
+    lon: 136.9081,
+    text: '平日の夕方、西日が差し込む改札口付近。学校帰りの学生や仕事帰りの人で少しずつ活気が出てくるこの時間帯の雰囲気が好きです。',
     photoUrls: [
       'https://loremflickr.com/400/300/warm,gate/all?lock=347'
     ],
@@ -5248,11 +5248,11 @@ export const mockReviews: Review[] = [
     userId: 'user-014',
     userName: '木村 彩音',
     spotId: 'spot-shimizu-015',
-    spotName: '駅前のケーキ屋',
+    spotName: '駅周辺のケーキ屋',
     area: '清水',
-    lat: 35.1895,
-    lon: 136.9105,
-    text: '雨が降る平日の午後、自分へのご褒美にショートケーキを購入。雨の日でも駅のすぐ近くだから買いに行きやすいです。甘さがちょうどよくて最高でした。',
+    lat: 35.1919,
+    lon: 136.9102,
+    text: '雨が降る平日の午後、自分へのご褒美に駅から少し離れたケーキ屋でショートケーキを購入。甘さがちょうどよくて最高でした。',
     photoUrls: [
       'https://loremflickr.com/400/300/rainy,cake/all?lock=348'
     ],
@@ -5271,11 +5271,11 @@ export const mockReviews: Review[] = [
     userId: 'user-015',
     userName: '林 健太郎',
     spotId: 'spot-shimizu-016',
-    spotName: '駅前のベンチ',
+    spotName: '駅周辺のベンチ',
     area: '清水',
-    lat: 35.1890,
-    lon: 136.9112,
-    text: '晴れた平日の昼間、待ち合わせの時間まで駅前のベンチで読書。日差しが暖かくて、のんびりとしたとても良い時間を過ごせました。',
+    lat: 35.1878,
+    lon: 136.9135,
+    text: '晴れた平日の昼間、待ち合わせの時間まで少し歩いた場所にあるベンチで読書。日差しが暖かくて、のんびりとしたとても良い時間を過ごせました。',
     photoUrls: [
       'https://loremflickr.com/400/300/sunny,bench/all?lock=349'
     ],
