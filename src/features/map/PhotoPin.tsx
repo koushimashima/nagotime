@@ -26,9 +26,10 @@ function buildIconHtml(review: Review): string {
     const escapedAlt = `${spotName} の口コミ写真`.replace(/"/g, '&quot;')
     const onerror =
       "this.style.display='none';if(this.nextElementSibling){this.nextElementSibling.style.display='block'}"
+    // block を指定して inline baseline ずれによる西方向のオフセットを防ぐ
     return (
       `<img src="${escapedSrc}" alt="${escapedAlt}" ` +
-      `class="w-10 h-10 rounded-full object-cover border-2 border-white shadow-md" ` +
+      `class="block w-10 h-10 rounded-full object-cover border-2 border-white shadow-md" ` +
       `onerror="${onerror}" />` +
       // フォールバック用オレンジドット（初期非表示）
       `<div class="w-10 h-10 rounded-full bg-orange-500 border-2 border-white shadow-md" style="display:none"></div>`
