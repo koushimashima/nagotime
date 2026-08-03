@@ -12,7 +12,6 @@ import type { Review, Weather, TimeSlot } from '../../mocks/data/types'
 
 /** フィードフィルタ条件。すべて省略可能（省略時は全件対象） */
 export interface ReviewFilters {
-  area?: string
   weather?: Weather
   timeSlot?: TimeSlot
 }
@@ -42,7 +41,6 @@ interface ReviewsApiResponse {
 
 function buildQueryString(filters: ReviewFilters, cursor: string | null, limit: number): string {
   const params = new URLSearchParams()
-  if (filters.area)     params.set('area', filters.area)
   if (filters.weather)  params.set('weather', filters.weather)
   if (filters.timeSlot) params.set('timeSlot', filters.timeSlot)
   if (cursor)           params.set('cursor', cursor)

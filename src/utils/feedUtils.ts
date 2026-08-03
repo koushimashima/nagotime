@@ -7,7 +7,6 @@ import type { Review, Weather, TimeSlot, DayType } from '../mocks/data/types'
 // ---- フィルター型定義 ----
 
 export interface ReviewFilters {
-  area?: string
   weather?: Weather
   timeSlot?: TimeSlot
   dayType?: DayType
@@ -42,9 +41,6 @@ export function filterPublished(reviews: Review[]): Review[] {
  */
 export function applyFilters(reviews: Review[], filters: ReviewFilters): Review[] {
   return reviews.filter((review) => {
-    if (filters.area !== undefined && filters.area !== null && review.area !== filters.area) {
-      return false
-    }
     if (filters.weather !== undefined && filters.weather !== null && review.weather !== filters.weather) {
       return false
     }

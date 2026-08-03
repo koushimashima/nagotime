@@ -46,7 +46,7 @@ export function ReviewCard({ review, onClick }: ReviewCardProps) {
           className="absolute top-2 left-2 flex flex-col gap-1 pointer-events-none max-w-[65%]"
           aria-label={`ハッシュタグ: ${(review.hashtags ?? []).join(', ')}`}
         >
-          {(review.hashtags ?? []).slice(0, 3).map((tag) => (
+          {(review.hashtags ?? []).map((tag) => (
             <span
               key={tag}
               className="block truncate text-xs font-semibold text-white [filter:drop-shadow(0_1px_3px_rgba(0,0,0,0.6))] leading-tight"
@@ -54,11 +54,6 @@ export function ReviewCard({ review, onClick }: ReviewCardProps) {
               {tag}
             </span>
           ))}
-          {(review.hashtags ?? []).length > 3 && (
-            <span className="block text-xs font-semibold text-white [filter:drop-shadow(0_1px_3px_rgba(0,0,0,0.6))] leading-tight">
-              +{(review.hashtags ?? []).length - 3}
-            </span>
-          )}
         </div>
       )}
 

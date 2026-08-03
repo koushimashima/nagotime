@@ -59,7 +59,7 @@ export const mockTickets: Ticket[] = [
     redeemedCount: 15,
     status: 'ACTIVE',
     // 映画館・シアター
-    thumbnailUrl: 'https://loremflickr.com/400/300/cinema,movie,theater/all?lock=206',
+    thumbnailUrl: 'https://loremflickr.com/400/300/movie,theater?lock=206',
   },
   {
     ticketId: 'ticket-007',

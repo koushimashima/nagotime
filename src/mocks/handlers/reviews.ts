@@ -4,6 +4,7 @@
 import { http, HttpResponse, delay } from 'msw'
 import { mockReviews as initialMockReviews } from '../data/reviews'
 import type { Review, Weather, TimeSlot, DayType } from '../data/types'
+import { resolveArea } from '../../utils/geoUtils'
 
 // ---- メモリ上のミュータブルな口コミ配列 ----
 // POST /api/reviews で追加されると GET /api/reviews にも反映される
@@ -142,7 +143,6 @@ export const reviewHandlers = [
     await delay(200)
 
     const url = new URL(request.url)
-    const area = url.searchParams.get('area')
     const weather = url.searchParams.get('weather') as Weather | null
     const timeSlot = url.searchParams.get('timeSlot') as TimeSlot | null
     const dayType = url.searchParams.get('dayType') as DayType | null
@@ -154,7 +154,6 @@ export const reviewHandlers = [
     let filtered = reviews.filter((r) => r.status === 'PUBLISHED')
 
     // AND 条件フィルタリング（Requirements 3.5）
-    if (area) filtered = filtered.filter((r) => r.area === area)
     if (weather) filtered = filtered.filter((r) => r.weather === weather)
     if (timeSlot) filtered = filtered.filter((r) => r.timeSlot === timeSlot)
     if (dayType) filtered = filtered.filter((r) => r.dayType === dayType)
@@ -238,8 +237,18 @@ export const reviewHandlers = [
     // PUBLISHED のみ（Requirements 4.8）
     const published = reviews.filter((r) => r.status === 'PUBLISHED')
 
+    // AND フィルタ: パラメータが指定された条件を完全一致で絞り込む
+    // weather / timeSlot はクエリに含まれていた場合のみ絞り込み対象とする
+    const weatherParam = url.searchParams.get('weather') as Weather | null
+    const timeSlotParam = url.searchParams.get('timeSlot') as TimeSlot | null
+    const filtered = published.filter((r) => {
+      if (weatherParam  !== null && r.weather  !== weatherParam)  return false
+      if (timeSlotParam !== null && r.timeSlot !== timeSlotParam) return false
+      return true
+    })
+
     // スコアリングして降順ソート（Requirements 4.1〜4.10）
-    const scored = published.map((r) => {
+    const scored = filtered.map((r) => {
       const distM = haversine(lat, lon, r.lat, r.lon)
       const weatherScore = calcWeatherScore(r.weather, weather as Weather)
       const timeScore = calcTimeSlotScore(r.timeSlot, timeSlot as TimeSlot)
@@ -413,7 +422,7 @@ export const reviewHandlers = [
       userName: body.userName as string ?? 'ゲストユーザー',
       spotId: body.spotId as string ?? `spot-${Date.now()}`,
       spotName: spotName as string,
-      area: body.area as string ?? '',
+      area: resolveArea(lat as number, lon as number),
       lat: lat as number,
       lon: lon as number,
       text: text as string,

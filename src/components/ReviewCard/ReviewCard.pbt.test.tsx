@@ -57,10 +57,11 @@ const hashtagsUpTo3Arb = fc
 
 /**
  * N 件（4〜10）の重複なしハッシュタグ配列を生成するアービタリー（Property 10b 用）
+ * @deprecated 現在未使用（将来のテスト拡張時に利用予定）
  */
-const hashtagsOver3Arb = fc
-  .integer({ min: 4, max: 10 })
-  .map((n) => Array.from({ length: n }, (_, i) => `#tag${i + 1}`))
+// const _hashtagsOver3Arb = fc
+//   .integer({ min: 4, max: 10 })
+//   .map((n) => Array.from({ length: n }, (_, i) => `#tag${i + 1}`))
 
 // ---- プロパティテスト ----
 
@@ -118,60 +119,5 @@ describe('ReviewCard.pbt - Property 10: フィードカードの縦3件制限と
     },
   )
 
-  /**
-   * Property 10b: N > 3 のとき3件のハッシュタグ + +{N-3} インジケーター
-   *
-   * 4〜10件のハッシュタグを持つレビューに対して:
-   *   - 先頭3件のハッシュタグが表示されていること
-   *   - 4件目以降のハッシュタグは表示されないこと
-   *   - '+{N-3}' インジケーターが表示されていること
-   *   - インジケーターテキストが正確な値であること
-   *
-   * Validates: Requirements 6.2, 6.3
-   */
-  it(
-    'N > 3 のとき、先頭3件のハッシュタグと +{N-3} インジケーターが表示される',
-    () => {
-      fc.assert(
-        fc.property(hashtagsOver3Arb, (hashtags) => {
-          const n = hashtags.length
-          const review = makeReview(hashtags)
 
-          render(<ReviewCard review={review} />)
-
-          // Requirement 6.1: ハッシュタグエリアが描画されていること
-          const hashtagArea = screen.getByLabelText(
-            `ハッシュタグ: ${hashtags.join(', ')}`,
-          )
-          expect(hashtagArea).toBeInTheDocument()
-
-          // Requirement 6.2: 先頭3件のハッシュタグが表示されていること
-          const visibleTags = hashtags.slice(0, 3)
-          for (const tag of visibleTags) {
-            expect(screen.getByText(tag)).toBeInTheDocument()
-          }
-
-          // 4件目以降のハッシュタグが DOM に存在しないこと
-          const hiddenTags = hashtags.slice(3)
-          for (const tag of hiddenTags) {
-            expect(screen.queryByText(tag)).not.toBeInTheDocument()
-          }
-
-          // Requirement 6.3: +{N-3} インジケーターが表示されていること
-          const expectedIndicator = `+${n - 3}`
-          expect(screen.getByText(expectedIndicator)).toBeInTheDocument()
-
-          // インジケーターが span 要素であること（+ で始まる span）
-          const allSpans = hashtagArea.querySelectorAll('span')
-          const indicatorSpan = Array.from(allSpans).find(
-            (span) => span.textContent === expectedIndicator,
-          )
-          expect(indicatorSpan).toBeDefined()
-
-          cleanup()
-        }),
-        { numRuns: 100 },
-      )
-    },
-  )
 })

@@ -52,7 +52,6 @@ const reviewArbitrary: fc.Arbitrary<Review> = fc.record({
 /** Generates a ReviewFilters record where each field is randomly present or absent */
 const filterArbitrary: fc.Arbitrary<ReviewFilters> = fc.record(
   {
-    area: fc.constantFrom('栄', '名古屋駅', '大須', '今池', '覚王山', '金山', '千種', '熱田'),
     weather: weatherArbitrary,
     timeSlot: timeSlotArbitrary,
     dayType: dayTypeArbitrary,
@@ -113,7 +112,6 @@ describe('feedUtils PBT', () => {
       fc.property(fc.array(reviewArbitrary), filterArbitrary, (reviews, filters) => {
         const result = applyFilters(reviews, filters)
         return result.every((review) => {
-          if (filters.area !== undefined && review.area !== filters.area) return false
           if (filters.weather !== undefined && review.weather !== filters.weather) return false
           if (filters.timeSlot !== undefined && review.timeSlot !== filters.timeSlot) return false
           if (filters.dayType !== undefined && review.dayType !== filters.dayType) return false

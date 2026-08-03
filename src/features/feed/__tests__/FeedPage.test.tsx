@@ -136,7 +136,7 @@ describe('FeedPage', () => {
     renderFeedPage()
 
     await waitFor(() => {
-      expect(screen.getByText('3 件の口コミを表示中')).toBeInTheDocument()
+      expect(screen.getByText('3 件すべて表示しました')).toBeInTheDocument()
     })
   })
 })
