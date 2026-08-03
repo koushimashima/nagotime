@@ -29,5 +29,5 @@
     /* Vitest globals */
     "types": ["vitest/globals"]
   },
-  "include": ["src"]
+  "include": ["src", "fix-mocks.js"]
 }

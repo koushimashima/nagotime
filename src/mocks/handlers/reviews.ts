@@ -251,7 +251,12 @@ export const reviewHandlers = [
 
     scored.sort((a, b) => b.score - a.score)
 
-    const resultReviews = scored.slice(0, 20).map((s) => normalize(s.review))
+    // all=true のとき全件返す。それ以外は limit パラメータ（デフォルト 20）で制限する
+    const allParam = url.searchParams.get('all')
+    const limitParam = url.searchParams.get('limit')
+    const limit = limitParam ? Math.min(Math.max(parseInt(limitParam, 10) || 20, 1), 200) : 20
+    const sliced = allParam === 'true' ? scored : scored.slice(0, limit)
+    const resultReviews = sliced.map((s) => normalize(s.review))
 
     return HttpResponse.json({ reviews: resultReviews })
   }),

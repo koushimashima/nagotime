@@ -3,7 +3,9 @@
 //
 // - useRecommendFeed で context ベースのレコメンドフィードを取得する
 // - ContextFilterBar でフィルタ UI を提供する
-// - reviews 変更時に setSharedReviews で MapPage へ共有する
+// - reviews 変更時に setSharedReviews（フィード表示中の口コミ）で MapPage へ共有する
+// - allReviews 変更時に setSharedAllReviews（全件）で MapPage へ共有する
+// - 「もっと見る」ボタンで追加ページを読み込む
 // - エラー時は role="alert" バナーとして表示する
 
 import { useEffect } from 'react'
@@ -25,20 +27,27 @@ export function FeedPage() {
     filterWeather,
     filterTimeSlot,
     setSharedReviews,
+    setSharedAllReviews,
   } = useRecommendContext()
 
-  // レコメンドフィード取得
-  const { reviews, loading, error } = useRecommendFeed({
+  // レコメンドフィード取得（ページネーション対応）
+  const { reviews, allReviews, loading, error, hasMore, loadMore } = useRecommendFeed({
     lat: coord.lat,
     lon: coord.lon,
     weather: filterWeather,
     timeSlot: filterTimeSlot,
   })
 
-  // reviews が変わるたびに MapPage へ共有する（Requirements 4.2）
+  // フィード表示中の口コミを MapPage へ共有する（Requirements 4.2）
+  // ※ マップには全件 (allReviews) を渡すため sharedReviews はフィード用途のみ
   useEffect(() => {
     setSharedReviews(reviews)
   }, [reviews, setSharedReviews])
+
+  // 絞り込み条件に合致する全件を MapPage へ共有する
+  useEffect(() => {
+    setSharedAllReviews(allReviews)
+  }, [allReviews, setSharedAllReviews])
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -113,10 +122,22 @@ export function FeedPage() {
           </div>
         )}
 
+        {/* もっと見るボタン */}
+        {!loading && hasMore && reviews.length > 0 && (
+          <div className="flex justify-center mt-6">
+            <button
+              onClick={loadMore}
+              className="px-6 py-2.5 rounded-full border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 active:scale-95 transition-transform shadow-sm"
+            >
+              もっと見る
+            </button>
+          </div>
+        )}
+
         {/* 全件表示済みメッセージ */}
-        {!loading && reviews.length > 0 && (
+        {!loading && !hasMore && reviews.length > 0 && (
           <p className="text-center text-xs text-gray-400 mt-6">
-            {reviews.length} 件の口コミを表示中
+            {reviews.length} 件すべて表示しました
           </p>
         )}
 

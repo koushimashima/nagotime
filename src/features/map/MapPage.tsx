@@ -1,9 +1,10 @@
 // src/features/map/MapPage.tsx
 // マップ画面 — フィード口コミを写真ピンとして地図上に表示
 //
-// - useRecommendContext() から sharedReviews を取得して PhotoPin で表示する
+// - useRecommendContext() から sharedAllReviews を取得して PhotoPin で表示する
+//   （フィードの表示件数に関わらず、絞り込み条件に合致する全件を表示）
 // - Geolocation API で現在地を取得。拒否時は栄（デフォルト座標）を使用
-// - sharedReviews が空のとき「現在の条件に一致する口コミがありません」を地図オーバーレイとして表示
+// - sharedAllReviews が空のとき「現在の条件に一致する口コミがありません」を地図オーバーレイとして表示
 // Requirements: 4.3, 4.4, 5.1〜5.7
 
 import { useCallback, useEffect, useRef, useState } from 'react'
@@ -94,8 +95,8 @@ export function MapPage() {
   // 現在地ボタン押下で強制 flyTo するためのカウンター
   const [flyToTrigger, setFlyToTrigger] = useState(0)
 
-  // フィード・マップ間で共有された口コミリスト（Requirements 4.3）
-  const { sharedReviews } = useRecommendContext()
+  // 絞り込み条件に合致する全口コミ（フィードの表示件数に関わらず全件表示）
+  const { sharedAllReviews } = useRecommendContext()
 
   // ---- 現在地取得の共通処理 ----
   const locateUser = useCallback(() => {
@@ -141,7 +142,7 @@ export function MapPage() {
       <div className="flex-1 relative">
 
         {/* 空リスト時オーバーレイ（Requirements 4.4） */}
-        {sharedReviews.length === 0 && (
+        {sharedAllReviews.length === 0 && (
           <div className="absolute inset-0 z-[999] flex items-center justify-center pointer-events-none">
             <div className="bg-white/90 backdrop-blur-sm rounded-xl px-6 py-4 shadow-lg text-center pointer-events-auto">
               <p className="text-sm font-medium text-gray-600">
@@ -195,7 +196,7 @@ export function MapPage() {
           )}
 
           {/* 口コミ写真ピン表示（Requirements 4.3, 5.1〜5.7） */}
-          {sharedReviews.map((review) => (
+          {sharedAllReviews.map((review) => (
             <PhotoPin key={review.reviewId} review={review} />
           ))}
         </MapContainer>
@@ -206,8 +207,8 @@ export function MapPage() {
 
       {/* ---- フッター情報（Requirements 4.3） ---- */}
       <div className="bg-white border-t border-gray-100 px-4 py-1.5 text-xs text-gray-400 flex-shrink-0 text-right">
-        {sharedReviews.length > 0
-          ? `${sharedReviews.length} 件の口コミを表示中`
+        {sharedAllReviews.length > 0
+          ? `${sharedAllReviews.length} 件の口コミを表示中`
           : '現在の条件に一致する口コミがありません'}
       </div>
     </div>

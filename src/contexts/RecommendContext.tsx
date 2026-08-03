@@ -42,8 +42,12 @@ interface RecommendState {
   isAnyFilterActive: boolean // いずれかのフィルタが有効な状態か
 
   // フィード・マップ間の共有口コミリスト
+  // sharedReviews  … フィードに表示中の口コミ（最大20件ずつ累積）
+  // sharedAllReviews … 現在の絞り込み条件に合致する口コミ全件（マップ用）
   sharedReviews: Review[]
   setSharedReviews: (reviews: Review[]) => void
+  sharedAllReviews: Review[]
+  setSharedAllReviews: (reviews: Review[]) => void
 
   // ローディング・エラー状態
   locating: boolean // Geolocation取得中フラグ
@@ -92,6 +96,8 @@ export function RecommendProvider({ children }: RecommendProviderProps) {
 
   // 共有口コミリスト（FeedPage → MapPage へ共有）
   const [sharedReviews, setSharedReviews] = useState<Review[]>([])
+  // 全件共有リスト（絞り込み条件に合致する全口コミ、マップ用）
+  const [sharedAllReviews, setSharedAllReviews] = useState<Review[]>([])
 
   // locationError の setTimeout を管理する ref（メモリリーク防止）
   const errorTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -208,6 +214,8 @@ export function RecommendProvider({ children }: RecommendProviderProps) {
     isAnyFilterActive,
     sharedReviews,
     setSharedReviews,
+    sharedAllReviews,
+    setSharedAllReviews,
     locating,
     locationError,
   }
