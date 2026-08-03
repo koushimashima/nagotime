@@ -64,8 +64,6 @@ function makeContextValue(overrides: Partial<Record<string, unknown>> = {}) {
     isAnyFilterActive: true,
     sharedReviews: [],
     setSharedReviews: vi.fn(),
-    sharedAllReviews: [],
-    setSharedAllReviews: vi.fn(),
     locating: false,
     locationError: null,
     ...overrides,

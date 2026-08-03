@@ -40,22 +40,35 @@ export function ReviewCard({ review, onClick }: ReviewCardProps) {
       {/* 写真下部グラデーション */}
       <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
 
-      {/* ハッシュタグ（写真左上・縦3件・白字・背景なし） */}
-      {(review.hashtags ?? []).length > 0 && (
-        <div
-          className="absolute top-2 left-2 flex flex-col gap-1 pointer-events-none max-w-[65%]"
-          aria-label={`ハッシュタグ: ${(review.hashtags ?? []).join(', ')}`}
-        >
-          {(review.hashtags ?? []).map((tag) => (
-            <span
-              key={tag}
-              className="block truncate text-xs font-semibold text-white [filter:drop-shadow(0_1px_3px_rgba(0,0,0,0.6))] leading-tight"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-      )}
+      {/* ハッシュタグ（写真左上・白字・背景なし）
+           4件以下: 全件表示
+           5件以上: 先頭3件 + "+N" バッジ */}
+      {(review.hashtags ?? []).length > 0 && (() => {
+        const tags = review.hashtags ?? []
+        const overflow = tags.length >= 5
+        const visibleTags = overflow ? tags.slice(0, 3) : tags.slice(0, 4)
+        const hiddenCount = tags.length - visibleTags.length
+        return (
+          <div
+            className="absolute top-2 left-2 flex flex-col gap-1 pointer-events-none max-w-[65%]"
+            aria-label={`ハッシュタグ: ${tags.join(', ')}`}
+          >
+            {visibleTags.map((tag) => (
+              <span
+                key={tag}
+                className="block truncate text-xs font-semibold text-white [filter:drop-shadow(0_1px_3px_rgba(0,0,0,0.6))] leading-tight"
+              >
+                {tag}
+              </span>
+            ))}
+            {overflow && (
+              <span className="text-xs font-semibold text-white [filter:drop-shadow(0_1px_3px_rgba(0,0,0,0.6))] leading-tight">
+                +{hiddenCount}
+              </span>
+            )}
+          </div>
+        )
+      })()}
 
       {/* 右下：ハート＋いいね数 */}
       <div

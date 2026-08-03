@@ -238,12 +238,14 @@ export const reviewHandlers = [
     const published = reviews.filter((r) => r.status === 'PUBLISHED')
 
     // AND フィルタ: パラメータが指定された条件を完全一致で絞り込む
-    // weather / timeSlot はクエリに含まれていた場合のみ絞り込み対象とする
-    const weatherParam = url.searchParams.get('weather') as Weather | null
+    // weather / timeSlot / dayType はクエリに含まれていた場合のみ絞り込み対象とする
+    const weatherParam  = url.searchParams.get('weather')  as Weather  | null
     const timeSlotParam = url.searchParams.get('timeSlot') as TimeSlot | null
+    const dayTypeParam  = url.searchParams.get('dayType')  as DayType  | null
     const filtered = published.filter((r) => {
       if (weatherParam  !== null && r.weather  !== weatherParam)  return false
       if (timeSlotParam !== null && r.timeSlot !== timeSlotParam) return false
+      if (dayTypeParam  !== null && r.dayType  !== dayTypeParam)  return false
       return true
     })
 

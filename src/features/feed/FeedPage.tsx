@@ -4,7 +4,6 @@
 // - useRecommendFeed で context ベースのレコメンドフィードを取得する
 // - ContextFilterBar でフィルタ UI を提供する
 // - reviews 変更時に setSharedReviews（フィード表示中の口コミ）で MapPage へ共有する
-// - allReviews 変更時に setSharedAllReviews（全件）で MapPage へ共有する
 // - 「もっと見る」ボタンで追加ページを読み込む
 // - エラー時は role="alert" バナーとして表示する
 
@@ -26,28 +25,23 @@ export function FeedPage() {
     coord,
     filterWeather,
     filterTimeSlot,
+    filterDayType,
     setSharedReviews,
-    setSharedAllReviews,
   } = useRecommendContext()
 
   // レコメンドフィード取得（ページネーション対応）
-  const { reviews, allReviews, loading, error, hasMore, loadMore } = useRecommendFeed({
+  const { reviews, loading, error, hasMore, loadMore } = useRecommendFeed({
     lat: coord.lat,
     lon: coord.lon,
     weather: filterWeather,
     timeSlot: filterTimeSlot,
+    dayType: filterDayType,
   })
 
   // フィード表示中の口コミを MapPage へ共有する（Requirements 4.2）
-  // ※ マップには全件 (allReviews) を渡すため sharedReviews はフィード用途のみ
   useEffect(() => {
     setSharedReviews(reviews)
   }, [reviews, setSharedReviews])
-
-  // 絞り込み条件に合致する全件を MapPage へ共有する
-  useEffect(() => {
-    setSharedAllReviews(allReviews)
-  }, [allReviews, setSharedAllReviews])
 
   return (
     <div className="min-h-screen bg-gray-50">

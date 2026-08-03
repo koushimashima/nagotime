@@ -1,10 +1,11 @@
 // src/features/map/MapPage.tsx
-// マップ画面 — フィード口コミを写真ピンとして地図上に表示
+// マップ画面 — フィルタ条件に合致する口コミを写真ピンとして地図上に表示
 //
-// - useRecommendContext() から sharedAllReviews を取得して PhotoPin で表示する
-//   （フィードの表示件数に関わらず、絞り込み条件に合致する全件を表示）
+// - useRecommendFeed() を MapPage 自身で呼び出してフィルタ済み全件を取得する
+//   （FeedPage の sharedAllReviews には依存しない。マップ独立動作）
+// - フィルタ変更時は useRecommendFeed が再フェッチして自動更新される
 // - Geolocation API で現在地を取得。拒否時は栄（デフォルト座標）を使用
-// - sharedAllReviews が空のとき「現在の条件に一致する口コミがありません」を地図オーバーレイとして表示
+// - allReviews が空のとき「現在の条件に一致する口コミがありません」を地図オーバーレイとして表示
 // Requirements: 4.3, 4.4, 5.1〜5.7
 
 import { useCallback, useEffect, useRef, useState } from 'react'
@@ -20,6 +21,7 @@ import type { LatLngExpression } from 'leaflet'
 import { LoadingSpinner } from '../../components/LoadingSpinner'
 import { ContextFilterBar } from '../../components/ContextFilterBar'
 import { useRecommendContext } from '../../contexts/RecommendContext'
+import { useRecommendFeed } from '../feed/useRecommendFeed'
 import { PhotoPin } from './PhotoPin'
 
 // ---- 定数 ----
@@ -95,8 +97,23 @@ export function MapPage() {
   // 現在地ボタン押下で強制 flyTo するためのカウンター
   const [flyToTrigger, setFlyToTrigger] = useState(0)
 
-  // 絞り込み条件に合致する全口コミ（フィードの表示件数に関わらず全件表示）
-  const { sharedAllReviews } = useRecommendContext()
+  // フィルタ状態を Context から取得（フィルタ変更で再フェッチが走る）
+  const {
+    coord,
+    filterWeather,
+    filterTimeSlot,
+    filterDayType,
+  } = useRecommendContext()
+
+  // マップ独自のフィルタ済み全件取得
+  // coord はフィード画面と同じ位置情報 Context を参照する
+  const { allReviews } = useRecommendFeed({
+    lat: coord.lat,
+    lon: coord.lon,
+    weather: filterWeather,
+    timeSlot: filterTimeSlot,
+    dayType: filterDayType,
+  })
 
   // ---- 現在地取得の共通処理 ----
   const locateUser = useCallback(() => {
@@ -142,7 +159,7 @@ export function MapPage() {
       <div className="flex-1 relative">
 
         {/* 空リスト時オーバーレイ（Requirements 4.4） */}
-        {sharedAllReviews.length === 0 && (
+        {allReviews.length === 0 && (
           <div className="absolute inset-0 z-[999] flex items-center justify-center pointer-events-none">
             <div className="bg-white/90 backdrop-blur-sm rounded-xl px-6 py-4 shadow-lg text-center pointer-events-auto">
               <p className="text-sm font-medium text-gray-600">
@@ -196,7 +213,7 @@ export function MapPage() {
           )}
 
           {/* 口コミ写真ピン表示（Requirements 4.3, 5.1〜5.7） */}
-          {sharedAllReviews.map((review) => (
+          {allReviews.map((review) => (
             <PhotoPin key={review.reviewId} review={review} />
           ))}
         </MapContainer>
@@ -207,8 +224,8 @@ export function MapPage() {
 
       {/* ---- フッター情報（Requirements 4.3） ---- */}
       <div className="bg-white border-t border-gray-100 px-4 py-1.5 text-xs text-gray-400 flex-shrink-0 text-right">
-        {sharedAllReviews.length > 0
-          ? `${sharedAllReviews.length} 件の口コミを表示中`
+        {allReviews.length > 0
+          ? `${allReviews.length} 件の口コミを表示中`
           : '現在の条件に一致する口コミがありません'}
       </div>
     </div>

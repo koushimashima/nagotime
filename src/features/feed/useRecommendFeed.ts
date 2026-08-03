@@ -2,13 +2,13 @@
 // レコメンドフィード取得カスタムフック（Requirements 2.2, 6.1, 6.2）
 //
 // - GET /api/reviews/recommend にコンテキストパラメータを渡してスコア降順の口コミを取得する
-// - weather / timeSlot が null の場合はそのパラメータを省略して全件取得する
+// - weather / timeSlot / dayType が null の場合はそのパラメータを省略して全件取得する
 // - params の変化を JSON.stringify のキーで検知し、変化のたびに再フェッチする
 // - フィード表示用: limit=20 でページネーション（hasMore / loadMore）
 // - マップ用全件: all=true で全件取得し allReviews として返す
 
 import { useCallback, useEffect, useRef, useState } from 'react'
-import type { Review, Weather, TimeSlot } from '../../mocks/data/types'
+import type { Review, Weather, TimeSlot, DayType } from '../../mocks/data/types'
 
 // ---- 定数 ----
 
@@ -20,8 +20,9 @@ const PAGE_SIZE = 20
 export interface RecommendFeedParams {
   lat: number
   lon: number
-  weather: Weather | null  // null = フィルタ無効（パラメータ省略）
+  weather: Weather | null   // null = フィルタ無効（パラメータ省略）
   timeSlot: TimeSlot | null // null = フィルタ無効（パラメータ省略）
+  dayType: DayType | null   // null = フィルタ無効（パラメータ省略）
 }
 
 /** レコメンドフィードの状態 */
@@ -52,13 +53,14 @@ function buildQuery(
   params: RecommendFeedParams,
   options: { all?: boolean; limit?: number; offset?: number },
 ): string {
-  const { lat, lon, weather, timeSlot } = params
+  const { lat, lon, weather, timeSlot, dayType } = params
   const query = new URLSearchParams()
   query.set('lat', String(lat))
   query.set('lon', String(lon))
-  if (weather !== null)  query.set('weather', weather)
-  if (timeSlot !== null) query.set('timeSlot', timeSlot)
-  if (options.all)       query.set('all', 'true')
+  if (weather !== null)   query.set('weather', weather)
+  if (timeSlot !== null)  query.set('timeSlot', timeSlot)
+  if (dayType !== null)   query.set('dayType', dayType)
+  if (options.all)        query.set('all', 'true')
   if (options.limit != null)  query.set('limit',  String(options.limit))
   if (options.offset != null) query.set('offset', String(options.offset))
   return query.toString()

@@ -7,7 +7,7 @@ import { setupServer } from 'msw/node'
 import { http, HttpResponse, delay } from 'msw'
 import { renderHook, waitFor } from '@testing-library/react'
 import { useRecommendFeed } from './useRecommendFeed'
-import type { Weather, TimeSlot } from '../../mocks/data/types'
+import type { Weather, TimeSlot, DayType } from '../../mocks/data/types'
 
 // ---- MSW サーバー ----
 
@@ -50,6 +50,7 @@ describe('useRecommendFeed — Property 5: レコメンドAPIクエリパラメ�
             lon: fc.float({ min: -180, max: 180, noNaN: true }),
             weather: fc.constantFrom<Weather>('SUNNY'),
             timeSlot: fc.constantFrom<TimeSlot>('MORNING', 'AFTERNOON', 'EVENING', 'NIGHT'),
+            dayType: fc.constantFrom<DayType>('WEEKDAY', 'HOLIDAY'),
           }),
           async (params) => {
             capturedUrl = null
@@ -76,9 +77,10 @@ describe('useRecommendFeed — Property 5: レコメンドAPIクエリパラメ�
             expect(sp.get('lat')).toBe(String(params.lat))
             expect(sp.get('lon')).toBe(String(params.lon))
 
-            // weather と timeSlot は文字列の完全一致
+            // weather と timeSlot と dayType は文字列の完全一致
             expect(sp.get('weather')).toBe(params.weather)
             expect(sp.get('timeSlot')).toBe(params.timeSlot)
+            expect(sp.get('dayType')).toBe(params.dayType)
 
             unmount()
           },
