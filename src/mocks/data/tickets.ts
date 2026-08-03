@@ -87,7 +87,7 @@ export const mockTickets: Ticket[] = [
     redeemedCount: 82,
     status: 'ACTIVE',
     // 水族館・イルカ
-    thumbnailUrl: 'https://loremflickr.com/400/300/aquarium,dolphin,fish/all?lock=208',
+    thumbnailUrl: 'https://loremflickr.com/400/300/aquarium,dolphin/all?lock=208',
   },
   {
     ticketId: 'ticket-009',
