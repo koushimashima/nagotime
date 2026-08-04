@@ -7,7 +7,7 @@
 // ログイン中にアバターをタップするとアカウント情報パネルが開く
 
 import { useState } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate, useLocation } from 'react-router-dom'
 import { Ticket, UserCircle, LogOut, Mail, Coins, ShieldCheck, Settings, BadgeCheck, MessageSquare } from 'lucide-react'
 import { useAuth } from '../../contexts/AuthContext'
 import type { User } from '../../mocks/data/types'
@@ -155,7 +155,15 @@ function navLinkClass({ isActive }: { isActive: boolean }): string {
 export function Header() {
   const { user, isAuthenticated, logout } = useAuth()
   const navigate = useNavigate()
+  const location = useLocation()
   const [accountOpen, setAccountOpen] = useState(false)
+
+  function handleTicketClick(e: React.MouseEvent) {
+    if (location.pathname === '/miles') {
+      e.preventDefault()
+      navigate(-1)
+    }
+  }
 
   function handleUserClick() {
     if (isAuthenticated) {
@@ -203,6 +211,7 @@ export function Header() {
           {/* マイルアイコン */}
           <NavLink
             to="/miles"
+            onClick={handleTicketClick}
             aria-label="マイル"
             className={({ isActive }) =>
               [
