@@ -30,32 +30,63 @@
 
 ## 2. システムアーキテクチャ
 
-```
-[ユーザーのブラウザ]
-        │ HTTPS
-        ▼
-[Amplify Hosting]  ← React SPA（静的ファイル）
-        │
-        │ REST API
-        ▼
-[API Gateway (REST)]
-        │
-   ┌────┴────────────────────┐
-   │                         │
-   ▼                         ▼
-[Lambda: API ハンドラー群]  [Lambda: image-analyzer]
-   │                         ▲
-   ├── DynamoDB               │ S3イベント通知
-   │   ├── NagoTime-Reviews   │ (uploads/ プレフィックスのみ)
-   │   ├── NagoTime-Spots     │
-   │   ├── NagoTime-Users     ▼
-   │   ├── NagoTime-MileTransactions  [S3: nagotime-uploads]
-   │   ├── NagoTime-Coupons           （アップロード専用）
-   │   ├── NagoTime-Likes             │
-   │   └── NagoTime-ImageCache        │ Lambda が処理後
-   │                                  ▼
-   └── Cognito（認証）       [S3: nagotime-content]
-                              （配信用・CloudFront経由）
+```mermaid
+graph TD
+    Browser["ユーザーのブラウザ"]
+
+    %% 認証フロー
+    Browser -->|"① ログイン"| CognitoUP
+    CognitoUP -->|"JWT トークン返却"| Browser
+
+    %% Identity Pool → ブラウザへ一時クレデンシャル
+    Browser -->|"② 一時クレデンシャル取得"| CognitoIP
+    CognitoIP -->|"S3 uploads/* PutObject権限"| Browser
+
+    %% フロントエンド配信
+    Browser -->|"HTTPS"| Amplify["Amplify Hosting\nReact SPA"]
+    Amplify -->|"REST API"| APIGW
+
+    %% API Gateway
+    APIGW["API Gateway\nnagotime-api\n(Cognito Authorizer)"]
+    APIGW --> ReviewsLambda["nagotime-reviews-handler\n口コミ CRUD・レコメンド"]
+    APIGW --> MilesLambda["nagotime-miles-handler\nマイル残高・チケット交換"]
+    APIGW --> CouponsLambda["nagotime-coupons-handler\nクーポン管理 (sponsor-admin)"]
+
+    %% Presign → S3 直接アップロード
+    APIGW -->|"③ presignedURL 発行"| Browser
+    Browser -->|"④ PUT presignedURL"| S3Uploads
+
+    %% DynamoDB
+    ReviewsLambda -->|"読み書き"| DynamoDB
+    MilesLambda -->|"読み書き"| DynamoDB
+    CouponsLambda -->|"読み書き"| DynamoDB
+
+    DynamoDB["Amazon DynamoDB\nReviews / Spots / Users / Likes\nMileTransactions / Coupons / ImageCache"]
+
+    %% Cognito
+    CognitoUP["Amazon Cognito\nUser Pool\nメール認証・学生ドメイン検証"]
+    CognitoIP["Amazon Cognito\nIdentity Pool\nS3 PutObject 最小権限"]
+
+    %% 画像処理パイプライン
+    S3Uploads["S3: nagotime-uploads\nアップロード専用\nライフサイクル: 30日\n⚠ イベント通知あり"]
+    S3Uploads -->|"S3イベント通知\nuploads/ のみ"| ImageAnalyzer
+
+    ImageAnalyzer["nagotime-image-analyzer\n画像リサイズ\nモデレーション (opt)"]
+    ImageAnalyzer -->|"処理済み画像配置"| S3Content
+
+    S3Content["S3: nagotime-content\n配信用\nライフサイクル: 90日\n⚠ イベント通知なし"]
+    S3Content -->|"CloudFront 経由"| Browser
+
+    %% スタイル
+    style Browser fill:#dbeafe,stroke:#3b82f6
+    style APIGW fill:#fef9c3,stroke:#ca8a04
+    style DynamoDB fill:#dcfce7,stroke:#16a34a
+    style CognitoUP fill:#ede9fe,stroke:#7c3aed
+    style CognitoIP fill:#ede9fe,stroke:#7c3aed
+    style S3Uploads fill:#ffedd5,stroke:#ea580c
+    style S3Content fill:#ffedd5,stroke:#ea580c
+    style ImageAnalyzer fill:#fce7f3,stroke:#db2777
+    style Amplify fill:#dbeafe,stroke:#3b82f6
 ```
 
 ---
