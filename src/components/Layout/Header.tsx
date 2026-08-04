@@ -158,10 +158,11 @@ export function Header() {
   const location = useLocation()
   const [accountOpen, setAccountOpen] = useState(false)
 
-  function handleTicketClick(e: React.MouseEvent) {
+  function handleTicketClick() {
     if (location.pathname === '/miles') {
-      e.preventDefault()
       navigate(-1)
+    } else {
+      navigate('/miles')
     }
   }
 
@@ -209,21 +210,19 @@ export function Header() {
         <div className="flex items-center gap-1 shrink-0">
 
           {/* マイルアイコン */}
-          <NavLink
-            to="/miles"
+          <button
+            type="button"
             onClick={handleTicketClick}
             aria-label="マイル"
-            className={({ isActive }) =>
-              [
-                'p-2 rounded-full transition-colors',
-                isActive
-                  ? 'text-white bg-orange-600'
-                  : 'text-orange-100 hover:text-white hover:bg-orange-600',
-              ].join(' ')
-            }
+            className={[
+              'p-2 rounded-full transition-colors',
+              location.pathname === '/miles'
+                ? 'text-white bg-orange-600'
+                : 'text-orange-100 hover:text-white hover:bg-orange-600',
+            ].join(' ')}
           >
             <Ticket className="w-7 h-7" aria-hidden="true" />
-          </NavLink>
+          </button>
 
           {/* ユーザーボタン + アカウントパネル */}
           <div className="relative">
